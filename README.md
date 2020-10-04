@@ -1,5 +1,8 @@
-﻿# Conspiratio
-Hier wird das gesamte Programm Conspiratios verwaltet
+﻿# Conspiratio.WinForms
+
+**Hinweis: Dieser Client wird nur noch sporadisch weiterentwickelt und erhält keine neuen großen Features mehr. Stattdessen arbeiten wir stattdessen an einem neuen Client mit Unity (Link folgt), der ebenfalls Open Source sein wird. Dazu suchen wir nach wie vor tatkräftige Unterstützung.**
+
+Hier findet Ihr den aktuellen Stand des WinForms Spieleclients von Conspiratio, so wie er auch auf der Website herunter geladen werden kann.
 
 ## Mitmachen
 
@@ -34,13 +37,13 @@ _Hinterlasse einen Ort (Code) immer in einem besseren Zustand als du ihn vorgefu
 
 ### Dokumentation
 
-Die Dokumentation von umfangreichen Features oder sonstigen interessanten Methoden, Klassen etc. im Code erfolgt im [Github Wiki](https://github.com/DerEinzehnte/Conspiratio-Programm/wiki).
+Die Dokumentation von umfangreichen Features oder sonstigen interessanten Methoden, Klassen etc. im Code erfolgt im [Github Wiki](https://github.com/Conspiratio/Conspiratio.WinForms/wiki).
 
 ### Changelog
 
 Vorab: Wir nutzen einiges aus diesem Konzept hier: https://keepachangelog.com/de/1.0.0/
 
-Der Changelog wird in der Datei [CHANGELOG.md](https://github.com/DerEinzehnte/Conspiratio-Programm/blob/master/CHANGELOG.md) gepflegt, direkt hier im Root. Wichtig ist, dass jede Änderung hier dokumentiert wird, und zwar immer im Bereich "Unreleased". Das bedeutet im Umkehrschluss, dass jeder Pull Request also auch immer eine Änderungen an der Changelog-Datei enthalten muss, sonst ist er nicht vollständig.
+Der Changelog wird in der Datei [CHANGELOG.md](https://github.com/Conspiratio/Conspiratio.WinForms/blob/master/CHANGELOG.md) gepflegt, direkt hier im Root. Wichtig ist, dass jede Änderung hier dokumentiert wird, und zwar immer im Bereich "Unreleased". Das bedeutet im Umkehrschluss, dass jeder Pull Request also auch immer eine Änderungen an der Changelog-Datei enthalten muss, sonst ist er nicht vollständig.
 
 Im Changelog nutzen wir folgende Gruppen zur Unterteilung der Änderungen:
 
@@ -69,7 +72,7 @@ Projekte ursprünglich erstellt für: Visual Studio 2015
 Kompatibel mit: Visual Studio 2017, 2019
 
 ## Sonstige Systemvoraussetzungen:
-- .NET Framework 4.5
+- .NET Framework 4.6.2
 
 ## NUGET Pakete, die verwendet werden
 - [NAudio](https://www.nuget.org/packages/NAudio/)
@@ -77,10 +80,3 @@ Kompatibel mit: Visual Studio 2017, 2019
 ## Setup
 - Als dritte und hoffentlich vorerst letzte Versuch habe ich im Ordner "Conspiratio.Setup" ein Advanced Installer Projekt erstellt (Conspiratio.Setup.aip). Advanced Installer ist in der Grundversion kostenfrei und  sehr einfach zu bedienen, weshalb ich mich für dieses Tool entschieden habe: https://www.advancedinstaller.com/  
 Ausblick: Mit der "Professional" Version hätten wir sogar die Möglichkeit, das Update Tool von Advanced Installer zu nutzen und könnten den Spielern die Option geben, Updates von Conspiratio bequem automatisch herunterladen und installieren zu können, ohne weitere Eingriffe.
-
-### Alte Varianten
-- Um das Setup "ConsSetup" zu verwenden muss im Ordner "VisualStudioZusatzTools" die Application "InstallShield2015LimitedEdition" installiert sein. Dafür ist allerdings mind. eine Visual Studio Professional Lizenz erforderlich (es wird außerdem nur Visual Studio 2015 unterstützt). Für Näheres siehe: 
-  https://stackoverflow.com/questions/39131050/visual-studio-2012-installer-project-in-vs-2015-the-application-is-not-installe
-- Altes Setup: Um das Setup "ConspiratioSetup" zu verwenden muss "Microsoft Visual Studio 2015 Installer Project"
-  installiert sein (gibt es auch für VS 2017). Dies kann erreicht werden indem man in Visual Studio unter
-  Tools/Extensions and Updates bei der Suche den Namen des Tools eintippt und anschließend installiert. Dies ist aber die veraltete Version des Setups.
