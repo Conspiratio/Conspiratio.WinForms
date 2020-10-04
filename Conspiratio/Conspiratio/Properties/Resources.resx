@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SymbReichtum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbReichtum.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintHauptmenue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintHauptmenue.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnwNV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Anwesen\AnwNV.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh2.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh19.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh7.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintWahl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintWahl.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbDoor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbDoor.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh3.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh11.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh2.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kampf_HeroInPeril" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_HeroInPeril.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ban12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban12.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbRel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbRel1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintAemter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintAemter.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbPfeilR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbPfeilR1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKupplerin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKupplerin.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Symbspionage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\Symbspionage.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Katastrophe_PendulumWaltz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Katastrophe_PendulumWaltz.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SymbPfeilL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbPfeilL1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbRaeuber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbRaeuber.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbMusketier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbMusketier.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintHinterzimmer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintHinterzimmer.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Brett3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\Brett3.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintSchreibstube2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintSchreibstube2.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh5.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Orient_TemptationMarch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Orient_TemptationMarch.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SymbKatas4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKatas4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh9.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnwImBau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Anwesen\AnwImBau.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PWK_201" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landkarten\PWK-201.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh10.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh21.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbKanonier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKanonier.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Brett1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\Brett1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh8.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PWK_101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landkarten\PWK-101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbStimme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbStimme.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_TriumphantReturn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_TriumphantReturn.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SymbCrime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbCrime.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kampf_EpicTVTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_EpicTVTheme.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ban9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban9.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbSabotage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbSabotage.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbBombenleger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbBombenleger.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh10.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh6.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbAnwNV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbAnwNV.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbRel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbRel2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban10.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh16.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh12.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban7.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh8.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintTrauung" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintTrauung.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh19.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_Assasins" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_Assasins.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Roh16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh16.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbVerheiratet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbVerheiratet.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Brett5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\Brett5.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh14.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh2.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbKatas3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKatas3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh4.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh12.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kampf_ImperialMorning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_ImperialMorning.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SymbKatas5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKatas5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh21.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh6.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh10.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbAnwImBau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbAnwImBau.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbSchuetze" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbSchuetze.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh15.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh6.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbNV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbNV.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintNetzwerkspiel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintNetzwerkspiel.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbAusverkauf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbAusverkauf.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh4.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh17.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_TurkishDance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_TurkishDance.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HintKontor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKontor.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kirche_TheAngelsWeep" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kirche_TheAngelsWeep.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ban13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban13.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh17.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbUnchecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbUnchecked.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbKatas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKatas2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh13.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintCredits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintCredits.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Tod_TheBigDecision" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Tod_TheBigDecision.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NVRoh15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh15.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh13.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban6.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_ATallShip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_ATallShip.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Roh17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh17.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintRundenNachrichten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintRundenNachrichten.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_Renaissance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_Renaissance.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WSRoh19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh19.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh3.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKirche1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKirche1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh11.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintNaechsterSpieler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintNaechsterSpieler.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kampf_WarfareBed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_WarfareBed.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SymbChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbChecked.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PWK_103" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landkarten\PWK-103.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintSpielerTod" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintSpielerTod.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh20.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh7.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SonstPergament" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\SonstPergament.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh15.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbJustiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbJustiz.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PWK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landkarten\PWK.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbOffizier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbOffizier.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh11.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh4.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh21.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKaravane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKaravane.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintSchreibstube1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintSchreibstube1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Raeuberlager_Platzhalter_br" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\Raeuberlager_Platzhalter_br.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh5.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh18.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintAbstimmung" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintAbstimmung.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stadt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Staedte\Stadt1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintBuchOffen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintBuchOffen.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban11.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AnwHaus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Anwesen\AnwHaus1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh7.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh18.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKindStirbt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKindStirbt.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKindGeboren" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKindGeboren.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKerker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKerker.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh9.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh14.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban5.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Geburt_Noel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Geburt_Noel.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Roh14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh14.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WSRoh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh3.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh13.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbAnwHaus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbAnwHaus1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbKatas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKatas1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Outro_PartingGlass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Outro_PartingGlass.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Hochzeit_30SecondClassical" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Hochzeit_30SecondClassical.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Standard_TheMaster" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_TheMaster.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SymbSoeldner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbSoeldner.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKirchgang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKirchgang.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Katastrophe_RoadToKilcoo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Katastrophe_RoadToKilcoo.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WSRoh1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh1.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Intro_BigHornsIntro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Intro_BigHornsIntro2.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ban14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban14.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbMuenzen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbMuenzen.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintKirche2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintKirche2.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintIntro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintIntro.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Brett4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\Brett4.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban3.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_HZ_TemptingFate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_HZ_TemptingFate.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_HZ_TheDeadlyYear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_HZ_TheDeadlyYear.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NVRoh18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh18.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh5.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ban8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Banner\ban8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbWS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbWS.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbFinanzen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbFinanzen.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbKaravane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKaravane.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbPfeilL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbPfeilL2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh12.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SonstHolzbrett" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\SonstHolzbrett.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kampf_NightRunner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_NightRunner.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Standard_LegendsOfTheRiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_LegendsOfTheRiver.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HintZugNachrichten" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintZugNachrichten.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Kampf_HighTension" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_HighTension.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Orient_WheelOfKarma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Orient_WheelOfKarma.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="HintSpielerAbsetzen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintSpielerAbsetzen.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Orient_EgyptianCrawl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Orient_EgyptianCrawl.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WSRoh8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh8.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_TroubledBridges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_TroubledBridges.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PWK_104" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landkarten\PWK-104.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbPfeilR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbPfeilR2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintOutro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintOutro.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HintGericht" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\HintGericht.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh20.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_HZ_TheTalk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_HZ_TheTalk.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Kampf_StalkingPrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_StalkingPrey.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Kampf_EnemyShips" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_EnemyShips.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WSRoh16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\WSRohstoffe\WSRoh16.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SymbKirche" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Symbole\SymbKirche.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PWK_102" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Landkarten\PWK-102.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Song_Standard_TheMightyKingdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_TheMightyKingdom.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Kampf_RememberTheHeroes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Kampf_RememberTheHeroes.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Standard_WhatChildIsThis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_WhatChildIsThis.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Standard_SundaysChild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_SundaysChild.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="muenzen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\muenzen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IconC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Icons\IconC.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Brett2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Sonstiges\Brett2.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NVRoh20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\NVRohstoffe\NVRoh20.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roh9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rohstoffe\Roh9.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kampf_loop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kampf_loop.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fanfare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fanfare.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pergament_klein" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Hintergruende\pergament_klein.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bongo_dunkel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bongo_dunkel.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bongo_hell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bongo_hell.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkbox_klick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkbox_klick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

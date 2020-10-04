@@ -1,0 +1,254 @@
+
+html, body
+{
+text-align: center;
+}
+
+
+p {text-align: middle;}
+
+
+@font-face { font-family: OldEng; src: url('OLDENGL.TTF'); }
+
+
+.einruecken {text-indent: 6em;}
+
+
+#rechts
+{
+    float: right;
+    width: 140px;
+    height: 140px;
+    margin-left: 20px;
+    margin-right: 180px;
+    border-style: solid;
+    border-width: 4px;
+
+}
+
+
+#links
+{
+    width: 45px;
+    height: 24px;
+    margin-top: 29px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+body
+{
+     margin: 0;
+     padding: 0;
+     background: url(hintIntro.png)no-repeat center center fixed;
+     text-align: justify;
+     font-family:OldEng, sans-serif;
+     font-size: 13px;
+     color: #000000;
+     background-color:#000000;
+     background-size:cover;
+}
+
+
+*
+{
+     margin: 0 auto 0 auto;
+     /*text-align:left;*/
+}
+
+
+#header
+{
+     position:relative;
+     width: 1000px;
+     height:99px;
+     background: url(header4.png) no-repeat center;
+}
+
+
+#page
+{
+     display: block;
+     height: 100%;
+     position: relative;
+     overflow: hidden;
+     background: #252F33 url(pergament3.png) no-repeat center;
+     width: 1000px;
+     background-color: rgba(0, 0, 0, 0.0);
+}
+
+
+.title
+{
+     position:relative;
+     top:1px;
+     text-align:center;
+     font-family:OldEng, sans-serif;
+     font-size:75px;
+     font-weight:bold;
+     color:#000000;
+}
+
+
+.articleTitle
+{
+     text-align:center;
+     padding-top:120px;
+     padding-bottom:50px;
+     color: #000000;
+     font-family:OldEng, sans-serif;
+     font-size:30px;
+     font-weight:bold;
+}
+
+.articleContent
+{
+     width:auto;
+     position:relative;
+     padding-left:30px;
+     padding-right:30px;
+     color:#000000;
+     text-align:center;
+     font-family:OldEng, sans-serif;
+     line-height:27px;
+     font-size:22px;
+}
+
+.articleContent a:link, a:active, a:visited 
+{
+     text-decoration:none;
+     color: #0000FF;
+}
+
+.articleContent a:hover
+{
+     text-decoration:none;
+     color: #ffffff;
+}
+
+.leftContent
+{
+     text-align:left;
+}
+
+
+#bar
+{
+     position:relative;
+     width: 1000px;
+     height:57px;
+     background: url(bar1.png) no-repeat;
+	padding-left: 30px;
+}
+
+#bar.submenu
+{
+     height:80px;
+     background: url(bar1.png);
+	padding-left: 30px;
+}
+
+.menuLink
+{
+     text-align:left;
+     float:left;
+     font-family:OldEng, sans-serif;
+     font-size:26px;
+     font-weight:bold;
+     color: #000000;
+     padding-top:14px;
+	padding-right: 44px;
+}
+
+.submenuLinks
+{
+     text-align:left;
+     float:left;
+     font-family:OldEng, sans-serif;
+     font-size:22px;
+     font-weight:bold;
+     color: #000000;
+     padding-top:2px;
+     padding-right: 30px;
+     padding-left: 154px;
+}
+
+a
+{
+     text-decoration:none;
+     color: #000000;
+}
+
+a:link.submenu,a:visited.submenu,a:active.submenu
+{
+     text-decoration:none;
+     color: #000000;
+     margin-right: 20px;
+}
+
+a:hover.submenu
+{
+     text-decoration:none;
+     color: #FFFFFF;
+}
+
+a:link.submenuactive,a:visited.submenuactive,a:active.submenuactive
+{
+     text-decoration:none;
+     color: #ffffff;
+     margin-right: 20px;
+}
+
+a:link.menu,a:visited.menu,a:active.menu
+{
+     text-decoration:none;
+     color: #000000;
+}
+
+a:hover.menu
+{
+     text-decoration:none;
+     color: #FFFFFF;
+}
+
+a.menuactive
+{
+     text-decoration:none;
+     color: #FFFFFF;
+}
+
+#pageContent
+{
+     width: 750px;
+     height: 1000px;
+
+}
+
+
+#footer
+{
+     width: 1000px;
+     height:24px;
+     font-size:16px;
+     color:#FFFFFF;
+}
+
+
+#footer a
+{
+     font-size:30px;
+     color:#FFFFFF;
+}
+
+
+html, body
+{
+     text-align: center;
+}
+
+
+p
+{
+text-align: left;
+}

@@ -1,0 +1,1038 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99F808F0-8819-4B0C-848C-C56669F7ED84}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Conspiratio</RootNamespace>
+    <AssemblyName>Conspiratio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\Vortex\Desktop\Cons\Conspiratio\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Conspiratio</ProductName>
+    <PublisherName>DerEinzehnte</PublisherName>
+    <ApplicationRevision>82</ApplicationRevision>
+    <ApplicationVersion>1.3.4.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>0BD13640C9F527185BA35A37BF7BECA28275492D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Conspiratio_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IconC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Conspiratio.Lib, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Conspiratio\Conspiratio.Lib\Conspiratio.Lib\bin\Debug\Conspiratio.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.9.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Allgemein\ConspiratioDeserializationBinder.cs" />
+    <Compile Include="Allgemein\Grafik.cs" />
+    <Compile Include="Allgemein\UI.cs" />
+    <Compile Include="Controls\CrystalButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LinkButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TransparentRichText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Allgemein\InterfaceBindings.cs" />
+    <Compile Include="Kampf\frmKampfereignisse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kampf\frmKampfereignisse.Designer.cs">
+      <DependentUpon>frmKampfereignisse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kampf\frmSoeldnerRaeuberKarte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kampf\frmSoeldnerRaeuberKarte.Designer.cs">
+      <DependentUpon>frmSoeldnerRaeuberKarte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kampf\frmStuetzpunktKaufen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kampf\frmStuetzpunktKaufen.Designer.cs">
+      <DependentUpon>frmStuetzpunktKaufen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kampf\frmStuetzpunktVerwalten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kampf\frmStuetzpunktVerwalten.Designer.cs">
+      <DependentUpon>frmStuetzpunktVerwalten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Kryptographie.cs" />
+    <Compile Include="Musik\FadeInOutWithStateSampleProvider.cs" />
+    <Compile Include="Privilegien\frmFestGeben.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegien\frmFestGeben.Designer.cs">
+      <DependentUpon>frmFestGeben.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\FormStatistik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\FormStatistik.Designer.cs">
+      <DependentUpon>FormStatistik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\frmBasis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\frmBasis.Designer.cs">
+      <DependentUpon>frmBasis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hauptmenue\frmEinstellungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hauptmenue\frmEinstellungen.Designer.cs">
+      <DependentUpon>frmEinstellungen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Musik\C_Musik.cs" />
+    <Compile Include="Hauptmenue\NetzwerkspielStarten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hauptmenue\NetzwerkspielStarten.Designer.cs">
+      <DependentUpon>NetzwerkspielStarten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Netzwerkspiel\NWSVerbinden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Netzwerkspiel\NWSVerbinden.Designer.cs">
+      <DependentUpon>NWSVerbinden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hauptmenue\Einzelspieler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hauptmenue\Einzelspieler.Designer.cs">
+      <DependentUpon>Einzelspieler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\NativeMethods.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\KontrahentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\KontrahentDetails.Designer.cs">
+      <DependentUpon>KontrahentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\KontrahentenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\KontrahentenForm.Designer.cs">
+      <DependentUpon>KontrahentenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hauptmenue\NeuesSpiel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hauptmenue\NeuesSpiel.Designer.cs">
+      <DependentUpon>NeuesSpiel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilegien\BauwerkStiftenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegien\BauwerkStiftenForm.Designer.cs">
+      <DependentUpon>BauwerkStiftenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilegien\RohstoffpreiseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegien\RohstoffpreiseForm.Designer.cs">
+      <DependentUpon>RohstoffpreiseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hauptmenue\SpielerHinzufuegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hauptmenue\SpielerHinzufuegen.Designer.cs">
+      <DependentUpon>SpielerHinzufuegen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personen\SpE.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Stadt\HausErweiterungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\HausErweiterungen.Designer.cs">
+      <DependentUpon>HausErweiterungen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stadt\StadtInformationen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\StadtInformationen.Designer.cs">
+      <DependentUpon>StadtInformationen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kirche\FormKonfessionslos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kirche\FormKonfessionslos.Designer.cs">
+      <DependentUpon>FormKonfessionslos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\ProzentwertFestlegenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\ProzentwertFestlegenForm.Designer.cs">
+      <DependentUpon>ProzentwertFestlegenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zugereignisse\Abrechnung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zugereignisse\Abrechnung.Designer.cs">
+      <DependentUpon>Abrechnung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gebiete\AemterEbene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gebiete\AemterEbene.Designer.cs">
+      <DependentUpon>AemterEbene.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\JaNeinFrage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\JaNeinFrage.Designer.cs">
+      <DependentUpon>JaNeinFrage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilegien\Handelszertifikat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegien\Handelszertifikat.Designer.cs">
+      <DependentUpon>Handelszertifikat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Cheatbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Cheatbox.Designer.cs">
+      <DependentUpon>Cheatbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zugereignisse\TitelVerleihForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zugereignisse\TitelVerleihForm.Designer.cs">
+      <DependentUpon>TitelVerleihForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\TippsAnzeigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\TippsAnzeigen.Designer.cs">
+      <DependentUpon>TippsAnzeigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Ladeform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Ladeform.Designer.cs">
+      <DependentUpon>Ladeform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Speicherform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Speicherform.Designer.cs">
+      <DependentUpon>Speicherform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stadt\LagerraumKaufen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\LagerraumKaufen.Designer.cs">
+      <DependentUpon>LagerraumKaufen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stadt\HausBauen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\HausBauen.Designer.cs">
+      <DependentUpon>HausBauen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stadt\HausWaehlen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\HausWaehlen.Designer.cs">
+      <DependentUpon>HausWaehlen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Optionen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Optionen.Designer.cs">
+      <DependentUpon>Optionen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hinterzimmer\Beleidigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hinterzimmer\Beleidigen.Designer.cs">
+      <DependentUpon>Beleidigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hinterzimmer\Bestechen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hinterzimmer\Bestechen.Designer.cs">
+      <DependentUpon>Bestechen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\BewerbForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\BewerbForm.Designer.cs">
+      <DependentUpon>BewerbForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\BewerbInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\BewerbInfos.Designer.cs">
+      <DependentUpon>BewerbInfos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hinterzimmer\BeziehungenPflegen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hinterzimmer\BeziehungenPflegen.Designer.cs">
+      <DependentUpon>BeziehungenPflegen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\GesetzeAnzeigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\GesetzeAnzeigen.Designer.cs">
+      <DependentUpon>GesetzeAnzeigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\Geldleiher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\Geldleiher.Designer.cs">
+      <DependentUpon>Geldleiher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kirche\KupplerinAngebot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kirche\KupplerinAngebot.Designer.cs">
+      <DependentUpon>KupplerinAngebot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gebiete\PolitischeWeltkarte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gebiete\PolitischeWeltkarte.Designer.cs">
+      <DependentUpon>PolitischeWeltkarte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\PrivilegienAnzeigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\PrivilegienAnzeigen.Designer.cs">
+      <DependentUpon>PrivilegienAnzeigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hauptmenue\RohstoffWaehlen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hauptmenue\RohstoffWaehlen.Designer.cs">
+      <DependentUpon>RohstoffWaehlen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hinterzimmer\Sabotage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hinterzimmer\Sabotage.Designer.cs">
+      <DependentUpon>Sabotage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hinterzimmer\Spionage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hinterzimmer\Spionage.Designer.cs">
+      <DependentUpon>Spionage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schreibstube\Testamentanzeigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schreibstube\Testamentanzeigen.Designer.cs">
+      <DependentUpon>Testamentanzeigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Allgemein\Textanzeigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Allgemein\Textanzeigen.Designer.cs">
+      <DependentUpon>Textanzeigen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stadt\WerkstaettenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\WerkstaettenForm.Designer.cs">
+      <DependentUpon>WerkstaettenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stadt\Transport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stadt\Transport.Designer.cs">
+      <DependentUpon>Transport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Allgemein\FormStatistik.resx">
+      <DependentUpon>FormStatistik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\frmBasis.resx">
+      <DependentUpon>frmBasis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hauptmenue\Einzelspieler.resx">
+      <DependentUpon>Einzelspieler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hauptmenue\frmEinstellungen.resx">
+      <DependentUpon>frmEinstellungen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hauptmenue\NeuesSpiel.resx">
+      <DependentUpon>NeuesSpiel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hauptmenue\NetzwerkspielStarten.resx">
+      <DependentUpon>NetzwerkspielStarten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kampf\frmKampfereignisse.resx">
+      <DependentUpon>frmKampfereignisse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kampf\frmSoeldnerRaeuberKarte.resx">
+      <DependentUpon>frmSoeldnerRaeuberKarte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kampf\frmStuetzpunktKaufen.resx">
+      <DependentUpon>frmStuetzpunktKaufen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kampf\frmStuetzpunktVerwalten.resx">
+      <DependentUpon>frmStuetzpunktVerwalten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Netzwerkspiel\NWSVerbinden.resx">
+      <DependentUpon>NWSVerbinden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumericButton.resx">
+      <DependentUpon>NumericButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegien\frmFestGeben.resx">
+      <DependentUpon>frmFestGeben.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\KontrahentDetails.resx">
+      <DependentUpon>KontrahentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegien\BauwerkStiftenForm.resx">
+      <DependentUpon>BauwerkStiftenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kirche\FormKonfessionslos.resx">
+      <DependentUpon>FormKonfessionslos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegien\RohstoffpreiseForm.resx">
+      <DependentUpon>RohstoffpreiseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hauptmenue\SpielerHinzufuegen.resx">
+      <DependentUpon>SpielerHinzufuegen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\KontrahentenForm.resx">
+      <DependentUpon>KontrahentenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\HausErweiterungen.resx">
+      <DependentUpon>HausErweiterungen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\StadtInformationen.resx">
+      <DependentUpon>StadtInformationen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\ProzentwertFestlegenForm.resx">
+      <DependentUpon>ProzentwertFestlegenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zugereignisse\Abrechnung.resx">
+      <DependentUpon>Abrechnung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gebiete\AemterEbene.resx">
+      <DependentUpon>AemterEbene.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\JaNeinFrage.resx">
+      <DependentUpon>JaNeinFrage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegien\Handelszertifikat.resx">
+      <DependentUpon>Handelszertifikat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Ladeform.resx">
+      <DependentUpon>Ladeform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Speicherform.resx">
+      <DependentUpon>Speicherform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Cheatbox.resx">
+      <DependentUpon>Cheatbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegien\UntergebeneForm.resx">
+      <DependentUpon>UntergebeneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\LagerraumKaufen.resx">
+      <DependentUpon>LagerraumKaufen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\HausBauen.resx">
+      <DependentUpon>HausBauen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\HausWaehlen.resx">
+      <DependentUpon>HausWaehlen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hinterzimmer\Beleidigen.resx">
+      <DependentUpon>Beleidigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hinterzimmer\Bestechen.resx">
+      <DependentUpon>Bestechen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\BewerbForm.resx">
+      <DependentUpon>BewerbForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\BewerbInfos.resx">
+      <DependentUpon>BewerbInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hinterzimmer\BeziehungenPflegen.resx">
+      <DependentUpon>BeziehungenPflegen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\GesetzeAnzeigen.resx">
+      <DependentUpon>GesetzeAnzeigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\Geldleiher.resx">
+      <DependentUpon>Geldleiher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kirche\KupplerinAngebot.resx">
+      <DependentUpon>KupplerinAngebot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Optionen.resx">
+      <DependentUpon>Optionen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gebiete\PolitischeWeltkarte.resx">
+      <DependentUpon>PolitischeWeltkarte.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\PrivilegienAnzeigen.resx">
+      <DependentUpon>PrivilegienAnzeigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hauptmenue\RohstoffWaehlen.resx">
+      <DependentUpon>RohstoffWaehlen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hinterzimmer\Sabotage.resx">
+      <DependentUpon>Sabotage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hinterzimmer\Spionage.resx">
+      <DependentUpon>Spionage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Schreibstube\Testamentanzeigen.resx">
+      <DependentUpon>Testamentanzeigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\Textanzeigen.resx">
+      <DependentUpon>Textanzeigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\WerkstaettenForm.resx">
+      <DependentUpon>WerkstaettenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stadt\Transport.resx">
+      <DependentUpon>Transport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Privilegien\UntergebenenOptionen.resx">
+      <DependentUpon>UntergebenenOptionen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zugereignisse\TitelVerleihForm.resx">
+      <DependentUpon>TitelVerleihForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Allgemein\TippsAnzeigen.resx">
+      <DependentUpon>TippsAnzeigen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Allgemein\Conspiratio_TemporaryKey.pfx" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Privilegien\UntergebeneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegien\UntergebeneForm.Designer.cs">
+      <DependentUpon>UntergebeneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Privilegien\UntergebenenOptionen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Privilegien\UntergebenenOptionen.Designer.cs">
+      <DependentUpon>UntergebenenOptionen.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Diamantdunkel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Diamantleuchtend.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Eheringe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Evangelisch.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Fragezeichen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Goldnugget.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Katas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Katas2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Katas3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Katas4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Katas5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Katholisch.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\Lagerplatz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\SabotageSymb.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Sonstiges\SpioneSymb.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Allgemein\C-Icon.ico" />
+    <Content Include="IconC.ico" />
+    <Content Include="Images\Hintergruende\HintGericht.tif" />
+    <Content Include="Images\Hintergruende\HintIntro.tif" />
+    <Content Include="Images\Hintergruende\HintKupplerin.tif" />
+    <Content Include="Images\Hintergruende\HintRundenNachrichten.tif" />
+    <None Include="Resources\checkbox_klick.wav" />
+    <None Include="Resources\bongo_hell.wav" />
+    <None Include="Resources\bongo_dunkel.wav" />
+    <None Include="Resources\fanfare.wav" />
+    <None Include="Resources\kampf_loop.wav" />
+    <None Include="Images\Symbole\SymbSoeldner.tif" />
+    <None Include="Images\Symbole\SymbSchuetze.tif" />
+    <None Include="Images\Symbole\SymbBombenleger.tif" />
+    <None Include="Images\Sonstiges\Raeuberlager_Platzhalter_br.png" />
+    <None Include="Images\Hintergruende\pergament_klein_transparent.png" />
+    <None Include="Images\Hintergruende\pergament_klein.png" />
+    <Content Include="Images\Symbole\SymbCrime.gif" />
+    <None Include="Images\Symbole\SymbKanonier.tif" />
+    <None Include="Images\Symbole\SymbMusketier.tif" />
+    <None Include="Images\Symbole\SymbOffizier.tif" />
+    <None Include="Images\Symbole\SymbRaeuber.tif" />
+    <Content Include="Images\Symbole\SymbReichtum.gif" />
+    <Content Include="Images\Symbole\SymbRel1.gif" />
+    <Content Include="Images\Symbole\SymbRel1_schwarz.gif" />
+    <Content Include="Images\Symbole\SymbRel2.gif" />
+    <Content Include="Images\Symbole\SymbRel2_schwarz.gif" />
+    <None Include="Resources\muenzen.wav" />
+    <None Include="Resources\Song_Tod_TheBigDecision.mp3" />
+    <None Include="Resources\Song_Standard_WhatChildIsThis.mp3" />
+    <None Include="Resources\Song_Standard_TurkishDance.mp3" />
+    <None Include="Resources\Song_Standard_TroubledBridges.mp3" />
+    <None Include="Resources\Song_Standard_TriumphantReturn.mp3" />
+    <None Include="Resources\Song_Standard_TheMightyKingdom.mp3" />
+    <None Include="Resources\Song_Standard_TheMaster.mp3" />
+    <None Include="Resources\Song_Standard_SundaysChild.mp3" />
+    <None Include="Resources\Song_Standard_Renaissance.mp3" />
+    <None Include="Resources\Song_Standard_LegendsOfTheRiver.mp3" />
+    <None Include="Resources\Song_Standard_ATallShip.mp3" />
+    <None Include="Resources\Song_Standard_Assasins.mp3" />
+    <None Include="Resources\Song_Outro_PartingGlass.mp3" />
+    <None Include="Resources\Song_Orient_WheelOfKarma.mp3" />
+    <None Include="Resources\Song_Orient_TemptationMarch.mp3" />
+    <None Include="Resources\Song_Orient_EgyptianCrawl.mp3" />
+    <None Include="Resources\Song_Kirche_TheAngelsWeep.mp3" />
+    <None Include="Resources\Song_Katastrophe_RoadToKilcoo.mp3" />
+    <None Include="Resources\Song_Katastrophe_PendulumWaltz.mp3" />
+    <None Include="Resources\Song_Kampf_WarfareBed.mp3" />
+    <None Include="Resources\Song_Kampf_StalkingPrey.mp3" />
+    <None Include="Resources\Song_Kampf_RememberTheHeroes.mp3" />
+    <None Include="Resources\Song_Kampf_NightRunner.mp3" />
+    <None Include="Resources\Song_Kampf_ImperialMorning.mp3" />
+    <None Include="Resources\Song_Kampf_HighTension.mp3" />
+    <None Include="Resources\Song_Kampf_HeroInPeril.mp3" />
+    <None Include="Resources\Song_Kampf_EpicTVTheme.mp3" />
+    <None Include="Resources\Song_Kampf_EnemyShips.mp3" />
+    <None Include="Resources\Song_Intro_BigHornsIntro2.mp3" />
+    <None Include="Resources\Song_Hochzeit_30SecondClassical.mp3" />
+    <None Include="Resources\Song_HZ_TheTalk.mp3" />
+    <None Include="Resources\Song_HZ_TheDeadlyYear.mp3" />
+    <None Include="Resources\Song_HZ_TemptingFate.mp3" />
+    <None Include="Resources\Song_Geburt_Noel.mp3" />
+    <None Include="Images\Symbole\SymbAusverkauf.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh21.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh20.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh19.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh18.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh17.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh16.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh15.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh14.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh13.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh12.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh11.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh10.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh9.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh8.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh7.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh6.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh5.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh4.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh3.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh2.tif" />
+    <None Include="Images\NVRohstoffe\NVRoh1.tif" />
+    <None Include="Images\Rohstoffe\Roh21.tif" />
+    <None Include="Images\Rohstoffe\Roh20.tif" />
+    <None Include="Images\Rohstoffe\Roh19.tif" />
+    <None Include="Images\Rohstoffe\Roh18.tif" />
+    <None Include="Images\Rohstoffe\Roh17.tif" />
+    <None Include="Images\Rohstoffe\Roh16.tif" />
+    <None Include="Images\Rohstoffe\Roh15.tif" />
+    <None Include="Images\Rohstoffe\Roh14.tif" />
+    <None Include="Images\Rohstoffe\Roh13.tif" />
+    <None Include="Images\Rohstoffe\Roh12.tif" />
+    <None Include="Images\Rohstoffe\Roh11.tif" />
+    <None Include="Images\Rohstoffe\Roh10.tif" />
+    <None Include="Images\Rohstoffe\Roh9.tif" />
+    <None Include="Images\Rohstoffe\Roh8.tif" />
+    <None Include="Images\Rohstoffe\Roh7.tif" />
+    <None Include="Images\Rohstoffe\Roh6.tif" />
+    <None Include="Images\Rohstoffe\Roh5.tif" />
+    <None Include="Images\Rohstoffe\Roh4.tif" />
+    <None Include="Images\Rohstoffe\Roh3.tif" />
+    <None Include="Images\Rohstoffe\Roh2.tif" />
+    <None Include="Images\Rohstoffe\Roh1.tif" />
+    <None Include="Images\Symbole\SymbAnwNV.tif" />
+    <None Include="Images\Hintergruende\HintKirchgang.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh21.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh20.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh19.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh18.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh17.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh16.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh15.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh14.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh13.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh12.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh11.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh10.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh9.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh8.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh7.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh6.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh5.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh4.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh3.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh2.tif" />
+    <None Include="Images\WSRohstoffe\WSRoh1.tif" />
+    <None Include="Images\Symbole\SymbStimme.tif" />
+    <None Include="Images\Sonstiges\Brett5.tif" />
+    <None Include="Images\Sonstiges\Brett4.tif" />
+    <None Include="Images\Sonstiges\Brett3.tif" />
+    <None Include="Images\Sonstiges\Brett2.tif" />
+    <None Include="Images\Sonstiges\Brett1.tif" />
+    <None Include="Images\Symbole\SymbAnwHaus1.tif" />
+    <None Include="Images\Symbole\SymbAnwImBau.tif" />
+    <None Include="Images\Symbole\SymbKaravane.tif" />
+    <None Include="Images\Symbole\SymbMuenzen.tif" />
+    <None Include="Images\Symbole\SymbDoor.tif" />
+    <None Include="Images\Icons\IconC.ico" />
+    <None Include="Images\Symbole\SymbVerheiratet.gif" />
+    <None Include="Images\Symbole\SymbUnchecked.gif" />
+    <None Include="Images\Symbole\Symbspionage.gif" />
+    <None Include="Images\Symbole\SymbSabotage.gif" />
+    <None Include="Images\Symbole\SymbPfeilR2.gif" />
+    <None Include="Images\Symbole\SymbPfeilR1.gif" />
+    <None Include="Images\Symbole\SymbPfeilL2.gif" />
+    <None Include="Images\Symbole\SymbPfeilL1.gif" />
+    <None Include="Images\Symbole\SymbNV.jpeg" />
+    <None Include="Images\Symbole\SymbKatas5.png" />
+    <None Include="Images\Symbole\SymbKatas4.png" />
+    <None Include="Images\Symbole\SymbKatas3.png" />
+    <None Include="Images\Symbole\SymbKatas2.png" />
+    <None Include="Images\Symbole\SymbKatas1.png" />
+    <None Include="Images\Symbole\SymbChecked.gif" />
+    <None Include="Images\Anwesen\AnwHaus4.tif" />
+    <None Include="Images\Symbole\SymbWS.tif" />
+    <None Include="Images\Symbole\SymbKirche.tif" />
+    <None Include="Images\Symbole\SymbJustiz.tif" />
+    <None Include="Images\Symbole\SymbFinanzen.tif" />
+    <None Include="Images\Staedte\Stadt1.tif" />
+    <None Include="Images\Hintergruende\HintNaechsterSpieler.tif" />
+    <None Include="Images\Hintergruende\HintKirche2.tif" />
+    <None Include="Images\Hintergruende\HintKirche1.tif" />
+    <None Include="Images\Hintergruende\HintKindGeboren.tif" />
+    <None Include="Images\Hintergruende\HintKaravane.tif" />
+    <None Include="Images\Hintergruende\HintHauptmenue.tif" />
+    <None Include="Images\Hintergruende\HintCredits.tif" />
+    <None Include="Images\Anwesen\AnwNV.tif" />
+    <None Include="Images\Anwesen\AnwHaus9.tif" />
+    <None Include="Images\Anwesen\AnwHaus8.tif" />
+    <None Include="Images\Anwesen\AnwHaus7.tif" />
+    <None Include="Images\Anwesen\AnwHaus6.tif" />
+    <None Include="Images\Anwesen\AnwHaus5.tif" />
+    <None Include="Images\Anwesen\AnwHaus3.tif" />
+    <None Include="Images\Anwesen\AnwHaus2.tif" />
+    <None Include="Images\Anwesen\AnwHaus1.tif" />
+    <None Include="Images\Sonstiges\SonstPergament.tif" />
+    <None Include="Images\Sonstiges\SonstHolzbrett.tif" />
+    <None Include="Images\Hintergruende\HintOutro.tif" />
+    <None Include="Images\Hintergruende\HintAemter.tif" />
+    <None Include="Images\Anwesen\AnwImBau.tif" />
+    <None Include="Images\Hintergruende\HintNetzwerkspiel.tif" />
+    <None Include="Images\Hintergruende\HintZugNachrichten.tif" />
+    <None Include="Images\Hintergruende\HintWahl.tif" />
+    <None Include="Images\Hintergruende\HintTrauung.tif" />
+    <None Include="Images\Hintergruende\HintSpielerTod.tif" />
+    <None Include="Images\Hintergruende\HintSpielerAbsetzen.tif" />
+    <None Include="Images\Hintergruende\HintSchreibstube2.tif" />
+    <None Include="Images\Hintergruende\HintSchreibstube1.tif" />
+    <None Include="Images\Hintergruende\HintKontor.tif" />
+    <None Include="Images\Hintergruende\HintKindstirbt.tif" />
+    <None Include="Images\Hintergruende\HintKerker.tif" />
+    <None Include="Images\Hintergruende\HintHinterzimmer.tif" />
+    <None Include="Images\Hintergruende\HintBuchOffen.tif" />
+    <None Include="Images\Hintergruende\HintAbstimmung.tif" />
+    <None Include="Images\Sonstiges\pfeil22.gif" />
+    <None Include="Images\Sonstiges\pfeil12.gif" />
+    <None Include="Images\Sonstiges\pfeil2.gif" />
+    <None Include="Images\Sonstiges\pfeil1.gif" />
+    <None Include="Images\Sonstiges\Door.jpeg" />
+    <None Include="Images\Landkarten\PWK-201.png" />
+    <None Include="Images\Landkarten\PWK-104.png" />
+    <None Include="Images\Landkarten\PWK-103.png" />
+    <None Include="Images\Landkarten\PWK-102.png" />
+    <None Include="Images\Landkarten\PWK-101.png" />
+    <None Include="Images\Landkarten\PWK.png" />
+    <None Include="Images\Banner\ban14.gif" />
+    <None Include="Images\Banner\ban13.gif" />
+    <None Include="Images\Banner\ban12.gif" />
+    <None Include="Images\Banner\ban11.gif" />
+    <None Include="Images\Banner\ban10.gif" />
+    <None Include="Images\Banner\ban9.gif" />
+    <None Include="Images\Banner\ban8.gif" />
+    <None Include="Images\Banner\ban7.gif" />
+    <None Include="Images\Banner\ban6.gif" />
+    <None Include="Images\Banner\ban5.gif" />
+    <None Include="Images\Banner\ban4.gif" />
+    <None Include="Images\Banner\ban3.gif" />
+    <None Include="Images\Banner\ban2.gif" />
+    <None Include="Images\Banner\ban1.gif" />
+    <None Include="Images\Sonstiges\C-Icon.ico" />
+    <None Include="Resources\kupplerin.jpeg" />
+    <None Include="Images\Sonstiges\kirchensymb.jpeg" />
+    <None Include="Images\Sonstiges\Justiz.jpeg" />
+    <None Include="Images\Sonstiges\Finanzen.jpeg" />
+    <None Include="Images\Sonstiges\crime.gif" />
+    <None Include="Images\Sonstiges\ring1.gif" />
+    <None Include="Images\NVRohstoffe\NVRohstoff21.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff20.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff19.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff18.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff17.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff16.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff15.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff14.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff13.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff12.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff11.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff10.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff9.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff8.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff7.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff6.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff5.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff4.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff3.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff2.jpeg" />
+    <None Include="Images\NVRohstoffe\NVRohstoff1.jpeg" />
+    <None Include="Images\Sonstiges\Werkstaetten.jpeg" />
+    <None Include="Images\Sonstiges\NichtVerf.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff21.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff20.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff19.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff18.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff17.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff16.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff15.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff14.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff13.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff12.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff11.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff10.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff9.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff8.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff7.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff6.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff5.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff4.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff3.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff2.jpeg" />
+    <None Include="Images\WSRohstoffe\WS_Rohstoff1.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff21.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff20.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff19.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff18.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff17.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff16.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff15.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff14.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff13.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff12.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff11.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff10.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff9.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff8.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff7.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff6.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff5.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff4.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff3.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff2.jpeg" />
+    <None Include="Images\Rohstoffe\Rohstoff1.jpeg" />
+    <None Include="Images\Sonstiges\Holzbrett.jpeg" />
+    <None Include="Images\Sonstiges\Wiese.jpeg" />
+    <None Include="Resources\CurSword.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Cursors\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

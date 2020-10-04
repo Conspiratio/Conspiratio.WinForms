@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conspiratio", "Conspiratio\Conspiratio.csproj", "{99F808F0-8819-4B0C-848C-C56669F7ED84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{99F808F0-8819-4B0C-848C-C56669F7ED84}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94E66541-CDCE-4330-B873-E270FD99AB74}
+	EndGlobalSection
+EndGlobal
