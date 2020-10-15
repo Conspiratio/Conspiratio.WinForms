@@ -56,6 +56,7 @@ namespace Conspiratio.Allgemein
             privilegien[31] = new PrivZollfrei();
             privilegien[32] = new PrivPrediger();
             privilegien[33] = new PrivFestGeben();
+            privilegien[34] = new PrivJurist();
 
             return privilegien;
         }
