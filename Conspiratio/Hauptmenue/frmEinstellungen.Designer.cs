@@ -40,6 +40,13 @@
             this.lbl_statistik_anzeigen = new System.Windows.Forms.Label();
             this.lbl_effekt_lautstaerke = new System.Windows.Forms.Label();
             this.trb_effekt_lautstaerke = new System.Windows.Forms.TrackBar();
+            this.btn_aggressivitaet_niedrig = new Conspiratio.Controls.CrystalButton();
+            this.lbl_aggressivitaet_ki_spieler = new System.Windows.Forms.Label();
+            this.lbl_aggressivitaet_niedrig = new System.Windows.Forms.Label();
+            this.lbl_aggressivitaet_mittel = new System.Windows.Forms.Label();
+            this.btn_aggressivitaet_mittel = new Conspiratio.Controls.CrystalButton();
+            this.lbl_aggressivitaet_hoch = new System.Windows.Forms.Label();
+            this.btn_aggressivitaet_hoch = new Conspiratio.Controls.CrystalButton();
             ((System.ComponentModel.ISupportInitialize)(this.trb_musik_lautstaerke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trb_effekt_lautstaerke)).BeginInit();
             this.SuspendLayout();
@@ -193,6 +200,7 @@
             this.lbl_effekt_lautstaerke.Size = new System.Drawing.Size(310, 29);
             this.lbl_effekt_lautstaerke.TabIndex = 250;
             this.lbl_effekt_lautstaerke.Text = "Effekt Lautstärke - 100 %";
+            this.lbl_effekt_lautstaerke.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
             // 
             // trb_effekt_lautstaerke
             // 
@@ -204,12 +212,137 @@
             this.trb_effekt_lautstaerke.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trb_effekt_lautstaerke.Value = 100;
             this.trb_effekt_lautstaerke.Scroll += new System.EventHandler(this.trb_effekt_lautstaerke_Scroll);
+            this.trb_effekt_lautstaerke.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // btn_aggressivitaet_niedrig
+            // 
+            this.btn_aggressivitaet_niedrig.BackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_niedrig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_aggressivitaet_niedrig.BackgroundImage")));
+            this.btn_aggressivitaet_niedrig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_aggressivitaet_niedrig.Checkbox = true;
+            this.btn_aggressivitaet_niedrig.Checked = false;
+            this.btn_aggressivitaet_niedrig.FlatAppearance.BorderSize = 0;
+            this.btn_aggressivitaet_niedrig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_niedrig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_niedrig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aggressivitaet_niedrig.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aggressivitaet_niedrig.ForeColor = System.Drawing.Color.Black;
+            this.btn_aggressivitaet_niedrig.Location = new System.Drawing.Point(50, 451);
+            this.btn_aggressivitaet_niedrig.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_aggressivitaet_niedrig.Name = "btn_aggressivitaet_niedrig";
+            this.btn_aggressivitaet_niedrig.Size = new System.Drawing.Size(20, 20);
+            this.btn_aggressivitaet_niedrig.TabIndex = 251;
+            this.btn_aggressivitaet_niedrig.Tag = false;
+            this.btn_aggressivitaet_niedrig.UseVisualStyleBackColor = false;
+            this.btn_aggressivitaet_niedrig.Click += new System.EventHandler(this.btn_aggressivitaet_niedrig_Click);
+            this.btn_aggressivitaet_niedrig.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // lbl_aggressivitaet_ki_spieler
+            // 
+            this.lbl_aggressivitaet_ki_spieler.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_aggressivitaet_ki_spieler.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aggressivitaet_ki_spieler.ForeColor = System.Drawing.Color.Black;
+            this.lbl_aggressivitaet_ki_spieler.Location = new System.Drawing.Point(83, 414);
+            this.lbl_aggressivitaet_ki_spieler.Name = "lbl_aggressivitaet_ki_spieler";
+            this.lbl_aggressivitaet_ki_spieler.Size = new System.Drawing.Size(354, 29);
+            this.lbl_aggressivitaet_ki_spieler.TabIndex = 252;
+            this.lbl_aggressivitaet_ki_spieler.Text = "Aggressivität der KI-Spieler";
+            this.lbl_aggressivitaet_ki_spieler.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // lbl_aggressivitaet_niedrig
+            // 
+            this.lbl_aggressivitaet_niedrig.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_aggressivitaet_niedrig.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aggressivitaet_niedrig.ForeColor = System.Drawing.Color.Black;
+            this.lbl_aggressivitaet_niedrig.Location = new System.Drawing.Point(83, 449);
+            this.lbl_aggressivitaet_niedrig.Name = "lbl_aggressivitaet_niedrig";
+            this.lbl_aggressivitaet_niedrig.Size = new System.Drawing.Size(96, 29);
+            this.lbl_aggressivitaet_niedrig.TabIndex = 253;
+            this.lbl_aggressivitaet_niedrig.Text = "Niedrig";
+            this.lbl_aggressivitaet_niedrig.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // lbl_aggressivitaet_mittel
+            // 
+            this.lbl_aggressivitaet_mittel.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_aggressivitaet_mittel.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aggressivitaet_mittel.ForeColor = System.Drawing.Color.Black;
+            this.lbl_aggressivitaet_mittel.Location = new System.Drawing.Point(235, 449);
+            this.lbl_aggressivitaet_mittel.Name = "lbl_aggressivitaet_mittel";
+            this.lbl_aggressivitaet_mittel.Size = new System.Drawing.Size(92, 29);
+            this.lbl_aggressivitaet_mittel.TabIndex = 255;
+            this.lbl_aggressivitaet_mittel.Text = "Mittel";
+            this.lbl_aggressivitaet_mittel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // btn_aggressivitaet_mittel
+            // 
+            this.btn_aggressivitaet_mittel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_mittel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_aggressivitaet_mittel.BackgroundImage")));
+            this.btn_aggressivitaet_mittel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_aggressivitaet_mittel.Checkbox = true;
+            this.btn_aggressivitaet_mittel.Checked = false;
+            this.btn_aggressivitaet_mittel.FlatAppearance.BorderSize = 0;
+            this.btn_aggressivitaet_mittel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_mittel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_mittel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aggressivitaet_mittel.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aggressivitaet_mittel.ForeColor = System.Drawing.Color.Black;
+            this.btn_aggressivitaet_mittel.Location = new System.Drawing.Point(202, 451);
+            this.btn_aggressivitaet_mittel.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_aggressivitaet_mittel.Name = "btn_aggressivitaet_mittel";
+            this.btn_aggressivitaet_mittel.Size = new System.Drawing.Size(20, 20);
+            this.btn_aggressivitaet_mittel.TabIndex = 254;
+            this.btn_aggressivitaet_mittel.Tag = false;
+            this.btn_aggressivitaet_mittel.UseVisualStyleBackColor = false;
+            this.btn_aggressivitaet_mittel.Click += new System.EventHandler(this.btn_aggressivitaet_mittel_Click);
+            this.btn_aggressivitaet_mittel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // lbl_aggressivitaet_hoch
+            // 
+            this.lbl_aggressivitaet_hoch.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_aggressivitaet_hoch.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aggressivitaet_hoch.ForeColor = System.Drawing.Color.Black;
+            this.lbl_aggressivitaet_hoch.Location = new System.Drawing.Point(363, 451);
+            this.lbl_aggressivitaet_hoch.Name = "lbl_aggressivitaet_hoch";
+            this.lbl_aggressivitaet_hoch.Size = new System.Drawing.Size(96, 29);
+            this.lbl_aggressivitaet_hoch.TabIndex = 257;
+            this.lbl_aggressivitaet_hoch.Text = "Hoch";
+            this.lbl_aggressivitaet_hoch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
+            // 
+            // btn_aggressivitaet_hoch
+            // 
+            this.btn_aggressivitaet_hoch.BackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_hoch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_aggressivitaet_hoch.BackgroundImage")));
+            this.btn_aggressivitaet_hoch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_aggressivitaet_hoch.Checkbox = true;
+            this.btn_aggressivitaet_hoch.Checked = false;
+            this.btn_aggressivitaet_hoch.FlatAppearance.BorderSize = 0;
+            this.btn_aggressivitaet_hoch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_hoch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_aggressivitaet_hoch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aggressivitaet_hoch.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aggressivitaet_hoch.ForeColor = System.Drawing.Color.Black;
+            this.btn_aggressivitaet_hoch.Location = new System.Drawing.Point(330, 453);
+            this.btn_aggressivitaet_hoch.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_aggressivitaet_hoch.Name = "btn_aggressivitaet_hoch";
+            this.btn_aggressivitaet_hoch.Size = new System.Drawing.Size(20, 20);
+            this.btn_aggressivitaet_hoch.TabIndex = 256;
+            this.btn_aggressivitaet_hoch.Tag = false;
+            this.btn_aggressivitaet_hoch.UseVisualStyleBackColor = false;
+            this.btn_aggressivitaet_hoch.Click += new System.EventHandler(this.btn_aggressivitaet_hoch_Click);
+            this.btn_aggressivitaet_hoch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmEinstellungen_MouseDown);
             // 
             // frmEinstellungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 431);
+            this.ClientSize = new System.Drawing.Size(471, 509);
+            this.Controls.Add(this.lbl_aggressivitaet_hoch);
+            this.Controls.Add(this.btn_aggressivitaet_hoch);
+            this.Controls.Add(this.lbl_aggressivitaet_mittel);
+            this.Controls.Add(this.btn_aggressivitaet_mittel);
+            this.Controls.Add(this.lbl_aggressivitaet_niedrig);
+            this.Controls.Add(this.lbl_aggressivitaet_ki_spieler);
+            this.Controls.Add(this.btn_aggressivitaet_niedrig);
             this.Controls.Add(this.lbl_effekt_lautstaerke);
             this.Controls.Add(this.trb_effekt_lautstaerke);
             this.Controls.Add(this.btn_statistik_anzeigen);
@@ -246,5 +379,12 @@
         private System.Windows.Forms.Label lbl_statistik_anzeigen;
         private System.Windows.Forms.Label lbl_effekt_lautstaerke;
         private System.Windows.Forms.TrackBar trb_effekt_lautstaerke;
+        private Controls.CrystalButton btn_aggressivitaet_niedrig;
+        private System.Windows.Forms.Label lbl_aggressivitaet_ki_spieler;
+        private System.Windows.Forms.Label lbl_aggressivitaet_niedrig;
+        private System.Windows.Forms.Label lbl_aggressivitaet_mittel;
+        private Controls.CrystalButton btn_aggressivitaet_mittel;
+        private System.Windows.Forms.Label lbl_aggressivitaet_hoch;
+        private Controls.CrystalButton btn_aggressivitaet_hoch;
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Gameplay.Einstellungen;
+using Conspiratio.Lib.Gameplay.Spielwelt;
 
 namespace Conspiratio.Hauptmenue
 {
@@ -32,6 +34,25 @@ namespace Conspiratio.Hauptmenue
             trb_effekt_lautstaerke.Value = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]);
             trb_musik_lautstaerke_Scroll(this, new EventArgs());  // Label aktualisieren
             trb_effekt_lautstaerke_Scroll(this, new EventArgs());  // Label aktualisieren
+
+            switch (SW.Dynamisch.Spielstand.Einstellungen.AggressivitaetKISpieler)
+            {
+                case EnumSchwierigkeitsgrad.Niedrig:
+                    btn_aggressivitaet_niedrig.Checked = true;
+                    btn_aggressivitaet_mittel.Checked = false;
+                    btn_aggressivitaet_hoch.Checked = false;
+                    break;
+                case EnumSchwierigkeitsgrad.Mittel:
+                    btn_aggressivitaet_niedrig.Checked = false;
+                    btn_aggressivitaet_mittel.Checked = true;
+                    btn_aggressivitaet_hoch.Checked = false;
+                    break;
+                case EnumSchwierigkeitsgrad.Hoch:
+                    btn_aggressivitaet_niedrig.Checked = false;
+                    btn_aggressivitaet_mittel.Checked = false;
+                    btn_aggressivitaet_hoch.Checked = true;
+                    break;
+            }
         }
         #endregion
 
@@ -72,5 +93,29 @@ namespace Conspiratio.Hauptmenue
             foC_MusikInstanz.SoundLautstaerke = trb_effekt_lautstaerke.Value;
         }
         #endregion
+
+        private void btn_aggressivitaet_niedrig_Click(object sender, EventArgs e)
+        {
+            SW.Dynamisch.Spielstand.Einstellungen.AggressivitaetKISpieler = EnumSchwierigkeitsgrad.Niedrig;
+            btn_aggressivitaet_niedrig.Checked = true;
+            btn_aggressivitaet_mittel.Checked = false;
+            btn_aggressivitaet_hoch.Checked = false;
+        }
+
+        private void btn_aggressivitaet_mittel_Click(object sender, EventArgs e)
+        {
+            SW.Dynamisch.Spielstand.Einstellungen.AggressivitaetKISpieler = EnumSchwierigkeitsgrad.Mittel;
+            btn_aggressivitaet_niedrig.Checked = false;
+            btn_aggressivitaet_mittel.Checked = true;
+            btn_aggressivitaet_hoch.Checked = false;
+        }
+
+        private void btn_aggressivitaet_hoch_Click(object sender, EventArgs e)
+        {
+            SW.Dynamisch.Spielstand.Einstellungen.AggressivitaetKISpieler = EnumSchwierigkeitsgrad.Hoch;
+            btn_aggressivitaet_niedrig.Checked = false;
+            btn_aggressivitaet_mittel.Checked = false;
+            btn_aggressivitaet_hoch.Checked = true;
+        }
     }
 }
