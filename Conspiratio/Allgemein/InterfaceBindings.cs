@@ -15,6 +15,7 @@ namespace Conspiratio.Allgemein
             strafarten[0] = new StrafePranger();
             strafarten[1] = new StrafeKerker();
             strafarten[2] = new StrafeGeldstrafe();
+            strafarten[3] = new StrafeAmtsenthebung();
 
             return strafarten;
         }

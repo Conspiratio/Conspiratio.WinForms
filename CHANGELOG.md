@@ -2,17 +2,27 @@
 
 ## Unreleased
 
+## 1.4.3 - 24.12.2020
+
 ### Erweiterungen
-- Neue Aktion in der Kirche für "Waisenkind adoptieren" hinzugefügt. Damit kann mithilfe einer großzügigen Spende ein Mündel adoptiert werden, sofern man selbst noch kein Kind hat. Damit soll das frustrierende und unvermeidliche Spielende bei plötzlichem Kindstod und anschließendem Tod des Spielercharakters verhindert werden.
+- Neue Aktion in der Kirche für "Waisenkind adoptieren" hinzugefügt. Damit kann mithilfe einer großzügigen Spende ein Mündel adoptiert werden, sofern man selbst noch kein Kind hat. Damit soll das frustrierende und unvermeidliche Spielende bei plötzlichem Kindstod und anschließendem Tod des Spielercharakters verhindert werden (Danke an berfroid für diesen Vorschlag).
 - Neues Privileg: Jurist aufsuchen. Dieser zeigt einem die eigenen Verbrechen auf.
+- Neue Einstellung "Aggressivität der KI-Spieler": Damit kann (aktuell) gesteuert werden, wie hoch die Wahrscheinlichkeit für eine Anklage sowie für ein Amtsenthebungsverfahren ist. Zusätzlich wird damit die Häufigkeit von militärische Aktionen in den Stützpunkten der KI-Spieler beeinflusst (z.B. Ausbau oder Rekrutierung neuer Truppen). Die Standardeinstellung ist "mittel". Hinweis: Diese Einstellung wird je Spielstand gespeichert.
+- Neue Strafe "Amtsenthebung" hinzugefügt: Verliert ein Spieler einen Gerichtsprozess, dann kann es nun sein, dass als Strafe ein Amtsenthebungsverfahren gegen ihn in die Wege geleitet oder (bei besonderer Schwere der Schuld) er sofort des Amtes enthoben wird
 
 ### Änderungen
-- .NET Framework 4.6.2 ist nun Voraussetzung für Conspiratio (vorher 4.5)
-- Die Chance der Geburts eines Kindes wurde leicht erhöht
 - Oberfläche: Die Größe des Textfensters für die Anzeige von einfachen Texten wird nun dynamisch an den Inhalt des Textes angepasst.
+- Die Chance der Geburt eines Kindes wurde leicht erhöht
+- Die Chance, als Spieler von KI-Gegnern angeklagt zu werden, wurde deutlich erhöht
+- Die Höhe der Strafen bei Gerichtsniederlagen wurde angepasst, sie sind teilweise nun auch von der Schwere der Schuld abhängig
+- Im Kreditbuch wird bei der Tilgung eines Kredites nun geprüft, ob der Spieler über genug Taler für die Rückzahlung verfügt
+- Im Hauptmenü wurde der Button für Netzwerkspiel in "Tutorial / Hilfe" geändert, über den nun unser neues Wiki mit Hilfe des Standard-Browsers aufgerufen werden kann (Link: https://github.com/Conspiratio/Conspiratio.Wiki/wiki)
+- .NET Framework 4.6.2 ist nun Voraussetzung für Conspiratio (vorher 4.5)
 
 ### Korrekturen
 - Bei Zollburgen oder Räuberlagern, die im Besitz eines menschlichen Spielers sind, wird der Name des Besitzers nun immer korrekt im "Kaufen"-Fenster des Stützpunktes angezeigt. Vorher wurde hier immer der Spieler angezeigt, der gerade an der Reihe war.
+- Im Kreditbuch wird nun der korrekte Mauszeiger (statt des Wappen-Cursors) angezeigt, wenn Kredite zur Tilgung vorhanden sind.
+- In der Gerichtsverhandlung werden weibliche Charaktere nun mit der korrekten Anrede angesprochen.
 
 ## 1.4.2 - 24.12.2019
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,7 @@ using Conspiratio.Allgemein;
 using Conspiratio.Hauptmenue;
 using Conspiratio.Kampf;
 using Conspiratio.Lib.Extensions;
+using Conspiratio.Lib.Gameplay.Einstellungen;
 using Conspiratio.Lib.Gameplay.Ereignisse;
 using Conspiratio.Lib.Gameplay.Kampf;
 using Conspiratio.Lib.Gameplay.Kampf.Einheiten;
@@ -64,7 +66,7 @@ namespace Conspiratio
         bool marked_einzelspieler;
         bool marked_credits;
         bool marked_beenden;
-        bool marked_netzwerk;
+        bool marked_tutorial;
         bool marked_optionen;
         bool GameStarted;
 
@@ -660,11 +662,11 @@ namespace Conspiratio
             {
                 if (mouse_x > haup_netzl && mouse_x < haup_netzr && mouse_y > haup_netzt && mouse_y < haup_netzb)
                 {
-                    marked_netzwerk = true;
+                    marked_tutorial = true;
                 }
                 else
                 {
-                    marked_netzwerk = false;
+                    marked_tutorial = false;
                 }
 
 
@@ -1239,6 +1241,7 @@ namespace Conspiratio
                     {
                         if (e.Button == MouseButtons.Right)
                         {
+                            C_MusikInstanz.PlaySound(Properties.Resources.bongo_hell);
                             Rechtsklick = true;
                             PositionWechseln(Posi_Schreibstube);
                         }
@@ -1361,9 +1364,9 @@ namespace Conspiratio
                             {
                                 await NeuesSpielStarten();
                             }
-                            else if (marked_netzwerk)
+                            else if (marked_tutorial)
                             {
-                                Netzwerkspielstarten();
+                                TutorialHilfefAufrufen();
                             }
                             else if (marked_optionen)
                             {
@@ -1508,7 +1511,7 @@ namespace Conspiratio
                 if (aktuellePosition == Posi_Hauptmenue)
                 {
                     C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
-                    Netzwerkspielstarten();
+                    TutorialHilfefAufrufen();
                 }
             }
         }
@@ -3083,7 +3086,7 @@ namespace Conspiratio
                     label2.Top = ((haup_spt + haup_spb) - label2.Height) / 2;
                     label2.Visible = true;
 
-                    label3.Text = "Netzwerk-Spiel";
+                    label3.Text = "Tutorial / Hilfe";
                     label3.Left = ((this.Width - label3.Width) / 2) + abstand;
                     label3.Top = ((haup_netzt + haup_netzb) - label2.Height) / 2;
                     label3.Visible = true;
@@ -4054,7 +4057,7 @@ namespace Conspiratio
 
             await RandomEreignisse();
 
-            KIsKlagen();
+            SW.Dynamisch.AnklagenVonKISpielernErstellen();
             await CheckGerichtsVerhandlungen();
             
             
@@ -5837,96 +5840,7 @@ namespace Conspiratio
 
         #endregion
 
-        #region KIsKlagen
-        private void KIsKlagen()
-        {
-            SW.Dynamisch.DeliktpunkteBerechnen();
-            //Jeder menschliche Spieler
-            for (int i = 1; i <= SW.Dynamisch.GetAktivSpielerAnzahl(); i++)
-            {
-                //Die Chance beruht auf den eigenen Deliktspunkten
-                int Deliktspunkte = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetDeliktpunkte();
-                int rand = SW.Statisch.Rnd.Next(0, Deliktspunkte);
-
-                if (rand >= SW.Statisch.GetChanceVerklagtZuWerden())
-                {
-                    int minamtid = SW.Dynamisch.GetMinGegnerAmtID(SW.Dynamisch.GetAktiverSpieler());
-                    int maxamtid = SW.Dynamisch.GetMaxGegnerAmtID(SW.Dynamisch.GetAktiverSpieler());
-
-                    int klaeger = SW.Dynamisch.GetKIthatDislikesHumX(SW.Dynamisch.GetAktiverSpieler(), minamtid, maxamtid);
-                    int gebietsid = SW.Statisch.Rnd.Next(1, SW.Statisch.GetMaxStadtID());
-
-                    //Falls der Spieler zufälligerweise in dieser Stadt Richter ist
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAmtID() == 5)
-                    {
-                        while (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAmtGebiet() == gebietsid)
-                        {
-                            gebietsid = SW.Statisch.Rnd.Next(1, SW.Statisch.GetMaxStadtID());
-                        }
-                    }
-
-                    int gebietsstufe = 0;
-
-                    int klageid = SW.Dynamisch.GetEmptyGerichtsverhandlung();
-
-                    //Richter ermitteln
-                    int r1 = SW.Dynamisch.GetStadtwithID(gebietsid).GetRichter();
-
-                    if (r1 == 0) //Ersatzrichter finden
-                    {
-                        while (r1 == 0)
-                        {
-                            int randstd = SW.Statisch.Rnd.Next(1, SW.Statisch.GetMaxStadtID());
-                            if (SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != 0 && SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != SW.Dynamisch.GetAktiverSpieler())
-                            {
-                                r1 = SW.Dynamisch.GetStadtwithID(randstd).GetRichter();
-                            }
-                        }
-                    }
-
-                    int r2 = 0;
-                    int loopcounter = 0;
-
-                    while (r2 == 0)
-                    {
-                        int randstd = SW.Statisch.Rnd.Next(1, SW.Statisch.GetMaxStadtID());
-                        if (SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != 0 && SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != SW.Dynamisch.GetAktiverSpieler() && SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != r1)
-                        {
-                            r2 = SW.Dynamisch.GetStadtwithID(randstd).GetRichter();
-                        }
-                        loopcounter++;
-
-                        if (loopcounter > 1000)
-                        {
-                            SW.Dynamisch.BelTextAnzeigen("Fehlercode 19. Bitte melde mir diesen Fehler");
-                            break;
-                        }
-                    }
-
-                    loopcounter = 0;
-
-                    int r3 = 0;
-                    while (r3 == 0)
-                    {
-                        int randstd = SW.Statisch.Rnd.Next(1, SW.Statisch.GetMaxStadtID());
-                        if (SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != 0 && SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != SW.Dynamisch.GetAktiverSpieler() && SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != r1 && SW.Dynamisch.GetStadtwithID(randstd).GetRichter() != r2)
-                        {
-                            r3 = SW.Dynamisch.GetStadtwithID(randstd).GetRichter();
-                        }
-
-                        loopcounter++;
-                        if (loopcounter > 1000)
-                        {
-                            SW.Dynamisch.BelTextAnzeigen("Fehlercode 55. Bitte melde mir diesen Fehler dringend");
-                            break;
-                        }
-                    }
-
-                    SW.Dynamisch.GetGerichtsverhandlungX(klageid).SetAll(r1, r2, r3, gebietsid, gebietsstufe, SW.Dynamisch.GetAktiverSpieler(), klaeger);
-                }
-            }
-        }
-        #endregion
+        
 
 
         #region Gerichtsverhandlung
@@ -5973,7 +5887,7 @@ namespace Conspiratio
             #region Verbrechen / Delikte ermitteln
 
             int sum = 0;
-            int iDeliktpunkteAngeklagter = SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetDeliktpunkte();
+            int deliktpunkteAngeklagter = SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetDeliktpunkte();
             int[] delikte = new int[SW.Statisch.GetMaxGesetze()];
 
             if (SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID() >= SW.Statisch.GetMinKIID())
@@ -5988,9 +5902,9 @@ namespace Conspiratio
                         if (randdelikt > 3)   // Liegt Gesetzesbruch vor? (Zufall)
                         {
                             delikte[i] = 1;
-                            iDeliktpunkteAngeklagter -= 2;  // Deliktpunkte abziehen
+                            deliktpunkteAngeklagter -= 2;  // Deliktpunkte abziehen
 
-                            if (iDeliktpunkteAngeklagter <= 0)
+                            if (deliktpunkteAngeklagter <= 0)
                             {
                                 break;
                             }
@@ -6001,18 +5915,15 @@ namespace Conspiratio
             else
             {
                 // Menschlicher Angeklagter
-                int loopcount = 0;
-                while (sum < SW.Statisch.GetGerichtsKlagepunkte())
+                for (int i = 0; i < SW.Statisch.GetMaxGesetze(); i++)
                 {
-                    int randdelikt = SW.Statisch.Rnd.Next(0, SW.Statisch.GetMaxGesetze());
-                    sum += SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetBegingVerbrechenX()[randdelikt];
-                    delikte[randdelikt] = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetBegingVerbrechenX()[randdelikt];
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).SetBegingVerbrechenX(randdelikt, 0);
-                    loopcount++;
+                    int begingVerbrechen = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetBegingVerbrechenX(i);
 
-                    if (loopcount > 150)
+                    if (begingVerbrechen > 0)
                     {
-                        break;
+                        sum += begingVerbrechen;
+                        delikte[i] = begingVerbrechen;
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).SetBegingVerbrechenX(i, 0);  // Verbrechencounter wieder zurücksetzen, da durch die Verhandlung die Verbrechen "gesühnt" sind
                     }
                 }
             }
@@ -6050,7 +5961,10 @@ namespace Conspiratio
 
             if (delfincounter != 0)
             {
-                label2.Text = "Man beschuldigt den Angeklagten, dass er gegen ";
+                if (SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetMaennlich())
+                    label2.Text = "Man beschuldigt den Angeklagten, dass er gegen ";
+                else
+                    label2.Text = "Man beschuldigt die Angeklagte, dass sie gegen ";
 
                 if (delfincounter == 1)
                 {
@@ -6078,10 +5992,12 @@ namespace Conspiratio
                 }
             }
 
-
             if (delstrafcounter != 0)
             {
-                label2.Text = "Man beschuldigt den Angeklagten, dass er gegen ";
+                if (SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetMaennlich())
+                    label2.Text = "Man beschuldigt den Angeklagten, dass er gegen ";
+                else
+                    label2.Text = "Man beschuldigt die Angeklagte, dass sie gegen ";
 
                 if (delstrafcounter == 1)
                 {
@@ -6109,10 +6025,12 @@ namespace Conspiratio
                 }
             }
 
-
             if (delkirchcounter != 0)
             {
-                label2.Text = "Man beschuldigt den Angeklagten, dass er gegen ";
+                if (SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetMaennlich())
+                    label2.Text = "Man beschuldigt den Angeklagten, dass er gegen ";
+                else
+                    label2.Text = "Man beschuldigt die Angeklagte, dass sie gegen ";
 
                 if (delkirchcounter == 1)
                 {
@@ -6140,19 +6058,23 @@ namespace Conspiratio
                 }
             }
 
-            label2.Text = "Angeklagter: \"Nichts von all dem habe ich getan!\"";
+            if (SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetMaennlich())
+                label2.Text = "Angeklagter: \"Nichts von all dem habe ich getan!\"";
+            else
+                label2.Text = "Angeklagte: \"Nichts von all dem habe ich getan!\"";
+
             label2.Left = this.Width / 2 - label2.Width / 2;
 
             await AufRechtsklickWarten();
 
-            //Zeugen
+            // Zeugen
 
-            //Gerichtsentscheidung
+            // Gerichtsentscheidung
             label2.Text = "Das hohe Gericht hat alle Zeugen vernommen.\n Es kommt nun zu einer Entscheidung durch das Gericht.";
 
             await AufRechtsklickWarten();
 
-            //Richter stimmen ab
+            // Richter stimmen ab
             bool[] schuldig = new bool[3];
             int unschuldig = 0;
 
@@ -6166,7 +6088,7 @@ namespace Conspiratio
                 if (id < SW.Statisch.GetMinKIID())
                 {
                     // Spielerwahl
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Für welches Urteil wollt Ihr stimmen, Richter\n " + SW.Dynamisch.GetSpWithID(id).GetName() + "?", "Schuldig", "Nicht schuldig") == DialogResult.Yes)
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Für welches Urteil wollt Ihr stimmen,\n " + SW.Dynamisch.GetSpWithID(id).GetKompletterName() + "?", "Schuldig", "Nicht schuldig") == DialogResult.Yes)
                     {
                         schuldig[i] = true;
                         SpE.setBoolKurzSpeicher(false);
@@ -6181,7 +6103,22 @@ namespace Conspiratio
                 {
                     // KI-Wahl
                     int kisymp = SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetRichterXID(i)).GetBeziehungZuKIX(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID());
-                    if (SW.Statisch.Rnd.Next(0, kisymp) > sum)
+                    int faktor = sum;
+
+                    switch (SW.Dynamisch.Spielstand.Einstellungen.AggressivitaetKISpieler)
+                    {
+                        case EnumSchwierigkeitsgrad.Niedrig:
+                            faktor -= 2;
+                            break;
+                        case EnumSchwierigkeitsgrad.Mittel:
+                            faktor += 5;
+                            break;
+                        case EnumSchwierigkeitsgrad.Hoch:
+                            faktor += 10;
+                            break;
+                    }
+
+                    if (SW.Statisch.Rnd.Next(0, kisymp) > faktor)
                     {
                         schuldig[i] = false;
                         unschuldig++;
@@ -6192,7 +6129,7 @@ namespace Conspiratio
                     }
                 }
 
-                label2.Text = "Richter " + SW.Dynamisch.GetSpWithID(id).GetName() + " stimmt für...";
+                label2.Text = SW.Dynamisch.GetSpWithID(id).GetKompletterName() + " stimmt für...";
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
                 await AufRechtsklickWarten();
@@ -6214,16 +6151,24 @@ namespace Conspiratio
                 await AufRechtsklickWarten();
             }
 
-            //Ergebnis
+            // Ergebnis
             if (unschuldig > 1)
             {
-                label2.Text = "Damit wird der Angeklagte freigesprochen!";
+                if (SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetMaennlich())
+                    label2.Text = "Damit wird der Angeklagte freigesprochen!";
+                else
+                    label2.Text = "Damit wird die Angeklagte freigesprochen!";
+
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
             }
             else
             {
-                label2.Text = "Damit ist der Angeklagte schuldig!";
+                if (SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID()).GetMaennlich())
+                    label2.Text = "Damit ist der Angeklagte schuldig!";
+                else
+                    label2.Text = "Damit ist die Angeklagte schuldig!";
+
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
 
@@ -6231,21 +6176,20 @@ namespace Conspiratio
 
                 int rndstrafe = SW.Statisch.Rnd.Next(0, SW.Statisch.GetMaxAnzahlStrafen());
 
-                label2.Text = "Richter " + SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetRichterXID(0)).GetName() + " entscheidet sich für folgendes Urteil: " + SW.Statisch.GetStrafartX(rndstrafe).Name;
+                label2.Text = SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetGerichtsverhandlungX(x).GetRichterXID(0)).GetKompletterName() + " entscheidet sich für folgendes Urteil: " + SW.Statisch.GetStrafartX(rndstrafe).Name;
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
                 await AufRechtsklickWarten();
 
-                label2.Text = SW.Statisch.GetStrafartX(rndstrafe).StrafeExecute(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID());
+                label2.Text = SW.Statisch.GetStrafartX(rndstrafe).StrafeExecute(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID(), deliktpunkteAngeklagter);
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
             }
+
             await AufRechtsklickWarten();
             label2.Visible = false;
             label1.Visible = false;
             label1.ForeColor = Color.Gold;
-            //Strafe
-
 
             PositionWechseln(Posi_ZugNachrichten);
             SpielerInfosEinAusBlenden(true);
@@ -6771,7 +6715,7 @@ namespace Conspiratio
                                 //Graphische Darstellung nur wenn mind. 1 Spieler beteiligt ist
                                 if (graphdar)
                                 {
-                                    label3.Text = "Damit wurde " + SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetAmtsenthebungX(i).OpferID).GetName() + " des Amtes enthoben";
+                                    label3.Text = "Damit wurde " + SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetAmtsenthebungX(i).OpferID).GetName() + " mit sofortiger Wirkung des Amtes enthoben!";
                                     label3.Left = this.Width / 2 - label3.Width / 2;
                                     await AufRechtsklickWarten();
                                 }
@@ -7646,10 +7590,8 @@ namespace Conspiratio
             {
                 lbl_kreditb_0.Visible = true;
                 lbl_kreditb_0.Text = "Zum Glück steht Ihr zur Zeit bei niemandem in der Kreide";
+                await AufRechtsklickWarten();
             }
-            await AufRechtsklickWarten();
-
-            PositionWechseln(Posi_Schreibstube);
         }
         #endregion
 
@@ -7686,7 +7628,12 @@ namespace Conspiratio
         #region KreditTilgen
         private void KreditTilgen(int kreditID)
         {
-            UI.TalerAendern(-SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKreditMitID(kreditID).GetTaler(), ref lbl_Taler);
+            int taler = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKreditMitID(kreditID).GetTaler();
+
+            if (!SW.Dynamisch.CheckIfenoughGold(taler))
+                return;
+
+            UI.TalerAendern(-taler, ref lbl_Taler);
             SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKreditMitID(kreditID).GetKIID()).ErhoeheTaler(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKreditMitID(kreditID).GetTaler());  // KI Geld erhöhen   
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKreditMitID(kreditID).SetDauer(0);
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKreditMitID(kreditID).SetTaler(0);
@@ -9146,10 +9093,13 @@ namespace Conspiratio
         }
         #endregion
 
-        #region Netzwerkspielstarten
-        private void Netzwerkspielstarten()
+        #region TutorialHilfefAufrufen
+        private void TutorialHilfefAufrufen()
         {
-            NochNichtImplementiert();
+            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr unsere Hilfeseite in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResult.Yes)
+                return;
+
+            Process.Start("https://github.com/Conspiratio/Conspiratio.Wiki/wiki");
         }
         #endregion
 
