@@ -4,6 +4,7 @@
 
 ### Korrekturen
 - 3-stellige Anzeige der Anzahl von Kasematten/Unterkünften in Söldnerburgen und Räuberlagern korrigiert. Es wird nun korrekt 200 angezeigt (Danke an berfroid für den Hinweis)
+- Fest geben: Die Einstellungen lassen sich jetzt für ein neues Fest ändern, wenn das Fenster nach einem geplanten oder bereits abgehaltenen Fest erneut geöffnet wird (Danke an berfroid für den Hinweis)
 
 ## 1.4.3 - 24.12.2020
 
