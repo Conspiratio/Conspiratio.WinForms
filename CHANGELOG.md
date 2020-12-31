@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Korrekturen
+- 3-stellige Anzeige der Anzahl von Kasematten/Unterkünften in Söldnerburgen und Räuberlagern korrigiert. Es wird nun korrekt 200 angezeigt (Danke an berfroid für den Hinweis)
+
 ## 1.4.3 - 24.12.2020
 
 ### Erweiterungen
