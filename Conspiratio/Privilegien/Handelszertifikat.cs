@@ -65,6 +65,9 @@ namespace Conspiratio
             }
 
             lbl_text.Text = "Aufgrund Eurer besonderen\nHandelserfolge wird Euch,\n" + SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetName() + ",\n ab heute gestattet, auch mit\n" + SW.Dynamisch.GetRohstoffwithID(rohid).GetRohName() + " zu handeln.\n \n" + text;
+
+            C_Musik musik = new C_Musik();
+            musik.PlaySound(Properties.Resources.fanfare);
         }
         #endregion
 

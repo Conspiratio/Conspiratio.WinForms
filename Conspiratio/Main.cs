@@ -4218,7 +4218,6 @@ namespace Conspiratio
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(SW.Dynamisch.GetSpWithID(brautid).GetTitel());
                         TitelVerleihForm tvf = new TitelVerleihForm();
-                        C_MusikInstanz.PlaySound(Properties.Resources.fanfare);
                         tvf.ShowDialog();
                     }
 
@@ -4241,9 +4240,8 @@ namespace Conspiratio
                 if (SW.Dynamisch.GetReichWithID(1).GetRegent() != 0)
                 {
                     PositionWechseln(Posi_ZugNachrichten);
-
+                    
                     TitelVerleihForm tvf = new TitelVerleihForm();
-                    C_MusikInstanz.PlaySound(Properties.Resources.fanfare);
                     tvf.ShowDialog();
 
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(0);
@@ -7661,7 +7659,6 @@ namespace Conspiratio
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetBekamHandeslzertifikatX() != 0)
             {
                 Handelszertifikat hzft = new Handelszertifikat(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetBekamHandeslzertifikatX());
-                C_MusikInstanz.PlaySound(Properties.Resources.fanfare);
                 hzft.ShowDialog();
 
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamHandelszertifikatX(0);
