@@ -5225,7 +5225,7 @@ namespace Conspiratio
                         await NachrichtenEtwasAnzeigen("Ansehen", "Ihr arbeitet an Euren Tischmanieren...");
                         break;
                     case 13:
-                        await NachrichtenEtwasAnzeigen("Ansehen", "Eines Morgens bemerkt Ihr Euer langes Nasenhaar im Spiegel. Prompt entledigt Euch von diesem...");
+                        await NachrichtenEtwasAnzeigen("Ansehen", "Eines Morgens bemerkt Ihr Euer langes Nasenhaar im Spiegel. Prompt entledigt Ihr Euch dessen...");
                         break;
                     case 14:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Jedem Gesprächspartner blickt Ihr offen und ehrlich in die Augen... So als ob Ihr ein guter Mensch wärt.");
