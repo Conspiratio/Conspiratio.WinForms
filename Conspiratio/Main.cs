@@ -7208,7 +7208,7 @@ namespace Conspiratio
                     for (int i = 0; i < SW.Statisch.GetMaxWahlKandidaten(); i++)
                     {
                         //Wenn er zu denen mit den meisten Stimmen gehört
-                        if (hatStimmen[i] == maxcounter)
+                        if (hatStimmen[i] == max)
                         {
                             //Und er das Los gezogen hat
                             if (z_counter == gzaeh)

@@ -7,7 +7,8 @@
 - Fest geben: Die Einstellungen lassen sich jetzt für ein neues Fest ändern, wenn das Fenster nach einem geplanten oder bereits abgehaltenen Fest erneut geöffnet wird (Danke an berfroid für den Hinweis)
 - Die Erstellung eines neuen Spiels mit mehr als 2 Spielern führt nun nicht mehr zu Fehlern (Spieler hatten keine Namen usw.) im folgenden Spielverlauf (Danke an DerEinzehnte für den Hinweis)
 - Der Sound bei Verleihung eines neuen Titels oder eines Handelszertifikats wird nun vollständig abgespielt und nicht mehr abgeschnitten bzw. überlagert (Danke an DerEinzehnte für den Hinweis)
-- Bei der Kupplerin sind die Schriftgrößen der beiden Optionen nun gleich groß
+- Bei der Kupplerin sind die Schriftgrößen der beiden Optionen nun gleich groß (Danke an DerEinzehnte für den Hinweis)
+- Der Losentscheid bei einer Wahl mit Stimmengleichheit funktioniert nun korrekt nach Zufall, anstatt immer den ersten Kandidaten mit mind. einer Stimme auszuwählen. Dies betraf nicht den Losentscheid ohne Wähler (Danke an DerEinzehnte für den Hinweis)
 
 ## 1.4.3 - 24.12.2020
 
