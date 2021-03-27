@@ -3,13 +3,14 @@
 ## Unreleased
 
 ### Korrekturen
-- 3-stellige Anzeige der Anzahl von Kasematten/Unterkünften in Söldnerburgen und Räuberlagern korrigiert. Es wird nun korrekt 200 angezeigt (Danke an berfroid für den Hinweis)
-- Fest geben: Die Einstellungen lassen sich jetzt für ein neues Fest ändern, wenn das Fenster nach einem geplanten oder bereits abgehaltenen Fest erneut geöffnet wird (Danke an berfroid für den Hinweis)
-- Die Erstellung eines neuen Spiels mit mehr als 2 Spielern führt nun nicht mehr zu Fehlern (Spieler hatten keine Namen usw.) im folgenden Spielverlauf (Danke an DerEinzehnte für den Hinweis)
-- Der Sound bei Verleihung eines neuen Titels oder eines Handelszertifikats wird nun vollständig abgespielt und nicht mehr abgeschnitten bzw. überlagert (Danke an DerEinzehnte für den Hinweis)
-- Bei der Kupplerin sind die Schriftgrößen der beiden Optionen nun gleich groß (Danke an DerEinzehnte für den Hinweis)
-- Der Losentscheid bei einer Wahl mit Stimmengleichheit funktioniert nun korrekt nach Zufall, anstatt immer den ersten Kandidaten mit mind. einer Stimme auszuwählen. Dies betraf nicht den Losentscheid ohne Wähler (Danke an DerEinzehnte für den Hinweis)
-- Grammatikfehler beim "Nasenhaar entledigen" Ereignis behoben (Danke an DerEinzehnte für den Hinweis)
+- 3-stellige Anzeige der Anzahl von Kasematten/Unterkünften in Söldnerburgen und Räuberlagern korrigiert. Es wird nun korrekt 200 angezeigt (Danke an berfroid)
+- Fest geben: Die Einstellungen lassen sich jetzt für ein neues Fest ändern, wenn das Fenster nach einem geplanten oder bereits abgehaltenen Fest erneut geöffnet wird (Danke an berfroid)
+- Die Erstellung eines neuen Spiels mit mehr als 2 Spielern führt nun nicht mehr zu Fehlern (Spieler hatten keine Namen usw.) im folgenden Spielverlauf (Danke an DerEinzehnte)
+- Der Sound bei Verleihung eines neuen Titels oder eines Handelszertifikats wird nun vollständig abgespielt und nicht mehr abgeschnitten bzw. überlagert (Danke an DerEinzehnte)
+- Bei der Kupplerin sind die Schriftgrößen der beiden Optionen nun gleich groß (Danke an DerEinzehnte)
+- Der Losentscheid bei einer Wahl mit Stimmengleichheit funktioniert nun korrekt nach Zufall, anstatt immer den ersten Kandidaten mit mind. einer Stimme auszuwählen. Dies betraf nicht den Losentscheid ohne Wähler (Danke an DerEinzehnte)
+- Grammatikfehler beim "Nasenhaar entledigen" Ereignis behoben (Danke an DerEinzehnte)
+- Beim Bau eines neuen Wohnsitzes wird dieser nun immer mit dem bestmöglichen Zustand (prächtig) errichtet und übernimmt nicht mehr den Zustand des vorherigen Wohnsitzes, sofern vorhanden (Danke an DerEinzehnte)
 
 ## 1.4.3 - 24.12.2020
 

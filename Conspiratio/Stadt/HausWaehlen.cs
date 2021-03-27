@@ -112,6 +112,7 @@ namespace Conspiratio
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtid).SetStadtID(_stadtid);
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtid).SetRestlicheBauzeit(SW.Statisch.GetHaus(x).Bauzeit);
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtid).HausErweiterungen = null;
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtid).ZustandInProzent = 100;  // Es kann sein, dass es an diesen Slot bereits einen Wohnsitz gibt, der heruntergekommen ist
                         this.Close();
                     }
                 }
