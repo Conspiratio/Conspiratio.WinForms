@@ -1,10 +1,13 @@
 ﻿# Conspiratio.WinForms
 
-**Hinweis: Dieser Client wird nur noch sporadisch weiterentwickelt und erhält keine neuen großen Features mehr. Stattdessen arbeiten wir stattdessen an einem neuen Client mit Unity (Link folgt), der ebenfalls Open Source sein wird. Dazu suchen wir nach wie vor tatkräftige Unterstützung.**
+**Hinweis: Dieser Client wird nur noch sporadisch weiterentwickelt und damit voraussichtlich auch keine neuen großen Features mehr erhalten, nur noch Fehlerbehebungen. Stattdessen arbeiten wir an einem neuen Client mit Unity (Link folgt), der ebenfalls Open Source sein wird. Dazu suchen wir nach wie vor tatkräftige Unterstützung (Grafik, Programmierung, Musik/Sounds, Konzeption).**
 
 Hier findet Ihr den aktuellen Stand des WinForms Spieleclients von Conspiratio, so wie er auch auf der Website herunter geladen werden kann.
 
 ## Mitmachen
+
+Ihr wollt Euch an diesem Projekt beteiligen? Großartig! Tretet einfach mit uns über [Discord](https://discord.gg/dxkC5DPgRY) oder oldschool per <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6D%61%69%6C%40%63%6F%6E%73%70%69%72%61%74%69%6F%2E%6E%65%74">E-Mail</a> in Kontakt und wir klären die Details.  
+_Jegliche Hilfe ist willkommen._
 
 ### Git Workflow
 

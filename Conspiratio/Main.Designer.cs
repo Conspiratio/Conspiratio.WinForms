@@ -1966,7 +1966,7 @@ namespace Conspiratio
             // 
             this.lbl_kup_2.AutoSize = true;
             this.lbl_kup_2.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_kup_2.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_kup_2.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_kup_2.ForeColor = System.Drawing.Color.Gold;
             this.lbl_kup_2.Location = new System.Drawing.Point(-244, 348);
             this.lbl_kup_2.Name = "lbl_kup_2";
