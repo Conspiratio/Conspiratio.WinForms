@@ -91,18 +91,18 @@ namespace Conspiratio
                     _waehlerX[2] = 0;
                 }
 
-                lbl_w1.Text = SW.Dynamisch.GetKIwithID(_waehlerX[0]).GetKompletterName();
+                lbl_w1.Text = SW.Dynamisch.GetSpWithID(_waehlerX[0]).GetKompletterName();
                 lbl_w1.Visible = true;
 
                 if (_waehlerX[1] != 0)
                 {
-                    lbl_w2.Text = SW.Dynamisch.GetKIwithID(_waehlerX[1]).GetKompletterName();
+                    lbl_w2.Text = SW.Dynamisch.GetSpWithID(_waehlerX[1]).GetKompletterName();
                     lbl_w2.Visible = true;
                 }
 
                 if (_waehlerX[2] != 0)
                 {
-                    lbl_w3.Text = SW.Dynamisch.GetKIwithID(_waehlerX[2]).GetKompletterName();
+                    lbl_w3.Text = SW.Dynamisch.GetSpWithID(_waehlerX[2]).GetKompletterName();
                     lbl_w3.Visible = true;
                 }
             }
@@ -110,7 +110,7 @@ namespace Conspiratio
             // Mitbewerber auflisten
             for (int i = 0; i < SW.Statisch.GetKITeilnehmerProWahl(); i++)
             {
-                this.Controls["lbl_mbw" + (i + 1).ToString()].Text = SW.Dynamisch.GetKIwithID(_mitbewerberX[i]).GetKompletterName();
+                this.Controls["lbl_mbw" + (i + 1).ToString()].Text = SW.Dynamisch.GetSpWithID(_mitbewerberX[i]).GetKompletterName();
                 this.Controls["lbl_mbw" + (i + 1).ToString()].Visible = true;
             }
         }

@@ -2,6 +2,37 @@
 
 ## Unreleased
 
+## 1.4.4 - 24.12.2021
+
+### Erweiterungen
+- Das in der letzten Version eingeführte Wiki (aufrufbar über den Button "Tutorial / Hilfe" im Hauptmenü oder direkt über https://github.com/Conspiratio/Conspiratio.Wiki/wiki) wurde stark erweitert und enhtält nun zu allen wichtigen Spielinhalten eine Seite (Vielen Dank an PommBaer für seine tolle Arbeit)
+
+### Änderungen
+- Der Preis für die Adoption eines Waisenkindes wurde etwas erhöht und schwankt nun nicht mehr zufällig, wenn man mehrfach in einer Runde eine Adoption aufruft aber wieder abbricht
+- Eine Adoption kostet nun zusätzlich Ansehen, um den Vorteil gegenüber leiblichen Kindern in einem Mehrspielerspiel etwas abzuschwächen (Danke an DerEinzehnte für diesen Vorschlag)
+- Die Höhe der vom Gericht verhängten Geldstrafe wurde etwas reduziert (Danke an DerEinzehnte)
+- Bei der Änderung des Gesetzes für die maximale Anzahl von Anwesen durch den Finanzminister hat das Gesetz nun ein Minimum von 4 anstatt von wie bisher 1 (Danke an DerEinzehnte)
+- Bei den "Aggressivität der KI-Spieler" Einstellungen niedrig und mittel wurde die Chance, als Spieler von KI-Gegnern angeklagt zu werden, reduziert (Danke an DerEinzehnte)
+
+### Korrekturen
+- 3-stellige Anzeige der Anzahl von Kasematten/Unterkünften in Söldnerburgen und Räuberlagern korrigiert. Es wird nun korrekt 200 angezeigt (Danke an berfroid)
+- Die Anzahl der Kasematten/Unterkünften in Söldnerburgen und Räuberlagern im Fenster für den Ausbau wird nun immer korrekt vorbelegt (Danke an DerEinzehnte)
+- Fest geben: Die Einstellungen lassen sich jetzt für ein neues Fest ändern, wenn das Fenster nach einem geplanten oder bereits abgehaltenen Fest erneut geöffnet wird (Danke an berfroid)
+- Die Erstellung eines neuen Spiels mit mehr als 2 Spielern führt nun nicht mehr zu Fehlern (Spieler hatten keine Namen usw.) im folgenden Spielverlauf (Danke an DerEinzehnte)
+- Der Sound bei Verleihung eines neuen Titels oder eines Handelszertifikats wird nun vollständig abgespielt und nicht mehr abgeschnitten bzw. überlagert (Danke an DerEinzehnte)
+- Bei der Kupplerin sind die Schriftgrößen der beiden Optionen nun gleich groß (Danke an DerEinzehnte)
+- Der Losentscheid bei einer Wahl mit Stimmengleichheit funktioniert nun korrekt nach Zufall, anstatt immer den ersten Kandidaten mit mind. einer Stimme auszuwählen. Dies betraf nicht den Losentscheid ohne Wähler (Danke an DerEinzehnte)
+- Grammatikfehler beim "Nasenhaar entledigen" Ereignis behoben (Danke an DerEinzehnte)
+- Beim Bau eines neuen Wohnsitzes wird dieser nun immer mit dem bestmöglichen Zustand (prächtig) errichtet und übernimmt nicht mehr den Zustand des vorherigen Wohnsitzes, sofern vorhanden (Danke an DerEinzehnte)
+- Bei der Adoption eines Waisenkindes wird der Preis nun auch vom Vermögen des Spielers abgezogen (Danke an DerEinzehnte)
+- Nach Gerichtsverfahren bei einer Geldstrafe wird die Taleranzeige nun sofort aktualisiert (Danke an DerEinzehnte)
+- Locker eingestellte Finanzgesetze werden nun nicht mehr als "repressiv" bezeichnet (Danke an DerEinzehnte)
+- Wenn man in der Schreibstube bei Bewerbungen die Bewerbinfos anklickt und einer der Wähler ein menschlicher Spieler ist, tritt nun keine unbehandelte Ausnahme mehr auf (Danke an DerEinzehnte)
+- Wenn ein Spieler stirbt, wird im Fenster mit dem Grabstein der Text "Hier das Testament..." nun sauber zentriert angezeigt (Danke an DerEinzehnte)
+- Wenn ein Spieler stirbt und mangels Erben aus dem Spiel ausscheidet (oder manuell aus dem Spiel geworfen wird):
+  - Dann werden Spieler, die nach ihm an der Reihe sind und nachrücken nun nicht mehr die Räuberlager und Zollburgen sowie die Beziehungswerte zu den KI-Spielern vom vorherigen Spieler übernehmen und die eigenen verlieren (Danke an DerEinzehnte)
+  - Dann werden seine Räuberlager und Zollburgen (sofern er welche besaß) nun an zufällige KI-Amtsinhaber von Lottringen verteilt und befinden sich somit nicht mehr in einem schwebenden Zustand, in dem sie nicht gekauft werden können
+
 ## 1.4.3 - 24.12.2020
 
 ### Erweiterungen

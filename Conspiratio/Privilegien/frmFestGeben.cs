@@ -95,6 +95,21 @@ namespace Conspiratio.Privilegien
             btn_jahr.Wert = _festManager.Jahr;
             btn_jahr.MinimalerWert = _festManager.Jahr;
             btn_jahr.MaximalerWert = _festManager.GetMaxJahr();
+
+            btn_ort.Visible = false;
+            btn_fest_ort.Visible = false;
+            lbl_fest_ort_1.Visible = false;
+            lbl_fest_ort_2.Visible = false;
+            btn_jahr.Visible = false;
+            btn_fest_jahr.Visible = false;
+            lbl_fest_jahr_1.Visible = false;
+            lbl_fest_jahr_2.Visible = false;
+
+            btn_fest_ort.Enabled = true;
+            btn_ort.Enabled = true;
+            btn_fest_art.Enabled = true;
+            btn_groesse.Enabled = true;
+            btn_musiker.Enabled = true;
         }
     }
 }

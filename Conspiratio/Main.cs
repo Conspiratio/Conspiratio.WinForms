@@ -1349,7 +1349,6 @@ namespace Conspiratio
                             {
                                 C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
                                 kirchgang.WaisenkindAdoptieren();
-                                SW.Dynamisch.PrivilegienAktualisieren();
                             }
                         }
                         break;
@@ -3661,11 +3660,6 @@ namespace Conspiratio
         }
         #endregion     
 
-
-        #region Ansehen Aktualisieren
-        
-        #endregion
-
         #region BuchAnzeigen
         private async Task BuchAnzeigen()
         {
@@ -3918,8 +3912,6 @@ namespace Conspiratio
 
 
         #endregion
-
-        
 
         #endregion
 
@@ -4218,7 +4210,6 @@ namespace Conspiratio
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(SW.Dynamisch.GetSpWithID(brautid).GetTitel());
                         TitelVerleihForm tvf = new TitelVerleihForm();
-                        C_MusikInstanz.PlaySound(Properties.Resources.fanfare);
                         tvf.ShowDialog();
                     }
 
@@ -4241,9 +4232,8 @@ namespace Conspiratio
                 if (SW.Dynamisch.GetReichWithID(1).GetRegent() != 0)
                 {
                     PositionWechseln(Posi_ZugNachrichten);
-
+                    
                     TitelVerleihForm tvf = new TitelVerleihForm();
-                    C_MusikInstanz.PlaySound(Properties.Resources.fanfare);
                     tvf.ShowDialog();
 
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(0);
@@ -4555,7 +4545,6 @@ namespace Conspiratio
             //Testamentsverlesung
             PositionWechseln(Posi_Testament);
             //Übliche Kommentare einblenden
-            label1.Visible = true;
 
             //Amt freigeben
             SW.Dynamisch.AmtVonXfreigeben(SW.Dynamisch.GetAktiverSpieler());
@@ -4579,6 +4568,8 @@ namespace Conspiratio
             }
 
             label1.Text = "Hier das Testament...";
+            label1.Left = (this.Width - label1.Width) / 2;
+            label1.Visible = true;
             await AufRechtsklickWarten();
             label1.Visible = false;
 
@@ -5227,7 +5218,7 @@ namespace Conspiratio
                         await NachrichtenEtwasAnzeigen("Ansehen", "Ihr arbeitet an Euren Tischmanieren...");
                         break;
                     case 13:
-                        await NachrichtenEtwasAnzeigen("Ansehen", "Eines Morgens bemerkt Ihr Euer langes Nasenhaar im Spiegel. Prompt entledigt Euch von diesem...");
+                        await NachrichtenEtwasAnzeigen("Ansehen", "Eines Morgens bemerkt Ihr Euer langes Nasenhaar im Spiegel. Prompt entledigt Ihr Euch dessen...");
                         break;
                     case 14:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Jedem Gesprächspartner blickt Ihr offen und ehrlich in die Augen... So als ob Ihr ein guter Mensch wärt.");
@@ -6184,6 +6175,8 @@ namespace Conspiratio
                 label2.Text = SW.Statisch.GetStrafartX(rndstrafe).StrafeExecute(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID(), deliktpunkteAngeklagter);
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
+
+                SpielerDatenAktualisieren();
             }
 
             await AufRechtsklickWarten();
@@ -7210,7 +7203,7 @@ namespace Conspiratio
                     for (int i = 0; i < SW.Statisch.GetMaxWahlKandidaten(); i++)
                     {
                         //Wenn er zu denen mit den meisten Stimmen gehört
-                        if (hatStimmen[i] == maxcounter)
+                        if (hatStimmen[i] == max)
                         {
                             //Und er das Los gezogen hat
                             if (z_counter == gzaeh)
@@ -7661,7 +7654,6 @@ namespace Conspiratio
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetBekamHandeslzertifikatX() != 0)
             {
                 Handelszertifikat hzft = new Handelszertifikat(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetBekamHandeslzertifikatX());
-                C_MusikInstanz.PlaySound(Properties.Resources.fanfare);
                 hzft.ShowDialog();
 
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamHandelszertifikatX(0);

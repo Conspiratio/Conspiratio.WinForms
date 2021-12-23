@@ -121,6 +121,13 @@ namespace Conspiratio
                     if (SW.Dynamisch.GetAktiverSpieler() == SW.Dynamisch.GetAktivSpielerAnzahl() && SW.Dynamisch.GetAktiverSpieler() > 1)
                         last = true;
 
+                    // Stützpunkte des verstorbenen Spielers wieder zufälligen KI-Spielern zuteilen
+                    for (int i = 0; i < SW.Dynamisch.GetStuetzpunkte().Length; i++)
+                    {
+                        if (SW.Dynamisch.GetStuetzpunkte()[i].Besitzer == SW.Dynamisch.GetAktiverSpieler())
+                            SW.Dynamisch.GetStuetzpunkte()[i].BesitzerStuetzpunktZufaelligSetzen();
+                    }
+
                     SW.Dynamisch.CreateSpielerX(SW.Dynamisch.GetAktiverSpieler(), 0, "", true, 0, 0);  // Aktuelles Spieler Objekt initialisieren (auf null setzen führt ansonsten z.B. in der Statistik zu Problemen beim Zugriff: NullReference Exception)
                     SW.Dynamisch.SetAktivSpielerAnzahl(SW.Dynamisch.GetAktivSpielerAnzahl() - 1);
 
@@ -132,12 +139,12 @@ namespace Conspiratio
                     }
                     else
                     {
-                        // Ist der Spieler nicht der letzte, so muss die Liste neu geordnet werden
+                        // Ist der Spieler nicht der letzte, so muss die Liste neu geordnet werden (Spieler rücken nach)
                         int i = SW.Dynamisch.GetAktiverSpieler();
 
                         while (i + 1 <= SW.Dynamisch.GetAktivSpielerAnzahl() + 1)
                         {
-                            SW.Dynamisch.SetHumX(i, SW.Dynamisch.GetHumWithID(i + 1));
+                            SW.Dynamisch.SetHumX(i, SW.Dynamisch.GetHumWithID(i + 1), i + 1);
                             i++;
                         }
                     }

@@ -20,6 +20,9 @@ namespace Conspiratio
             string text = "Wir, " + SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetReichWithID(1).GetRegent()).GetKompletterName() + ", verfügen hiermit, dass Ihr, " + SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetAktiverSpieler()).GetName() + ", Euch fortan\n\n\"" + SW.Statisch.GetTitelX(verltitelid).GetName(SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich()) + "\"\n\nnennen dürft.\n\n" + SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetReichWithID(1).GetRegent()).GetKompletterName();
             lbl_text.Text = text;
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTitel(verltitelid);
+
+            C_Musik musik = new C_Musik();
+            musik.PlaySound(Properties.Resources.fanfare);
         }
         #endregion
 

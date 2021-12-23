@@ -43,8 +43,8 @@ namespace Conspiratio
             {
                 lbl1.Text = "Als Bürgermeister von " + SW.Dynamisch.GetStadtwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAmtGebiet()).GetGebietsName() + " könnt Ihr die Umsatzsteuer festlegen. Die Umsatzsteuer soll";
                 lbl2.Text = "% betragen";
-                btn_1.Wert = Convert.ToInt32(SW.Dynamisch.GetStadtwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAmtGebiet()).GetUmsatzsteuer() * 100);
                 btn_1.MinimalerWert = Convert.ToInt32(SW.Statisch.GetMinUmsatzsteuer() * 100);
+                btn_1.Wert = Convert.ToInt32(SW.Dynamisch.GetStadtwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAmtGebiet()).GetUmsatzsteuer() * 100);
                 btn_1.MaximalerWert = Convert.ToInt32(SW.Statisch.GetMaxUmsatzsteuer() * 100);
                 btn_1.MaximaleStellen = 2;
                 this.Height = 280;
@@ -53,8 +53,8 @@ namespace Conspiratio
             {
                 lbl1.Text = "Als Besitzer von " + SW.Dynamisch.GetZollburgWithIDx(ZielStuetzpunktIndex).Name + " könnt Ihr den Zollsatz festlegen. Der Zollsatz soll";
                 lbl2.Text = "% betragen";
-                btn_1.Wert = Convert.ToInt32(SW.Dynamisch.GetZollburgWithIDx(ZielStuetzpunktIndex).Zoll * 100);
                 btn_1.MinimalerWert = Convert.ToInt32(SW.Statisch.GetMinZollsatz() * 100);
+                btn_1.Wert = Convert.ToInt32(SW.Dynamisch.GetZollburgWithIDx(ZielStuetzpunktIndex).Zoll * 100);
                 btn_1.MaximalerWert = Convert.ToInt32(SW.Statisch.GetMaxZollsatz() * 100);
                 btn_1.MaximaleStellen = 2;
                 this.Height = 280;
@@ -63,8 +63,8 @@ namespace Conspiratio
             {
                 lbl1.Text = "Verbessern: Auf welchen Wert wollt Ihr die " + SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].SicherheitTarnungAlsString() + " von " + SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].Name + " erhöhen? Sie soll";
                 lbl2.Text = "% betragen";
-                btn_1.Wert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].SicherheitTarnungInProzent;
                 btn_1.MinimalerWert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].SicherheitTarnungInProzent;
+                btn_1.Wert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].SicherheitTarnungInProzent;
                 btn_1.MaximalerWert = 100;
                 btn_1.MaximaleStellen = 3;
                 lbl_kosten.Text = "Kosten: " + 0.ToStringGeld(); ;
@@ -77,8 +77,8 @@ namespace Conspiratio
             {
                 lbl1.Text = "Reparieren: Um welchen Wert wollt Ihr den Zustand von " + SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].Name + " verbessern? Der Zustand soll";
                 lbl2.Text = "% betragen";
-                btn_1.Wert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].ZustandInProzent;
                 btn_1.MinimalerWert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].ZustandInProzent;
+                btn_1.Wert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].ZustandInProzent;
                 btn_1.MaximalerWert = 100;
                 btn_1.MaximaleStellen = 3;
                 lbl_kosten.Text = "Kosten: " + 0.ToStringGeld();
@@ -98,8 +98,8 @@ namespace Conspiratio
 
                 lbl1.Text = $"Ausbauen: Um welche Anzahl wollt Ihr die {KapazitaetBezeichnung} von {SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].Name} erweitern? Es soll insgesamt";
                 lbl2.Text = "geben";
-                btn_1.Wert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].Kapazitaet;
                 btn_1.MinimalerWert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].Kapazitaet;
+                btn_1.Wert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].Kapazitaet;
                 btn_1.MaximalerWert = SW.Dynamisch.GetStuetzpunkte()[ZielStuetzpunktIndex].MaximaleKapazitaet;
                 btn_1.MaximaleStellen = 3;
                 lbl_kosten.Text = "Kosten: " + 0.ToStringGeld();

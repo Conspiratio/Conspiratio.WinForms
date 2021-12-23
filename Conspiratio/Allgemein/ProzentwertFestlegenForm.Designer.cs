@@ -35,7 +35,7 @@ namespace Conspiratio
             this.btn_1 = new Conspiratio.NumericButton();
             this.lbl_kosten = new System.Windows.Forms.Label();
             this.lbl_auftrag = new System.Windows.Forms.Label();
-            this.btn_auftrag = new CrystalButton();
+            this.btn_auftrag = new Conspiratio.Controls.CrystalButton();
             this.SuspendLayout();
             // 
             // lbl1
@@ -67,20 +67,21 @@ namespace Conspiratio
             // btn_1
             // 
             this.btn_1.BackColor = System.Drawing.Color.Transparent;
+            this.btn_1.FensterBeiRechtsklickSchliessen = false;
             this.btn_1.FlatAppearance.BorderSize = 0;
             this.btn_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_1.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_1.ForeColor = System.Drawing.Color.Black;
-            this.btn_1.Location = new System.Drawing.Point(150, 213);
+            this.btn_1.Location = new System.Drawing.Point(115, 213);
             this.btn_1.Margin = new System.Windows.Forms.Padding(0);
             this.btn_1.MaximalerWert = 999999999;
             this.btn_1.MaximaleStellen = 2;
             this.btn_1.MinimalerWert = 0;
             this.btn_1.Name = "btn_1";
             this.btn_1.NurEinserSchritte = false;
-            this.btn_1.Size = new System.Drawing.Size(65, 42);
+            this.btn_1.Size = new System.Drawing.Size(100, 42);
             this.btn_1.TabIndex = 316;
             this.btn_1.TausenderTrenner = false;
             this.btn_1.Text = "15";
@@ -126,6 +127,8 @@ namespace Conspiratio
             this.btn_auftrag.BackColor = System.Drawing.Color.Transparent;
             this.btn_auftrag.BackgroundImage = global::Conspiratio.Properties.Resources.SymbUnchecked;
             this.btn_auftrag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_auftrag.Checkbox = false;
+            this.btn_auftrag.Checked = false;
             this.btn_auftrag.FlatAppearance.BorderSize = 0;
             this.btn_auftrag.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btn_auftrag.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -137,6 +140,7 @@ namespace Conspiratio
             this.btn_auftrag.Name = "btn_auftrag";
             this.btn_auftrag.Size = new System.Drawing.Size(20, 20);
             this.btn_auftrag.TabIndex = 319;
+            this.btn_auftrag.Tag = false;
             this.btn_auftrag.UseVisualStyleBackColor = false;
             this.btn_auftrag.Visible = false;
             this.btn_auftrag.Click += new System.EventHandler(this.btn_auftrag_Click);

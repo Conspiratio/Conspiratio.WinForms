@@ -134,6 +134,8 @@ namespace Conspiratio
                 await NamenseingabeUmschalten();
             }
 
+            SW.Dynamisch.SetAktiverSpieler(_aktuellAktiverSpieler);
+
             CurWaitActive();
         }
         #endregion
@@ -742,15 +744,7 @@ namespace Conspiratio
 
                 label1.Text = "Spieler hinzufügen";
 
-                SW.Dynamisch.SetAktiverSpieler(1);
-
                 _finished = true;
-
-                if (_nachtraeglich == false)
-                {
-                    SW.Dynamisch.SetAktiverSpieler(_aktuellAktiverSpieler);
-                }
-
                 _anzahlAngelegteSpieler++;
             }
             else
