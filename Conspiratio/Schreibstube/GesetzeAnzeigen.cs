@@ -78,7 +78,19 @@ namespace Conspiratio
 
             if (ebene == 0)
             {
-                strenge = SW.Dynamisch.GetGesetzX(0) + SW.Dynamisch.GetGesetzX(1) + Convert.ToInt32(SW.Dynamisch.GetGesetzX(2) / 10) + Convert.ToInt32(SW.Dynamisch.GetGesetzX(3) / 10) + SW.Dynamisch.GetGesetzX(4);
+                // Zuerst von den "An-Aus-Gesetzen" die addieren, die an sind
+                strenge = SW.Dynamisch.GetGesetzX(0) + SW.Dynamisch.GetGesetzX(1) + SW.Dynamisch.GetGesetzX(4);
+
+                // Dann die Gesetzte mit einem Wert prüfen, ob dieser über oder unter dem Mittelwert liegt. Wenn drunter, dann Punkt für repressiv, ansonsten Punkt für locker
+                int gesetz2GrenzeFuerLocker = (SW.Statisch.GetGesetzXDefUntergrenze(2) + SW.Statisch.GetGesetzXDefObergrenze(2)) / 2;  // Anzahl Anwesen (zwischen 4 und 14)
+                int gesetz3GrenzeFuerLocker = (SW.Statisch.GetGesetzXDefUntergrenze(3) + SW.Statisch.GetGesetzXDefObergrenze(3)) / 2;  // Anzahl Taler (zwischen 5 und 30)
+
+                if (SW.Dynamisch.GetGesetzX(2) <= gesetz2GrenzeFuerLocker)
+                    strenge++;
+
+                if (SW.Dynamisch.GetGesetzX(3) <= gesetz3GrenzeFuerLocker)
+                    strenge++;
+
                 temp = "Finanzgesetze: ";
             }
             if (ebene == 1)

@@ -99,7 +99,7 @@ namespace Conspiratio.Allgemein
             return Convert.ToInt32(value * width / BildschirmBreite);
         }
 
-        public static void TalerAendern(int wert, ref Label lblgold)
+        public static void TalerAendern(int wert, ref Label lbltaler)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace Conspiratio.Allgemein
 
                 SW.Dynamisch.GetSpWithID(SW.Dynamisch.GetAktiverSpieler()).SetTaler(neuerStand);
 
-                lblgold.Text = neuerStand.ToStringGeld();
+                lbltaler.Text = neuerStand.ToStringGeld();
             }
             catch { }
         }

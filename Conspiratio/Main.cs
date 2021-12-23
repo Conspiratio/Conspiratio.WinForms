@@ -1349,7 +1349,6 @@ namespace Conspiratio
                             {
                                 C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
                                 kirchgang.WaisenkindAdoptieren();
-                                SW.Dynamisch.PrivilegienAktualisieren();
                             }
                         }
                         break;
@@ -3661,11 +3660,6 @@ namespace Conspiratio
         }
         #endregion     
 
-
-        #region Ansehen Aktualisieren
-        
-        #endregion
-
         #region BuchAnzeigen
         private async Task BuchAnzeigen()
         {
@@ -3918,8 +3912,6 @@ namespace Conspiratio
 
 
         #endregion
-
-        
 
         #endregion
 
@@ -4553,7 +4545,6 @@ namespace Conspiratio
             //Testamentsverlesung
             PositionWechseln(Posi_Testament);
             //Übliche Kommentare einblenden
-            label1.Visible = true;
 
             //Amt freigeben
             SW.Dynamisch.AmtVonXfreigeben(SW.Dynamisch.GetAktiverSpieler());
@@ -4577,6 +4568,8 @@ namespace Conspiratio
             }
 
             label1.Text = "Hier das Testament...";
+            label1.Left = (this.Width - label1.Width) / 2;
+            label1.Visible = true;
             await AufRechtsklickWarten();
             label1.Visible = false;
 
@@ -6182,6 +6175,8 @@ namespace Conspiratio
                 label2.Text = SW.Statisch.GetStrafartX(rndstrafe).StrafeExecute(SW.Dynamisch.GetGerichtsverhandlungX(x).GetAngeklagterID(), deliktpunkteAngeklagter);
                 label2.Left = this.Width / 2 - label2.Width / 2;
                 label2.Top = this.Height - label2.Height - 60;
+
+                SpielerDatenAktualisieren();
             }
 
             await AufRechtsklickWarten();
