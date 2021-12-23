@@ -10,6 +10,7 @@
 - Eine Adoption kostet nun zusätzlich Ansehen, um den Vorteil gegenüber leiblichen Kindern in einem Mehrspielerspiel etwas abzuschwächen (Danke an DerEinzehnte für diesen Vorschlag)
 - Die Höhe der vom Gericht verhängten Geldstrafe wurde etwas reduziert (Danke an DerEinzehnte)
 - Bei der Änderung des Gesetzes für die maximale Anzahl von Anwesen durch den Finanzminister hat das Gesetz nun ein Minimum von 4 anstatt von wie bisher 1 (Danke an DerEinzehnte)
+- Bei den "Aggressivität der KI-Spieler" Einstellungen niedrig und mittel wurde die Chance, als Spieler von KI-Gegnern angeklagt zu werden, reduziert
 
 ### Korrekturen
 - 3-stellige Anzeige der Anzahl von Kasematten/Unterkünften in Söldnerburgen und Räuberlagern korrigiert. Es wird nun korrekt 200 angezeigt (Danke an berfroid)
