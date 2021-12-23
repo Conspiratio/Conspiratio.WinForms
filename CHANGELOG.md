@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.4 - 24.12.2021
+
 ### Erweiterungen
 - Das in der letzten Version eingeführte Wiki (aufrufbar über den Button "Tutorial / Hilfe" im Hauptmenü oder direkt über https://github.com/Conspiratio/Conspiratio.Wiki/wiki) wurde stark erweitert und enhtält nun zu allen wichtigen Spielinhalten eine Seite (Vielen Dank an PommBaer für seine tolle Arbeit)
 
