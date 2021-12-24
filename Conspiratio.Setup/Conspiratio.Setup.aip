@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="15.4" version="17.8" Modules="simple" RootPath="." Language="en" Id="{B88DD6E0-5911-41F5-8422-77FF946B7942}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="15.4" version="19.0" Modules="simple" RootPath="." Language="en" Id="{B88DD6E0-5911-41F5-8422-77FF946B7942}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2021" ValueLocId="-"/>
     <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_DOTNET_VERSION"/>
     <ROW Property="AI_REQUIRED_DOTNET_DISPLAY" MultiBuildValue="DefaultBuild:4.5" ValueLocId="-"/>
     <ROW Property="AI_REQUIRED_DOTNET_VERSION" MultiBuildValue="DefaultBuild:4.5" ValueLocId="-"/>
@@ -12,10 +13,10 @@
     <ROW Property="ARPURLINFOABOUT" Value="www.conspiratio.net"/>
     <ROW Property="CTRLS" Value="3"/>
     <ROW Property="Manufacturer" Value="Conspiratio"/>
-    <ROW Property="ProductCode" Value="1033:{DDF53492-2F66-47B7-876E-7133237BAEBE} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{5ED397DC-6B58-4243-AB3A-EE5122007ECB} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Conspiratio"/>
-    <ROW Property="ProductVersion" Value="1.4.3.0" Type="32" TargetFile="Conspiratio.exe_1"/>
+    <ROW Property="ProductVersion" Value="1.4.4.0" Type="32" TargetFile="Conspiratio.exe_1"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{B1624FC3-6E9B-4423-B696-BEF6DC93DA08}"/>
