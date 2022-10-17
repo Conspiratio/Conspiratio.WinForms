@@ -136,19 +136,20 @@ namespace Conspiratio
 
             SW.Dynamisch.SetAktiverSpieler(_aktuellAktiverSpieler);
 
-            CurWaitActive();
+            if (_finished)
+            {
+                await AufRechtsklickWarten();
+                DialogResult = DialogResult.OK;
+                CloseMitSound();
+            }
         }
         #endregion
 
         #region SpielerHinzufuegen_MouseDown
         private void SpielerHinzufuegen_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right && _finished)
-            {
-                CurStandardActive();
-                DialogResult = DialogResult.OK;
-                CloseMitSound();
-            }
+            if (e.Button == MouseButtons.Right)
+                tcsRechtsklick?.TrySetResult(true);
         }
         #endregion
 
@@ -159,7 +160,7 @@ namespace Conspiratio
             {
                 CurStandardActive();
 
-                // Rohstoff auswählen
+                // Religion auswählen
                 if (lbl_nsp_religion.Visible)
                 {
                     await ReligionAuswaehlenUmschalten(false);
@@ -518,8 +519,16 @@ namespace Conspiratio
         {
             if (Visible)
             {
+                label1.Text = "Spieler hinzufügen - Abbrechen mit ESC";
+
                 lbl_nsp_name.Left = UI.NormB(145, Width, _bildschirmBreite);
                 lbl_nsp_name.Top = UI.NormH(163, Height, _bildschirmHoehe);
+                
+                if (_nachtraeglich)
+                    lbl_nsp_name.Text = $"Spielernamen eingeben:";
+                else
+                    lbl_nsp_name.Text = $"Spieler{_anzahlAngelegteSpieler + 1} Namen eingeben:";
+                
                 txb_namenEingeben.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - txb_namenEingeben.Width / 2;
                 txb_namenEingeben.Top = UI.NormH(209, Height, _bildschirmHoehe);
                 lbl_nsp_name.Visible = true;
@@ -545,6 +554,12 @@ namespace Conspiratio
             }
             else
             {
+                if (!_nachtraeglich &&  // Neues Spiel?
+                    SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?", "Ja", "Nein") != DialogResult.Yes)
+                {
+                    return;
+                }
+
                 // Fenster schließen
                 SW.Dynamisch.SetAktiverSpieler(_aktuellAktiverSpieler);
                 DialogResult = DialogResult.Cancel;
@@ -558,6 +573,8 @@ namespace Conspiratio
         {
             if (Visible)
             {
+                label1.Text = "Spieler hinzufügen - Zurück mit ESC";
+
                 lbl_nsp_Geschlecht.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - lbl_nsp_Geschlecht.Width / 2;
                 lbl_nsp_Geschlecht.Top = UI.NormH(291, Height, _bildschirmHoehe);
 
@@ -741,8 +758,6 @@ namespace Conspiratio
                 Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
 
                 await AufButtonKlickWarten();
-
-                label1.Text = "Spieler hinzufügen";
 
                 _finished = true;
                 _anzahlAngelegteSpieler++;
