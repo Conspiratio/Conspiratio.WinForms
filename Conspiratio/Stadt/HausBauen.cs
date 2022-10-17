@@ -69,6 +69,8 @@ namespace Conspiratio
                     btn_bild.BackgroundImage = new Bitmap(Conspiratio.Properties.Resources.AnwImBau);
                 }
             }
+
+            btn_bild.Enabled = IstButtonEnabled(_stadtID);
         }
         #endregion
 
@@ -247,6 +249,25 @@ namespace Conspiratio
             else
             {
                 SW.Dynamisch.BelTextAnzeigen("Ihr besitzt bereits alle möglichen Erweiterungen für diesen Wohnsitz.");
+            }
+        }
+
+        private bool IstButtonEnabled(int stadtID)
+        {
+            int hausid = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(stadtID).GetHausID();
+
+            if (hausid == 0)
+                return true;
+            
+            int restlBauzeit = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(stadtID).GetRestlicheBauzeit();
+
+            if (restlBauzeit > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;  // Button inaktiv da er in diesem Fall keine Funktion hat (es gibt ein Haus und es ist fertig)
             }
         }
     }
