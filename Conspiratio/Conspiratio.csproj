@@ -728,6 +728,7 @@
     <Content Include="Images\Hintergruende\HintIntro.tif" />
     <Content Include="Images\Hintergruende\HintKupplerin.tif" />
     <Content Include="Images\Hintergruende\HintRundenNachrichten.tif" />
+    <None Include="Resources\Song_Standard_Strobotone_Medieval_Theme_02.mp3" />
     <None Include="Resources\checkbox_klick.wav" />
     <None Include="Resources\bongo_hell.wav" />
     <None Include="Resources\bongo_dunkel.wav" />
@@ -761,7 +762,6 @@
     <None Include="Resources\Song_Standard_Renaissance.mp3" />
     <None Include="Resources\Song_Standard_LegendsOfTheRiver.mp3" />
     <None Include="Resources\Song_Standard_ATallShip.mp3" />
-    <None Include="Resources\Song_Standard_Assasins.mp3" />
     <None Include="Resources\Song_Outro_PartingGlass.mp3" />
     <None Include="Resources\Song_Orient_WheelOfKarma.mp3" />
     <None Include="Resources\Song_Orient_TemptationMarch.mp3" />

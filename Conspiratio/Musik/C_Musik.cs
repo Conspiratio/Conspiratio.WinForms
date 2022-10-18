@@ -70,7 +70,7 @@ namespace Conspiratio
             Songs_Outro[0] = Properties.Resources.Song_Outro_PartingGlass;
 
             Songs_Standard = new byte[11][];
-            Songs_Standard[0] = Properties.Resources.Song_Standard_Assasins;
+            Songs_Standard[0] = Properties.Resources.Song_Standard_Strobotone_Medieval_Theme_02;
             Songs_Standard[1] = Properties.Resources.Song_Standard_ATallShip;
             Songs_Standard[2] = Properties.Resources.Song_Standard_LegendsOfTheRiver;
             Songs_Standard[3] = Properties.Resources.Song_Standard_Renaissance;

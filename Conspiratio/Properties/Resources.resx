@@ -289,9 +289,6 @@
   <data name="NVRoh19" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\NVRohstoffe\NVRoh19.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Song_Standard_Assasins" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Song_Standard_Assasins.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Roh16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Rohstoffe\Roh16.tif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -726,5 +723,8 @@
   </data>
   <data name="checkbox_klick" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkbox_klick.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Song_Standard_Strobotone_Medieval_Theme_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Song_Standard_Strobotone_Medieval_Theme_02.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
