@@ -7810,8 +7810,25 @@ namespace Conspiratio
         private void StadtProdTextLaden(int Slot0oder1)
         {
             string textges, text1, text3;
-
             int rohid = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, Slot0oder1).GetProduktionRohstoff();
+
+            int indexVonRohstoffInStadt = Array.IndexOf(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetRohstoffe(), rohid);
+            
+            if (!SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(rohid) ||
+                !SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(indexVonRohstoffInStadt, globalAktiveStadt).GetEnabled())
+            {
+                // Der aktuelle Rohstoff ist nicht gültig, selektiere den nächst gültigen
+
+                for (int i = 1; i <= SW.Statisch.GetMaxWerkstaettenProStadt(); i++)
+                {
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i)) &&
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(i, globalAktiveStadt).GetEnabled())
+                    {
+                        rohid = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i);
+                        break;
+                    }
+                }
+            }
 
             #region Werte für Input Button setzen
             (this.Controls["btn_stadt_prod" + Slot0oder1.ToString() + "_Arbeiter"] as NumericButton).MaximalerWert = SW.Statisch.GetMaxArbeiterAnzahl();
@@ -8086,17 +8103,33 @@ namespace Conspiratio
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).GetTaetigkeit() == (int)EnumProduktionsslotAktionsart.Produzieren)
             {
                 int akt_roh_id = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).GetProduktionRohstoff();
-
                 int akt_ws = SW.Dynamisch.GetWerkposInStadtXzuRohIDy(globalAktiveStadt, akt_roh_id);
-                akt_ws++;
+                int temp_ws = akt_ws;
+                bool rohstoffErlaubt = false;
 
-
-                if (akt_ws > SW.Statisch.GetMaxWerkstaettenProStadt())
+                for (int i = 0; i < SW.Statisch.GetMaxWerkstaettenProStadt(); i++)
                 {
-                    akt_ws = 1;
+                    temp_ws++;
+
+                    if (temp_ws > SW.Statisch.GetMaxWerkstaettenProStadt())
+                        temp_ws = 1;
+
+                    // Prüfen, ob der Spieler das Rohstoffrecht oder die Werkstatt zur Produktion für den nächsten Rohstoff besitzt.
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(temp_ws)) &&
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(temp_ws, globalAktiveStadt).GetEnabled())
+                    {
+                        rohstoffErlaubt = true;
+                        break;
+                    }
                 }
-                int neueRohID = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(akt_ws);
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetProduktionRohstoff(neueRohID);
+
+                if (!rohstoffErlaubt || akt_ws == temp_ws)
+                    return;
+                
+                akt_ws = temp_ws;
+
+                int neueRohstoffID = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(akt_ws);
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetProduktionRohstoff(neueRohstoffID);
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetProduktionStaetten(0);
                 BtnStadtWasTutEr(false, slot0oder1);
             }
