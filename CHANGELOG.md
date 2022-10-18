@@ -16,6 +16,7 @@
 
 ### Korrekturen
 - Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können (ich konnte es zumindest nicht mehr reproduzieren).
+- Anzeigefehler beim Kartenspielen behoben, die Taleranzeige verschwand nach Bestätigung nicht direkt und konnte somit Text verdecken. Zusätzlich wird nun immer das Mindestgebot vorbelegt und nicht der Einsatz des letzten Spiels.
 
 ## 1.4.4 - 24.12.2021
 

@@ -4700,11 +4700,11 @@ namespace Conspiratio
                     btn_nachrichten_ksp_setzen.Left = btn_nachrichten_ksp_ok.Left + btn_nachrichten_ksp_ok.Width + 5;
                     btn_nachrichten_ksp_setzen.MaximalerWert = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler();
                     btn_nachrichten_ksp_setzen.MinimalerWert = Convert.ToInt32(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() * 0.05);
+                    btn_nachrichten_ksp_setzen.Wert = btn_nachrichten_ksp_setzen.MinimalerWert;
 
                     lbl_nachrichten_titel.Text = "17 und 4";
                     lbl_nachrichten_text.Text = "Ihr habt Euch entschieden, in diesem Jahr mit " + GegnerName + " eine Runde 17 und 4 zu spielen, wobei " + GegnerErSie + " die Aufgabe des Bankhalters übernimmt." + "\n" + "\n" +
                                                 "Nach einem Blick in Euren Geldbeutel legt " + GegnerName + " einen Mindesteinsatz von " + btn_nachrichten_ksp_setzen.MinimalerWert.ToStringGeld() + " fest." + "\n" + "\n" + "Wie viel wollt Ihr setzen?";
-
 
                     lbl_nachrichten_titel.Visible = true;
                     lbl_nachrichten_text.Visible = true;
@@ -4717,10 +4717,10 @@ namespace Conspiratio
                     int wert = btn_nachrichten_ksp_setzen.Wert;
 
                     lbl_nachrichten_text.Text += "\n\n\n" + "Ihr entschließt Euch " + wert.ToStringGeld() + " zu setzen.";
-
-                    await AufRechtsklickWarten();
                     btn_nachrichten_ksp_setzen.Visible = false;
                     btn_nachrichten_ksp_ok.Visible = false;
+
+                    await AufRechtsklickWarten();
 
                     lbl_nachrichten_text.Text = GegnerName + " mischt die Karten und beginnt auszuteilen.";
 
