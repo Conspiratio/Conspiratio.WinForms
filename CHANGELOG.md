@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### Änderungen
+- Verbesserungen der Benutzerfreundlichkeit
+  - Es werden nun in der Stadtansicht beim Auftragstyp "Produzieren" nur noch die möglichen Waren angezeigt, für die ein Rohstoffrecht und eine Werkstatt vorhanden ist.
+  - Das Bild des Wohnsitzes ist nun kein klickbarer Button mehr, wenn der Button keine Funktion hat (und daher irritieren kann)
+- Spielererstellung
+  - Es erscheint nun der Hinweis "Spieler1 Name eingeben" vor dem Eingabefeld, um dies für neue Spieler zu verdeutlichen und um bei mehreren Spielern den Überblick zu behalten
+  - Die Überschrift enthält auch bei allen nach dem ersten Spieler folgenden Spielern den Hinweis "Zurück mit ESC"
+  - Vor dem Abbruch der gesamten Spielerstellung mit ESC wird man ab jetzt mit einer Meldung gefragt, ob man das wirklich möchte, um versehentliche Abbrüche zu verhindern (ärgerlich, wenn man gerade beim 7. Spieler war und alles nochmal eingeben muss ...)
+  - Das Ladeicon erscheint nun korrekt beim letzten Schritt nach der Auswahl der Religion des letzten Spielers
+- Ein Musikstück entfernt (Jason Shaw - The Assasins), welches nicht ganz zum Thema passte und ersetzt durch neues Lied für den Hintergrund (Strobotone - Medieval Theme 02)
+- Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
+
+### Korrekturen
+- Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können (ich konnte es zumindest nicht mehr reproduzieren).
+
 ## 1.4.4 - 24.12.2021
 
 ### Erweiterungen

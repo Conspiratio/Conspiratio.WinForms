@@ -9057,17 +9057,23 @@ namespace Conspiratio
 
             PositionWechseln(Posi_Credits);
 
-            label2.Text = "Programm:\n\nDerEinzehnte, SirToby";
-            label2.Text += "\n\n\n\n";
+            label2.Text = "Programm:\nDerEinzehnte, SirToby";
+            label2.Text += "\n\n\n";
 
-            label2.Text += "Grafiken:\n\nBeetle";
-            label2.Text += "\n\n\n\n";
+            label2.Text += "Grafiken:\nBeetle";
+            label2.Text += "\n\n\n";
 
-            label2.Text += "Musik:\n\nJason Shaw";
-            label2.Text += "\n\n\n\n";
+            label2.Text += "Wiki:\nPommBaer";
+            label2.Text += "\n\n\n";
+
+            label2.Text += "Musik:\nJason Shaw (Audionautix.com), Strobotone";
+            label2.Text += "\n\n\n";
+
+            label2.Text += "Sounds:\ncsmag, BraveFrog, sarson,\nflorian_reinke, bevibeldesign";
+            label2.Text += "\n\n\n";
 
             label2.Text += "Vector Icons: Vecteezy.com";
-            label2.Text += "\n\n\n\n";
+            label2.Text += "\n\n";
 
             //label2.Text += "Tester:\n\nSchweng\nLexx\nHorde\nThomas H Wichtel\nHodg\n";
             //label2.Text += "Nief\nNwee\nGeheimrat\nSeniyad\nSir Toby\n";
