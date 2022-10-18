@@ -7523,13 +7523,13 @@ namespace Conspiratio
 
                 for (int i = SW.Statisch.GetMinKIID(); i < SW.Statisch.GetMaxKIID(); i++)
                 {
-                    //Wenn sie unterschiedliches Geschlecht vorweisen
+                    // Wenn sie unterschiedliches Geschlecht vorweisen
                     if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich() != SW.Dynamisch.GetKIwithID(i).GetMaennlich())
                     {
-                        //und nicht verheiratet sind
+                        // und nicht verheiratet sind
                         if (SW.Dynamisch.GetKIwithID(i).GetVerheiratet() == 0)
                         {
-                            //und das Amt nicht höher ist als in der Stadtebene
+                            // und das Amt nicht höher ist als in der Stadtebene
                             if (SW.Dynamisch.GetKIwithID(i).GetAmtID() < 17)
                             {
                                 if (optimalerPartner == 0)
@@ -7538,7 +7538,10 @@ namespace Conspiratio
                                 }
                                 else
                                 {
-                                    if (SW.Dynamisch.GetKIwithID(optimalerPartner).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) < SW.Dynamisch.GetKIwithID(i).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) + SW.Statisch.Rnd.Next(-20, 21))
+                                    int Preis = Convert.ToInt32(SW.Dynamisch.GetKIwithID(i).GetTaler() * SW.Statisch.GetKupplerProzente());
+
+                                    if (SW.Dynamisch.GetKIwithID(optimalerPartner).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) < SW.Dynamisch.GetKIwithID(i).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) + SW.Statisch.Rnd.Next(-15, 16) &&
+                                        Preis <= (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetGesamtVermoegen(SW.Dynamisch.GetAktiverSpieler()) * 0.4d))  // Nur die Partner vorschlagen, deren Preis nicht höher liegt als 40 % des Gesamtvermögen des Spielers
                                     {
                                         optimalerPartner = i;
                                     }

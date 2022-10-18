@@ -19,18 +19,14 @@ namespace Conspiratio
         {
             InitializeComponent();
 
-
-
-
-
-            btn_d1.BackgroundImage = new Bitmap(Conspiratio.Properties.Resources.SymbUnchecked);
-            btn_d2.BackgroundImage = new Bitmap(Conspiratio.Properties.Resources.SymbUnchecked);
+            btn_d1.BackgroundImage = new Bitmap(Properties.Resources.SymbUnchecked);
+            btn_d2.BackgroundImage = new Bitmap(Properties.Resources.SymbUnchecked);
 
             Kupplerprozente = SW.Statisch.GetKupplerProzente();
             globAktivSpieler = globakt;
             optimalerPartner = optPartner;
             Preis = Convert.ToInt32(SW.Dynamisch.GetKIwithID(optimalerPartner).GetTaler() * Kupplerprozente);
-            lbl_text.Text = "Die Kupplerin könnte bei " + SW.Dynamisch.GetKIwithID(optimalerPartner).GetKompletterName() + " großes Interesse an Euch wecken. Für " + Preis.ToStringGeld() + " kann sie Eure Brautwerbung unterstützen. Wollt Ihr";
+            lbl_text.Text = "Die Kupplerin könnte bei " + SW.Dynamisch.GetKIwithID(optimalerPartner).GetKompletterName() + " großes Interesse an Euch wecken. Für " + Preis.ToStringGeld() + " kann sie Eure Werbung unterstützen. Wollt Ihr";
         }
         #endregion
 
