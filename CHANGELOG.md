@@ -15,6 +15,7 @@
 - Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
 - Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin.
 - Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun ein wenig Taler, um den Realismus ein wenig zu erhöhen
+- Der Betrag bei positiven sowie negativen finanziellen Ereignisse am Rundenende wurde ein wenig erhöht
 
 ### Korrekturen
 - Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können (ich konnte es zumindest nicht mehr reproduzieren).

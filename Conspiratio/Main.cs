@@ -5003,7 +5003,7 @@ namespace Conspiratio
                 val1 = SW.Statisch.Rnd.Next(0, 100);
                 val2 = SW.Statisch.Rnd.Next(0, 100);
                 val3 = SW.Statisch.Rnd.Next(0, 100);
-                wert1 = SW.Statisch.Rnd.Next(5, 30);
+                wert1 = SW.Statisch.Rnd.Next(10, 31);
                 wert2 = SW.Statisch.Rnd.Next(1, 11);
                 wert3 = SW.Statisch.Rnd.Next(1, 11);
 
@@ -5011,7 +5011,7 @@ namespace Conspiratio
                 if (gesver <= 0)
                     gesver = SW.Statisch.GetStartgold();  // falls kein Vermögen vorhanden ist (oder Schulden) wird vom Startkapital ausgegangen
 
-                vwert = Convert.ToInt32((wert1 * gesver) / 1000);
+                vwert = Convert.ToInt32((wert1 * gesver) / 700);
 
                 if (val1 < 50)
                 {
