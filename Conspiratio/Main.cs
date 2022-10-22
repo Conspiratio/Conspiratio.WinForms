@@ -5170,10 +5170,15 @@ namespace Conspiratio
                             await NachrichtenEtwasAnzeigen("Ansehen", "Ihr entschließt Euch, öfters eine modische Robe zu tragen.");
                         break;
                     case 2:
+                        // Dieses Ereignis kostet zusätzlich auch Geld, da hier etwas gekauft wird (Realismus)
+                        vwert /= 2;  // Bisherigen Wert der Finanzereignisse halbieren für die Kosten dieses Ereignisses
+                        UI.TalerAendern(-vwert, ref lbl_Taler);
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoehePermaAnsehen(wert2 / 2);  // Als Bonus für die Kosten das Ansehen noch ein wenig stärker erhöhen
+
                         if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich())
-                            await NachrichtenEtwasAnzeigen("Ansehen", "Ihr kauft Euch einen eleganten Gehstock.");
+                            await NachrichtenEtwasAnzeigen("Ansehen", $"Ihr kauft Euch einen eleganten Gehstock für {vwert.ToStringGeld()}.");
                         else
-                            await NachrichtenEtwasAnzeigen("Ansehen", "Ihr kauft Euch einen eleganten, tragbaren Sonnenschirm.");
+                            await NachrichtenEtwasAnzeigen("Ansehen", $"Ihr kauft Euch einen eleganten, tragbaren Sonnenschirm für {vwert.ToStringGeld()}.");
                         break;
                     case 3:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Bei jedem Treffen mit Euren Geschäftspartnern seid Ihr bereits 5 Minuten vor dem vereinbarten Termin vor Ort.");
@@ -5240,13 +5245,13 @@ namespace Conspiratio
                         await NachrichtenEtwasAnzeigen("Ansehen", "Aufgrund einer Beinverletzung gewöhnt Ihr Euch das Hinken an.");
                         break;
                     case 53:
-                        await NachrichtenEtwasAnzeigen("Ansehen", "Ihr seid spät dran für einen wichtigen Geschäftstermin und könnt keine Droschke finden also Ihr beschließt den langen Weg zu laufen. Völlig durchgeschwitzt erscheint Ihr gerade noch rechtzeitig zum Treffen.");
+                        await NachrichtenEtwasAnzeigen("Ansehen", "Ihr seid spät dran für einen wichtigen Geschäftstermin und könnt keine Droschke finden, also Ihr beschließt den langen Weg zu laufen. Völlig durchgeschwitzt erscheint Ihr gerade noch rechtzeitig zum Treffen.");
                         break;
                     case 54:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Am Marktplatz herumspazierend erinnert Ihr Euch an Eure Kindheitstage. Dabei beginnt Ihr Selbstgespräche zu führen. Alle anwesenden Menschen sehen Euch verdutzt an.");
                         break;
                     case 55:
-                        await NachrichtenEtwasAnzeigen("Ansehen", "Als Ihr an einem regnerischem Tag auf dem Weg zur Kirche seid, fährt neben Euch eine Kutsche durch eine Schlammpfütze und Ihr werdet völlig verdreckt. Ihr besucht dennoch den Gottesdienst...");
+                        await NachrichtenEtwasAnzeigen("Ansehen", "Als Ihr an einem regnerischen Tag auf dem Weg zur Kirche seid, fährt neben Euch eine Kutsche durch eine Schlammpfütze und Ihr werdet völlig verdreckt. Ihr besucht dennoch den Gottesdienst...");
                         break;
                     case 56:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Ihr habt Eure Zunge bei einem heißen Tee verbrannt. Wegen den Schmerzen könnt Ihr nur noch lispeln.");
