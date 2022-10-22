@@ -1,4 +1,6 @@
-﻿# Conspiratio.WinForms
+﻿<a href="https://discord.gg/dxkC5DPgRY"><img src='https://discordapp.com/api/guilds/779755166017519666/widget.png?style=shield'></a>
+
+# Conspiratio.WinForms
 
 **Hinweis: Dieser Client wird nur noch sporadisch weiterentwickelt und damit voraussichtlich auch keine neuen großen Features mehr erhalten, nur noch Fehlerbehebungen. Stattdessen arbeiten wir an einem neuen Client mit Unity (Link folgt), der ebenfalls Open Source sein wird. Dazu suchen wir nach wie vor tatkräftige Unterstützung (Grafik, Programmierung, Musik/Sounds, Konzeption).**
 
