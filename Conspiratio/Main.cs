@@ -2355,6 +2355,7 @@ namespace Conspiratio
                         opt.ShowDialog();
 
                         SpielerInfosEinAusBlenden(true);
+                        btn_runde_beenden.Visible = true;
 
                         if (SpE.getIntKurzSpeicher() == 1)
                         {
@@ -2406,10 +2407,6 @@ namespace Conspiratio
                                 SpE.setStringKurzSpeicher("");
                                 Speichern(name, false);
                             }
-                        }
-                        else
-                        {
-                            btn_runde_beenden.Visible = true;
                         }
 
                         SpE.setIntKurzSpeicher(0);
