@@ -7519,48 +7519,16 @@ namespace Conspiratio
         #region Partner Wahl Kupplerin
         private void PartnerWaehlenKupplerin()
         {
-            if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).WirbtUmSpielerID == 0)
-            {
-                int optimalerPartner = 0;
-
-                for (int i = SW.Statisch.GetMinKIID(); i < SW.Statisch.GetMaxKIID(); i++)
-                {
-                    // Wenn sie unterschiedliches Geschlecht vorweisen
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich() != SW.Dynamisch.GetKIwithID(i).GetMaennlich())
-                    {
-                        // und nicht verheiratet sind
-                        if (SW.Dynamisch.GetKIwithID(i).GetVerheiratet() == 0)
-                        {
-                            // und das Amt nicht höher ist als in der Stadtebene
-                            if (SW.Dynamisch.GetKIwithID(i).GetAmtID() < 17)
-                            {
-                                if (optimalerPartner == 0)
-                                {
-                                    optimalerPartner = i;
-                                }
-                                else
-                                {
-                                    int Preis = Convert.ToInt32(SW.Dynamisch.GetKIwithID(i).GetTaler() * SW.Statisch.GetKupplerProzente());
-
-                                    if (SW.Dynamisch.GetKIwithID(optimalerPartner).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) < SW.Dynamisch.GetKIwithID(i).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) + SW.Statisch.Rnd.Next(-15, 16) &&
-                                        Preis <= (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetGesamtVermoegen(SW.Dynamisch.GetAktiverSpieler()) * 0.4d))  // Nur die Partner vorschlagen, deren Preis nicht höher liegt als 40 % des Gesamtvermögen des Spielers
-                                    {
-                                        optimalerPartner = i;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                KupplerinAngebot KA = new KupplerinAngebot(optimalerPartner, SW.Dynamisch.GetAktiverSpieler());
-                KA.ShowDialog();
-                SpielerDatenAktualisieren();
-            }
-            else
+            if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).WirbtUmSpielerID != 0)
             {
                 SW.Dynamisch.BelTextAnzeigen("Ihr werbt bereits um " + SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).WirbtUmSpielerID).GetKompletterName());
+                return;
             }
+            
+            int optimalerPartner = Kupplerin.ErmittleOptimalenPartnerFuerSpieler(SW.Dynamisch.GetAktiverSpieler());
+            KupplerinAngebot KA = new KupplerinAngebot(optimalerPartner, SW.Dynamisch.GetAktiverSpieler());
+            KA.ShowDialog();
+            SpielerDatenAktualisieren();
         }
         #endregion
 
