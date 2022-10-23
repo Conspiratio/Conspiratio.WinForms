@@ -62,6 +62,28 @@ namespace Conspiratio
         }
         #endregion
 
+        #region AllHumanPlayersWithNameToString (for Debugging)
+        public static string AllHumanPlayersWithNameToString()
+        {
+            string allHumanPlayersString = "Aktiver Spieler Index: " + SW.Dynamisch.GetAktiverSpieler() + Environment.NewLine;
+
+            for (int i = 1; i < SW.Statisch.GetMinKIID(); i++)
+            {
+                if (string.IsNullOrEmpty(SW.Dynamisch.GetHumWithID(i).GetName()))
+                    continue;
+                
+                allHumanPlayersString += $"Id: {i} {SW.Dynamisch.GetHumWithID(i)}{Environment.NewLine}";
+            }
+
+            allHumanPlayersString += Environment.NewLine + "ENDE--------------------------------------------------------------------------------------------------" + Environment.NewLine + Environment.NewLine;
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine(allHumanPlayersString);
+#endif
+
+            return allHumanPlayersString;
+        }
+        #endregion
 
         #region SpielerHinzufuegen_Shown
         private async void SpielerHinzufuegen_Shown(object sender, EventArgs e)
@@ -144,6 +166,11 @@ namespace Conspiratio
                 _abzugTalerWegenRohstoffwahl = 0;
 
                 #endregion
+
+#if DEBUG
+                System.Diagnostics.Debug.WriteLine("Spielerstellung für Spieler " + SW.Dynamisch.GetAktiverSpieler() + " gestartet.");
+                AllHumanPlayersWithNameToString();
+#endif
 
                 // Beginne mit dem Aufruf des ersten Schrittes, alle weiteren Schritte werden durch die Methoden selbst aufgerufen
                 await NamenseingabeUmschalten();
@@ -533,6 +560,11 @@ namespace Conspiratio
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nam);
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(verbleibendeJahre);
 
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("Nach Namenseingabe für Spieler " + SW.Dynamisch.GetAktiverSpieler());
+            AllHumanPlayersWithNameToString();
+#endif
+
             await GeschlechtAuswaehlenUmschalten();
         }
         #endregion
@@ -572,6 +604,11 @@ namespace Conspiratio
                 await NamenseingabeUmschalten();
                 return;
             }
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("Nach Geschlechtsauswahl für Spieler " + SW.Dynamisch.GetAktiverSpieler());
+            AllHumanPlayersWithNameToString();
+#endif
 
             await BannerAuswaehlenUmschalten();
         }
@@ -634,6 +671,11 @@ namespace Conspiratio
                 return;
             }
 
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("Nach Bannerauswahl für Spieler " + SW.Dynamisch.GetAktiverSpieler());
+            AllHumanPlayersWithNameToString();
+#endif
+
             await StadtAuswaehlenUmschalten();
         }
         #endregion
@@ -669,6 +711,11 @@ namespace Conspiratio
                 await BannerAuswaehlenUmschalten();
                 return;
             }
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("Nach Stadtauswahl für Spieler " + SW.Dynamisch.GetAktiverSpieler());
+            AllHumanPlayersWithNameToString();
+#endif
 
             await RohstoffAuswaehlenUmschalten();
         }
@@ -710,6 +757,11 @@ namespace Conspiratio
                 return;
             }
 
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("Nach Rohstoffauswahl für Spieler " + SW.Dynamisch.GetAktiverSpieler());
+            AllHumanPlayersWithNameToString();
+#endif
+
             await ReligionAuswaehlenUmschalten();
         }
         #endregion
@@ -749,6 +801,11 @@ namespace Conspiratio
                 await RohstoffAuswaehlenUmschalten();
                 return;
             }
+
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine("Nach Religionsauswahl für Spieler " + SW.Dynamisch.GetAktiverSpieler());
+            AllHumanPlayersWithNameToString();
+#endif
 
             _finished = true;
             _anzahlAngelegteSpieler++;
