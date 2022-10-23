@@ -2355,6 +2355,7 @@ namespace Conspiratio
                         opt.ShowDialog();
 
                         SpielerInfosEinAusBlenden(true);
+                        btn_runde_beenden.Visible = true;
 
                         if (SpE.getIntKurzSpeicher() == 1)
                         {
@@ -2406,10 +2407,6 @@ namespace Conspiratio
                                 SpE.setStringKurzSpeicher("");
                                 Speichern(name, false);
                             }
-                        }
-                        else
-                        {
-                            btn_runde_beenden.Visible = true;
                         }
 
                         SpE.setIntKurzSpeicher(0);
@@ -4700,11 +4697,11 @@ namespace Conspiratio
                     btn_nachrichten_ksp_setzen.Left = btn_nachrichten_ksp_ok.Left + btn_nachrichten_ksp_ok.Width + 5;
                     btn_nachrichten_ksp_setzen.MaximalerWert = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler();
                     btn_nachrichten_ksp_setzen.MinimalerWert = Convert.ToInt32(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() * 0.05);
+                    btn_nachrichten_ksp_setzen.Wert = btn_nachrichten_ksp_setzen.MinimalerWert;
 
                     lbl_nachrichten_titel.Text = "17 und 4";
                     lbl_nachrichten_text.Text = "Ihr habt Euch entschieden, in diesem Jahr mit " + GegnerName + " eine Runde 17 und 4 zu spielen, wobei " + GegnerErSie + " die Aufgabe des Bankhalters übernimmt." + "\n" + "\n" +
                                                 "Nach einem Blick in Euren Geldbeutel legt " + GegnerName + " einen Mindesteinsatz von " + btn_nachrichten_ksp_setzen.MinimalerWert.ToStringGeld() + " fest." + "\n" + "\n" + "Wie viel wollt Ihr setzen?";
-
 
                     lbl_nachrichten_titel.Visible = true;
                     lbl_nachrichten_text.Visible = true;
@@ -4717,10 +4714,10 @@ namespace Conspiratio
                     int wert = btn_nachrichten_ksp_setzen.Wert;
 
                     lbl_nachrichten_text.Text += "\n\n\n" + "Ihr entschließt Euch " + wert.ToStringGeld() + " zu setzen.";
-
-                    await AufRechtsklickWarten();
                     btn_nachrichten_ksp_setzen.Visible = false;
                     btn_nachrichten_ksp_ok.Visible = false;
+
+                    await AufRechtsklickWarten();
 
                     lbl_nachrichten_text.Text = GegnerName + " mischt die Karten und beginnt auszuteilen.";
 
@@ -5003,7 +5000,7 @@ namespace Conspiratio
                 val1 = SW.Statisch.Rnd.Next(0, 100);
                 val2 = SW.Statisch.Rnd.Next(0, 100);
                 val3 = SW.Statisch.Rnd.Next(0, 100);
-                wert1 = SW.Statisch.Rnd.Next(5, 30);
+                wert1 = SW.Statisch.Rnd.Next(10, 31);
                 wert2 = SW.Statisch.Rnd.Next(1, 11);
                 wert3 = SW.Statisch.Rnd.Next(1, 11);
 
@@ -5011,7 +5008,7 @@ namespace Conspiratio
                 if (gesver <= 0)
                     gesver = SW.Statisch.GetStartgold();  // falls kein Vermögen vorhanden ist (oder Schulden) wird vom Startkapital ausgegangen
 
-                vwert = Convert.ToInt32((wert1 * gesver) / 1000);
+                vwert = Convert.ToInt32((wert1 * gesver) / 700);
 
                 if (val1 < 50)
                 {
@@ -5170,10 +5167,15 @@ namespace Conspiratio
                             await NachrichtenEtwasAnzeigen("Ansehen", "Ihr entschließt Euch, öfters eine modische Robe zu tragen.");
                         break;
                     case 2:
+                        // Dieses Ereignis kostet zusätzlich auch Geld, da hier etwas gekauft wird (Realismus)
+                        vwert /= 2;  // Bisherigen Wert der Finanzereignisse halbieren für die Kosten dieses Ereignisses
+                        UI.TalerAendern(-vwert, ref lbl_Taler);
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoehePermaAnsehen(wert2 / 2);  // Als Bonus für die Kosten das Ansehen noch ein wenig stärker erhöhen
+
                         if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich())
-                            await NachrichtenEtwasAnzeigen("Ansehen", "Ihr kauft Euch einen eleganten Gehstock.");
+                            await NachrichtenEtwasAnzeigen("Ansehen", $"Ihr kauft Euch einen eleganten Gehstock für {vwert.ToStringGeld()}.");
                         else
-                            await NachrichtenEtwasAnzeigen("Ansehen", "Ihr kauft Euch einen eleganten, tragbaren Sonnenschirm.");
+                            await NachrichtenEtwasAnzeigen("Ansehen", $"Ihr kauft Euch einen eleganten, tragbaren Sonnenschirm für {vwert.ToStringGeld()}.");
                         break;
                     case 3:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Bei jedem Treffen mit Euren Geschäftspartnern seid Ihr bereits 5 Minuten vor dem vereinbarten Termin vor Ort.");
@@ -5240,13 +5242,13 @@ namespace Conspiratio
                         await NachrichtenEtwasAnzeigen("Ansehen", "Aufgrund einer Beinverletzung gewöhnt Ihr Euch das Hinken an.");
                         break;
                     case 53:
-                        await NachrichtenEtwasAnzeigen("Ansehen", "Ihr seid spät dran für einen wichtigen Geschäftstermin und könnt keine Droschke finden also Ihr beschließt den langen Weg zu laufen. Völlig durchgeschwitzt erscheint Ihr gerade noch rechtzeitig zum Treffen.");
+                        await NachrichtenEtwasAnzeigen("Ansehen", "Ihr seid spät dran für einen wichtigen Geschäftstermin und könnt keine Droschke finden, also Ihr beschließt den langen Weg zu laufen. Völlig durchgeschwitzt erscheint Ihr gerade noch rechtzeitig zum Treffen.");
                         break;
                     case 54:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Am Marktplatz herumspazierend erinnert Ihr Euch an Eure Kindheitstage. Dabei beginnt Ihr Selbstgespräche zu führen. Alle anwesenden Menschen sehen Euch verdutzt an.");
                         break;
                     case 55:
-                        await NachrichtenEtwasAnzeigen("Ansehen", "Als Ihr an einem regnerischem Tag auf dem Weg zur Kirche seid, fährt neben Euch eine Kutsche durch eine Schlammpfütze und Ihr werdet völlig verdreckt. Ihr besucht dennoch den Gottesdienst...");
+                        await NachrichtenEtwasAnzeigen("Ansehen", "Als Ihr an einem regnerischen Tag auf dem Weg zur Kirche seid, fährt neben Euch eine Kutsche durch eine Schlammpfütze und Ihr werdet völlig verdreckt. Ihr besucht dennoch den Gottesdienst...");
                         break;
                     case 56:
                         await NachrichtenEtwasAnzeigen("Ansehen", "Ihr habt Eure Zunge bei einem heißen Tee verbrannt. Wegen den Schmerzen könnt Ihr nur noch lispeln.");
@@ -7517,45 +7519,16 @@ namespace Conspiratio
         #region Partner Wahl Kupplerin
         private void PartnerWaehlenKupplerin()
         {
-            if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).WirbtUmSpielerID == 0)
-            {
-                int optimalerPartner = 0;
-
-                for (int i = SW.Statisch.GetMinKIID(); i < SW.Statisch.GetMaxKIID(); i++)
-                {
-                    //Wenn sie unterschiedliches Geschlecht vorweisen
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich() != SW.Dynamisch.GetKIwithID(i).GetMaennlich())
-                    {
-                        //und nicht verheiratet sind
-                        if (SW.Dynamisch.GetKIwithID(i).GetVerheiratet() == 0)
-                        {
-                            //und das Amt nicht höher ist als in der Stadtebene
-                            if (SW.Dynamisch.GetKIwithID(i).GetAmtID() < 17)
-                            {
-                                if (optimalerPartner == 0)
-                                {
-                                    optimalerPartner = i;
-                                }
-                                else
-                                {
-                                    if (SW.Dynamisch.GetKIwithID(optimalerPartner).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) < SW.Dynamisch.GetKIwithID(i).GetBeziehungZuKIX(SW.Dynamisch.GetAktiverSpieler()) + SW.Statisch.Rnd.Next(-20, 21))
-                                    {
-                                        optimalerPartner = i;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                KupplerinAngebot KA = new KupplerinAngebot(optimalerPartner, SW.Dynamisch.GetAktiverSpieler());
-                KA.ShowDialog();
-                SpielerDatenAktualisieren();
-            }
-            else
+            if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).WirbtUmSpielerID != 0)
             {
                 SW.Dynamisch.BelTextAnzeigen("Ihr werbt bereits um " + SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).WirbtUmSpielerID).GetKompletterName());
+                return;
             }
+            
+            int optimalerPartner = Kupplerin.ErmittleOptimalenPartnerFuerSpieler(SW.Dynamisch.GetAktiverSpieler());
+            KupplerinAngebot KA = new KupplerinAngebot(optimalerPartner, SW.Dynamisch.GetAktiverSpieler());
+            KA.ShowDialog();
+            SpielerDatenAktualisieren();
         }
         #endregion
 
@@ -7810,8 +7783,25 @@ namespace Conspiratio
         private void StadtProdTextLaden(int Slot0oder1)
         {
             string textges, text1, text3;
-
             int rohid = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, Slot0oder1).GetProduktionRohstoff();
+
+            int indexVonRohstoffInStadt = Array.IndexOf(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetRohstoffe(), rohid);
+            
+            if (!SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(rohid) ||
+                !SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(indexVonRohstoffInStadt, globalAktiveStadt).GetEnabled())
+            {
+                // Der aktuelle Rohstoff ist nicht gültig, selektiere den nächst gültigen
+
+                for (int i = 1; i <= SW.Statisch.GetMaxWerkstaettenProStadt(); i++)
+                {
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i)) &&
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(i, globalAktiveStadt).GetEnabled())
+                    {
+                        rohid = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i);
+                        break;
+                    }
+                }
+            }
 
             #region Werte für Input Button setzen
             (this.Controls["btn_stadt_prod" + Slot0oder1.ToString() + "_Arbeiter"] as NumericButton).MaximalerWert = SW.Statisch.GetMaxArbeiterAnzahl();
@@ -8086,17 +8076,33 @@ namespace Conspiratio
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).GetTaetigkeit() == (int)EnumProduktionsslotAktionsart.Produzieren)
             {
                 int akt_roh_id = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).GetProduktionRohstoff();
-
                 int akt_ws = SW.Dynamisch.GetWerkposInStadtXzuRohIDy(globalAktiveStadt, akt_roh_id);
-                akt_ws++;
+                int temp_ws = akt_ws;
+                bool rohstoffErlaubt = false;
 
-
-                if (akt_ws > SW.Statisch.GetMaxWerkstaettenProStadt())
+                for (int i = 0; i < SW.Statisch.GetMaxWerkstaettenProStadt(); i++)
                 {
-                    akt_ws = 1;
+                    temp_ws++;
+
+                    if (temp_ws > SW.Statisch.GetMaxWerkstaettenProStadt())
+                        temp_ws = 1;
+
+                    // Prüfen, ob der Spieler das Rohstoffrecht oder die Werkstatt zur Produktion für den nächsten Rohstoff besitzt.
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(temp_ws)) &&
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(temp_ws, globalAktiveStadt).GetEnabled())
+                    {
+                        rohstoffErlaubt = true;
+                        break;
+                    }
                 }
-                int neueRohID = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(akt_ws);
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetProduktionRohstoff(neueRohID);
+
+                if (!rohstoffErlaubt || akt_ws == temp_ws)
+                    return;
+                
+                akt_ws = temp_ws;
+
+                int neueRohstoffID = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(akt_ws);
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetProduktionRohstoff(neueRohstoffID);
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetProduktionStaetten(0);
                 BtnStadtWasTutEr(false, slot0oder1);
             }
@@ -9024,17 +9030,23 @@ namespace Conspiratio
 
             PositionWechseln(Posi_Credits);
 
-            label2.Text = "Programm:\n\nDerEinzehnte, SirToby";
-            label2.Text += "\n\n\n\n";
+            label2.Text = "Programm:\nDerEinzehnte, SirToby";
+            label2.Text += "\n\n\n";
 
-            label2.Text += "Grafiken:\n\nBeetle";
-            label2.Text += "\n\n\n\n";
+            label2.Text += "Grafiken:\nBeetle";
+            label2.Text += "\n\n\n";
 
-            label2.Text += "Musik:\n\nJason Shaw";
-            label2.Text += "\n\n\n\n";
+            label2.Text += "Wiki:\nPommBaer";
+            label2.Text += "\n\n\n";
+
+            label2.Text += "Musik:\nJason Shaw (Audionautix.com), Strobotone";
+            label2.Text += "\n\n\n";
+
+            label2.Text += "Sounds:\ncsmag, BraveFrog, sarson,\nflorian_reinke, bevibeldesign";
+            label2.Text += "\n\n\n";
 
             label2.Text += "Vector Icons: Vecteezy.com";
-            label2.Text += "\n\n\n\n";
+            label2.Text += "\n\n";
 
             //label2.Text += "Tester:\n\nSchweng\nLexx\nHorde\nThomas H Wichtel\nHodg\n";
             //label2.Text += "Nief\nNwee\nGeheimrat\nSeniyad\nSir Toby\n";
@@ -9130,6 +9142,12 @@ namespace Conspiratio
 
                         HauptmenueVerlassen();
                         await SpielerDatenLaden(false);
+                    }
+                    else
+                    {
+                        // Dafür sorgen, dass möglicherweise bereits erstellte also gespeicherte Spieler wieder zurückgesetzt werden
+                        // (NeuInitialiseren wird in HauptmenueAusfuehren aufgerufen)
+                        HauptmenueAusfuehren();
                     }
                 }
             }

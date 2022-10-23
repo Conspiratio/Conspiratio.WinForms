@@ -52,6 +52,7 @@ namespace Conspiratio.Kampf
             lbl_nachrichten_titel.Width = UI.NormB(lbl_nachrichten_titel.Width, this.Width);
 
             trtText.Font = Grafik.GetStandardFont(Convert.ToInt16(trtText.Font.Size));
+            trtText.SelectionFont = Grafik.GetStandardFont(Convert.ToInt16(trtText.Font.Size));
             trtText.Text = "";
             lbl_nachrichten_titel.Text = "Militärische Ereignisse " + SW.Dynamisch.GetAktuellesJahr().ToString();
         }
@@ -62,7 +63,6 @@ namespace Conspiratio.Kampf
         {
             Kampfberechnung Kampfklasse = new Kampfberechnung();
             KampfErgebnis Ergebnis;
-            List<Lib.Gameplay.Kampf.Kampf> lstKaempfe = new List<Lib.Gameplay.Kampf.Kampf>();
 
             // KI Aktionen ermitteln und durchführen (bezogen auf den Stützpunkt)
             foreach (Stuetzpunkt Stuetzpunkt in SW.Dynamisch.GetStuetzpunkte())
@@ -70,20 +70,20 @@ namespace Conspiratio.Kampf
                 if (Stuetzpunkt.Besitzer <= SW.Statisch.GetMinKIID())  // Ist es ein menschlicher Spieler?
                     continue;
 
-                string sText = "";
+                string text = "";
 
                 if (Stuetzpunkt.Art == EnumStuetzpunktArt.Zollburg)
                 {
-                    sText = (Stuetzpunkt as Zollburg).RundenendeKIAktionenDurchfuehren();
+                    text = (Stuetzpunkt as Zollburg).RundenendeKIAktionenDurchfuehren();
                 }
                 else if (Stuetzpunkt.Art == EnumStuetzpunktArt.Raeuberlager)
                 {
-                    sText = (Stuetzpunkt as Raeuberlager).RundenendeKIAktionenDurchfuehren();
+                    text = (Stuetzpunkt as Raeuberlager).RundenendeKIAktionenDurchfuehren();
                 }
 
-                if (sText != "")
+                if (text != "")
                 {
-                    trtText.AppendText(sText + "\n\n");
+                    trtText.AppendText(text + "\n\n");
                     ZumEndeScrollen();
                     await AufRechtsklickWarten();
                 }
@@ -91,7 +91,7 @@ namespace Conspiratio.Kampf
 
             SW.Dynamisch.LandsicherheitenInitialisieren();
 
-            lstKaempfe = Kampfklasse.ErmittleStattfindendeKaempfe();
+            List<Lib.Gameplay.Kampf.Kampf> lstKaempfe = Kampfklasse.ErmittleStattfindendeKaempfe();
 
             string NameAngreifer = "";
             string NameVerteidiger = "";
@@ -129,11 +129,11 @@ namespace Conspiratio.Kampf
                     {
                         string[] Teilstrings = Text.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
 
-                        foreach (string Str in Teilstrings)
+                        foreach (string teilstring in Teilstrings)
                         {
-                            if ((Str != NameAngreifer) && (Str != NameVerteidiger) && (Str != NameSpielerKarawane))
+                            if ((teilstring != NameAngreifer) && (teilstring != NameVerteidiger) && (teilstring != NameSpielerKarawane))
                             {
-                                trtText.AddText(Str);
+                                trtText.AddText(teilstring, trtText.ForeColor, Grafik.GetStandardFont(Convert.ToInt16(trtText.Font.Size)));
                                 continue;
                             }
 
@@ -141,20 +141,20 @@ namespace Conspiratio.Kampf
 
                             for (int i = 1; i <= SW.Dynamisch.GetAktivSpielerAnzahl(); i++)  // Alle menschlichen Spieler durchgehen
                             {
-                                if (SW.Dynamisch.GetSpWithID(i).GetKompletterName() == Str)
+                                if (SW.Dynamisch.GetSpWithID(i).GetKompletterName() == teilstring)
                                 {
                                     TextColor = Color.DarkRed;
                                     break;
                                 }
                             }
 
-                            trtText.AddText(Str, TextColor, new Font(Grafik.GetStandardFont(Convert.ToInt16(trtText.Font.Size)), FontStyle.Bold));  // Text eine Spielers immer fett formatieren (wenn menschlich, dann auch dunkelrot)
+                            trtText.AddText(teilstring, TextColor, new Font(Grafik.GetStandardFont(Convert.ToInt16(trtText.Font.Size)), FontStyle.Bold));  // Text eine Spielers immer fett formatieren (wenn menschlich, dann auch dunkelrot)
                         }
 
-                        trtText.AddText("\n\n");
+                        trtText.AppendText("\n\n");
                     }
-                    else
-                        trtText.AppendText(Text + "\n\n");
+                    else  // Kommt theoretisch nie vor, da jeder Textblock (Absatz) immer mind. einen Spielernamen enthält
+                        trtText.AppendText(Text + "\n\n");  
 
                     ZumEndeScrollen();
                     await AufRechtsklickWarten();

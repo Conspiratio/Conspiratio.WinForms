@@ -19,7 +19,7 @@ namespace Conspiratio.Properties {
     // -Klasse über ein Tool wie ResGen oder Visual Studio automatisch generiert.
     // Um einen Member hinzuzufügen oder zu entfernen, bearbeiten Sie die .ResX-Datei und führen dann ResGen
     // mit der /str-Option erneut aus, oder Sie erstellen Ihr VS-Projekt neu.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1347,16 +1347,6 @@ namespace Conspiratio.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
-        internal static byte[] Song_Standard_Assasins {
-            get {
-                object obj = ResourceManager.GetObject("Song_Standard_Assasins", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
-        /// </summary>
         internal static byte[] Song_Standard_ATallShip {
             get {
                 object obj = ResourceManager.GetObject("Song_Standard_ATallShip", resourceCulture);
@@ -1380,6 +1370,16 @@ namespace Conspiratio.Properties {
         internal static byte[] Song_Standard_Renaissance {
             get {
                 object obj = ResourceManager.GetObject("Song_Standard_Renaissance", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] Song_Standard_Strobotone_Medieval_Theme_02 {
+            get {
+                object obj = ResourceManager.GetObject("Song_Standard_Strobotone_Medieval_Theme_02", resourceCulture);
                 return ((byte[])(obj));
             }
         }

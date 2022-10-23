@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+### Änderungen
+- Verbesserungen der Benutzerfreundlichkeit
+  - Es werden nun in der Stadtansicht beim Auftragstyp "Produzieren" nur noch die möglichen Waren angezeigt, für die ein Rohstoffrecht und eine Werkstatt vorhanden ist.
+  - Das Bild des Wohnsitzes ist nun kein klickbarer Button mehr, wenn der Button keine Funktion hat (und daher irritieren kann)
+- Spielererstellung
+  - Es erscheint nun der Hinweis "Spieler1 Name eingeben" vor dem Eingabefeld, um dies für neue Spieler zu verdeutlichen und um bei mehreren Spielern den Überblick zu behalten
+  - Die Überschrift enthält auch bei allen nach dem ersten Spieler folgenden Spielern den Hinweis "Zurück mit ESC"
+  - Vor dem Abbruch der gesamten Spielerstellung mit ESC wird man ab jetzt mit einer Meldung gefragt, ob man das wirklich möchte, um versehentliche Abbrüche zu verhindern (ärgerlich, wenn man gerade beim 7. Spieler war und alles nochmal eingeben muss ...)
+  - Das Ladeicon erscheint nun korrekt beim letzten Schritt nach der Auswahl der Religion des letzten Spielers
+- Ein Musikstück entfernt (Jason Shaw - The Assasins), welches nicht ganz zum Thema passte und ersetzt durch neues Lied für den Hintergrund (Strobotone - Medieval Theme 02)
+- Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
+- Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin.
+- Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun ein wenig Taler, um den Realismus etwas zu erhöhen
+- Der Betrag bei positiven sowie negativen finanziellen Ereignisse am Rundenende wurde ein wenig erhöht
+- Titelstufe von Fürst/Fürstin und Herzog/Herzogin vertauscht, um sie an den historischen Rang in Europa anzupassen
+
+### Korrekturen
+- Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können (ich konnte es zumindest nicht mehr reproduzieren).
+- Anzeigefehler beim Kartenspielen behoben, die Taleranzeige verschwand nach Bestätigung nicht direkt und konnte somit Text verdecken. Zusätzlich wird nun immer das Mindestgebot vorbelegt und nicht der Einsatz des letzten Spiels.
+- Nach dem manuellen Speichern des Spiels über das Menü im Kontor verschwindet der Button für das Beenden der Runde nun nicht mehr
+- Spielerstellung: 
+  - Wenn man mit ESC während der Spielerstellung einen Schritt zurück geht, bleibt das Spiel nach der Auswahl der Religion nicht mehr hängen
+  - Wenn man mit ESC die Schritte Stadtauswahl und Rohstoffauswahl mehrfach wiederholt, so wird die Talerstrafe von 150 Talern bei Stadtauswahl und 100 Talern bei Rohstoffauswahl nun im Hintergrund nicht mehr mehrfach abgezogen.
+  - Wenn man mit ESC eine Spielerstellung komplett abbricht, dann werden nun alle getätigten Einstellungen zu den Spielern zurückgesetzt und vermischen sich bei der erneuten Spielerstellung im Hintergrund nicht mit den neu angelegten Spielern. Dies konnte dazu führen, dass Spieler zu Beginn des Spiels mit Wohnsitzen in mehr als einer Stadt und Rohstoffrechten für mehr als einen Rohstoff gestartet sind.
+
 ## 1.4.4 - 24.12.2021
 
 ### Erweiterungen

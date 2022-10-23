@@ -1,4 +1,6 @@
-﻿# Conspiratio.WinForms
+﻿<a href="https://discord.gg/dxkC5DPgRY"><img src='https://discordapp.com/api/guilds/779755166017519666/widget.png?style=shield'></a>
+
+# Conspiratio.WinForms
 
 **Hinweis: Dieser Client wird nur noch sporadisch weiterentwickelt und damit voraussichtlich auch keine neuen großen Features mehr erhalten, nur noch Fehlerbehebungen. Stattdessen arbeiten wir an einem neuen Client mit Unity (Link folgt), der ebenfalls Open Source sein wird. Dazu suchen wir nach wie vor tatkräftige Unterstützung (Grafik, Programmierung, Musik/Sounds, Konzeption).**
 
@@ -83,3 +85,61 @@ Kompatibel mit: Visual Studio 2017, 2019
 ## Setup
 - Als dritte und hoffentlich vorerst letzte Versuch habe ich im Ordner "Conspiratio.Setup" ein Advanced Installer Projekt erstellt (Conspiratio.Setup.aip). Advanced Installer ist in der Grundversion kostenfrei und  sehr einfach zu bedienen, weshalb ich mich für dieses Tool entschieden habe: https://www.advancedinstaller.com/  
 Ausblick: Mit der "Professional" Version hätten wir sogar die Möglichkeit, das Update Tool von Advanced Installer zu nutzen und könnten den Spielern die Option geben, Updates von Conspiratio bequem automatisch herunterladen und installieren zu können, ohne weitere Eingriffe.
+
+## Musik und Sound Credits
+
+Wir benutzen ausschließlich freie Musik und Sounds und bedanken uns dafür bei:
+
+### Musik
+
+- [Jason Shaw](https://audionautix.com/) (Lizenz: [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0)) für
+  - Noel
+  - 30 Second Classical
+  - Tempting Fate
+  - The Deadly Year
+  - The Deadly Year
+  - The Talk
+  - Big Intro #2
+  - Enemy Ships
+  - Epic TV Theme
+  - Hero In Peril
+  - High Tension
+  - Imperial Morning
+  - Night Runner
+  - Remember The Heroes
+  - Stalking Prey
+  - Warfare Bed
+  - Pendulum Waltz
+  - Road To Kilcoo
+  - The Angels Weep
+  - Egyptian Crawl
+  - Temptation March
+  - Wheel Of Karma
+  - Parting Glass
+  - A Tall Ship
+  - Legends Of The River
+  - Renaissance
+  - Sundays Child
+  - The Master
+  - The Mighty Kingdom
+  - Triumphant Return
+  - Troubled Bridges
+  - Turkish Dance
+  - What Child Is This
+  - The Big Decision
+- [Strobotone](https://freemusicarchive.org/music/Strobotone/) (Lizenz: [Attribution-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nd/4.0)) für
+  - Medieval Theme 02
+
+### Sounds
+
+- [csmag](https://freesound.org/people/csmag/) (Lizenz: [Creative Commons 0 License](https://creativecommons.org/publicdomain/zero/1.0/))
+  - Synth1 Bongo-01.wav
+  - Synth1 Bongo-02.wav
+- [BraveFrog](https://freesound.org/people/BraveFrog/) (Lizenz: [Creative Commons 0 License](https://creativecommons.org/publicdomain/zero/1.0/))
+  - coins.wav
+- [sarson](https://freesound.org/people/sarson/) (Lizenz: [Creative Commons 0 License](https://creativecommons.org/publicdomain/zero/1.0/))
+  - Arras.wav
+- [florian_reinke](https://freesound.org/people/florian_reinke/)
+  - click1.wav
+- [bevibeldesign](https://freesound.org/people/bevibeldesign/)
+  - Trumpet Fanfare

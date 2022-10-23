@@ -1,7 +1,9 @@
 Anmerkungen:
+
 	*) Minimale Auflösung: 1024 x 768
 
-	*) "Rechstklick" um fortzusetzen wenn das Bild "stecken bleibt"
+	*) "Rechtsklick" auf das aktive Fenster, um fortzusetzen, wenn das Bild "stecken bleibt" 
+		oder um das Fenster zu schließen
 
 	*) Wenn man sich im Kontor befindet, kann man mit der Escape Taste das 
 		Menü öffnen
@@ -38,3 +40,4 @@ Anmerkungen:
 	*) Ämter sind nicht vererblich
 	*) Titel sind vererblich
 	*) Savegames werden hier gespeichert: C:\Users\%Username%\AppData\Roaming\Conspiratio
+	*) Weitere Infos im Onlinewiki unter https://github.com/Conspiratio/Conspiratio.Wiki/wiki
