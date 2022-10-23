@@ -9143,6 +9143,12 @@ namespace Conspiratio
                         HauptmenueVerlassen();
                         await SpielerDatenLaden(false);
                     }
+                    else
+                    {
+                        // Dafür sorgen, dass möglicherweise bereits erstellte also gespeicherte Spieler wieder zurückgesetzt werden
+                        // (NeuInitialiseren wird in HauptmenueAusfuehren aufgerufen)
+                        HauptmenueAusfuehren();
+                    }
                 }
             }
             // Laden

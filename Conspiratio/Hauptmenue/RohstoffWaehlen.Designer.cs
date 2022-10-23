@@ -50,7 +50,7 @@ namespace Conspiratio
             this.btn_roh1.TabIndex = 205;
             this.btn_roh1.UseVisualStyleBackColor = false;
             this.btn_roh1.Click += new System.EventHandler(this.btn_roh1_Click);
-            this.btn_roh1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_roh1_MouseDown);
+            this.btn_roh1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RohstoffWaehlen_MouseDown);
             // 
             // btn_roh2
             // 
@@ -66,7 +66,7 @@ namespace Conspiratio
             this.btn_roh2.TabIndex = 206;
             this.btn_roh2.UseVisualStyleBackColor = false;
             this.btn_roh2.Click += new System.EventHandler(this.btn_roh2_Click);
-            this.btn_roh2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_roh2_MouseDown);
+            this.btn_roh2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RohstoffWaehlen_MouseDown);
             // 
             // ttRohstoffe
             // 

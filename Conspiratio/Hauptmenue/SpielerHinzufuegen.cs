@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
 
@@ -16,6 +17,14 @@ namespace Conspiratio
         private int _bildschirmBreite;
         private int _aktuellAktiverSpieler = 0;
         private int _anzahlAngelegteSpieler = 0;
+
+        private int _stadtIdAktuellerSpieler;
+        private int _rohstoffIdAktuellerSpieler;
+        private int _rohstoffPlatzAktuellerSpieler;
+        private int _abzugTalerWegenStadtwahl;
+        private int _abzugTalerWegenRohstoffwahl;
+        
+        private bool _escPressed = false;
 
         #region Konstruktor
         public SpielerHinzufuegen(bool nachtr)
@@ -128,6 +137,12 @@ namespace Conspiratio
                 btn_nsp_rohwaeh.Text = "Wählen";
                 btn_nsp_maen.Text = "Männlich";
 
+                _stadtIdAktuellerSpieler = 0;
+                _rohstoffIdAktuellerSpieler = 0;
+                _rohstoffPlatzAktuellerSpieler = 0;
+                _abzugTalerWegenStadtwahl = 0;
+                _abzugTalerWegenRohstoffwahl = 0;
+
                 #endregion
 
                 // Beginne mit dem Aufruf des ersten Schrittes, alle weiteren Schritte werden durch die Methoden selbst aufgerufen
@@ -154,53 +169,16 @@ namespace Conspiratio
         #endregion
 
         #region SpielerHinzufuegen_KeyPress
-        private async void SpielerHinzufuegen_KeyPress(object sender, KeyPressEventArgs e)
+        private void SpielerHinzufuegen_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Escape)  // Schritt zurück?
             {
                 CurStandardActive();
 
-                // Religion auswählen
-                if (lbl_nsp_religion.Visible)
-                {
-                    await ReligionAuswaehlenUmschalten(false);
-                    return;
-                }
+                _escPressed = true;
 
-                // Rohstoff auswählen
-                if (lbl_nsp_Rohstoff.Visible)
-                {
-                    await RohstoffAuswaehlenUmschalten(false);
-                    return;
-                }
-
-                // Stadt auswählen
-                if (lbl_nsp_Stadt.Visible)
-                {
-                    await StadtAuswaehlenUmschalten(false);
-                    return;
-                }
-
-                // Banner auswählen
-                if (lbl_nsp_Banner.Visible)
-                {
-                    await BannerAuswaehlenUmschalten(false);
-                    return;
-                }
-
-                // Geschlecht auswählen
-                if ((btn_nsp_maen.Enabled) && (btn_nsp_maen.Visible))
-                {
-                    await GeschlechtAuswaehlenUmschalten(false);
-                    return;
-                }
-
-                // Namen eingeben
-                if (txb_namenEingeben.Enabled)
-                {
-                    await NamenseingabeUmschalten(false);
-                    return;
-                }
+                tcsEnterdruck?.TrySetResult(true);
+                tcsButtonklick?.TrySetResult(true);
             }
         }
         #endregion
@@ -295,10 +273,11 @@ namespace Conspiratio
 
             if (SpE.getBoolKurzSpeicher() == false)
             {
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-SW.Statisch.GetNSPStadtwahlKosten());
+                _abzugTalerWegenStadtwahl = SW.Statisch.GetNSPStadtwahlKosten();
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-_abzugTalerWegenStadtwahl);
                 btn_nsp_stdzuf.Visible = false;
                 int sid = SpE.getIntKurzSpeicher();
-                hausXhinzufuegen(sid);
+                HausInStadtHinzufuegen(sid);
 
                 btn_nsp_stdwaeh.Text = "gewählt: " + SW.Dynamisch.GetStadtwithID(sid).GetGebietsName();
 
@@ -316,7 +295,7 @@ namespace Conspiratio
             btn_nsp_stdzuf.Visible = false;
             int randstd = SW.Statisch.Rnd.Next(1, SW.Statisch.GetMaxStadtID());
 
-            hausXhinzufuegen(randstd);
+            HausInStadtHinzufuegen(randstd);
 
             btn_nsp_stdwaeh.Text = "zufällig: " + SW.Dynamisch.GetStadtwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(randstd).GetStadtID()).GetGebietsName();
             btn_nsp_stdwaeh.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_stdwaeh.Width / 2;
@@ -367,44 +346,34 @@ namespace Conspiratio
 
         private void btn_nsp_rohwaeh_Click(object sender, EventArgs e)
         {
-            int sid = SpE.getIntKurzSpeicher();
             SpE.setBoolKurzSpeicher(false);
 
-            RohstoffWaehlen rsfw = new RohstoffWaehlen(SW.Dynamisch.GetStadtwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(sid).GetStadtID()).GetSingleRohstoff(1), SW.Dynamisch.GetStadtwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(sid).GetStadtID()).GetSingleRohstoff(2));
-            rsfw.ShowDialog();
+            RohstoffWaehlen rohstoffWaehlen = new RohstoffWaehlen(_stadtIdAktuellerSpieler);
+            rohstoffWaehlen.ShowDialog();
 
-            if (SpE.getBoolKurzSpeicher() == false)
+            if (rohstoffWaehlen.DialogResult == DialogResult.OK)
             {
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-SW.Statisch.GetNSPRohwahlKosten());
+                _abzugTalerWegenRohstoffwahl = SW.Statisch.GetNSPRohwahlKosten();
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-_abzugTalerWegenRohstoffwahl);
                 btn_nsp_rohzuf.Visible = false;
-                btn_nsp_rohwaeh.Text = "Gewählt: " + SW.Dynamisch.GetRohstoffwithID(SpE.getIntKurzSpeicher()).GetRohName();
+                btn_nsp_rohwaeh.Text = "Gewählt: " + SW.Dynamisch.GetRohstoffwithID(rohstoffWaehlen.GewaehlterRohstoffId).GetRohName();
 
-                //RohstoffrechteVerleihen(sid);
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetRohstoffrechteXZuY(SpE.getIntKurzSpeicher(), true);
+                RohstoffrechteVerleihenUndWerkstattSetzen(rohstoffWaehlen.GewaehlterRohstoffId, rohstoffWaehlen.GewaehlterRohstoffPlatz, _stadtIdAktuellerSpieler);
 
                 btn_nsp_rohwaeh.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rohwaeh.Width / 2;
                 btn_nsp_rohwaeh.Enabled = false;
                 tcsButtonklick?.TrySetResult(true);
             }
-            SpE.setBoolKurzSpeicher(false);
         }
 
         private void btn_nsp_rohzuf_Click(object sender, EventArgs e)
         {
-            int randroh = SW.Statisch.Rnd.Next(1, 3);
-
-            int sid = SpE.getIntKurzSpeicher();
-
-            int rohid = SW.Dynamisch.GetStadtwithID(sid).GetSingleRohstoff(randroh);
-            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(randroh, sid).SetRohstoffID(rohid);
-            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(randroh, sid).SetSkillX(1, SW.Statisch.GetStartLagerraum()); //Startlagerraum
-            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(randroh, sid).SetEnabled(true);
-
+            int randomPlatz = SW.Statisch.Rnd.Next(1, 3);
+            int rohid = SW.Dynamisch.GetStadtwithID(_stadtIdAktuellerSpieler).GetSingleRohstoff(randomPlatz);
 
             btn_nsp_rohzuf.Visible = false;
 
-            //Rohstoffrechte verleihen
-            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetRohstoffrechteXZuY(rohid, true);
+            RohstoffrechteVerleihenUndWerkstattSetzen(rohid, randomPlatz, _stadtIdAktuellerSpieler);
 
             btn_nsp_rohwaeh.Text = "zufällig: " + SW.Dynamisch.GetRohstoffwithID(rohid).GetRohName();
             btn_nsp_rohwaeh.Top = lbl_nsp_Rohstoff.Top + 50;
@@ -515,48 +484,36 @@ namespace Conspiratio
 
 
         #region NamenseingabeUmschalten
-        private async Task NamenseingabeUmschalten(bool Visible = true)
+        private async Task NamenseingabeUmschalten()
         {
-            if (Visible)
-            {
-                label1.Text = "Spieler hinzufügen - Abbrechen mit ESC";
+            label1.Text = "Spieler hinzufügen - Abbrechen mit ESC";
 
-                lbl_nsp_name.Left = UI.NormB(145, Width, _bildschirmBreite);
-                lbl_nsp_name.Top = UI.NormH(163, Height, _bildschirmHoehe);
-                
-                if (_nachtraeglich)
-                    lbl_nsp_name.Text = $"Spielernamen eingeben:";
-                else
-                    lbl_nsp_name.Text = $"Spieler{_anzahlAngelegteSpieler + 1} Namen eingeben:";
-                
-                txb_namenEingeben.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - txb_namenEingeben.Width / 2;
-                txb_namenEingeben.Top = UI.NormH(209, Height, _bildschirmHoehe);
-                lbl_nsp_name.Visible = true;
-                txb_namenEingeben.Visible = true;
-                txb_namenEingeben.Enabled = true;
-                txb_namenEingeben.ReadOnly = false;
+            lbl_nsp_name.Left = UI.NormB(145, Width, _bildschirmBreite);
+            lbl_nsp_name.Top = UI.NormH(163, Height, _bildschirmHoehe);
 
-                string nam = "";
-                txb_namenEingeben.Focus();
-
-                await AufEnterdruckWarten();
-                Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
-                txb_namenEingeben.Enabled = false;
-                nam = txb_namenEingeben.Text;
-
-                int verbleibendeJahre = SW.Statisch.Rnd.Next(SW.Statisch.GetHumminVerblJahre(), SW.Statisch.GetHummaxVerblJahre());
-
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTaler(SW.Statisch.GetStartgold());
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nam);
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(verbleibendeJahre);
-
-                await GeschlechtAuswaehlenUmschalten();
-            }
+            if (_nachtraeglich)
+                lbl_nsp_name.Text = $"Spielernamen eingeben:";
             else
+                lbl_nsp_name.Text = $"Spieler{_anzahlAngelegteSpieler + 1} Namen eingeben:";
+
+            txb_namenEingeben.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - txb_namenEingeben.Width / 2;
+            txb_namenEingeben.Top = UI.NormH(209, Height, _bildschirmHoehe);
+            lbl_nsp_name.Visible = true;
+            txb_namenEingeben.Visible = true;
+            txb_namenEingeben.Enabled = true;
+            txb_namenEingeben.ReadOnly = false;
+            txb_namenEingeben.Focus();
+
+            await AufEnterdruckWarten();
+
+            if (_escPressed)  // Einen Schritt zurück gehen bzw. die Spielerstellung abbrechen
             {
+                _escPressed = false;
+
                 if (!_nachtraeglich &&  // Neues Spiel?
-                    SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?", "Ja", "Nein") != DialogResult.Yes)
+                SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?", "Ja", "Nein") != DialogResult.Yes)
                 {
+                    await NamenseingabeUmschalten();
                     return;
                 }
 
@@ -565,211 +522,236 @@ namespace Conspiratio
                 DialogResult = DialogResult.Cancel;
                 Close();
             }
+
+            Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
+            txb_namenEingeben.Enabled = false;
+            string nam = txb_namenEingeben.Text;
+
+            int verbleibendeJahre = SW.Statisch.Rnd.Next(SW.Statisch.GetHumminVerblJahre(), SW.Statisch.GetHummaxVerblJahre());
+
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTaler(SW.Statisch.GetStartgold());
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nam);
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(verbleibendeJahre);
+
+            await GeschlechtAuswaehlenUmschalten();
         }
         #endregion
 
         #region GeschlechtAuswaehlenUmschalten
-        private async Task GeschlechtAuswaehlenUmschalten(bool Visible = true)
+        private async Task GeschlechtAuswaehlenUmschalten()
         {
-            if (Visible)
+            label1.Text = "Spieler hinzufügen - Zurück mit ESC";
+
+            lbl_nsp_Geschlecht.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - lbl_nsp_Geschlecht.Width / 2;
+            lbl_nsp_Geschlecht.Top = UI.NormH(291, Height, _bildschirmHoehe);
+
+            txb_namenEingeben.ReadOnly = true;
+            lbl_nsp_Geschlecht.Visible = true;
+
+            btn_nsp_maen.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_maen.Width / 2;
+            btn_nsp_maen.Top = UI.NormH(345, Height, _bildschirmHoehe);
+            btn_nsp_maen.Text = "Männlich";
+            btn_nsp_maen.Enabled = true;
+            btn_nsp_maen.Visible = true;
+
+            btn_nsp_weib.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_weib.Width / 2;
+            btn_nsp_weib.Top = UI.NormH(387, Height, _bildschirmHoehe);
+            btn_nsp_weib.Visible = true;
+            Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
+
+            await AufButtonKlickWarten();
+
+            if (_escPressed)  // Einen Schritt zurück gehen
             {
-                label1.Text = "Spieler hinzufügen - Zurück mit ESC";
+                _escPressed = false;
 
-                lbl_nsp_Geschlecht.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - lbl_nsp_Geschlecht.Width / 2;
-                lbl_nsp_Geschlecht.Top = UI.NormH(291, Height, _bildschirmHoehe);
-
-                txb_namenEingeben.ReadOnly = true;
-                lbl_nsp_Geschlecht.Visible = true;
-
-                btn_nsp_maen.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_maen.Width / 2;
-                btn_nsp_maen.Top = UI.NormH(345, Height, _bildschirmHoehe);
-                btn_nsp_maen.Text = "Männlich";
-                btn_nsp_maen.Enabled = true;
-                btn_nsp_maen.Visible = true;
-
-                btn_nsp_weib.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_weib.Width / 2;
-                btn_nsp_weib.Top = UI.NormH(387, Height, _bildschirmHoehe);
-                btn_nsp_weib.Visible = true;
-                Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
-
-                await AufButtonKlickWarten();
-
-                await BannerAuswaehlenUmschalten();
-            }
-            else
-            {
                 lbl_nsp_Geschlecht.Visible = false;
                 btn_nsp_maen.Visible = false;
                 btn_nsp_weib.Visible = false;
 
                 await NamenseingabeUmschalten();
+                return;
             }
+
+            await BannerAuswaehlenUmschalten();
         }
         #endregion
 
         #region BannerAuswaehlenUmschalten
-        private async Task BannerAuswaehlenUmschalten(bool Visible = true)
+        private async Task BannerAuswaehlenUmschalten()
         {
-            if (Visible)
+            lbl_nsp_Banner.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - lbl_nsp_Banner.Width / 2;
+            lbl_nsp_Banner.Top = UI.NormH(484, Height, _bildschirmHoehe);
+
+            btn_nsp_ban1.Top = UI.NormH(554, Height, _bildschirmHoehe);
+            btn_nsp_ban2.Top = btn_nsp_ban1.Top;
+            btn_nsp_ban3.Top = btn_nsp_ban1.Top;
+            btn_nsp_ban4.Top = btn_nsp_ban1.Top;
+            btn_nsp_ban5.Top = btn_nsp_ban1.Top;
+            btn_nsp_ban6.Top = btn_nsp_ban1.Top;
+            btn_nsp_ban7.Top = btn_nsp_ban1.Top;
+
+            btn_nsp_ban8.Top = UI.NormH(616, Height, _bildschirmHoehe);
+            btn_nsp_ban9.Top = btn_nsp_ban8.Top;
+            btn_nsp_ban10.Top = btn_nsp_ban8.Top;
+            btn_nsp_ban11.Top = btn_nsp_ban8.Top;
+            btn_nsp_ban12.Top = btn_nsp_ban8.Top;
+            btn_nsp_ban13.Top = btn_nsp_ban8.Top;
+            btn_nsp_ban14.Top = btn_nsp_ban8.Top;
+            lbl_nsp_Banner.Visible = true;
+
+            int btnabstand = 6;
+            btnabstand = UI.NormB(btnabstand, Width, _bildschirmBreite);
+            btn_nsp_ban4.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_ban4.Width / 2;
+            btn_nsp_ban5.Left = btn_nsp_ban4.Right + btnabstand;
+            btn_nsp_ban6.Left = btn_nsp_ban5.Right + btnabstand;
+            btn_nsp_ban7.Left = btn_nsp_ban6.Right + btnabstand;
+            btn_nsp_ban3.Left = btn_nsp_ban4.Left - btn_nsp_ban3.Width - btnabstand;
+            btn_nsp_ban2.Left = btn_nsp_ban3.Left - btn_nsp_ban2.Width - btnabstand;
+            btn_nsp_ban1.Left = btn_nsp_ban2.Left - btn_nsp_ban1.Width - btnabstand;
+
+            btn_nsp_ban11.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_ban11.Width / 2;
+            btn_nsp_ban12.Left = btn_nsp_ban11.Right + btnabstand;
+            btn_nsp_ban13.Left = btn_nsp_ban12.Right + btnabstand;
+            btn_nsp_ban14.Left = btn_nsp_ban13.Right + btnabstand;
+            btn_nsp_ban10.Left = btn_nsp_ban11.Left - btn_nsp_ban10.Width - btnabstand;
+            btn_nsp_ban9.Left = btn_nsp_ban10.Left - btn_nsp_ban9.Width - btnabstand;
+            btn_nsp_ban8.Left = btn_nsp_ban9.Left - btn_nsp_ban8.Width - btnabstand;
+
+            alleBannerEinblenden(true, 0);
+            Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
+
+            await AufButtonKlickWarten();
+
+            if (_escPressed)  // Einen Schritt zurück gehen
             {
-                lbl_nsp_Banner.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - lbl_nsp_Banner.Width / 2;
-                lbl_nsp_Banner.Top = UI.NormH(484, Height, _bildschirmHoehe);
+                _escPressed = false;
 
-                btn_nsp_ban1.Top = UI.NormH(554, Height, _bildschirmHoehe);
-                btn_nsp_ban2.Top = btn_nsp_ban1.Top;
-                btn_nsp_ban3.Top = btn_nsp_ban1.Top;
-                btn_nsp_ban4.Top = btn_nsp_ban1.Top;
-                btn_nsp_ban5.Top = btn_nsp_ban1.Top;
-                btn_nsp_ban6.Top = btn_nsp_ban1.Top;
-                btn_nsp_ban7.Top = btn_nsp_ban1.Top;
-
-                btn_nsp_ban8.Top = UI.NormH(616, Height, _bildschirmHoehe);
-                btn_nsp_ban9.Top = btn_nsp_ban8.Top;
-                btn_nsp_ban10.Top = btn_nsp_ban8.Top;
-                btn_nsp_ban11.Top = btn_nsp_ban8.Top;
-                btn_nsp_ban12.Top = btn_nsp_ban8.Top;
-                btn_nsp_ban13.Top = btn_nsp_ban8.Top;
-                btn_nsp_ban14.Top = btn_nsp_ban8.Top;
-                lbl_nsp_Banner.Visible = true;
-
-                int btnabstand = 6;
-                btnabstand = UI.NormB(btnabstand, Width, _bildschirmBreite);
-                btn_nsp_ban4.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_ban4.Width / 2;
-                btn_nsp_ban5.Left = btn_nsp_ban4.Right + btnabstand;
-                btn_nsp_ban6.Left = btn_nsp_ban5.Right + btnabstand;
-                btn_nsp_ban7.Left = btn_nsp_ban6.Right + btnabstand;
-                btn_nsp_ban3.Left = btn_nsp_ban4.Left - btn_nsp_ban3.Width - btnabstand;
-                btn_nsp_ban2.Left = btn_nsp_ban3.Left - btn_nsp_ban2.Width - btnabstand;
-                btn_nsp_ban1.Left = btn_nsp_ban2.Left - btn_nsp_ban1.Width - btnabstand;
-
-                btn_nsp_ban11.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - btn_nsp_ban11.Width / 2;
-                btn_nsp_ban12.Left = btn_nsp_ban11.Right + btnabstand;
-                btn_nsp_ban13.Left = btn_nsp_ban12.Right + btnabstand;
-                btn_nsp_ban14.Left = btn_nsp_ban13.Right + btnabstand;
-                btn_nsp_ban10.Left = btn_nsp_ban11.Left - btn_nsp_ban10.Width - btnabstand;
-                btn_nsp_ban9.Left = btn_nsp_ban10.Left - btn_nsp_ban9.Width - btnabstand;
-                btn_nsp_ban8.Left = btn_nsp_ban9.Left - btn_nsp_ban8.Width - btnabstand;
-
-                alleBannerEinblenden(true, 0);
-                Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
-
-                await AufButtonKlickWarten();
-
-                await StadtAuswaehlenUmschalten();
-            }
-            else
-            {
                 lbl_nsp_Banner.Visible = false;
                 alleBannerEinblenden(false, 0);
 
                 await GeschlechtAuswaehlenUmschalten();
+                return;
             }
+
+            await StadtAuswaehlenUmschalten();
         }
         #endregion
 
         #region StadtAuswaehlenUmschalten
-        private async Task StadtAuswaehlenUmschalten(bool Visible = true)
+        private async Task StadtAuswaehlenUmschalten()
         {
-            if (Visible)
+            lbl_nsp_Stadt.Top = lbl_nsp_name.Top;
+            lbl_nsp_Stadt.Left = UI.NormB(692, Width, _bildschirmBreite);
+            lbl_nsp_Stadt.Visible = true;
+
+            btn_nsp_stdwaeh.Top = lbl_nsp_Stadt.Top + 50;
+            btn_nsp_stdwaeh.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_stdwaeh.Width / 2;
+            btn_nsp_stdwaeh.Enabled = true;
+            btn_nsp_stdwaeh.Text = "Wählen";
+            btn_nsp_stdwaeh.Visible = true;
+
+            btn_nsp_stdzuf.Top = btn_nsp_stdwaeh.Top + 50;
+            btn_nsp_stdzuf.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_stdzuf.Width / 2;
+            btn_nsp_stdzuf.Visible = true;
+            Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
+
+            await AufButtonKlickWarten();
+
+            if (_escPressed)  // Einen Schritt zurück gehen
             {
-                lbl_nsp_Stadt.Top = lbl_nsp_name.Top;
-                lbl_nsp_Stadt.Left = UI.NormB(692, Width, _bildschirmBreite);
-                lbl_nsp_Stadt.Visible = true;
+                _escPressed = false;
 
-                btn_nsp_stdwaeh.Top = lbl_nsp_Stadt.Top + 50;
-                btn_nsp_stdwaeh.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_stdwaeh.Width / 2;
-                btn_nsp_stdwaeh.Enabled = true;
-                btn_nsp_stdwaeh.Text = "Wählen";
-                btn_nsp_stdwaeh.Visible = true;
-
-                btn_nsp_stdzuf.Top = btn_nsp_stdwaeh.Top + 50;
-                btn_nsp_stdzuf.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_stdzuf.Width / 2;
-                btn_nsp_stdzuf.Visible = true;
-                Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
-
-                await AufButtonKlickWarten();
-
-                await RohstoffAuswaehlenUmschalten();
-            }
-            else
-            {
                 lbl_nsp_Stadt.Visible = false;
                 btn_nsp_stdwaeh.Visible = false;
                 btn_nsp_stdzuf.Visible = false;
 
                 await BannerAuswaehlenUmschalten();
+                return;
             }
+
+            await RohstoffAuswaehlenUmschalten();
         }
         #endregion
 
         #region RohstoffAuswaehlenUmschalten
-        private async Task RohstoffAuswaehlenUmschalten(bool Visible = true)
+        private async Task RohstoffAuswaehlenUmschalten()
         {
-            if (Visible)
+            lbl_nsp_Rohstoff.Top = UI.NormH(327, Height, _bildschirmHoehe);
+            lbl_nsp_Rohstoff.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - lbl_nsp_Rohstoff.Width / 2;
+            lbl_nsp_Rohstoff.Visible = true;
+
+            btn_nsp_rohwaeh.Top = UI.NormH(376, Height, _bildschirmHoehe);
+            btn_nsp_rohwaeh.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rohwaeh.Width / 2;
+            btn_nsp_rohwaeh.Enabled = true;
+            btn_nsp_rohwaeh.Text = "Wählen";
+            btn_nsp_rohwaeh.Visible = true;
+
+            btn_nsp_rohzuf.Top = UI.NormH(418, Height, _bildschirmHoehe);
+            btn_nsp_rohzuf.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rohzuf.Width / 2;
+            btn_nsp_rohzuf.Visible = true;
+            Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
+
+            await AufButtonKlickWarten();
+
+            if (_escPressed)  // Einen Schritt zurück gehen
             {
-                lbl_nsp_Rohstoff.Top = UI.NormH(327, Height, _bildschirmHoehe);
-                lbl_nsp_Rohstoff.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - lbl_nsp_Rohstoff.Width / 2;
-                lbl_nsp_Rohstoff.Visible = true;
+                _escPressed = false;
 
-                btn_nsp_rohwaeh.Top = UI.NormH(376, Height, _bildschirmHoehe);
-                btn_nsp_rohwaeh.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rohwaeh.Width / 2;
-                btn_nsp_rohwaeh.Enabled = true;
-                btn_nsp_rohwaeh.Text = "Wählen";
-                btn_nsp_rohwaeh.Visible = true;
-
-                btn_nsp_rohzuf.Top = UI.NormH(418, Height, _bildschirmHoehe);
-                btn_nsp_rohzuf.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rohzuf.Width / 2;
-                btn_nsp_rohzuf.Visible = true;
-                Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
-
-                await AufButtonKlickWarten();
-
-                await ReligionAuswaehlenUmschalten();
-            }
-            else
-            {
                 lbl_nsp_Rohstoff.Visible = false;
                 btn_nsp_rohwaeh.Visible = false;
                 btn_nsp_rohzuf.Visible = false;
 
+                // Vorheriger Abzug der Taler für die Stadtwahl (sofern vorhanden) wieder auf die Taler des aktiven Spielers addieren
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(_abzugTalerWegenStadtwahl);
+                _abzugTalerWegenStadtwahl = 0;
+
                 await StadtAuswaehlenUmschalten();
+                return;
             }
+
+            await ReligionAuswaehlenUmschalten();
         }
         #endregion
 
         #region ReligionAuswaehlenUmschalten
         private async Task ReligionAuswaehlenUmschalten(bool Visible = true)
         {
-            if (Visible)
+            lbl_nsp_religion.Top = UI.NormH(484, Height, _bildschirmHoehe);
+            lbl_nsp_religion.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - lbl_nsp_religion.Width / 2;
+            lbl_nsp_religion.Visible = true;
+
+            btn_nsp_rel1.Top = UI.NormH(554, Height, _bildschirmHoehe);
+            btn_nsp_rel1.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rel1.Width - UI.NormB(6, Width, _bildschirmBreite);
+            btn_nsp_rel1.Enabled = true;
+            btn_nsp_rel1.Visible = true;
+
+            btn_nsp_rel2.Top = btn_nsp_rel1.Top;
+            btn_nsp_rel2.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 + UI.NormB(6, Width, _bildschirmBreite);
+            btn_nsp_rel2.Enabled = true;
+            btn_nsp_rel2.Visible = true;
+            Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
+
+            await AufButtonKlickWarten();
+
+            if (_escPressed)  // Einen Schritt zurück gehen
             {
-                lbl_nsp_religion.Top = UI.NormH(484, Height, _bildschirmHoehe);
-                lbl_nsp_religion.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - lbl_nsp_religion.Width / 2;
-                lbl_nsp_religion.Visible = true;
+                _escPressed = false;
 
-                btn_nsp_rel1.Top = UI.NormH(554, Height, _bildschirmHoehe);
-                btn_nsp_rel1.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 - btn_nsp_rel1.Width - UI.NormB(6, Width, _bildschirmBreite);
-                btn_nsp_rel1.Enabled = true;
-                btn_nsp_rel1.Visible = true;
-
-                btn_nsp_rel2.Top = btn_nsp_rel1.Top;
-                btn_nsp_rel2.Left = lbl_nsp_Stadt.Left + lbl_nsp_Stadt.Width / 2 + UI.NormB(6, Width, _bildschirmBreite);
-                btn_nsp_rel2.Enabled = true;
-                btn_nsp_rel2.Visible = true;
-                Focus();  // Das scheint notwendig zu sein, damit KeyPress (für ESC) im Fenster gefeuert wird
-
-                await AufButtonKlickWarten();
-
-                _finished = true;
-                _anzahlAngelegteSpieler++;
-            }
-            else
-            {
                 lbl_nsp_religion.Visible = false;
                 btn_nsp_rel1.Visible = false;
                 btn_nsp_rel2.Visible = false;
 
+                // Vorheriger Abzug der Taler für die Rohstoffwahl (sofern vorhanden) wieder auf die Taler des aktiven Spielers addieren
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(_abzugTalerWegenRohstoffwahl);
+                _abzugTalerWegenRohstoffwahl = 0;
+
                 await RohstoffAuswaehlenUmschalten();
+                return;
             }
+
+            _finished = true;
+            _anzahlAngelegteSpieler++;
         }
         #endregion
 
@@ -821,11 +803,55 @@ namespace Conspiratio
         }
         #endregion
 
-        #region hausXhinzufuegen
-        private void hausXhinzufuegen(int stadtid)
+        #region HausInStadtHinzufuegen
+        private void HausInStadtHinzufuegen(int stadtId)
         {
-            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(stadtid).SetHausID(SW.Statisch.GetStartHausID());
-            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(stadtid).SetStadtID(stadtid);
+            // Prüfen, ob der aktive Spieler bereits eine Stadt über ein Haus zugewiesen hatte. Wenn ja, das Haus wieder löschen (zurücksetzen)
+            if (_stadtIdAktuellerSpieler != 0 &&
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtIdAktuellerSpieler).GetHausID() > 0)
+            {
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtIdAktuellerSpieler).SetHausID(0);
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtIdAktuellerSpieler).SetStadtID(0);
+            }
+
+            _stadtIdAktuellerSpieler = stadtId;
+            
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(stadtId).SetHausID(SW.Statisch.GetStartHausID());
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(stadtId).SetStadtID(stadtId);
+        }
+        #endregion
+
+        #region RohstoffrechteVerleihen
+        private void RohstoffrechteVerleihenUndWerkstattSetzen(int rohstoffId, int platz, int stadtId)
+        {
+            // Prüfen, ob der aktive Spieler bereits ein Rohstoffrecht zugewiesen hatte. Wenn ja, dieses löschen
+            if (_rohstoffIdAktuellerSpieler != 0 &&
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetRohstoffrechteX(_rohstoffIdAktuellerSpieler))
+            {
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetRohstoffrechteXZuY(_rohstoffIdAktuellerSpieler, false);
+            }
+
+            // Prüfen, ob der aktive Spieler bereits eine Werkstatt für irgendeinen Rohstoff zugewiesen hatte. Wenn ja, diese Werstatt löschen (zurücksetzen)
+            if (_rohstoffPlatzAktuellerSpieler != 0)
+            {
+                for (int i = 1; i < SW.Statisch.GetMaxStadtID(); i++)
+                {
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(_rohstoffPlatzAktuellerSpieler, i).GetEnabled())
+                    {
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(_rohstoffPlatzAktuellerSpieler, i).SetRohstoffID(0);
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(_rohstoffPlatzAktuellerSpieler, i).SetSkillX(1, 0);  // Lagerraum zurücksetzen
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(_rohstoffPlatzAktuellerSpieler, i).SetEnabled(false);
+                    }
+                }
+            }
+            
+            _rohstoffIdAktuellerSpieler = rohstoffId;
+            _rohstoffPlatzAktuellerSpieler = platz;
+
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(platz, stadtId).SetRohstoffID(rohstoffId);
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(platz, stadtId).SetSkillX(1, SW.Statisch.GetStartLagerraum());  // Startlagerraum
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(platz, stadtId).SetEnabled(true);
+            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetRohstoffrechteXZuY(rohstoffId, true);
         }
         #endregion
     }
