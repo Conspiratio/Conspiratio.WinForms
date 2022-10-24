@@ -270,24 +270,6 @@ namespace Conspiratio
                 txb_namenEingeben.Text = txb_namenEingeben.Text.Substring(0, maxlen);
                 txb_namenEingeben.Select(txb_namenEingeben.Text.Length, 0);
             }
-
-            if (txb_namenEingeben.Text.Contains(" ") == true)
-            {
-                for (int i = 0; i < txb_namenEingeben.Text.Length; i++)
-                {
-                    if (txb_namenEingeben.Text.Substring(i, 1) == " ")
-                    {
-                        string s1 = txb_namenEingeben.Text.Substring(0, i);
-                        string s2 = "";
-                        if ((txb_namenEingeben.Text.Length - 1) > (i + 1))
-                        {
-                            s2 = txb_namenEingeben.Text.Substring(i + 1, txb_namenEingeben.Text.Length - i - 1);
-                        }
-                        txb_namenEingeben.Text = s1 + s2;
-                        txb_namenEingeben.Select(txb_namenEingeben.Text.Length, 0);
-                    }
-                }
-            }
         }
         #endregion
 
