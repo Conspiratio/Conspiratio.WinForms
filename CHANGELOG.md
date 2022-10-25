@@ -27,6 +27,7 @@
   - Wenn man mit ESC während der Spielerstellung einen Schritt zurück geht, bleibt das Spiel nach der Auswahl der Religion nicht mehr hängen
   - Wenn man mit ESC die Schritte Stadtauswahl und Rohstoffauswahl mehrfach wiederholt, so wird die Talerstrafe von 150 Talern bei Stadtauswahl und 100 Talern bei Rohstoffauswahl nun im Hintergrund nicht mehr mehrfach abgezogen.
   - Wenn man mit ESC eine Spielerstellung komplett abbricht, dann werden nun alle getätigten Einstellungen zu den Spielern zurückgesetzt und vermischen sich bei der erneuten Spielerstellung im Hintergrund nicht mit den neu angelegten Spielern. Dies konnte dazu führen, dass Spieler zu Beginn des Spiels mit Wohnsitzen in mehr als einer Stadt und Rohstoffrechten für mehr als einen Rohstoff gestartet sind.
+- Im Hauptmenü wird der Klicksound jetzt nur noch abgespielt, wenn man auch einen Button drückt und nicht mehr bei jedem Klick (egal wohin)
 
 ## 1.4.4 - 24.12.2021
 

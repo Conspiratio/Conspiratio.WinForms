@@ -1357,7 +1357,8 @@ namespace Conspiratio
                     {
                         if (e.Button == MouseButtons.Left)
                         {
-                            C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
+                            if (marked_einzelspieler || marked_tutorial || marked_optionen || marked_credits || marked_beenden)
+                                C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
 
                             if (marked_einzelspieler)
                             {
