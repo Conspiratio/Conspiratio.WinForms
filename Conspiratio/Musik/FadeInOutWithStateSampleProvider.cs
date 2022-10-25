@@ -94,7 +94,7 @@ namespace Conspiratio.Musik
                     // clear out the end
                     ClearBuffer(buffer, sample + offset, sourceSamplesRead - sample);
 
-                    FadeFinished(fadeState);  // eigenes Event auslösen
+                    FadeFinished(fadeState);  // trigger own event
                     break;
                 }
             }
@@ -116,7 +116,7 @@ namespace Conspiratio.Musik
                     fadeState = FadeState.FullVolume;
                     // no need to multiply any more
 
-                    FadeFinished(fadeState);  // eigenes Event auslösen
+                    FadeFinished(fadeState);  // trigger own event
                     break;
                 }
             }
