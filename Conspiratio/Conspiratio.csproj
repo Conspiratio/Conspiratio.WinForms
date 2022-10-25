@@ -146,6 +146,8 @@
     </Compile>
     <Compile Include="Allgemein\Kryptographie.cs" />
     <Compile Include="Musik\FadeInOutWithStateSampleProvider.cs" />
+    <Compile Include="Musik\QueuedSound.cs" />
+    <Compile Include="Musik\SoundQueuePlayer.cs" />
     <Compile Include="Privilegien\frmFestGeben.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,7 +172,7 @@
     <Compile Include="Hauptmenue\frmEinstellungen.Designer.cs">
       <DependentUpon>frmEinstellungen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Musik\C_Musik.cs" />
+    <Compile Include="Musik\MusicAndSoundPlayer.cs" />
     <Compile Include="Hauptmenue\NetzwerkspielStarten.cs">
       <SubType>Form</SubType>
     </Compile>

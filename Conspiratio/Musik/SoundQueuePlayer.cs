@@ -63,15 +63,16 @@ namespace Conspiratio.Musik
             IWavePlayer wavePlayerSoundFromQueue = new WaveOutEvent();
 
             if (soundQueue.Count <= 1)
-                wavePlayerSoundFromQueue.PlaybackStopped += wavePlayerSoundFromQueue_LastSound_PlaybackStopped;
+                wavePlayerSoundFromQueue.PlaybackStopped += WavePlayerSoundFromQueue_LastSound_PlaybackStopped;
             else
-                wavePlayerSoundFromQueue.PlaybackStopped += wavePlayerSoundFromQueue_PlaybackStopped;
+                wavePlayerSoundFromQueue.PlaybackStopped += WavePlayerSoundFromQueue_PlaybackStopped;
 
             WaveStream sourceStreamSounds = new WaveFileReader(sound);
-            WaveChannel32 inputStreamSounds = new WaveChannel32(sourceStreamSounds);
-
-            inputStreamSounds.Volume = (float)Convert.ToDouble(volumeInPercent) / 100;
-            inputStreamSounds.PadWithZeroes = false;
+            WaveChannel32 inputStreamSounds = new WaveChannel32(sourceStreamSounds)
+            {
+                Volume = (float)Convert.ToDouble(volumeInPercent) / 100,
+                PadWithZeroes = false
+            };
 
             var lengthOfSound = inputStreamSounds.TotalTime;
 
@@ -81,7 +82,7 @@ namespace Conspiratio.Musik
             return lengthOfSound;
         }
 
-        private void wavePlayerSoundFromQueue_PlaybackStopped(object sender, StoppedEventArgs e)
+        private void WavePlayerSoundFromQueue_PlaybackStopped(object sender, StoppedEventArgs e)
         {
             if (sender is WaveOutEvent)
             {
@@ -93,9 +94,9 @@ namespace Conspiratio.Musik
             }
         }
 
-        private void wavePlayerSoundFromQueue_LastSound_PlaybackStopped(object sender, StoppedEventArgs e)
+        private void WavePlayerSoundFromQueue_LastSound_PlaybackStopped(object sender, StoppedEventArgs e)
         {
-            wavePlayerSoundFromQueue_PlaybackStopped(sender, e);
+            WavePlayerSoundFromQueue_PlaybackStopped(sender, e);
 
             // clean up timer
             if (_timerNextSound != null)

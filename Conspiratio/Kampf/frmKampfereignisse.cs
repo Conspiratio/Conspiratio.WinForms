@@ -5,19 +5,20 @@ using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Kampf;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Musik;
 
 namespace Conspiratio.Kampf
 {
     public partial class frmKampfereignisse : frmBasis
     {
-        private C_Musik foC_MusikInstanz = null;
+        private MusicAndSoundPlayer _musicPlayer = null;
 
         #region Konstruktor
-        public frmKampfereignisse(ref C_Musik oC_MusikInstanz)
+        public frmKampfereignisse(ref MusicAndSoundPlayer oC_MusikInstanz)
         {
             InitializeComponent();
 
-            foC_MusikInstanz = oC_MusikInstanz;
+            _musicPlayer = oC_MusikInstanz;
         }
         #endregion
 
@@ -118,12 +119,12 @@ namespace Conspiratio.Kampf
 
                 foreach (string Text in Texte)
                 {
-                    foC_MusikInstanz.MusikEinschieben_Kampf();
+                    _musicPlayer.MusikEinschieben_Kampf();
 
                     if (Text.Contains("Kampf entbrennt"))
-                        foC_MusikInstanz.PlaySound(Properties.Resources.kampf_loop);
+                        _musicPlayer.PlaySound(Properties.Resources.kampf_loop);
                     else if (Text.Contains("Triumph"))
-                        foC_MusikInstanz.StopSound();
+                        _musicPlayer.StopSound();
 
                     if (Text.Contains("|"))
                     {

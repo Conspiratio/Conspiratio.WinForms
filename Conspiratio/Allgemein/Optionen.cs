@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Hauptmenue;
+using Conspiratio.Musik;
 
 namespace Conspiratio
 {
@@ -10,10 +11,10 @@ namespace Conspiratio
     {
         private int hptm, beenden, sphinaus, sphinzu;
 
-        private C_Musik foC_MusikInstanz = null;
+        private MusicAndSoundPlayer _musicPlayer = null;
 
         #region Konstruktor
-        public Optionen(ref C_Musik oC_MusikInstanz)
+        public Optionen(ref MusicAndSoundPlayer musicPlayer)
         {
             InitializeComponent();
 
@@ -32,7 +33,7 @@ namespace Conspiratio
             sphinaus = 3;
             sphinzu = 4;
 
-            foC_MusikInstanz = oC_MusikInstanz;
+            _musicPlayer = musicPlayer;
         }
         #endregion
 
@@ -128,12 +129,12 @@ namespace Conspiratio
 
         private void btn_optionen_Click(object sender, EventArgs e)
         {
-            frmEinstellungen oEinstellungen = new frmEinstellungen(ref foC_MusikInstanz);
+            frmEinstellungen oEinstellungen = new frmEinstellungen(ref _musicPlayer);
             oEinstellungen.ShowDialog();
 
             if (Convert.ToBoolean(Properties.Settings.Default["Musik_ausschalten"]))
             {
-                foC_MusikInstanz.RequestStop();
+                _musicPlayer.RequestStop();
             }
         }
 

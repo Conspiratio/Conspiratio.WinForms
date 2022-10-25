@@ -3,22 +3,23 @@ using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Einstellungen;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Musik;
 
 namespace Conspiratio.Hauptmenue
 {
     public partial class frmEinstellungen : frmBasis
     {
-        private C_Musik foC_MusikInstanz = null;
+        private MusicAndSoundPlayer _musicPlayer = null;
 
         #region Konstruktor frmEinstellungen
-        public frmEinstellungen(ref C_Musik oC_MusikInstanz)
+        public frmEinstellungen(ref MusicAndSoundPlayer oC_MusikInstanz)
         {
             InitializeComponent();
 
             lbl_ueberschrift.Font = Grafik.GetStandardFont(Grafik.GetSchriftgRiesig());
             lbl_ueberschrift.Left = this.Width / 2 - lbl_ueberschrift.Width / 2;
 
-            foC_MusikInstanz = oC_MusikInstanz;
+            _musicPlayer = oC_MusikInstanz;
         }
         #endregion
 
@@ -82,7 +83,7 @@ namespace Conspiratio.Hauptmenue
         private void trb_musik_lautstaerke_Scroll(object sender, EventArgs e)
         {
             lbl_musik_lautstaerke.Text = "Musik Lautstärke - " + trb_musik_lautstaerke.Value + " %";
-            foC_MusikInstanz.MusikLautstaerke = trb_musik_lautstaerke.Value;
+            _musicPlayer.MusikLautstaerke = trb_musik_lautstaerke.Value;
         }
         #endregion
 
@@ -90,7 +91,7 @@ namespace Conspiratio.Hauptmenue
         private void trb_effekt_lautstaerke_Scroll(object sender, EventArgs e)
         {
             lbl_effekt_lautstaerke.Text = "Effekt Lautstärke - " + trb_effekt_lautstaerke.Value + " %";
-            foC_MusikInstanz.SoundLautstaerke = trb_effekt_lautstaerke.Value;
+            _musicPlayer.SoundLautstaerke = trb_effekt_lautstaerke.Value;
         }
         #endregion
 

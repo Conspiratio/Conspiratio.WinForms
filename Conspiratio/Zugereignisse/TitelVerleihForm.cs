@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Musik;
 
 namespace Conspiratio
 {
@@ -21,8 +22,9 @@ namespace Conspiratio
             lbl_text.Text = text;
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTitel(verltitelid);
 
-            C_Musik musik = new C_Musik();
-            musik.PlaySound(Properties.Resources.fanfare);
+            MusicAndSoundPlayer musicPlayer = new MusicAndSoundPlayer();
+            musicPlayer.PlaySound(Properties.Resources.fanfare);
+            // TODO: Sprachausgabe über SoundQueue
         }
         #endregion
 

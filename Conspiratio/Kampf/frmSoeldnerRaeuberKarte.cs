@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Musik;
 
 namespace Conspiratio.Kampf
 {
@@ -11,7 +12,7 @@ namespace Conspiratio.Kampf
     {
         #region Variablen
 
-        private C_Musik _sounds = new C_Musik();
+        private MusicAndSoundPlayer _sounds = new MusicAndSoundPlayer();
 
         int switch_case = 0;
         int vorige_switch_case = 0;
