@@ -25,6 +25,7 @@ using Conspiratio.Lib.Gameplay.Niederlassung;
 using Conspiratio.Lib.Gameplay.Privilegien.FestGeben;
 using Conspiratio.Lib.Gameplay.Schreibstube;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Musik;
 
 // Problem: Diese Types werden wohl nicht vom SerializationBinder aufgelöst sondern intern, was dann bei der Deserialisierung zu einer TypeLoadException führt, siehe auch: https://stackoverflow.com/a/55379118/13328804
 // Exceptiondetails (System.Exception {System.TypeLoadException}):
@@ -50,7 +51,7 @@ namespace Conspiratio
 
         #region Soundplayer
         
-        C_Musik C_MusikInstanz;
+        MusicAndSoundPlayer C_MusikInstanz;
 
         #endregion
 
@@ -217,7 +218,7 @@ namespace Conspiratio
             btn_runde_beenden.BackgroundImage = new Bitmap(Properties.Resources.SonstPergament);
             #endregion
 
-            C_MusikInstanz = new C_Musik();
+            C_MusikInstanz = new MusicAndSoundPlayer();
 
             #region Defines
 
@@ -1357,7 +1358,8 @@ namespace Conspiratio
                     {
                         if (e.Button == MouseButtons.Left)
                         {
-                            C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
+                            if (marked_einzelspieler || marked_tutorial || marked_optionen || marked_credits || marked_beenden)
+                                C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
 
                             if (marked_einzelspieler)
                             {
@@ -3211,7 +3213,7 @@ namespace Conspiratio
             }
 
             if (!bMusikEinschieben)
-                C_MusikInstanz.checkMusik();
+                C_MusikInstanz.CheckMusik();
 
             if (ortdatumAktualisieren)
             {

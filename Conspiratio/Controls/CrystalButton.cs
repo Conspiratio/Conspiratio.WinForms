@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using Conspiratio.Musik;
+
 namespace Conspiratio.Controls
 {
     public class CrystalButton: Button
     {
-        private C_Musik _sounds = new C_Musik();
+        private MusicAndSoundPlayer _sounds = new MusicAndSoundPlayer();
         private bool _checked = false;
 
         /// <summary>

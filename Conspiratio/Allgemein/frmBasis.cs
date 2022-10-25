@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conspiratio.Controls;
+using Conspiratio.Musik;
 
 namespace Conspiratio.Allgemein
 {
@@ -12,7 +13,7 @@ namespace Conspiratio.Allgemein
     {
         #region Variablen
 
-        private C_Musik _sounds = new C_Musik();
+        private MusicAndSoundPlayer _sounds = new MusicAndSoundPlayer();
 
         /// <summary>
         /// Globale Task Variable als auto implemented Property für Warten auf Rechtsklick

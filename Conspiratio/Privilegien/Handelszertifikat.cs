@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Musik;
 
 namespace Conspiratio
 {
@@ -66,8 +67,8 @@ namespace Conspiratio
 
             lbl_text.Text = "Aufgrund Eurer besonderen\nHandelserfolge wird Euch,\n" + SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetName() + ",\n ab heute gestattet, auch mit\n" + SW.Dynamisch.GetRohstoffwithID(rohid).GetRohName() + " zu handeln.\n \n" + text;
 
-            C_Musik musik = new C_Musik();
-            musik.PlaySound(Properties.Resources.fanfare);
+            MusicAndSoundPlayer musicPlayer = new MusicAndSoundPlayer();
+            musicPlayer.PlaySound(Properties.Resources.fanfare);
         }
         #endregion
 
