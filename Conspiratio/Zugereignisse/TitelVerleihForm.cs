@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -22,9 +24,18 @@ namespace Conspiratio
             lbl_text.Text = text;
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTitel(verltitelid);
 
-            MusicAndSoundPlayer musicPlayer = new MusicAndSoundPlayer();
-            musicPlayer.PlaySound(Properties.Resources.fanfare);
-            // TODO: Sprachausgabe über SoundQueue
+            Stream titelSound = Properties.Resources._42_Aart_Veder_Buerger;  // TODO: Anhand Titel ermitteln
+
+            SoundQueuePlayer player = new SoundQueuePlayer();
+            List<QueuedSound> queue = new List<QueuedSound>
+            {
+                new QueuedSound(Properties.Resources.fanfare),
+                new QueuedSound(Properties.Resources._42_Aart_Veder_Wir_verfuegen_hiermit, SoundType.Voice, startMillisecondsEarlier: 5000),
+                new QueuedSound(titelSound, SoundType.Voice, startMillisecondsEarlier: 200),
+                new QueuedSound(Properties.Resources._42_Aart_Veder_nennen_duerft, SoundType.Voice, startMillisecondsEarlier: 150)
+            };
+            player.PlayAllSoundsFromQueue(queue);
+
         }
         #endregion
 

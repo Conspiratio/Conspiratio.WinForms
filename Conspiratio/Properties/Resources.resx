@@ -727,4 +727,70 @@
   <data name="Song_Standard_Strobotone_Medieval_Theme_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Song_Standard_Strobotone_Medieval_Theme_02.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="_42_Aart_Veder_Baron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Baron.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Baronin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Baronin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Bin_ich_laut_genug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Bin_ich_laut_genug.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Buerger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Buerger.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Buergerin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Buergerin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Edelfrau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Edelfrau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Edelmann" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Edelmann.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Freifrau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Freifrau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Freiherr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Freiherr.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Fuerst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Fuerst.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Fuerstin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Fuerstin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Graefin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Graefin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Graf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Graf.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Herzog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Herzog.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Herzogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Herzogin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Hofdame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Hofdame.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Landfrau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Landfrau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Landherr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Landherr.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_nennen_duerft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_nennen_duerft.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_nennen_duerft_schnell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_nennen_duerft_schnell.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Ritter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Ritter.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_42_Aart_Veder_Wir_verfuegen_hiermit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\42_Aart Veder_Wir_verfuegen_hiermit.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
