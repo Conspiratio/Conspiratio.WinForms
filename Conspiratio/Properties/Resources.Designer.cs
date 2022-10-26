@@ -63,198 +63,171 @@ namespace Conspiratio.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Baron {
+        internal static System.IO.UnmanagedMemoryStream _31_bin_ich_laut_genug {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Baron", resourceCulture);
+                return ResourceManager.GetStream("_31_bin_ich_laut_genug", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Baronin {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_baron {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Baronin", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_baron", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Bin_ich_laut_genug {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_baronin {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Bin_ich_laut_genug", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_baronin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Buerger {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_buerger {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Buerger", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_buerger", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Buergerin {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_buergerin {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Buergerin", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_buergerin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Edelfrau {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_edelfrau {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Edelfrau", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_edelfrau", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Edelmann {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_edelmann {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Edelmann", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_edelmann", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Freifrau {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_freifrau {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Freifrau", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_freifrau", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Freiherr {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_freiherr {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Freiherr", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_freiherr", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Fuerst {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_fuerst {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Fuerst", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_fuerst", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Fuerstin {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_fuerstin {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Fuerstin", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_fuerstin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Graefin {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_graefin {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Graefin", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_graefin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Graf {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_graf {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Graf", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_graf", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Herzog {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_herzog {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Herzog", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_herzog", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Herzogin {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_herzogin {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Herzogin", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_herzogin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Hofdame {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_hofdame {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Hofdame", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_hofdame", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Landfrau {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_landfrau {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Landfrau", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_landfrau", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Landherr {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_landherr {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Landherr", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_landherr", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_nennen_duerft {
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_ritter {
             get {
-                return ResourceManager.GetStream("_42_Aart_Veder_nennen_duerft", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_nennen_duerft_schnell {
-            get {
-                return ResourceManager.GetStream("_42_Aart_Veder_nennen_duerft_schnell", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Ritter {
-            get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Ritter", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream _42_Aart_Veder_Wir_verfuegen_hiermit {
-            get {
-                return ResourceManager.GetStream("_42_Aart_Veder_Wir_verfuegen_hiermit", resourceCulture);
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_ritter", resourceCulture);
             }
         }
         

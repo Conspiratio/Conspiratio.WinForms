@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.CodeDom;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Gameplay.Privilegien.FestGeben;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Lib.Gameplay.Titel;
 using Conspiratio.Musik;
 
 namespace Conspiratio
@@ -24,16 +27,52 @@ namespace Conspiratio
             lbl_text.Text = text;
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTitel(verltitelid);
 
-            Stream titelSound = Properties.Resources._42_Aart_Veder_Buerger;  // TODO: Anhand Titel ermitteln
+            // Sound anhand Titel ermitteln
+            Stream titelSound;  
+            Adelstitel titel = SW.Statisch.GetTitelX(verltitelid);
+            bool maennlich = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich();
+
+            switch (titel.GetType().Name)
+            {
+                case nameof(Buerger):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_buerger : Properties.Resources._31_wir_verfuegen_hiermit_buergerin;
+                    break;
+                case nameof(Edelmann):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_edelmann : Properties.Resources._31_wir_verfuegen_hiermit_edelfrau;
+                    break;
+                case nameof(Ritter):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_ritter : Properties.Resources._31_wir_verfuegen_hiermit_hofdame;
+                    break;
+                case nameof(Landherr):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_landherr : Properties.Resources._31_wir_verfuegen_hiermit_landfrau;
+                    break;
+                case nameof(Freiherr):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_freiherr : Properties.Resources._31_wir_verfuegen_hiermit_freifrau;
+                    break;
+                case nameof(Baron):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_baron : Properties.Resources._31_wir_verfuegen_hiermit_baronin;
+                    break;
+                case nameof(Graf):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_graf : Properties.Resources._31_wir_verfuegen_hiermit_graefin;
+                    break;
+                case nameof(Herzog):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_herzog : Properties.Resources._31_wir_verfuegen_hiermit_herzogin;
+                    break;
+                case nameof(Fuerst):
+                    titelSound = maennlich ? Properties.Resources._31_wir_verfuegen_hiermit_fuerst : Properties.Resources._31_wir_verfuegen_hiermit_fuerstin;
+                    break;
+                default:
+                    titelSound = null;
+                    break;
+            }
 
             SoundQueuePlayer player = new SoundQueuePlayer();
-            List<QueuedSound> queue = new List<QueuedSound>
-            {
-                new QueuedSound(Properties.Resources.fanfare),
-                new QueuedSound(Properties.Resources._42_Aart_Veder_Wir_verfuegen_hiermit, SoundType.Voice, startMillisecondsEarlier: 5000),
-                new QueuedSound(titelSound, SoundType.Voice, startMillisecondsEarlier: 200),
-                new QueuedSound(Properties.Resources._42_Aart_Veder_nennen_duerft, SoundType.Voice, startMillisecondsEarlier: 150)
-            };
+            List<QueuedSound> queue = new List<QueuedSound>();
+            queue.Add(new QueuedSound(Properties.Resources.fanfare));
+
+            if (titelSound != null)
+                queue.Add(new QueuedSound(titelSound, SoundType.Voice, startMillisecondsEarlier: 5000));
+            
             player.PlayAllSoundsFromQueue(queue);
 
         }

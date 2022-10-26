@@ -41,7 +41,7 @@ namespace Conspiratio.Musik
                         VolumeInPercent = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]); ;
                         break;
                     case SoundType.Voice:
-                        VolumeInPercent = 85;  // TODO: get from new setting
+                        VolumeInPercent = 65;  // TODO: get from new setting
                         break;
                 }
             }

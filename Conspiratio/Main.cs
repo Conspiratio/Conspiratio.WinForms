@@ -1381,6 +1381,15 @@ namespace Conspiratio
                             {
                                 await SpielBeenden();
                             }
+
+                            // TODO: Nur ein Test!
+                            SoundQueuePlayer player = new SoundQueuePlayer();
+                            List<QueuedSound> queue = new List<QueuedSound>
+                            {
+                                new QueuedSound(Properties.Resources.fanfare),
+                                new QueuedSound(Properties.Resources._31_wir_verfuegen_hiermit_graf, SoundType.Voice, startMillisecondsEarlier: 5000),
+                            };
+                            player.PlayAllSoundsFromQueue(queue);
                         }
                         break;
                     }
