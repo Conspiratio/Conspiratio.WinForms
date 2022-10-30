@@ -11,16 +11,18 @@
   - Die Überschrift enthält auch bei allen nach dem ersten Spieler folgenden Spielern den Hinweis "Zurück mit ESC"
   - Vor dem Abbruch der gesamten Spielerstellung mit ESC wird man ab jetzt mit einer Meldung gefragt, ob man das wirklich möchte, um versehentliche Abbrüche zu verhindern (ärgerlich, wenn man gerade beim 7. Spieler war und alles nochmal eingeben muss ...)
   - Das Ladeicon erscheint nun korrekt beim letzten Schritt nach der Auswahl der Religion des letzten Spielers
-  - Im Spielernamen sind nun auch Leerzeichen erlaubt (es gibt jedoch nach wie vor eine Maximallänge von 12 Zeichen, um keine Anzeigefehler zu provozieren)
+  - Im Spielernamen sind nun auch Leerzeichen erlaubt, es gibt jedoch nach wie vor eine Maximallänge von 12 Zeichen, um keine Anzeigefehler zu provozieren (Danke an sknortsch für die Anregung)
 - Ein Musikstück entfernt (Jason Shaw - The Assasins), welches nicht ganz zum Thema passte und ersetzt durch neues Lied für den Hintergrund (Strobotone - Medieval Theme 02)
 - Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
 - Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin.
 - Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun ein wenig Taler, um den Realismus etwas zu erhöhen
 - Der Betrag bei positiven sowie negativen finanziellen Ereignisse am Rundenende wurde ein wenig erhöht
-- Titelstufe von Fürst/Fürstin und Herzog/Herzogin vertauscht, um sie an den historischen Rang in Europa anzupassen
+- Titelvergabe
+  - Die Vergabe von Titeln wurde neu balanciert und ist nun u.a. auch vom Wohnsitz sowie vom Besitz militärischer Stützpunkte abhängig, zusätzlich wurde die Talergrenze der höheren Titel herabgesetzt (Danke an DerEinzehnte für die Anregung). Details dazu im [Wiki (ACHTUNG SPOILER!)](https://github.com/Conspiratio/Conspiratio.Wiki/wiki/2.5-Titel).
+  - Titelstufe von Fürst/Fürstin und Herzog/Herzogin wurde vertauscht, um sie an den historischen Rang in Europa anzupassen
 
 ### Korrekturen
-- Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können (ich konnte es zumindest nicht mehr reproduzieren).
+- Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können, ich konnte es zumindest nicht mehr reproduzieren (Danke an DerEinzehnte).
 - Anzeigefehler beim Kartenspielen behoben, die Taleranzeige verschwand nach Bestätigung nicht direkt und konnte somit Text verdecken. Zusätzlich wird nun immer das Mindestgebot vorbelegt und nicht der Einsatz des letzten Spiels.
 - Nach dem manuellen Speichern des Spiels über das Menü im Kontor verschwindet der Button für das Beenden der Runde nun nicht mehr
 - Spielerstellung: 
@@ -28,11 +30,12 @@
   - Wenn man mit ESC die Schritte Stadtauswahl und Rohstoffauswahl mehrfach wiederholt, so wird die Talerstrafe von 150 Talern bei Stadtauswahl und 100 Talern bei Rohstoffauswahl nun im Hintergrund nicht mehr mehrfach abgezogen.
   - Wenn man mit ESC eine Spielerstellung komplett abbricht, dann werden nun alle getätigten Einstellungen zu den Spielern zurückgesetzt und vermischen sich bei der erneuten Spielerstellung im Hintergrund nicht mit den neu angelegten Spielern. Dies konnte dazu führen, dass Spieler zu Beginn des Spiels mit Wohnsitzen in mehr als einer Stadt und Rohstoffrechten für mehr als einen Rohstoff gestartet sind.
 - Im Hauptmenü wird der Klicksound jetzt nur noch abgespielt, wenn man auch einen Button drückt und nicht mehr bei jedem Klick (egal wohin)
+- Beim Privileg "Jurist aufsuchen" wird nun ein Rechtsklick im Dialog nicht mehr als "Ja" sondern als Abbruch gewertet (Danke an DerEinzehnte für den Hinweis)
 
 ## 1.4.4 - 24.12.2021
 
 ### Erweiterungen
-- Das in der letzten Version eingeführte Wiki (aufrufbar über den Button "Tutorial / Hilfe" im Hauptmenü oder direkt über https://github.com/Conspiratio/Conspiratio.Wiki/wiki) wurde stark erweitert und enhtält nun zu allen wichtigen Spielinhalten eine Seite (Vielen Dank an PommBaer für seine tolle Arbeit)
+- Das in der letzten Version eingeführte Wiki (aufrufbar über den Button "Tutorial / Hilfe" im Hauptmenü oder direkt über https://github.com/Conspiratio/Conspiratio.Wiki/wiki) wurde stark erweitert und enthält nun zu allen wichtigen Spielinhalten eine Seite (Vielen Dank an PommBaer für seine tolle Arbeit)
 
 ### Änderungen
 - Der Preis für die Adoption eines Waisenkindes wurde etwas erhöht und schwankt nun nicht mehr zufällig, wenn man mehrfach in einer Runde eine Adoption aufruft aber wieder abbricht
