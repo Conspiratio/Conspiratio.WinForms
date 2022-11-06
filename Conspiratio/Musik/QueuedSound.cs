@@ -25,7 +25,7 @@ namespace Conspiratio.Musik
         /// Example: When the sound before this sound has a length of 6000 milliseconds and we say, 
         /// this sound should start, when the sound before has played 4000 milliseconds, then we have to set 2000 as a value for this parameter.
         /// This sound will then played 2000 milliseconds earlier then normal (normal is just after the sound before is completely played) and will
-        /// start at 4000 milliseconds of the sound before this sound in the queue. THis is useful, if the pause between to sounds are to long and we want to shortend it (for voice acting for example).
+        /// start at 4000 milliseconds of the sound before this sound in the queue. This is useful, if the pause between to sounds are to long and we want to shortend it (for voice acting for example).
         /// </param>
         public QueuedSound(Stream sound, SoundType soundType = SoundType.Effect, int volumeInPercent = 0, int startMillisecondsEarlier = 0)
         {
@@ -38,10 +38,10 @@ namespace Conspiratio.Musik
                 switch (soundType)
                 {
                     case SoundType.Effect:
-                        VolumeInPercent = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]); ;
+                        VolumeInPercent = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]);
                         break;
                     case SoundType.Voice:
-                        VolumeInPercent = 65;  // TODO: get from new setting
+                        VolumeInPercent = Convert.ToInt32(Properties.Settings.Default["Stimmen_Lautstaerke"]);
                         break;
                 }
             }

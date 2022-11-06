@@ -9,19 +9,28 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Statistik_anzeigen" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Musik_Lautstaerke" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">60</Value>
+      <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="Sound_Lautstaerke" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">80</Value>
+      <Value Profile="(Default)">15</Value>
     </Setting>
     <Setting Name="Sound_ausschalten" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="Letzter_Spielstand" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Stimmen_Lautstaerke" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">65</Value>
+    </Setting>
+    <Setting Name="Stuetzpunktereignisse_KISpieler_anzeigen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="Militaerereignisse_KISpieler_anzeigen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
