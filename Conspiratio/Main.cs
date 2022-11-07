@@ -4021,7 +4021,7 @@ namespace Conspiratio
         #region Nachrichten Ausfuehren
         private async Task<int> ZugNachrichten()
         {
-            VersuchTitelVerleihen();
+            SW.Dynamisch.VersuchTitelVerleihen(SW.Dynamisch.GetAktiverSpieler());
             await KindBekommen();
             await Hochzeit();
             TitelVerleihen();
@@ -4068,78 +4068,6 @@ namespace Conspiratio
         #endregion
 
         #region Familie
-
-        #region VersuchTitelVerleihen
-        private void VersuchTitelVerleihen()
-        {
-            //Falls nicht schon einer diese Runde verliehen wird
-            if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetBekamTitelX() == 0)
-            {
-                int aktTit = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTitel();
-
-                if (aktTit < 1)
-                {
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(1);
-                }
-                else if (aktTit < 2)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 5000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(2);
-                    }
-                }
-                else if (aktTit < 3)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 15000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(3);
-                    }
-                }
-                else if (aktTit < 4)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 50000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(4);
-                    }
-                }
-                else if (aktTit < 5)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 100000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(5);
-                    }
-                }
-                else if (aktTit < 6)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 200000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(6);
-                    }
-                }
-                else if (aktTit < 7)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 500000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(7);
-                    }
-                }
-                else if (aktTit < 8)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 750000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(8);
-                    }
-                }
-                else if (aktTit < 9)
-                {
-                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > 1000000)
-                    {
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBekamTitelX(9);
-                    }
-                }
-            }
-        }
-        #endregion
 
         #region KindBekommen
         private async Task KindBekommen()
@@ -10088,7 +10016,7 @@ namespace Conspiratio
         {
             PositionWechseln(Posi_NaechsterSpieler);
 
-            label1.Text = "Nächster Spieler\n\n" + SW.Dynamisch.GetAktHum().GetName() + ",\n" + SW.Dynamisch.GetAktHum().GetAmtNameUndOrt();
+            label1.Text = "Nächster Spieler\n\n" + SW.Dynamisch.GetAktHum().GetTitelGegendert() + " " + SW.Dynamisch.GetAktHum().GetName() + ",\n" + SW.Dynamisch.GetAktHum().GetAmtNameUndOrt();
             label1.Top = (this.Height * 1) / 7;
             label1.Left = (this.Width - label1.Width) / 2;
 

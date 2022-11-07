@@ -12,7 +12,7 @@ namespace Conspiratio.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -49,7 +49,7 @@ namespace Conspiratio.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool Statistik_anzeigen {
             get {
                 return ((bool)(this["Statistik_anzeigen"]));
@@ -61,7 +61,7 @@ namespace Conspiratio.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int Musik_Lautstaerke {
             get {
                 return ((int)(this["Musik_Lautstaerke"]));
@@ -73,7 +73,7 @@ namespace Conspiratio.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("80")]
+        [global::System.Configuration.DefaultSettingValueAttribute("15")]
         public int Sound_Lautstaerke {
             get {
                 return ((int)(this["Sound_Lautstaerke"]));
@@ -104,6 +104,42 @@ namespace Conspiratio.Properties {
             }
             set {
                 this["Letzter_Spielstand"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("65")]
+        public int Stimmen_Lautstaerke {
+            get {
+                return ((int)(this["Stimmen_Lautstaerke"]));
+            }
+            set {
+                this["Stimmen_Lautstaerke"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Stuetzpunktereignisse_KISpieler_anzeigen {
+            get {
+                return ((bool)(this["Stuetzpunktereignisse_KISpieler_anzeigen"]));
+            }
+            set {
+                this["Stuetzpunktereignisse_KISpieler_anzeigen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Militaerereignisse_KISpieler_anzeigen {
+            get {
+                return ((bool)(this["Militaerereignisse_KISpieler_anzeigen"]));
+            }
+            set {
+                this["Militaerereignisse_KISpieler_anzeigen"] = value;
             }
         }
     }

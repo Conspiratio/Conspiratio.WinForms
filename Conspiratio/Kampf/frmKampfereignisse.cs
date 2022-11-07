@@ -82,6 +82,9 @@ namespace Conspiratio.Kampf
                     text = (Stuetzpunkt as Raeuberlager).RundenendeKIAktionenDurchfuehren();
                 }
 
+                if (!Convert.ToBoolean(Properties.Settings.Default["Stuetzpunktereignisse_KISpieler_anzeigen"]))
+                    continue;
+
                 if (text != "")
                 {
                     trtText.AppendText(text + "\n\n");
@@ -116,6 +119,16 @@ namespace Conspiratio.Kampf
                     NameSpielerKarawane = SW.Dynamisch.GetSpWithID(Ergebnis.Karawane.SpielerID).GetKompletterName();
                 else
                     NameSpielerKarawane = "";
+
+                if (!Convert.ToBoolean(Properties.Settings.Default["Militaerereignisse_KISpieler_anzeigen"]))  // Sollen nur Kämpfe mit menschlicher Beteiligung angezeigt werden?
+                {
+                    bool menschlicherSpielerBeteiligt = Ergebnis.SpielerIDAngreifer <= SW.Statisch.GetMinKIID() ||
+                                                        Ergebnis.SpielerIDVerteidiger <= SW.Statisch.GetMinKIID() ||
+                                                        Ergebnis.Karawane.SpielerID <= SW.Statisch.GetMinKIID();
+                    
+                    if (!menschlicherSpielerBeteiligt)
+                        continue;
+                }
 
                 foreach (string Text in Texte)
                 {

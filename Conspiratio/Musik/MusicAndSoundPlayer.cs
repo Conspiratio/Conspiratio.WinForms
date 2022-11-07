@@ -39,7 +39,6 @@ namespace Conspiratio.Musik
         private readonly int _dauerEinblendungUebergang = 3000;
 
         private int _musikLautstaerke = Convert.ToInt32(Properties.Settings.Default["Musik_Lautstaerke"]);
-        private int _soundLautstaerke = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]);
 
         private bool _start;
         private bool _initialisiert = false;
@@ -310,7 +309,7 @@ namespace Conspiratio.Musik
             WaveStream sourceStreamSounds = new WaveFileReader(sound);
             WaveChannel32 inputStreamSounds = new WaveChannel32(sourceStreamSounds)
             {
-                Volume = (float)Convert.ToDouble(_soundLautstaerke) / 100,
+                Volume = (float)Convert.ToDouble(Properties.Settings.Default["Sound_Lautstaerke"]) / 100,
                 PadWithZeroes = false
             };
 
@@ -431,17 +430,6 @@ namespace Conspiratio.Musik
                     if (_inputStreamEinschieben != null)
                         _inputStreamEinschieben.Volume = (float)Convert.ToDouble(_musikLautstaerke) / 100;
                 }
-            }
-        }
-
-        public int SoundLautstaerke
-        {
-            get { return _soundLautstaerke; }
-
-            set
-            {
-                if (_soundLautstaerke >= 0 && _soundLautstaerke <= 100)
-                    _soundLautstaerke = value;
             }
         }
         #endregion

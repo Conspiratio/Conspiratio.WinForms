@@ -727,4 +727,61 @@
   <data name="Song_Standard_Strobotone_Medieval_Theme_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Song_Standard_Strobotone_Medieval_Theme_02.mp3;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="_31_bin_ich_laut_genug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_bin_ich_laut_genug.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_baron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_baron.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_baronin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_baronin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_buerger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_buerger.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_buergerin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_buergerin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_edelfrau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_edelfrau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_edelmann" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_edelmann.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_freifrau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_freifrau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_freiherr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_freiherr.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_fuerst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_fuerst.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_fuerstin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_fuerstin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_graefin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_graefin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_graf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_graf.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_herzog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_herzog.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_herzogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_herzogin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_hofdame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_hofdame.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_landfrau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_landfrau.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_landherr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_landherr.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wir_verfuegen_hiermit_ritter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wir_verfuegen_hiermit_ritter.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

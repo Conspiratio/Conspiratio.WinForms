@@ -61,6 +61,177 @@ namespace Conspiratio.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_bin_ich_laut_genug {
+            get {
+                return ResourceManager.GetStream("_31_bin_ich_laut_genug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_baron {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_baron", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_baronin {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_baronin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_buerger {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_buerger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_buergerin {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_buergerin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_edelfrau {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_edelfrau", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_edelmann {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_edelmann", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_freifrau {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_freifrau", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_freiherr {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_freiherr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_fuerst {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_fuerst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_fuerstin {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_fuerstin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_graefin {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_graefin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_graf {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_graf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_herzog {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_herzog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_herzogin {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_herzogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_hofdame {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_hofdame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_landfrau {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_landfrau", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_landherr {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_landherr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_ritter {
+            get {
+                return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_ritter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap AnwHaus1 {

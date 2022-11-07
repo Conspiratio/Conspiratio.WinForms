@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Einstellungen;
@@ -10,31 +11,34 @@ namespace Conspiratio.Hauptmenue
     public partial class frmEinstellungen : frmBasis
     {
         private MusicAndSoundPlayer _musicPlayer = null;
+        private SoundQueuePlayer player = new SoundQueuePlayer();
 
-        #region Konstruktor frmEinstellungen
-        public frmEinstellungen(ref MusicAndSoundPlayer oC_MusikInstanz)
+        public frmEinstellungen(ref MusicAndSoundPlayer musicPlayer)
         {
             InitializeComponent();
 
             lbl_ueberschrift.Font = Grafik.GetStandardFont(Grafik.GetSchriftgRiesig());
             lbl_ueberschrift.Left = this.Width / 2 - lbl_ueberschrift.Width / 2;
 
-            _musicPlayer = oC_MusikInstanz;
+            _musicPlayer = musicPlayer;
         }
-        #endregion
 
-        #region frmEinstellungen_Load
         private void frmEinstellungen_Load(object sender, EventArgs e)
         {
             // Einstellungen auslesen
             btn_musik_ausschalten.Checked = Convert.ToBoolean(Properties.Settings.Default["Musik_ausschalten"]);
             btn_tipps_anzeigen.Checked = Convert.ToBoolean(Properties.Settings.Default["Tipp_anzeigen"]);
             btn_statistik_anzeigen.Checked = Convert.ToBoolean(Properties.Settings.Default["Statistik_anzeigen"]);
+            btn_stuetzpunktereignisse_ki_anzeigen.Checked = Convert.ToBoolean(Properties.Settings.Default["Stuetzpunktereignisse_KISpieler_anzeigen"]);
+            btn_militaerereignisse_ki_anzeigen.Checked = Convert.ToBoolean(Properties.Settings.Default["Militaerereignisse_KISpieler_anzeigen"]);
 
-            trb_musik_lautstaerke.Value = Convert.ToInt32(Properties.Settings.Default["Musik_Lautstaerke"]);
-            trb_effekt_lautstaerke.Value = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]);
-            trb_musik_lautstaerke_Scroll(this, new EventArgs());  // Label aktualisieren
-            trb_effekt_lautstaerke_Scroll(this, new EventArgs());  // Label aktualisieren
+            scr_musik_lautstaerke.Value = Convert.ToInt32(Properties.Settings.Default["Musik_Lautstaerke"]);
+            scr_effekt_lautstaerke.Value = Convert.ToInt32(Properties.Settings.Default["Sound_Lautstaerke"]);
+            scr_stimmen_lautstaerke.Value = Convert.ToInt32(Properties.Settings.Default["Stimmen_Lautstaerke"]);
+
+            UpdateVolumeLabel(lbl_musik_lautstaerke, "Musik", scr_musik_lautstaerke.Value);
+            UpdateVolumeLabel(lbl_effekt_lautstaerke, "Effekt", scr_effekt_lautstaerke.Value);
+            UpdateVolumeLabel(lbl_stimmen_lautstaerke, "Stimmen", scr_stimmen_lautstaerke.Value);
 
             switch (SW.Dynamisch.Spielstand.Einstellungen.AggressivitaetKISpieler)
             {
@@ -55,45 +59,66 @@ namespace Conspiratio.Hauptmenue
                     break;
             }
         }
-        #endregion
 
-        #region frmEinstellungen_MouseDown
         private void frmEinstellungen_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-                this.CloseMitSound();
+                CloseMitSound();
         }
-        #endregion
-
-        #region frmEinstellungen_FormClosing
+        
         private void frmEinstellungen_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Einstellungen speichern
             Properties.Settings.Default["Musik_ausschalten"] = btn_musik_ausschalten.Checked;
             Properties.Settings.Default["Tipp_anzeigen"] = btn_tipps_anzeigen.Checked;
             Properties.Settings.Default["Statistik_anzeigen"] = btn_statistik_anzeigen.Checked;
-            Properties.Settings.Default["Musik_Lautstaerke"] = trb_musik_lautstaerke.Value;
-            Properties.Settings.Default["Sound_Lautstaerke"] = trb_effekt_lautstaerke.Value;
+            Properties.Settings.Default["Stuetzpunktereignisse_KISpieler_anzeigen"] = btn_stuetzpunktereignisse_ki_anzeigen.Checked;
+            Properties.Settings.Default["Militaerereignisse_KISpieler_anzeigen"] = btn_militaerereignisse_ki_anzeigen.Checked;
 
             Properties.Settings.Default.Save(); // Settings in application configuration file speichern
         }
-        #endregion
 
-        #region trb_musik_lautstaerke_Scroll
-        private void trb_musik_lautstaerke_Scroll(object sender, EventArgs e)
+        private void scr_musik_lautstaerke_Scroll(object sender, ScrollEventArgs e)
         {
-            lbl_musik_lautstaerke.Text = "Musik Lautstärke - " + trb_musik_lautstaerke.Value + " %";
-            _musicPlayer.MusikLautstaerke = trb_musik_lautstaerke.Value;
+            UpdateVolumeLabel(lbl_musik_lautstaerke, "Musik", (sender as ScrollBar).Value);
+            Properties.Settings.Default["Musik_Lautstaerke"] = (sender as ScrollBar).Value;
+            _musicPlayer.MusikLautstaerke = (sender as ScrollBar).Value;
         }
-        #endregion
 
-        #region trb_effekt_lautstaerke_Scroll
-        private void trb_effekt_lautstaerke_Scroll(object sender, EventArgs e)
+        private void scr_effekt_lautstaerke_Scroll(object sender, ScrollEventArgs e)
         {
-            lbl_effekt_lautstaerke.Text = "Effekt Lautstärke - " + trb_effekt_lautstaerke.Value + " %";
-            _musicPlayer.SoundLautstaerke = trb_effekt_lautstaerke.Value;
+            UpdateVolumeLabel(lbl_effekt_lautstaerke, "Effekt", (sender as ScrollBar).Value);
+            Properties.Settings.Default["Sound_Lautstaerke"] = (sender as ScrollBar).Value;
+
+            if (e.Type == ScrollEventType.EndScroll)
+            {
+                List<QueuedSound> queue = new List<QueuedSound>
+                {
+                    new QueuedSound(Properties.Resources.bongo_dunkel, SoundType.Effect)
+                };
+                player.PlayAllSoundsFromQueue(queue);
+            }
         }
-        #endregion
+
+        private void scr_stimmen_lautstaerke_Scroll(object sender, ScrollEventArgs e)
+        {
+            UpdateVolumeLabel(lbl_stimmen_lautstaerke, "Stimmen", (sender as ScrollBar).Value);
+            Properties.Settings.Default["Stimmen_Lautstaerke"] = (sender as ScrollBar).Value;
+
+            if (e.Type == ScrollEventType.EndScroll)
+            {
+                List<QueuedSound> queue = new List<QueuedSound>
+                {
+                    new QueuedSound(Properties.Resources._31_bin_ich_laut_genug, SoundType.Voice)
+                };
+                player.PlayAllSoundsFromQueue(queue);
+            }
+        }
+
+        private void UpdateVolumeLabel(Label label, string typeText, int value)
+        {
+            label.Text = $"{typeText} Lautstärke - " + value + " %";
+        }
 
         private void btn_aggressivitaet_niedrig_Click(object sender, EventArgs e)
         {
