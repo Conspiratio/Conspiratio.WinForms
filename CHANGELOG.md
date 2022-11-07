@@ -2,10 +2,26 @@
 
 ## Unreleased
 
+### TL;DR (Zusammenfassung)
+- Sprachausgabe bei Titelvergabe
+- Erweiterung der Optionen
+- Verbesserungen der Benutzerfreundlichkeit und Optimierung der Spielerstellung
+- Verschiedenes Rebalancing
+- Diverse Korrekturen
+
+### Erweiterungen
+- Bei der Titelvergabe gibt es nun eine (experimentelle) Sprachausgabe. Sollten sich keine Probleme ergeben und euer Feedback positiv sein, soll die Sprachausgabe auf weitere Bereiche im Spiel ausgeweitet werden.
+- Optionen
+  - Neue Einstellung für die Lautstärke der Sprachausgabe hinzugefügt
+  - Lautstärke Änderungen spielen nun einen Testsound in der neuen Lautstärke ab
+  - Neue Einstellung "Stützpunktereignisse von KI-Spielern anzeigen" (Standard: Aus) hinzugefügt. Damit wird im Standard verhindert, dass bei Jahresende jedes Mal durch all die Stützpunktereignisse (Ausbau, Reparatur usw.) der KI-Besitzer geklickt werden muss. Dies sollte der Atmosphäre dienen, wird nach einiger Spielzeit jedoch nervig (Danke an DerEinzehnte für das Feedback).
+  - Neue Einstellung "Militärereignisse (Überfälle) von KI-Spieler anzeigen" (Standard: An) hinzugefügt. Damit lässt sich auf Wunsch einstellen, dass nur Überfälle mit Beteiligung von menschlichen Spielern angezeigt werden. Auch dies soll die Klicks beim Jahresende reduzieren.
+
 ### Änderungen
 - Verbesserungen der Benutzerfreundlichkeit
   - Es werden nun in der Stadtansicht beim Auftragstyp "Produzieren" nur noch die möglichen Waren angezeigt, für die ein Rohstoffrecht und eine Werkstatt vorhanden ist.
   - Das Bild des Wohnsitzes ist nun kein klickbarer Button mehr, wenn der Button keine Funktion hat (und daher irritieren kann)
+  - Die Standardwerte einiger Einstellung wurden sinnvoller gesetzt, um beim erstmaligen Start ein besseres Spielerlebnis zu ermöglichen (Statistik anzeigen: Aus, Lautstärken wurden reduziert)
 - Spielererstellung
   - Es erscheint nun der Hinweis "Spieler1 Name eingeben" vor dem Eingabefeld, um dies für neue Spieler zu verdeutlichen und um bei mehreren Spielern den Überblick zu behalten
   - Die Überschrift enthält auch bei allen nach dem ersten Spieler folgenden Spielern den Hinweis "Zurück mit ESC"
@@ -20,6 +36,7 @@
 - Titelvergabe
   - Die Vergabe von Titeln wurde neu balanciert und ist nun u.a. auch vom Wohnsitz sowie vom Besitz militärischer Stützpunkte abhängig, zusätzlich wurde die Talergrenze der höheren Titel herabgesetzt (Danke an DerEinzehnte für die Anregung). Details dazu im [Wiki (ACHTUNG SPOILER!)](https://github.com/Conspiratio/Conspiratio.Wiki/wiki/2.5-Titel).
   - Titelstufe von Fürst/Fürstin und Herzog/Herzogin wurde vertauscht, um sie an den historischen Rang in Europa anzupassen
+- Bei der Ankündigung eines Spielers wird nun auch sein Titel angezeigt
 
 ### Korrekturen
 - Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können, ich konnte es zumindest nicht mehr reproduzieren (Danke an DerEinzehnte).

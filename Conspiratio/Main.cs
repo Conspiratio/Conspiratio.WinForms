@@ -10016,7 +10016,7 @@ namespace Conspiratio
         {
             PositionWechseln(Posi_NaechsterSpieler);
 
-            label1.Text = "Nächster Spieler\n\n" + SW.Dynamisch.GetAktHum().GetName() + ",\n" + SW.Dynamisch.GetAktHum().GetAmtNameUndOrt();
+            label1.Text = "Nächster Spieler\n\n" + SW.Dynamisch.GetAktHum().GetTitelGegendert() + " " + SW.Dynamisch.GetAktHum().GetName() + ",\n" + SW.Dynamisch.GetAktHum().GetAmtNameUndOrt();
             label1.Top = (this.Height * 1) / 7;
             label1.Left = (this.Width - label1.Width) / 2;
 
