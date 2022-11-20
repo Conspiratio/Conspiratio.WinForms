@@ -16,6 +16,7 @@
   - Lautstärke Änderungen spielen nun einen Testsound in der neuen Lautstärke ab
   - Neue Einstellung "Stützpunktereignisse von KI-Spielern anzeigen" (Standard: Aus) hinzugefügt. Damit wird im Standard verhindert, dass bei Jahresende jedes Mal durch all die Stützpunktereignisse (Ausbau, Reparatur usw.) der KI-Besitzer geklickt werden muss. Dies sollte der Atmosphäre dienen, wird nach einiger Spielzeit jedoch nervig (Danke an DerEinzehnte für das Feedback).
   - Neue Einstellung "Militärereignisse (Überfälle) von KI-Spieler anzeigen" (Standard: An) hinzugefügt. Damit lässt sich auf Wunsch einstellen, dass nur Überfälle mit Beteiligung von menschlichen Spielern angezeigt werden. Auch dies soll die Klicks beim Jahresende reduzieren.
+- Tooltip für den freien, belegten und insgesamt verfügbaren Lagerraum auf dem Werkstatt-Button in der Stadtansicht (Produktionsbildschirm) hinzugefügt
 
 ### Änderungen
 - Verbesserungen der Benutzerfreundlichkeit
