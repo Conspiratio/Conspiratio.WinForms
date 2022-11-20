@@ -7597,6 +7597,7 @@ namespace Conspiratio
                 {
                     WerkstaettenForm wsf = new WerkstaettenForm(globalAktiveStadt, wks_nr, ref lbl_Taler);
                     wsf.ShowDialog();
+                    StadtRohstoffeAktualisieren();  // Damit der Lagerplatz Tooltip vorsorglich aktualisiert wird
                 }
                 else
                 {
@@ -7671,21 +7672,29 @@ namespace Conspiratio
         #region StadtRohstoffeAktualisieren
         private void StadtRohstoffeAktualisieren()
         {
-            string anzahl;
-            int rohid;
-
             for (int i = 1; i <= SW.Statisch.GetMaxWerkstaettenProStadt(); i++)
             {
-                rohid = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i);
-                anzahl = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetStadtRohstoffAnzahl(globalAktiveStadt, rohid).ToString();
+                int rohID = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i);
+                int anzahl = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetStadtRohstoffAnzahl(globalAktiveStadt, rohID);
+                string anzahlAlsString = anzahl.ToString();
 
-                while (anzahl.Length < 6)
+                while (anzahlAlsString.Length < 6)
                 {
-                    anzahl = "0" + anzahl;
+                    anzahlAlsString = "0" + anzahlAlsString;
                 }
 
-                anzahl = anzahl.Substring(0, 3) + "." + anzahl.Substring(3, 3);
-                this.Controls["lbl_stadt_roh" + i.ToString()].Text = anzahl;
+                anzahlAlsString = anzahlAlsString.Substring(0, 3) + "." + anzahlAlsString.Substring(3, 3);
+                this.Controls["lbl_stadt_roh" + i.ToString()].Text = anzahlAlsString;
+
+                // Tooltip für Lagerraum setzen
+                if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(i, globalAktiveStadt).GetEnabled())
+                {
+                    int belegterLagerplatz = SW.Dynamisch.GetRohstoffwithID(rohID).ErmittleBenoetigtenLagerplatz(anzahl);
+                    int gesamterLagerplatz = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErmittleLagerplatzInStadt(globalAktiveStadt, rohID);
+                    int freierLagerplatz = gesamterLagerplatz - belegterLagerplatz;
+
+                    ttRohstoffe.SetToolTip(this.Controls["btn_stadt_ws" + i.ToString()], $"Freier Lagerplatz: {freierLagerplatz} m² ({belegterLagerplatz} m²/{gesamterLagerplatz} m² belegt)");
+                }
             }
         }
         #endregion
