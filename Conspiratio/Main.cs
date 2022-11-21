@@ -8109,7 +8109,7 @@ namespace Conspiratio
                 int i_old = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).GetVerkaufStadt();
                 int i_new = (this.Controls["btn_stadt_prod" + slot0oder1.ToString() + "_Werkstaetten"] as NumericButton).Wert;
 
-                //Falls die eigene Stadt eingestellt ist, soll weitergeschalten werden
+                // Falls die eigene Stadt eingestellt ist, soll weitergeschalten werden
                 if (i_new == globalAktiveStadt)
                 {
                     if (i_new > i_old)
@@ -8126,9 +8126,9 @@ namespace Conspiratio
                 {
                     i_new = SW.Statisch.GetMinStadtID();
                 }
-                else if (i_new <= SW.Statisch.GetMinStadtID())
+                else if (i_new < SW.Statisch.GetMinStadtID())
                 {
-                    i_new = SW.Statisch.GetMaxStadtID() - 1; //-1 weil maxStaedte die maxID + 1 speichert
+                    i_new = SW.Statisch.GetMaxStadtID() - 1; // -1 weil maxStaedte die maxID + 1 speichert
                 }
 
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, slot0oder1).SetVerkaufStadt(i_new);
