@@ -50,6 +50,7 @@
 - Im Hauptmenü wird der Klicksound jetzt nur noch abgespielt, wenn man auch einen Button drückt und nicht mehr bei jedem Klick (egal wohin)
 - Beim Privileg "Jurist aufsuchen" wird nun ein Rechtsklick im Dialog nicht mehr als "Ja" sondern als Abbruch gewertet (Danke an DerEinzehnte für den Hinweis)
 - Beim Verkaufen/Exportieren von Waren kann nun auch Frozen Castle als Ziel ausgewählt werden, wenn man die Städte rückwärts, also mit dem Minus-Cursor durchläuft (Danke an DerEinzehnte für den Hinweis)
+- Die Rekrutierung von Soldaten/Räubern in klappt nun auch in 10er Schritten (Danke an Muffinz für den Hinweis)
 
 ## 1.4.4 - 24.12.2021
 

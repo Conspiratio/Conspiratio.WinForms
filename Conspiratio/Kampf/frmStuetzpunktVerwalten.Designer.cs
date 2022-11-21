@@ -282,7 +282,7 @@ namespace Conspiratio.Kampf
             this.nb_einheit_2.MaximaleStellen = 3;
             this.nb_einheit_2.MinimalerWert = 0;
             this.nb_einheit_2.Name = "nb_einheit_2";
-            this.nb_einheit_2.NurEinserSchritte = true;
+            this.nb_einheit_2.NurEinserSchritte = false;
             this.nb_einheit_2.Size = new System.Drawing.Size(66, 62);
             this.nb_einheit_2.TabIndex = 88;
             this.nb_einheit_2.TausenderTrenner = true;
@@ -308,7 +308,7 @@ namespace Conspiratio.Kampf
             this.nb_einheit_3.MaximaleStellen = 3;
             this.nb_einheit_3.MinimalerWert = 0;
             this.nb_einheit_3.Name = "nb_einheit_3";
-            this.nb_einheit_3.NurEinserSchritte = true;
+            this.nb_einheit_3.NurEinserSchritte = false;
             this.nb_einheit_3.Size = new System.Drawing.Size(66, 62);
             this.nb_einheit_3.TabIndex = 89;
             this.nb_einheit_3.TausenderTrenner = true;
@@ -334,7 +334,7 @@ namespace Conspiratio.Kampf
             this.nb_einheit_4.MaximaleStellen = 3;
             this.nb_einheit_4.MinimalerWert = 0;
             this.nb_einheit_4.Name = "nb_einheit_4";
-            this.nb_einheit_4.NurEinserSchritte = true;
+            this.nb_einheit_4.NurEinserSchritte = false;
             this.nb_einheit_4.Size = new System.Drawing.Size(66, 62);
             this.nb_einheit_4.TabIndex = 90;
             this.nb_einheit_4.TausenderTrenner = true;
