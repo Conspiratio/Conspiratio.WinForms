@@ -149,58 +149,70 @@ namespace Conspiratio
                         }
                     }
                 }
-                else if (fixerErbe > SW.Statisch.GetMinKIID())
-                {
-                    // Frau erbt
-                    int FrauKIID = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetVerheiratet();
-
-                    string nname = SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetVerheiratet()).GetName();
-
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(SW.Dynamisch.GetSpWithID(FrauKIID).GetTaler());
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nname);
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetAlter(SW.Dynamisch.GetSpWithID(FrauKIID).GetAlter());
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetMaennlich(SW.Dynamisch.GetSpWithID(FrauKIID).GetMaennlich());
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerheiratet(0);
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetErbeSpielerID(0);
-
-                    // +2 Damit die Frau nicht womöglich in derselben Runde stirbt
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(SW.Dynamisch.GetSpWithID(FrauKIID).GetVerbleibendeJahre() + 2);
-
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetGesundheit(SW.Dynamisch.GetSpWithID(FrauKIID).GetGesundheit());
-
-                    // Kinder bleiben die gleichen
-
-                    // Amt wird uebernommen
-                    SW.Dynamisch.AmtAufStufeXGebietYidZanWvergeben(SW.Dynamisch.GetStufeVonAmtmitIDx(SW.Dynamisch.GetKIwithID(FrauKIID).GetAmtsInformationen().GetAmtsID()), SW.Dynamisch.GetKIwithID(FrauKIID).GetAmtsInformationen().GetGebietsID(), SW.Dynamisch.GetKIwithID(FrauKIID).GetAmtsInformationen().GetAmtsID(), SW.Dynamisch.GetAktiverSpieler());
-
-                    // KI neu anlegen da die Frau sonst doppelt existieren würde
-                    SW.Dynamisch.KIXneuAnlegen(FrauKIID);
-                }
                 else
                 {
-                    // Kind erbt
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetErbeSpielerID(0);
+                    // Verschiedene Zustände des verstorbenen Charakters zurücksetzen, die nicht vererbt werden
+                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetSitztImKerker(false);  // Soll nicht im Schuldturm sitzen, wenn der verstorbene Charakter vorher verurteilt wurde
+                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetDeliktpunkte(0);
+                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetKindBekommen(false);
+                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetSpieltKartenGegenSpielerID(0);
 
-                    string nname = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(fixerErbe).GetKindName();
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nname);
+                    for (int i = 0; i < SW.Statisch.GetMaxGesetze(); i++)
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetBegingVerbrechenX(i, 0);  // Gesetzesbrüche zurücksetzen (werden nicht vererbt)
 
-                    int nalter = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(fixerErbe).GetAlter();
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetAlter(nalter);
+                    if (fixerErbe >= SW.Statisch.GetMinKIID())
+                    {
+                        // Frau erbt
+                        int FrauKIID = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetVerheiratet();
 
-                    bool maennlich = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(fixerErbe).GetMaennlich();
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetMaennlich(maennlich);
+                        string nname = SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetVerheiratet()).GetName();
 
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetGesundheit(SW.Statisch.GetMaxGesundheit());
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(SW.Dynamisch.GetSpWithID(FrauKIID).GetTaler());
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nname);
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetAlter(SW.Dynamisch.GetSpWithID(FrauKIID).GetAlter());
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetMaennlich(SW.Dynamisch.GetSpWithID(FrauKIID).GetMaennlich());
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerheiratet(0);
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetErbeSpielerID(0);
 
-                    int verbleibendeJahre = SW.Statisch.Rnd.Next(SW.Statisch.GetHumminVerblJahre(), SW.Statisch.GetHummaxVerblJahre());
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(verbleibendeJahre);
+                        // +2 Damit die Frau nicht womöglich in derselben Runde stirbt
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(SW.Dynamisch.GetSpWithID(FrauKIID).GetVerbleibendeJahre() + 2);
 
-                    // Das Kind hat noch keine Kinder!!!
-                    for (int i = SW.Statisch.GetMinKindSlotNr(); i < SW.Statisch.GetMaxKinderAnzahl(); i++)
-                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(i).SetName("");
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetGesundheit(SW.Dynamisch.GetSpWithID(FrauKIID).GetGesundheit());
 
-                    // Das Kind ist nicht verheiratet
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerheiratet(0);
+                        // Kinder bleiben die gleichen
+
+                        // Amt wird uebernommen
+                        SW.Dynamisch.AmtAufStufeXGebietYidZanWvergeben(SW.Dynamisch.GetStufeVonAmtmitIDx(SW.Dynamisch.GetKIwithID(FrauKIID).GetAmtsInformationen().GetAmtsID()), SW.Dynamisch.GetKIwithID(FrauKIID).GetAmtsInformationen().GetGebietsID(), SW.Dynamisch.GetKIwithID(FrauKIID).GetAmtsInformationen().GetAmtsID(), SW.Dynamisch.GetAktiverSpieler());
+
+                        // KI neu anlegen da die Frau sonst doppelt existieren würde
+                        SW.Dynamisch.KIXneuAnlegen(FrauKIID);
+                    }
+                    else
+                    {
+                        // Kind erbt
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetErbeSpielerID(0);
+
+                        string nname = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(fixerErbe).GetKindName();
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetName(nname);
+
+                        int nalter = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(fixerErbe).GetAlter();
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetAlter(nalter);
+
+                        bool maennlich = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(fixerErbe).GetMaennlich();
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetMaennlich(maennlich);
+
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetGesundheit(SW.Statisch.GetMaxGesundheit());
+
+                        int verbleibendeJahre = SW.Statisch.Rnd.Next(SW.Statisch.GetHumminVerblJahre(), SW.Statisch.GetHummaxVerblJahre());
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerbleibendeJahre(verbleibendeJahre);
+
+                        // Das Kind hat noch keine Kinder!!!
+                        for (int i = SW.Statisch.GetMinKindSlotNr(); i < SW.Statisch.GetMaxKinderAnzahl(); i++)
+                            SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetKindX(i).SetName("");
+
+                        // Das Kind ist nicht verheiratet
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetVerheiratet(0);
+                    }
                 }
             }
 
