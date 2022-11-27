@@ -38,6 +38,7 @@
   - Die Vergabe von Titeln wurde neu balanciert und ist nun u.a. auch vom Wohnsitz sowie vom Besitz militärischer Stützpunkte abhängig, zusätzlich wurde die Talergrenze der höheren Titel herabgesetzt (Danke an DerEinzehnte für die Anregung). Details dazu im [Wiki (ACHTUNG SPOILER!)](https://github.com/Conspiratio/Conspiratio.Wiki/wiki/2.5-Titel).
   - Titelstufe von Fürst/Fürstin und Herzog/Herzogin wurde vertauscht, um sie an den historischen Rang in Europa anzupassen
 - Bei der Ankündigung eines Spielers wird nun auch sein Titel angezeigt
+- Die Strafe "Einen Monat Kerker" hat nun eine variable Länge, abhängig von der Schwere der Schuld. Die Auswirkung auf die Gesundheit des verurteilten Spielers ist dann entsprechend höher (Danke an Muffinz für das Feedback)
 
 ### Korrekturen
 - Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können, ich konnte es zumindest nicht mehr reproduzieren (Danke an DerEinzehnte).
