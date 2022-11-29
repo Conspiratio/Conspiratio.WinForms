@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Gameplay.Aemter;
+using Conspiratio.Lib.Gameplay.Gebiete;
 using Conspiratio.Lib.Gameplay.Spielwelt;
 
 namespace Conspiratio
@@ -365,14 +367,13 @@ namespace Conspiratio
 
         private void btn_amtuebernehmen_Click(object sender, EventArgs e)
         {
-            //Amt mit der KI tauschen
+            // Amt mit der KI tauschen
             int stuf = comboBox1.SelectedIndex;
             int geb = comboBox2.SelectedIndex + 1;
             int amt = comboBox3.SelectedIndex + 1;
 
             if (amt > 0)
             {
-
                 if (stuf == 0)
                 {
                     amt -= 1;
@@ -386,8 +387,7 @@ namespace Conspiratio
                     amt += (SW.Statisch.GetMaxAmtLandID() - 1);
                 }
 
-
-                //Das Amt gehört einer KI
+                // Das Amt gehört einer KI
                 if (SW.Dynamisch.GetGebietwithID(geb, stuf).GetAmtX(amt) >= SW.Statisch.GetMinKIID())
                 {
                     int altgeb = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAmtGebiet();
@@ -395,11 +395,11 @@ namespace Conspiratio
                     int altGebstuf = SW.Dynamisch.GetStufeVonAmtmitIDx(altamt);
                     int kiid = SW.Dynamisch.GetGebietwithID(geb, stuf).GetAmtX(amt);
 
-                    //Dem Spieler das Amt geben
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetAmt(amt, geb);
-                    SW.Dynamisch.GetGebietwithID(geb, stuf).SetAmtXtoY(amt, SW.Dynamisch.GetAktiverSpieler());
+                    // Dem Spieler das Amt geben
+                    int amtStufe = SW.Dynamisch.GetStufeVonAmtmitIDx(amt);
+                    SW.Dynamisch.AmtAufStufeXGebietYidZanWvergeben(amtStufe, geb, amt, SW.Dynamisch.GetAktiverSpieler());
 
-                    //Der KI das Amt geben
+                    // Der KI das alte Amt vom Spieler geben
                     SW.Dynamisch.GetSpWithID(kiid).SetAmt(altamt, altgeb);
                     if (altamt != 0)
                     {
@@ -412,12 +412,12 @@ namespace Conspiratio
 
                     SW.Dynamisch.BelTextAnzeigen("Ihr seid nun " + SW.Statisch.GetAmtwithID(amt).GetAmtsname(true));
                 }
-                //Das Amt ist nicht besetzt
+                // Das Amt ist nicht besetzt
                 else if (SW.Dynamisch.GetGebietwithID(geb, stuf).GetAmtX(amt) == 0)
                 {
-                    //Dem Spieler das Amt geben
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetAmt(amt, geb);
-                    SW.Dynamisch.GetGebietwithID(geb, stuf).SetAmtXtoY(amt, SW.Dynamisch.GetAktiverSpieler());
+                    // Dem Spieler das Amt geben
+                    int amtStufe = SW.Dynamisch.GetStufeVonAmtmitIDx(amt);
+                    SW.Dynamisch.AmtAufStufeXGebietYidZanWvergeben(amtStufe, geb, amt, SW.Dynamisch.GetAktiverSpieler());
 
                     SW.Dynamisch.BelTextAnzeigen("Ihr seid nun " + SW.Statisch.GetAmtwithID(amt).GetAmtsname(true));
                 }

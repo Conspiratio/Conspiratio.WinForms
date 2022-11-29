@@ -3,14 +3,15 @@
 ## Unreleased
 
 ### TL;DR (Zusammenfassung)
-- Sprachausgabe bei Titelvergabe
+- Sprachausgabe bei Titelvergabe und Handelszertifikat
+- Handelszertifikate bei Amtsverleihung
 - Erweiterung der Optionen
 - Verbesserungen der Benutzerfreundlichkeit und Optimierung der Spielerstellung
 - Verschiedenes Rebalancing
 - Diverse Korrekturen
 
 ### Erweiterungen
-- Bei der Titelvergabe gibt es nun eine (experimentelle) Sprachausgabe. Sollten sich keine Probleme ergeben und euer Feedback positiv sein, soll die Sprachausgabe auf weitere Bereiche im Spiel ausgeweitet werden.
+- Bei der Titelvergabe und Handelszertifikaten gibt es nun eine (experimentelle) Sprachausgabe. Sollten sich keine Probleme ergeben und euer Feedback positiv sein, soll die Sprachausgabe auf weitere Bereiche im Spiel ausgeweitet werden.
 - Optionen
   - Neue Einstellung für die Lautstärke der Sprachausgabe hinzugefügt
   - Lautstärke Änderungen spielen nun einen Testsound in der neuen Lautstärke ab
@@ -29,6 +30,7 @@
   - Vor dem Abbruch der gesamten Spielerstellung mit ESC wird man nun mit einer Meldung gefragt, ob man das wirklich möchte, um versehentliche Abbrüche zu verhindern (ärgerlich, wenn man gerade beim 7. Spieler war und alles nochmal eingeben muss ...)
   - Das Ladeicon erscheint nun korrekt beim letzten Schritt nach der Auswahl der Religion des letzten Spielers
   - Im Spielernamen sind nun auch Leerzeichen erlaubt, es gibt jedoch nach wie vor eine Maximallänge von 12 Zeichen, um keine Anzeigefehler zu provozieren (Danke an sknortsch für die Anregung)
+- Handelszertifikate sind nicht mehr beschränkt auf maximal 5 und werden nun bei jeder Amtsverleihung sowie Kauf einer Zollburg oder eines Räuberlagers gewährt. Die bisherigen Talergrenzen wurden abgeschafft. Damit lassen sich nun theoretisch alle Waren in einem Spieldurchlauf freischalten (Danke an DerEinzehnte für den Vorschlag und Muffinz für das Feedback).
 - Das Musikstück "Jason Shaw - The Assasins" entfernt, welches nicht ganz zum Thema passte (Danke an Kathi für die Anregung) und durch das neues Lied "Strobotone - Medieval Theme 02" ersetzt.
 - Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
 - Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin (Danke an Kathi für den Hinweis)

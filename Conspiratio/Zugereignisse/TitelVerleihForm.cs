@@ -28,7 +28,7 @@ namespace Conspiratio
             SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetTitel(verltitelid);
 
             // Sound anhand Titel ermitteln
-            Stream titelSound;  
+            Stream titelSound;
             Adelstitel titel = SW.Statisch.GetTitelX(verltitelid);
             bool maennlich = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetMaennlich();
 

@@ -63,6 +63,15 @@ namespace Conspiratio.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_auf_grund_eurer_besonderen_erfolge {
+            get {
+                return ResourceManager.GetStream("_31_auf_grund_eurer_besonderen_erfolge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream _31_bin_ich_laut_genug {
             get {
                 return ResourceManager.GetStream("_31_bin_ich_laut_genug", resourceCulture);
@@ -228,6 +237,195 @@ namespace Conspiratio.Properties {
         internal static System.IO.UnmanagedMemoryStream _31_wir_verfuegen_hiermit_ritter {
             get {
                 return ResourceManager.GetStream("_31_wir_verfuegen_hiermit_ritter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_bier {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_bier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_diamant {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_diamant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_erz {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_erz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_fell {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_fell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_fisch {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_fisch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_glas {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_glas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_gold {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_gold", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_holz {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_holz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_korn {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_korn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_kupfer {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_kupfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_medizin {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_medizin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_obst {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_obst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_pfeffer {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_pfeffer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_rind {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_rind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_rum {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_rum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_salz {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_salz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_silber {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_silber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_waffen {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_waffen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_wein {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_wein", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_wolle {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_wolle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream _31_wird_euch_ab_heute_gestattet_ziegel {
+            get {
+                return ResourceManager.GetStream("_31_wird_euch_ab_heute_gestattet_ziegel", resourceCulture);
             }
         }
         

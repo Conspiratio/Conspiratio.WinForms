@@ -3650,9 +3650,9 @@ namespace Conspiratio
 
                 if (geradeGeladen == false)
                 {
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).VersuchHandelszertifikatVerleihen();
                     HandelszertifikatAnzeigen();
                 }
+
                 SpielerDatenAktualisieren();
                 Autosave();
             }

@@ -784,4 +784,70 @@
   <data name="_31_wir_verfuegen_hiermit_ritter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\voice\31_wir_verfuegen_hiermit_ritter.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="_31_auf_grund_eurer_besonderen_erfolge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_auf_grund_eurer_besonderen_erfolge.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_bier" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_bier.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_diamant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_diamant.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_erz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_erz.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_fell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_fell.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_fisch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_fisch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_glas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_glas.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_gold.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_holz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_holz.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_korn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_korn.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_kupfer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_kupfer.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_medizin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_medizin.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_obst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_obst.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_pfeffer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_pfeffer.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_rind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_rind.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_rum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_rum.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_salz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_salz.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_silber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_silber.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_waffen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_waffen.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_wein" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_wein.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_wolle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_wolle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_31_wird_euch_ab_heute_gestattet_ziegel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\voice\31_wird_euch_ab_heute_gestattet_ziegel.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
