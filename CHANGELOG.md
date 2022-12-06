@@ -3,41 +3,46 @@
 ## Unreleased
 
 ### TL;DR (Zusammenfassung)
-- Sprachausgabe bei Titelvergabe
+- Sprachausgabe bei Titelvergabe und Handelszertifikat
+- Handelszertifikate bei Amtsverleihung
 - Erweiterung der Optionen
 - Verbesserungen der Benutzerfreundlichkeit und Optimierung der Spielerstellung
 - Verschiedenes Rebalancing
 - Diverse Korrekturen
 
 ### Erweiterungen
-- Bei der Titelvergabe gibt es nun eine (experimentelle) Sprachausgabe. Sollten sich keine Probleme ergeben und euer Feedback positiv sein, soll die Sprachausgabe auf weitere Bereiche im Spiel ausgeweitet werden.
+- Bei der Titelvergabe und Handelszertifikaten gibt es nun eine (experimentelle) Sprachausgabe. Sollten sich keine Probleme ergeben und euer Feedback positiv sein, soll die Sprachausgabe auf weitere Bereiche im Spiel ausgeweitet werden.
 - Optionen
   - Neue Einstellung für die Lautstärke der Sprachausgabe hinzugefügt
   - Lautstärke Änderungen spielen nun einen Testsound in der neuen Lautstärke ab
-  - Neue Einstellung "Stützpunktereignisse von KI-Spielern anzeigen" (Standard: Aus) hinzugefügt. Damit wird im Standard verhindert, dass bei Jahresende jedes Mal durch all die Stützpunktereignisse (Ausbau, Reparatur usw.) der KI-Besitzer geklickt werden muss. Dies sollte der Atmosphäre dienen, wird nach einiger Spielzeit jedoch nervig (Danke an DerEinzehnte für das Feedback).
+  - Neue Einstellung "Stützpunktereignisse von KI-Spielern anzeigen" (Standard: Aus) hinzugefügt. Damit wird im Standard verhindert, dass bei Jahresende jedes Mal durch all die Stützpunktereignisse (Ausbau, Reparatur usw.) der KI-Besitzer geklickt werden muss. Dies sollte ursprünglich der Atmosphäre dienen, wird nach einiger Spielzeit jedoch nervig (Danke an DerEinzehnte für das Feedback).
   - Neue Einstellung "Militärereignisse (Überfälle) von KI-Spieler anzeigen" (Standard: An) hinzugefügt. Damit lässt sich auf Wunsch einstellen, dass nur Überfälle mit Beteiligung von menschlichen Spielern angezeigt werden. Auch dies soll die Klicks beim Jahresende reduzieren.
 - Tooltip für den freien, belegten und insgesamt verfügbaren Lagerraum auf dem Werkstatt-Button in der Stadtansicht (Produktionsbildschirm) hinzugefügt
 
 ### Änderungen
 - Verbesserungen der Benutzerfreundlichkeit
   - Es werden nun in der Stadtansicht beim Auftragstyp "Produzieren" nur noch die möglichen Waren angezeigt, für die ein Rohstoffrecht und eine Werkstatt vorhanden ist.
-  - Das Bild des Wohnsitzes ist nun kein klickbarer Button mehr, wenn der Button keine Funktion hat (und daher irritieren kann)
+  - Das Bild des Wohnsitzes ist nun kein klickbarer Button mehr, wenn der Button keine Funktion hat und daher irritieren kann (Danke an Kathi für den Hinweis)
   - Die Standardwerte einiger Einstellung wurden sinnvoller gesetzt, um beim erstmaligen Start ein besseres Spielerlebnis zu ermöglichen (Statistik anzeigen: Aus, Lautstärken wurden reduziert)
 - Spielererstellung
   - Es erscheint nun der Hinweis "Spieler1 Name eingeben" vor dem Eingabefeld, um dies für neue Spieler zu verdeutlichen und um bei mehreren Spielern den Überblick zu behalten
-  - Die Überschrift enthält auch bei allen nach dem ersten Spieler folgenden Spielern den Hinweis "Zurück mit ESC"
-  - Vor dem Abbruch der gesamten Spielerstellung mit ESC wird man ab jetzt mit einer Meldung gefragt, ob man das wirklich möchte, um versehentliche Abbrüche zu verhindern (ärgerlich, wenn man gerade beim 7. Spieler war und alles nochmal eingeben muss ...)
+  - Die Überschrift enthält auch bei allen nach dem ersten Spieler folgenden Spielern den Hinweis "Zurück mit ESC" (Danke an Kathi für den Hinweis)
+  - Vor dem Abbruch der gesamten Spielerstellung mit ESC wird man nun mit einer Meldung gefragt, ob man das wirklich möchte, um versehentliche Abbrüche zu verhindern (ärgerlich, wenn man gerade beim 7. Spieler war und alles nochmal eingeben muss ...)
   - Das Ladeicon erscheint nun korrekt beim letzten Schritt nach der Auswahl der Religion des letzten Spielers
   - Im Spielernamen sind nun auch Leerzeichen erlaubt, es gibt jedoch nach wie vor eine Maximallänge von 12 Zeichen, um keine Anzeigefehler zu provozieren (Danke an sknortsch für die Anregung)
-- Ein Musikstück entfernt (Jason Shaw - The Assasins), welches nicht ganz zum Thema passte und ersetzt durch neues Lied für den Hintergrund (Strobotone - Medieval Theme 02)
+- Handelszertifikate sind nicht mehr beschränkt auf maximal 5 und werden nun bei jeder Amtsverleihung sowie Kauf einer Zollburg oder eines Räuberlagers gewährt. Die bisherigen Talergrenzen wurden abgeschafft. Damit lassen sich nun theoretisch alle Waren in einem Spieldurchlauf freischalten (Danke an DerEinzehnte für den Vorschlag und Muffinz für das Feedback).
+- Das Musikstück "Jason Shaw - The Assasins" entfernt, welches nicht ganz zum Thema passte (Danke an Kathi für die Anregung) und durch das neues Lied "Strobotone - Medieval Theme 02" ersetzt.
 - Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
-- Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin.
-- Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun ein wenig Taler, um den Realismus etwas zu erhöhen
+- Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin (Danke an Kathi für den Hinweis)
+- Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun ein wenig Taler, um den Realismus etwas zu erhöhen (Danke an Kathi für die Anregung)
 - Der Betrag bei positiven sowie negativen finanziellen Ereignisse am Rundenende wurde ein wenig erhöht
 - Titelvergabe
   - Die Vergabe von Titeln wurde neu balanciert und ist nun u.a. auch vom Wohnsitz sowie vom Besitz militärischer Stützpunkte abhängig, zusätzlich wurde die Talergrenze der höheren Titel herabgesetzt (Danke an DerEinzehnte für die Anregung). Details dazu im [Wiki (ACHTUNG SPOILER!)](https://github.com/Conspiratio/Conspiratio.Wiki/wiki/2.5-Titel).
   - Titelstufe von Fürst/Fürstin und Herzog/Herzogin wurde vertauscht, um sie an den historischen Rang in Europa anzupassen
 - Bei der Ankündigung eines Spielers wird nun auch sein Titel angezeigt
+- Die Strafe "Einen Monat Kerker" hat nun eine variable Länge, abhängig von der Schwere der Schuld. Die Auswirkung auf die Gesundheit des verurteilten Spielers ist dann entsprechend höher (Danke an Muffinz für das Feedback)
+- Feste benötigen die Waren nun im Lager der Stadt anstelle im Lager der Niederlassung des Spielers. Somit ist es nun überhaupt erst möglich, alle Waren für die größeren Feste zu beschaffen (sofern die Handelszertifikate dafür vorhanden sind).
+- Die von den Einwohnern einer Stadt verbrauchten Waren am Rundenende wurden reduziert
 
 ### Korrekturen
 - Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können, ich konnte es zumindest nicht mehr reproduzieren (Danke an DerEinzehnte).
@@ -49,6 +54,10 @@
   - Wenn man mit ESC eine Spielerstellung komplett abbricht, dann werden nun alle getätigten Einstellungen zu den Spielern zurückgesetzt und vermischen sich bei der erneuten Spielerstellung im Hintergrund nicht mit den neu angelegten Spielern. Dies konnte dazu führen, dass Spieler zu Beginn des Spiels mit Wohnsitzen in mehr als einer Stadt und Rohstoffrechten für mehr als einen Rohstoff gestartet sind.
 - Im Hauptmenü wird der Klicksound jetzt nur noch abgespielt, wenn man auch einen Button drückt und nicht mehr bei jedem Klick (egal wohin)
 - Beim Privileg "Jurist aufsuchen" wird nun ein Rechtsklick im Dialog nicht mehr als "Ja" sondern als Abbruch gewertet (Danke an DerEinzehnte für den Hinweis)
+- Beim Verkaufen/Exportieren von Waren kann nun auch Frozen Castle als Ziel ausgewählt werden, wenn man die Städte rückwärts, also mit dem Minus-Cursor durchläuft (Danke an DerEinzehnte für den Hinweis)
+- Die Rekrutierung von Soldaten/Räubern in klappt nun auch in 10er Schritten (Danke an Muffinz für den Hinweis)
+- Kerkerstrafe und Gesetzesbrüche (und einige weitere Zustände) werden beim Tod eines Spielercharakters nicht mehr an dessen Erben weitergegeben sondern zurückgesetzt
+- Bei Spielen mit nur einem aktiven Spieler erhöhen Warenverkäufe des Spielers an die Stadt am Ende der Runde nun korrekt den Lagerstand der Stadt
 
 ## 1.4.4 - 24.12.2021
 
