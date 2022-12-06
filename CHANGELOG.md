@@ -41,7 +41,7 @@
   - Titelstufe von Fürst/Fürstin und Herzog/Herzogin wurde vertauscht, um sie an den historischen Rang in Europa anzupassen
 - Bei der Ankündigung eines Spielers wird nun auch sein Titel angezeigt
 - Die Strafe "Einen Monat Kerker" hat nun eine variable Länge, abhängig von der Schwere der Schuld. Die Auswirkung auf die Gesundheit des verurteilten Spielers ist dann entsprechend höher (Danke an Muffinz für das Feedback)
-- Feste benötigen die Waren nun im Lager der Stadt anstelle im Lager der Niederlassung des Spielers. Somit ist es nun überhaupt erst möglich, alle Waren für die größeren Feste zu beschaffen (sofern die Handelszertifikat dafür vorhanden sind).
+- Feste benötigen die Waren nun im Lager der Stadt anstelle im Lager der Niederlassung des Spielers. Somit ist es nun überhaupt erst möglich, alle Waren für die größeren Feste zu beschaffen (sofern die Handelszertifikate dafür vorhanden sind).
 - Die von den Einwohnern einer Stadt verbrauchten Waren am Rundenende wurden reduziert
 
 ### Korrekturen
