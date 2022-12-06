@@ -41,6 +41,8 @@
   - Titelstufe von Fürst/Fürstin und Herzog/Herzogin wurde vertauscht, um sie an den historischen Rang in Europa anzupassen
 - Bei der Ankündigung eines Spielers wird nun auch sein Titel angezeigt
 - Die Strafe "Einen Monat Kerker" hat nun eine variable Länge, abhängig von der Schwere der Schuld. Die Auswirkung auf die Gesundheit des verurteilten Spielers ist dann entsprechend höher (Danke an Muffinz für das Feedback)
+- Feste benötigen die Waren nun im Lager der Stadt anstelle im Lager der Niederlassung des Spielers. Somit ist es nun überhaupt erst möglich, alle Waren für die größeren Feste zu beschaffen (sofern die Handelszertifikat dafür vorhanden sind).
+- Die von den Einwohnern einer Stadt verbrauchten Waren am Rundenende wurden reduziert
 
 ### Korrekturen
 - Militärische Ereignisse: Auf einigen Systemen war die Schriftart für Nachrichten der Karawanenüberfälle nicht korrekt, das sollte nun nicht mehr vorkommen können, ich konnte es zumindest nicht mehr reproduzieren (Danke an DerEinzehnte).
@@ -55,6 +57,7 @@
 - Beim Verkaufen/Exportieren von Waren kann nun auch Frozen Castle als Ziel ausgewählt werden, wenn man die Städte rückwärts, also mit dem Minus-Cursor durchläuft (Danke an DerEinzehnte für den Hinweis)
 - Die Rekrutierung von Soldaten/Räubern in klappt nun auch in 10er Schritten (Danke an Muffinz für den Hinweis)
 - Kerkerstrafe und Gesetzesbrüche (und einige weitere Zustände) werden beim Tod eines Spielercharakters nicht mehr an dessen Erben weitergegeben sondern zurückgesetzt
+- Bei Spielen mit nur einem aktiven Spieler erhöhen Warenverkäufe des Spielers an die Stadt am Ende der Runde nun korrekt den Lagerstand der Stadt
 
 ## 1.4.4 - 24.12.2021
 
