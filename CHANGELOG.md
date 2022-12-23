@@ -1,6 +1,6 @@
 # Changelog Conspiratio
 
-## Unreleased
+## 1.4.5 - 24.12.2022
 
 ### TL;DR (Zusammenfassung)
 - Sprachausgabe bei Titelvergabe und Handelszertifikat
@@ -18,6 +18,7 @@
   - Neue Einstellung "Stützpunktereignisse von KI-Spielern anzeigen" (Standard: Aus) hinzugefügt. Damit wird im Standard verhindert, dass bei Jahresende jedes Mal durch all die Stützpunktereignisse (Ausbau, Reparatur usw.) der KI-Besitzer geklickt werden muss. Dies sollte ursprünglich der Atmosphäre dienen, wird nach einiger Spielzeit jedoch nervig (Danke an DerEinzehnte für das Feedback).
   - Neue Einstellung "Militärereignisse (Überfälle) von KI-Spieler anzeigen" (Standard: An) hinzugefügt. Damit lässt sich auf Wunsch einstellen, dass nur Überfälle mit Beteiligung von menschlichen Spielern angezeigt werden. Auch dies soll die Klicks beim Jahresende reduzieren.
 - Tooltip für den freien, belegten und insgesamt verfügbaren Lagerraum auf dem Werkstatt-Button in der Stadtansicht (Produktionsbildschirm) hinzugefügt
+- Der Changelog kann nun aus dem Hauptmenü mit einem Klick auf den Schriftzug der Versionsnummer unten rechts aufgerufen werden
 
 ### Änderungen
 - Verbesserungen der Benutzerfreundlichkeit
@@ -34,7 +35,7 @@
 - Das Musikstück "Jason Shaw - The Assasins" entfernt, welches nicht ganz zum Thema passte (Danke an Kathi für die Anregung) und durch das neues Lied "Strobotone - Medieval Theme 02" ersetzt.
 - Credits bzgl. Wiki sowie Musik und Sounds erweitert (Details dazu in der GitHub [README](https://github.com/Conspiratio/Conspiratio.WinForms/tree/main#musik-und-sound-credits))
 - Bei der Kupplerin werden nun keine übertrieben teuren Kandidaten mehr vorgeschlagen und die bestehende Beziehung zum Kandidaten hat einen leicht höheren Einfluss auf die Auswahl durch die Kupplerin (Danke an Kathi für den Hinweis)
-- Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun ein wenig Taler, um den Realismus etwas zu erhöhen (Danke an Kathi für die Anregung)
+- Das Ereignis "Gehstock bzw. Sonnenschirm kaufen" kostet nun einige Taler, um den Realismus etwas zu erhöhen (Danke an Kathi für die Anregung)
 - Der Betrag bei positiven sowie negativen finanziellen Ereignisse am Rundenende wurde ein wenig erhöht
 - Titelvergabe
   - Die Vergabe von Titeln wurde neu balanciert und ist nun u.a. auch vom Wohnsitz sowie vom Besitz militärischer Stützpunkte abhängig, zusätzlich wurde die Talergrenze der höheren Titel herabgesetzt (Danke an DerEinzehnte für die Anregung). Details dazu im [Wiki (ACHTUNG SPOILER!)](https://github.com/Conspiratio/Conspiratio.Wiki/wiki/2.5-Titel).
