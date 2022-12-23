@@ -1480,6 +1480,17 @@ namespace Conspiratio
                     tcsRechtsklick?.TrySetResult(true);
                 }
             }
+            else if (e.Button == MouseButtons.Left)
+            {
+                if (aktuellePosition == Posi_Hauptmenue || aktuellePosition == Posi_Credits)
+                {
+                    // Changelog aufrufen
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr den Changelog in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResult.Yes)
+                        return;
+
+                    Process.Start("https://github.com/Conspiratio/Conspiratio.WinForms/blob/main/CHANGELOG.md");
+                }
+            }
         }
 
         private async void label2_MouseDown(object sender, MouseEventArgs e)
@@ -3065,7 +3076,7 @@ namespace Conspiratio
                     ortdatumAktualisieren = false;
 
                     Version v = Assembly.GetExecutingAssembly().GetName().Version;
-                    label1.Text = string.Format("{0}.{1}.{2}", v.Major, v.Minor, v.Build);
+                    label1.Text = string.Format("Klicken für Changelog - Version {0}.{1}.{2}", v.Major, v.Minor, v.Build);
                     label1.Left = this.Width - 5 - label1.Width;
                     label1.Top = this.Height - 5 - label1.Height;
                     label1.ForeColor = Color.Gold;
