@@ -78,8 +78,8 @@
     </Win32Resource>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Conspiratio.Lib, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Conspiratio.Lib.2.2.0\lib\net462\Conspiratio.Lib.dll</HintPath>
+    <Reference Include="Conspiratio.Lib, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Conspiratio.Lib.2.3.0\lib\net462\Conspiratio.Lib.dll</HintPath>
     </Reference>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
