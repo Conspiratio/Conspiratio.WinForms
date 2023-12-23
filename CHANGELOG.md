@@ -3,10 +3,13 @@
 ## 1.4.6 - 24.12.2023
 
 ### Erweiterungen
+- Neues Musikstück hinzugefügt, welches vom Spieler Michael Ziege eigens für Conspiratio als Theme-Idee erstellt wurde (Danke für die Erlaubnis zur Verwendung)
 
 ### Änderungen
 - 'Hotseat-Spiel' in 'Lokales Spiel' im Menü umbenannt, um die Zugänglichkeit für neue Spieler zu erhöhen
 - Die feste Begrenzung des Spielnamens auf 12 Zeichen wurde aufgehoben, stattdessen wird sich nun an der maximalen Länge für den Dateinamenpfad und Namen orientiert (max. 256 Zeichen)
+- Im Intro den "Rechtsklick um fortzufahren" Hinweis ergänzt, um klar zu machen, dass dies anhand des Mauscursors erkennbar ist
+- Spielererstellung Prompt geändert in "Name Spieler 1"
 
 ## 1.4.5 - 24.12.2022
 

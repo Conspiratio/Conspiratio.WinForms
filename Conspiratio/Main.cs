@@ -8489,7 +8489,7 @@ namespace Conspiratio
             PositionWechseln(Posi_Intro);
 
             label1.Top = this.Height - label1.Height - 5;
-            label1.Text = "(Rechtsklick um fortzufahren)";
+            label1.Text = "Dieser Cursor bedeutet: Rechtsklick um fortzufahren";
             label1.ForeColor = Color.Gold;
             label1.Left = this.Width - label1.Width - 10;
             label1.Visible = true;
@@ -8967,7 +8967,7 @@ namespace Conspiratio
             label2.Text += "Wiki:\nPommBaer";
             label2.Text += "\n\n\n";
 
-            label2.Text += "Musik:\nJason Shaw (Audionautix.com), Strobotone";
+            label2.Text += "Musik:\nJason Shaw (Audionautix.com),\nStrobotone,\nMichael Ziege";
             label2.Text += "\n\n\n";
 
             label2.Text += "Sounds:\ncsmag, BraveFrog, sarson,\nflorian_reinke, bevibeldesign";

@@ -69,7 +69,7 @@ namespace Conspiratio.Musik
             Songs_Outro = new byte[1][];
             Songs_Outro[0] = Properties.Resources.Song_Outro_PartingGlass;
 
-            Songs_Standard = new byte[11][];
+            Songs_Standard = new byte[12][];
             Songs_Standard[0] = Properties.Resources.Song_Standard_Strobotone_Medieval_Theme_02;
             Songs_Standard[1] = Properties.Resources.Song_Standard_ATallShip;
             Songs_Standard[2] = Properties.Resources.Song_Standard_LegendsOfTheRiver;
@@ -81,6 +81,7 @@ namespace Conspiratio.Musik
             Songs_Standard[8] = Properties.Resources.Song_Standard_TroubledBridges;
             Songs_Standard[9] = Properties.Resources.Song_Standard_TurkishDance;
             Songs_Standard[10] = Properties.Resources.Song_Standard_WhatChildIsThis;
+            Songs_Standard[11] = Properties.Resources.Song_Standard_Conspiratio_Theme;
 
             Songs_HZ = new byte[3][];
             Songs_HZ[0] = Properties.Resources.Song_HZ_TemptingFate;

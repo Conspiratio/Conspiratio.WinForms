@@ -1726,6 +1726,16 @@ namespace Conspiratio.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
         /// </summary>
+        internal static byte[] Song_Standard_Conspiratio_Theme {
+            get {
+                object obj = ResourceManager.GetObject("Song_Standard_Conspiratio_Theme", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
         internal static byte[] Song_Standard_LegendsOfTheRiver {
             get {
                 object obj = ResourceManager.GetObject("Song_Standard_LegendsOfTheRiver", resourceCulture);
