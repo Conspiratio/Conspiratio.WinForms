@@ -41,7 +41,7 @@
             this.btn_neuesSpiel.FlatAppearance.BorderSize = 0;
             this.btn_neuesSpiel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_neuesSpiel.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_neuesSpiel.Location = new System.Drawing.Point(48, 97);
+            this.btn_neuesSpiel.Location = new System.Drawing.Point(68, 161);
             this.btn_neuesSpiel.Name = "btn_neuesSpiel";
             this.btn_neuesSpiel.Size = new System.Drawing.Size(224, 42);
             this.btn_neuesSpiel.TabIndex = 228;
@@ -57,7 +57,7 @@
             this.btn_spielLaden.FlatAppearance.BorderSize = 0;
             this.btn_spielLaden.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_spielLaden.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_spielLaden.Location = new System.Drawing.Point(48, 155);
+            this.btn_spielLaden.Location = new System.Drawing.Point(68, 219);
             this.btn_spielLaden.Name = "btn_spielLaden";
             this.btn_spielLaden.Size = new System.Drawing.Size(224, 42);
             this.btn_spielLaden.TabIndex = 229;
@@ -68,15 +68,15 @@
             // 
             // lbl_hot_seat_text
             // 
-            this.lbl_hot_seat_text.AutoSize = true;
             this.lbl_hot_seat_text.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_hot_seat_text.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hot_seat_text.Font = new System.Drawing.Font("Arial", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hot_seat_text.ForeColor = System.Drawing.Color.Black;
-            this.lbl_hot_seat_text.Location = new System.Drawing.Point(55, 36);
+            this.lbl_hot_seat_text.Location = new System.Drawing.Point(31, 35);
             this.lbl_hot_seat_text.Name = "lbl_hot_seat_text";
-            this.lbl_hot_seat_text.Size = new System.Drawing.Size(148, 37);
+            this.lbl_hot_seat_text.Size = new System.Drawing.Size(293, 89);
             this.lbl_hot_seat_text.TabIndex = 230;
-            this.lbl_hot_seat_text.Text = "Hot-Seat";
+            this.lbl_hot_seat_text.Text = "Lokales Spiel (Hot Seat)";
+            this.lbl_hot_seat_text.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbl_hot_seat_text.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_hot_seat_text_MouseDown);
             // 
             // btn_spiel_fortsetzen
@@ -87,7 +87,7 @@
             this.btn_spiel_fortsetzen.FlatAppearance.BorderSize = 0;
             this.btn_spiel_fortsetzen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_spiel_fortsetzen.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_spiel_fortsetzen.Location = new System.Drawing.Point(48, 214);
+            this.btn_spiel_fortsetzen.Location = new System.Drawing.Point(68, 278);
             this.btn_spiel_fortsetzen.Name = "btn_spiel_fortsetzen";
             this.btn_spiel_fortsetzen.Size = new System.Drawing.Size(224, 42);
             this.btn_spiel_fortsetzen.TabIndex = 231;
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 289);
+            this.ClientSize = new System.Drawing.Size(363, 379);
             this.Controls.Add(this.btn_spiel_fortsetzen);
             this.Controls.Add(this.lbl_hot_seat_text);
             this.Controls.Add(this.btn_spielLaden);
@@ -109,7 +109,6 @@
             this.Text = "Einzelspieler";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_hot_seat_text_MouseDown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

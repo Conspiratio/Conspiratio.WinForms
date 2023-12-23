@@ -88,7 +88,7 @@ Ausblick: Mit der "Professional" Version hätten wir sogar die Möglichkeit, das
 
 ## Musik und Sound Credits
 
-Wir benutzen ausschließlich freie Musik und Sounds und bedanken uns dafür bei:
+Wir benutzen freie Musik und Sounds und bedanken uns dafür bei:
 
 ### Musik
 
@@ -129,6 +129,8 @@ Wir benutzen ausschließlich freie Musik und Sounds und bedanken uns dafür bei:
   - The Big Decision
 - [Strobotone](https://freemusicarchive.org/music/Strobotone/) (Lizenz: [Attribution-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nd/4.0)) für
   - Medieval Theme 02
+- [Michael Ziege](https://siggiziege.de/) für
+  - Conspiratio Theme - Idee 01
 
 ### Sounds
 

@@ -25,6 +25,7 @@ using Conspiratio.Lib.Gameplay.Niederlassung;
 using Conspiratio.Lib.Gameplay.Privilegien.FestGeben;
 using Conspiratio.Lib.Gameplay.Schreibstube;
 using Conspiratio.Lib.Gameplay.Spielwelt;
+using Conspiratio.Lib.Gameplay.Hinterzimmer;
 using Conspiratio.Musik;
 
 // Problem: Diese Types werden wohl nicht vom SerializationBinder aufgelöst sondern intern, was dann bei der Deserialisierung zu einer TypeLoadException führt, siehe auch: https://stackoverflow.com/a/55379118/13328804
@@ -3090,7 +3091,7 @@ namespace Conspiratio
 
                     int abstand = NormB(42);
 
-                    label2.Text = "Hotseat-Spiel";
+                    label2.Text = "Lokales Spiel";
                     label2.Left = ((this.Width - label2.Width) / 2) + abstand;
                     label2.Top = ((haup_spt + haup_spb) - label2.Height) / 2;
                     label2.Visible = true;
@@ -4602,35 +4603,17 @@ namespace Conspiratio
         #region KartenSpielen
         private async Task KartenSpielen()
         {
-            bool esWirdGespielt = false;
+            var Kartenspiel = new Kartenspiel();
 
-            if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID() != 0)
+            if (Kartenspiel.FindetKartenspielStatt)
             {
-                esWirdGespielt = true;
-            }
+                Kartenspiel.InitiiereKartenspielUndErmittleGegner();
 
-            if (esWirdGespielt)
-            {
-                if (SW.Dynamisch.GetGesetzX(4) > 0)
-                {
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheGesetzXUmEins(4);
-                }
-
-                if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetTaler() > SW.Statisch.GetKartenSpielenMinTaler())
+                if (Kartenspiel.HatSpielerGenugTaler())
                 {
                     label1.ForeColor = Color.Black;
                     label2.ForeColor = Color.Black;
-
-                    string GegnerName = SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).GetKompletterName();
-                    string GegnerErSie = "er";
-                    string GegnerSeinenIhren = "seinen";
-
-                    if (!SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).GetMaennlich())
-                    {
-                        GegnerErSie = "sie";
-                        GegnerSeinenIhren = "ihren";
-                    }
-
+     
                     btn_nachrichten_ksp_ok.Top = NormH(510);
                     btn_nachrichten_ksp_ok.Left = lbl_nachrichten_text.Left + lbl_nachrichten_text.Width / 2 - 40;
 
@@ -4641,8 +4624,8 @@ namespace Conspiratio
                     btn_nachrichten_ksp_setzen.Wert = btn_nachrichten_ksp_setzen.MinimalerWert;
 
                     lbl_nachrichten_titel.Text = "17 und 4";
-                    lbl_nachrichten_text.Text = "Ihr habt Euch entschieden, in diesem Jahr mit " + GegnerName + " eine Runde 17 und 4 zu spielen, wobei " + GegnerErSie + " die Aufgabe des Bankhalters übernimmt." + "\n" + "\n" +
-                                                "Nach einem Blick in Euren Geldbeutel legt " + GegnerName + " einen Mindesteinsatz von " + btn_nachrichten_ksp_setzen.MinimalerWert.ToStringGeld() + " fest." + "\n" + "\n" + "Wie viel wollt Ihr setzen?";
+                    lbl_nachrichten_text.Text = "Ihr habt Euch entschieden, in diesem Jahr mit " + Kartenspiel.GegnerName + " eine Runde 17 und 4 zu spielen, wobei " + Kartenspiel.GegnerErSie + " die Aufgabe des Bankhalters übernimmt." + "\n" + "\n" +
+                                                "Nach einem Blick in Euren Geldbeutel legt " + Kartenspiel.GegnerName + " einen Mindesteinsatz von " + btn_nachrichten_ksp_setzen.MinimalerWert.ToStringGeld() + " fest." + "\n" + "\n" + "Wie viel wollt Ihr setzen?";
 
                     lbl_nachrichten_titel.Visible = true;
                     lbl_nachrichten_text.Visible = true;
@@ -4660,7 +4643,7 @@ namespace Conspiratio
 
                     await AufRechtsklickWarten();
 
-                    lbl_nachrichten_text.Text = GegnerName + " mischt die Karten und beginnt auszuteilen.";
+                    lbl_nachrichten_text.Text = Kartenspiel.GegnerName + " mischt die Karten und beginnt auszuteilen.";
 
                     int kartenanzahl = 13;
                     int[] GegnerKarten = new int[10];
@@ -4795,7 +4778,7 @@ namespace Conspiratio
 
                     if (ueberkauft)
                     {
-                        lbl_nachrichten_text.Text += "\n" + "Ihr habt Euch leider überkauft und damit " + wert.ToStringGeld() + " an " + GegnerName + " verloren.";
+                        lbl_nachrichten_text.Text += "\n" + "Ihr habt Euch leider überkauft und damit " + wert.ToStringGeld() + " an " + Kartenspiel.GegnerName + " verloren.";
                         UI.TalerAendern(-wert, ref lbl_Taler);
                         SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).ErhoeheBeziehungZuX(SW.Dynamisch.GetAktiverSpieler(), 50);
                         await AufRechtsklickWarten();
@@ -4810,13 +4793,13 @@ namespace Conspiratio
                         {
                             GegnerKarten[j] = SW.Statisch.Rnd.Next(0, kartenanzahl);
                             GegnerPunkte += kartenwerte[GegnerKarten[j]];
-                            lbl_nachrichten_text.Text += "\n" + GegnerName + " kauft noch " + kartennamen[GegnerKarten[j]] + " und besitzt damit " + GegnerPunkte.ToString() + " Punkte.";
+                            lbl_nachrichten_text.Text += "\n" + Kartenspiel.GegnerName + " kauft noch " + kartennamen[GegnerKarten[j]] + " und besitzt damit " + GegnerPunkte.ToString() + " Punkte.";
                             await AufRechtsklickWarten();
                             j++;
                         }
                         if (GegnerPunkte > 21)
                         {
-                            lbl_nachrichten_text.Text += "\n" + GegnerName + " hat sich mit " + GegnerPunkte.ToString() + " überkauft und damit " + wert.ToStringGeld() + " an Euch verloren. Triumphierend streicht Ihr den Gewinn ein.";
+                            lbl_nachrichten_text.Text += "\n" + Kartenspiel.GegnerName + " hat sich mit " + GegnerPunkte.ToString() + " überkauft und damit " + wert.ToStringGeld() + " an Euch verloren. Triumphierend streicht Ihr den Gewinn ein.";
                             UI.TalerAendern(wert, ref lbl_Taler);
                             SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).ErhoeheBeziehungZuX(SW.Dynamisch.GetAktiverSpieler(), 20);
                             await AufRechtsklickWarten();
@@ -4825,21 +4808,21 @@ namespace Conspiratio
                         {
                             if (GegnerPunkte > EigenePunkte)
                             {
-                                lbl_nachrichten_text.Text += "\n" + "Leider konnte " + GegnerName + " Euch mit " + GegnerSeinenIhren + " " + GegnerPunkte.ToString() + " Punkten Eure " + EigenePunkte + " schlagen. Ihr verliert Euren Einsatz in Höhe von " + wert.ToStringGeld() + ".";
+                                lbl_nachrichten_text.Text += "\n" + "Leider konnte " + Kartenspiel.GegnerName + " Euch mit " + Kartenspiel.GegnerSeinenIhren + " " + GegnerPunkte.ToString() + " Punkten Eure " + EigenePunkte + " schlagen. Ihr verliert Euren Einsatz in Höhe von " + wert.ToStringGeld() + ".";
                                 UI.TalerAendern(-wert, ref lbl_Taler);
                                 SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).ErhoeheBeziehungZuX(SW.Dynamisch.GetAktiverSpieler(), 50);
                                 await AufRechtsklickWarten();
                             }
                             else if (GegnerPunkte < EigenePunkte)
                             {
-                                lbl_nachrichten_text.Text += "\n" + "Mit Euren " + EigenePunkte.ToString() + " Punkten konntet Ihr die " + GegnerPunkte.ToString() + " Punkte von " + GegnerName + " übertreffen. Jubelnd streicht Ihr Euren Gewinn in Höhe von " + wert.ToStringGeld() + " ein.";
+                                lbl_nachrichten_text.Text += "\n" + "Mit Euren " + EigenePunkte.ToString() + " Punkten konntet Ihr die " + GegnerPunkte.ToString() + " Punkte von " + Kartenspiel.GegnerName + " übertreffen. Jubelnd streicht Ihr Euren Gewinn in Höhe von " + wert.ToStringGeld() + " ein.";
                                 UI.TalerAendern(wert, ref lbl_Taler);
                                 SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).ErhoeheBeziehungZuX(SW.Dynamisch.GetAktiverSpieler(), 20);
                                 await AufRechtsklickWarten();
                             }
                             else if (GegnerPunkte == EigenePunkte)
                             {
-                                lbl_nachrichten_text.Text += "\n" + "Ihr besitzt mit " + EigenePunkte.ToString() + " Punkten gleich viele wie " + GegnerName + " und habt daher ein Unentschieden erlangt. Beide gehen ohne Gewinn nach Hause...";
+                                lbl_nachrichten_text.Text += "\n" + "Ihr besitzt mit " + EigenePunkte.ToString() + " Punkten gleich viele wie " + Kartenspiel.GegnerName + " und habt daher ein Unentschieden erlangt. Beide gehen ohne Gewinn nach Hause...";
                                 SW.Dynamisch.GetKIwithID(SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpieltKartenGegenSpielerID()).ErhoeheBeziehungZuX(SW.Dynamisch.GetAktiverSpieler(), 30);
                                 await AufRechtsklickWarten();
                             }
@@ -7748,6 +7731,7 @@ namespace Conspiratio
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(i, globalAktiveStadt).GetEnabled())
                     {
                         rohid = SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(i);
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetProduktionsslot(globalAktiveStadt, Slot0oder1).SetProduktionRohstoff(rohid);
                         break;
                     }
                 }
@@ -8506,7 +8490,7 @@ namespace Conspiratio
             PositionWechseln(Posi_Intro);
 
             label1.Top = this.Height - label1.Height - 5;
-            label1.Text = "(Rechtsklick um fortzufahren)";
+            label1.Text = "Dieser Cursor bedeutet: Rechtsklick um fortzufahren";
             label1.ForeColor = Color.Gold;
             label1.Left = this.Width - label1.Width - 10;
             label1.Visible = true;
@@ -8899,11 +8883,6 @@ namespace Conspiratio
             btn_kup_selbst.Left = lbl_kup_2.Left - btn_kup_kupplerin.Width - 15;
             #endregion
 
-            #region KartenSpielen
-
-
-            #endregion
-
             #region Kreditbuch
             int kred_dist1 = 15;
             int kred_dist2 = 10;
@@ -8989,7 +8968,7 @@ namespace Conspiratio
             label2.Text += "Wiki:\nPommBaer";
             label2.Text += "\n\n\n";
 
-            label2.Text += "Musik:\nJason Shaw (Audionautix.com), Strobotone";
+            label2.Text += "Musik:\nJason Shaw (Audionautix.com),\nStrobotone,\nMichael Ziege";
             label2.Text += "\n\n\n";
 
             label2.Text += "Sounds:\ncsmag, BraveFrog, sarson,\nflorian_reinke, bevibeldesign";

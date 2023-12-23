@@ -500,10 +500,7 @@ namespace Conspiratio
             lbl_nsp_name.Left = UI.NormB(145, Width, _bildschirmBreite);
             lbl_nsp_name.Top = UI.NormH(163, Height, _bildschirmHoehe);
 
-            if (_nachtraeglich)
-                lbl_nsp_name.Text = $"Spielernamen eingeben:";
-            else
-                lbl_nsp_name.Text = $"Spieler{_anzahlAngelegteSpieler + 1} Namen eingeben:";
+            lbl_nsp_name.Text = _nachtraeglich ? "Spielername:" : $"Name Spieler {_anzahlAngelegteSpieler + 1}:";
 
             txb_namenEingeben.Left = lbl_nsp_name.Left + lbl_nsp_name.Width / 2 - txb_namenEingeben.Width / 2;
             txb_namenEingeben.Top = UI.NormH(209, Height, _bildschirmHoehe);
