@@ -1,0 +1,1 @@
+Conspiratio is a free fanmade open source game project, inspired by "Fugger 2". It's a turn-based economic simulator of the modern age (17th century).
