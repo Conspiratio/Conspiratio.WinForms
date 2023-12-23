@@ -1,5 +1,13 @@
 # Changelog Conspiratio
 
+## 1.4.6 - 24.12.2023
+
+### Erweiterungen
+
+### Änderungen
+- 'Hotseat-Spiel' in 'Lokales Spiel' im Menü umbenannt, um die Zugänglichkeit für neue Spieler zu erhöhen
+- Die feste Begrenzung des Spielnamens auf 12 Zeichen wurde aufgehoben, stattdessen wird sich nun an der maximalen Länge für den Dateinamenpfad und Namen orientiert (max. 256 Zeichen)
+
 ## 1.4.5 - 24.12.2022
 
 ### TL;DR (Zusammenfassung)

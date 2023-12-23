@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -144,9 +145,17 @@ namespace Conspiratio
 
         private void txb_namenEingeben_TextChanged(object sender, EventArgs e)
         {
-            int maxlen = SW.Statisch.GetMaxNameLength();
+            var savegamePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Conspiratio");
+            savegamePath = Path.Combine(savegamePath, "_1600.dat");
+            
+            int savegamePathLength = savegamePath.Length;
 
-            //Zu lange Namen abfangen
+            int maxlen = 256 - savegamePathLength;
+
+            if (maxlen < 0)  // Fallback aus den Einstellungen (Standard: 12), wenn der Savegamepfad bereits länger als 256 Zeichen sein sollte
+                maxlen = SW.Statisch.GetMaxNameLength();
+
+            // Zu lange Namen abfangen und kürzen
             if (txb_namenEingeben.Text.Length > maxlen)
             {
                 txb_namenEingeben.Text = txb_namenEingeben.Text.Substring(0, maxlen);
