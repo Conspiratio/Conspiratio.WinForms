@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Extensions;
 using Conspiratio.Lib.Gameplay.Privilegien;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -44,6 +45,10 @@ namespace Conspiratio
         }
         #endregion
 
+        public new DialogResultGame ShowDialog()
+        {
+            return base.ShowDialog().ToDialogResultGame();
+        }
 
         private void BauwerkStiftenForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -86,7 +91,7 @@ namespace Conspiratio
         {
             if (SW.Dynamisch.CheckIfenoughGold(preise[x-1]))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich für " + preise[x-1].ToStringGeld() + "\nder Stadt " + SW.Dynamisch.GetStadtwithID(aktive_stadt).GetGebietsName() + " " + Bauwerke[x-1] + " stiften?", "Ja", "Nein") == DialogResult.Yes)
+                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich für " + preise[x-1].ToStringGeld() + "\nder Stadt " + SW.Dynamisch.GetStadtwithID(aktive_stadt).GetGebietsName() + " " + Bauwerke[x-1] + " stiften?", "Ja", "Nein") == DialogResultGame.Yes)
                 {
                     // Permaansehen erhöhen
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoehePermaAnsehen(Convert.ToInt16(preise[x-1] / 1000));

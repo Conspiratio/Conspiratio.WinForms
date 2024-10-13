@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Gameplay.Privilegien;
 using Conspiratio.Lib.Gameplay.Privilegien.FestGeben;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -20,6 +21,11 @@ namespace Conspiratio.Privilegien
             btn_fest_art.BackgroundImage = new Bitmap(Properties.Resources.SymbUnchecked);
             btn_fest_ort.BackgroundImage = new Bitmap(Properties.Resources.SymbUnchecked);
             btn_fest_jahr.BackgroundImage = new Bitmap(Properties.Resources.SymbUnchecked);
+        }
+
+        public new DialogResultGame ShowDialog()
+        {
+            return base.ShowDialog().ToDialogResultGame();
         }
 
         private void frmFestGeben_MouseDown(object sender, MouseEventArgs e)

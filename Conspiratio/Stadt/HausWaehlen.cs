@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Extensions;
 using Conspiratio.Lib.Gameplay.Privilegien;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -105,7 +106,7 @@ namespace Conspiratio
             {
                 if (SW.Dynamisch.CheckIfenoughGold(_hausXpreis[x - 1]))
                 {
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich für\n" + _hausXpreis[x - 1].ToStringGeld() + " ein/e " + SW.Statisch.GetHaus(x).Name + "\n bauen lassen?", "Ja", "Nein") == DialogResult.Yes)
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich für\n" + _hausXpreis[x - 1].ToStringGeld() + " ein/e " + SW.Statisch.GetHaus(x).Name + "\n bauen lassen?", "Ja", "Nein") == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-_hausXpreis[x - 1]);
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtid).SetHausID(x);

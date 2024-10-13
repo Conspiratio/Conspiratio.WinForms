@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Hauptmenue;
 using Conspiratio.Kampf;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Extensions;
 using Conspiratio.Lib.Gameplay.Einstellungen;
 using Conspiratio.Lib.Gameplay.Ereignisse;
@@ -986,7 +987,7 @@ namespace Conspiratio
                         #region Runde beenden
                         else if (e.Button == MouseButtons.Right)
                         {
-                            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResult.Yes)
+                            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResultGame.Yes)
                             {
                                 label1.Visible = false;
                                 label2.Visible = false;
@@ -1486,7 +1487,7 @@ namespace Conspiratio
                 if (aktuellePosition == Posi_Hauptmenue || aktuellePosition == Posi_Credits)
                 {
                     // Changelog aufrufen
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr den Changelog in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResult.Yes)
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr den Changelog in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResultGame.Yes)
                         return;
 
                     Process.Start("https://github.com/Conspiratio/Conspiratio.WinForms/blob/main/CHANGELOG.md");
@@ -2322,7 +2323,7 @@ namespace Conspiratio
 
         private async void btn_runde_beenden_Click(object sender, EventArgs e)
         {
-            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResult.Yes)
+            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResultGame.Yes)
                 await ZugBeenden();
         }
         #endregion 
@@ -6005,7 +6006,7 @@ namespace Conspiratio
                 if (id < SW.Statisch.GetMinKIID())
                 {
                     // Spielerwahl
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Für welches Urteil wollt Ihr stimmen,\n " + SW.Dynamisch.GetSpWithID(id).GetKompletterName() + "?", "Schuldig", "Nicht schuldig") == DialogResult.Yes)
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Für welches Urteil wollt Ihr stimmen,\n " + SW.Dynamisch.GetSpWithID(id).GetKompletterName() + "?", "Schuldig", "Nicht schuldig") == DialogResultGame.Yes)
                     {
                         schuldig[i] = true;
                         SpE.setBoolKurzSpeicher(false);
@@ -7392,7 +7393,7 @@ namespace Conspiratio
 
             if (SW.Dynamisch.CheckIfenoughGold(konvertierkosten))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr für " + konvertierkosten.ToStringGeld() + "\nzum " + SW.Statisch.GetReligionsNamenX(neueID) + "en Glauben wechseln?", "Ja", "Nein") == DialogResult.Yes)
+                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr für " + konvertierkosten.ToStringGeld() + "\nzum " + SW.Statisch.GetReligionsNamenX(neueID) + "en Glauben wechseln?", "Ja", "Nein") == DialogResultGame.Yes)
                 {
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetReligion(neueID);
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerStatistik().KKonvertierungen++;
@@ -7412,7 +7413,7 @@ namespace Conspiratio
 
             if (SW.Dynamisch.CheckIfenoughGold(austrittkosten))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr für " + austrittkosten.ToStringGeld() + "\naus der Kirche austreten?", "Ja", "Nein") == DialogResult.Yes)
+                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr für " + austrittkosten.ToStringGeld() + "\naus der Kirche austreten?", "Ja", "Nein") == DialogResultGame.Yes)
                 {
                     //falls verboten
                     if (SW.Dynamisch.GetGesetzX(40) != 0)
@@ -7597,7 +7598,7 @@ namespace Conspiratio
                 {
                     int verkpreis = (SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetWSKaufpreis() * 3) / 4;
 
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Eure Werkstätte für " + verkpreis.ToString() + "\nTaler verkaufen?", "Ja", "Nein") == DialogResult.Yes)
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Eure Werkstätte für " + verkpreis.ToString() + "\nTaler verkaufen?", "Ja", "Nein") == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(wks_nr, globalAktiveStadt).SetEnabled(false);
 
@@ -7633,7 +7634,7 @@ namespace Conspiratio
                     int preis = SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetWSKaufpreis();
                     
                     if (SW.UI.JaNeinFrage.ShowDialogText(textFrage: "Wollt Ihr für " + preis.ToStringGeld() + " in " + SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetGebietsName() + " eine Werkstätte für eine\n" + 
-                                                         SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetRohName() + "-Produktion kaufen?") == DialogResult.Yes)
+                                                         SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetRohName() + "-Produktion kaufen?") == DialogResultGame.Yes)
                     {
                         if (SW.Dynamisch.CheckIfenoughGold(preis))
                         {
@@ -9029,7 +9030,7 @@ namespace Conspiratio
         #region TutorialHilfefAufrufen
         private void TutorialHilfefAufrufen()
         {
-            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr unsere Hilfeseite in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResult.Yes)
+            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr unsere Hilfeseite in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResultGame.Yes)
                 return;
 
             Process.Start("https://github.com/Conspiratio/Conspiratio.Wiki/wiki");

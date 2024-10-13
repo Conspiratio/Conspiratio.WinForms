@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
 
 namespace Conspiratio
@@ -517,7 +518,7 @@ namespace Conspiratio
                 _escPressed = false;
 
                 if (!_nachtraeglich &&  // Neues Spiel?
-                SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?", "Ja", "Nein") != DialogResult.Yes)
+                SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?", "Ja", "Nein") != DialogResultGame.Yes)
                 {
                     await NamenseingabeUmschalten();
                     return;

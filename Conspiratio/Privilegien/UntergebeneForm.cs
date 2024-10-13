@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Gameplay.Privilegien;
 using Conspiratio.Lib.Gameplay.Spielwelt;
 
@@ -27,6 +28,10 @@ namespace Conspiratio
         }
         #endregion
 
+        public new DialogResultGame ShowDialog()
+        {
+            return base.ShowDialog().ToDialogResultGame();
+        }
 
         private void btn_d1_Click(object sender, EventArgs e)
         {

@@ -16,7 +16,7 @@ namespace Conspiratio
         /// <param name="textJa">Beschriftung des linken "Ja"-Buttons</param>
         /// <param name="textNein">Beschriftung des rechten "Nein"-Buttons</param>
         /// <returns>Kann DialogResult.Yes, DialogResult.No und DialogResult.Cancel beim Schließen des Dialogs über Rechtsklick zurückgeben.</returns>
-        public DialogResult ShowDialogText(string textFrage, string textJa = "Ja", string textNein = "Nein")
+        public DialogResultGame ShowDialogText(string textFrage, string textJa = "Ja", string textNein = "Nein")
         {
             lbl_frage_20.Text = textFrage;
             Width = lbl_frage_20.Left * 2 + lbl_frage_20.Width;
@@ -32,7 +32,7 @@ namespace Conspiratio
             if ((dialogResult != DialogResult.Yes) && (dialogResult != DialogResult.No))
                 dialogResult = DialogResult.Cancel;
 
-            return dialogResult;
+            return dialogResult.ToDialogResultGame();
         }
 
         // Protected Konstruktor, damit keine direkten Instanzen dieser Klasse erzeugt werden können.

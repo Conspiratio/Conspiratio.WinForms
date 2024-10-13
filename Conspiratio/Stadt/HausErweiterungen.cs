@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
 using Conspiratio.Controls;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Extensions;
 using Conspiratio.Lib.Gameplay.Privilegien;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -109,7 +110,7 @@ namespace Conspiratio
 
             if (SW.Dynamisch.CheckIfenoughGold(preis))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich\n" + this.Controls["lblErweiterungBauen" + (sender as Control).Tag.ToString()].Text + "\n bauen lassen?", "Ja", "Lieber nicht!") == DialogResult.Yes)
+                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich\n" + this.Controls["lblErweiterungBauen" + (sender as Control).Tag.ToString()].Text + "\n bauen lassen?", "Ja", "Lieber nicht!") == DialogResultGame.Yes)
                 {
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-preis);
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Gameplay.Spielwelt;
 
 namespace Conspiratio
@@ -176,7 +177,7 @@ namespace Conspiratio
                 }
                 else if (level == 1)
                 {
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr falsche Informationen verbreiten um\n den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " ins schwanken zu bringen?", "Ja", "Nein") == DialogResult.Yes)
+                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr falsche Informationen verbreiten um\n den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " ins schwanken zu bringen?", "Ja", "Nein") == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetPrivilegKaufmannBenutzt(true);
 
@@ -198,15 +199,15 @@ namespace Conspiratio
                 }
                 else if (level == 2)
                 {
-                    DialogResult result = SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Einfluss auf die Großhändler dazu\n nutzen um den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " zu", "steigern", "senken");
+                    DialogResultGame result = SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Einfluss auf die Großhändler dazu\n nutzen um den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " zu", "steigern", "senken");
 
-                    if (result == DialogResult.Yes)
+                    if (result == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetPrivilegKaufmannBenutzt(true);
                         value = SW.Statisch.Rnd.Next(1, 3);
                         temp = "Ihr habt den Grundpreis\nvon " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " gesteigert";
                     }
-                    else if(result == DialogResult.No)
+                    else if(result == DialogResultGame.No)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetPrivilegKaufmannBenutzt(true);
                         value = SW.Statisch.Rnd.Next(-2, 0);
