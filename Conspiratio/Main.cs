@@ -8504,7 +8504,7 @@ namespace Conspiratio
         {
             var interfaceBindings = new InterfaceBindings();
 
-            SW.Statisch.Initialisieren(interfaceBindings.GetStrafen(), interfaceBindings.GetPrivilegien());
+            SW.Statisch.Initialisieren();
 
             SW.UI.Initialisieren(interfaceBindings.GetJaNeinFrage(), interfaceBindings.GetTextAnzeigen(), interfaceBindings.GetBeziehungPflegen(), 
                                  interfaceBindings.GetBauwerkStiftenDialog(), interfaceBindings.GetFestGebenDialog(), interfaceBindings.GetPolitischeWeltkarteDialog(),
