@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Lib.Allgemein;
@@ -59,112 +60,112 @@ namespace Conspiratio
                 this.CloseMitSound();
         }
 
-        private void btn_1_Click(object sender, EventArgs e)
+        private async void btn_1_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(1);
+            await RohstoffXclick(1);
         }
 
-        private void btn_2_Click(object sender, EventArgs e)
+        private async void btn_2_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(2);
+            await RohstoffXclick(2);
         }
 
-        private void btn_3_Click(object sender, EventArgs e)
+        private async void btn_3_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(3);
+            await RohstoffXclick(3);
         }
 
-        private void btn_4_Click(object sender, EventArgs e)
+        private async void btn_4_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(4);
+            await RohstoffXclick(4);
         }
 
-        private void btn_5_Click(object sender, EventArgs e)
+        private async void btn_5_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(5);
+            await RohstoffXclick(5);
         }
 
-        private void btn_6_Click(object sender, EventArgs e)
+        private async void btn_6_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(6);
+            await RohstoffXclick(6);
         }
 
-        private void btn_7_Click(object sender, EventArgs e)
+        private async void btn_7_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(7);
+            await RohstoffXclick(7);
         }
 
-        private void btn_8_Click(object sender, EventArgs e)
+        private async void btn_8_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(8);
+            await RohstoffXclick(8);
         }
 
-        private void btn_9_Click(object sender, EventArgs e)
+        private async void btn_9_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(9);
+            await RohstoffXclick(9);
         }
 
-        private void btn_10_Click(object sender, EventArgs e)
+        private async void btn_10_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(10);
+            await RohstoffXclick(10);
         }
 
-        private void btn_11_Click(object sender, EventArgs e)
+        private async void btn_11_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(11);
+            await RohstoffXclick(11);
         }
 
-        private void btn_12_Click(object sender, EventArgs e)
+        private async void btn_12_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(12);
+            await RohstoffXclick(12);
         }
 
-        private void btn_13_Click(object sender, EventArgs e)
+        private async void btn_13_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(13);
+            await RohstoffXclick(13);
         }
 
-        private void btn_14_Click(object sender, EventArgs e)
+        private async void btn_14_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(14);
+            await RohstoffXclick(14);
         }
 
-        private void btn_15_Click(object sender, EventArgs e)
+        private async void btn_15_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(15);
+            await RohstoffXclick(15);
         }
 
-        private void btn_16_Click(object sender, EventArgs e)
+        private async void btn_16_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(16);
+            await RohstoffXclick(16);
         }
 
-        private void btn_17_Click(object sender, EventArgs e)
+        private async void btn_17_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(17);
+            await RohstoffXclick(17);
         }
 
-        private void btn_18_Click(object sender, EventArgs e)
+        private async void btn_18_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(18);
+            await RohstoffXclick(18);
         }
 
-        private void btn_19_Click(object sender, EventArgs e)
+        private async void btn_19_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(19);
+            await RohstoffXclick(19);
         }
 
-        private void btn_20_Click(object sender, EventArgs e)
+        private async void btn_20_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(20);
+            await RohstoffXclick(20);
         }
 
-        private void btn_21_Click(object sender, EventArgs e)
+        private async void btn_21_Click(object sender, EventArgs e)
         {
-            RohstoffXclick(21);
+            await RohstoffXclick(21);
         }
 
-        private void RohstoffXclick(int X)
+        private async Task RohstoffXclick(int X)
         {
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetPrivilegKaufmannBenutzt() == false)
             {
@@ -177,7 +178,7 @@ namespace Conspiratio
                 }
                 else if (level == 1)
                 {
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr falsche Informationen verbreiten um\n den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " ins schwanken zu bringen?", "Ja", "Nein") == DialogResultGame.Yes)
+                    if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr falsche Informationen verbreiten um\n den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " ins schwanken zu bringen?", "Ja", "Nein") == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetPrivilegKaufmannBenutzt(true);
 
@@ -199,7 +200,7 @@ namespace Conspiratio
                 }
                 else if (level == 2)
                 {
-                    DialogResultGame result = SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Einfluss auf die Großhändler dazu\n nutzen um den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " zu", "steigern", "senken");
+                    DialogResultGame result = await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr Euren Einfluss auf die Großhändler dazu\n nutzen um den Grundpreis von " + SW.Dynamisch.GetRohstoffwithID(X).GetRohName() + " zu", "steigern", "senken");
 
                     if (result == DialogResultGame.Yes)
                     {

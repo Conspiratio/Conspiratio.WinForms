@@ -6,7 +6,7 @@ namespace Conspiratio.Allgemein
 {
     public class InterfaceBindings
     {
-        public IJaNeinFrage GetJaNeinFrage()
+        public IYesNoQuestion GetYesNoQuestion()
         {
             return new JaNeinFrage();
         }

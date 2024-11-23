@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Conspiratio.Allgemein;
@@ -67,31 +68,31 @@ namespace Conspiratio
             btn_stadt.Text = SW.Dynamisch.GetStadtwithID(aktive_stadt).GetGebietsName();
         }
 
-        private void btn_d1_Click(object sender, EventArgs e)
+        private async void btn_d1_Click(object sender, EventArgs e)
         {
-            btnXexecute(1);
+            await btnXexecute(1);
         }
 
-        private void btn_d2_Click(object sender, EventArgs e)
+        private async void btn_d2_Click(object sender, EventArgs e)
         {
-            btnXexecute(2);
+            await btnXexecute(2);
         }
 
-        private void btn_d3_Click(object sender, EventArgs e)
+        private async void btn_d3_Click(object sender, EventArgs e)
         {
-            btnXexecute(3);
+            await btnXexecute(3);
         }
 
-        private void btn_d4_Click(object sender, EventArgs e)
+        private async void btn_d4_Click(object sender, EventArgs e)
         {
-            btnXexecute(4);
+            await btnXexecute(4);
         }
 
-        private void btnXexecute(int x)
+        private async Task btnXexecute(int x)
         {
             if (SW.Dynamisch.CheckIfenoughGold(preise[x-1]))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich für " + preise[x-1].ToStringGeld() + "\nder Stadt " + SW.Dynamisch.GetStadtwithID(aktive_stadt).GetGebietsName() + " " + Bauwerke[x-1] + " stiften?", "Ja", "Nein") == DialogResultGame.Yes)
+                if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr wirklich für " + preise[x-1].ToStringGeld() + "\nder Stadt " + SW.Dynamisch.GetStadtwithID(aktive_stadt).GetGebietsName() + " " + Bauwerke[x-1] + " stiften?", "Ja", "Nein") == DialogResultGame.Yes)
                 {
                     // Permaansehen erhöhen
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoehePermaAnsehen(Convert.ToInt16(preise[x-1] / 1000));

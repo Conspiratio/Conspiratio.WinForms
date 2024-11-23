@@ -518,7 +518,7 @@ namespace Conspiratio
                 _escPressed = false;
 
                 if (!_nachtraeglich &&  // Neues Spiel?
-                SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?", "Ja", "Nein") != DialogResultGame.Yes)
+                await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr die Spielerstellung\n komplett abbrechen?") != DialogResultGame.Yes)
                 {
                     await NamenseingabeUmschalten();
                     return;

@@ -104,13 +104,13 @@ namespace Conspiratio
         }
         #endregion
 
-        private void btnErweiterungBauen_Click(object sender, EventArgs e)
+        private async void btnErweiterungBauen_Click(object sender, EventArgs e)
         {
             int preis = Convert.ToInt32(_hausErweiterungen[Convert.ToInt32((sender as Control).Tag)].Kaufpreis * _reduzierung);
 
             if (SW.Dynamisch.CheckIfenoughGold(preis))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr wirklich\n" + this.Controls["lblErweiterungBauen" + (sender as Control).Tag.ToString()].Text + "\n bauen lassen?", "Ja", "Lieber nicht!") == DialogResultGame.Yes)
+                if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr wirklich\n" + this.Controls["lblErweiterungBauen" + (sender as Control).Tag.ToString()].Text + "\n bauen lassen?", "Ja", "Lieber nicht!") == DialogResultGame.Yes)
                 {
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-preis);
 
