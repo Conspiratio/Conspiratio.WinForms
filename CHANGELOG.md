@@ -4,6 +4,7 @@
 
 ### Änderungen
 - Spionagen sind nun begtrenzt auf eine Dauer von 5 Jahren, um endlose Spionagen bei Amtsverlust des Ziels zu verhindern (Danke an DerEinzehnte für die Anregung)
+- Das "Bauwerk stiften" Fenster wird nun nicht mehr nach jedem Stiften geschlossen sondern bleibt geöffnet, um mehrfache Stiftungen zu vereinfachen (Danke an DerEinzehnte für die Anregung)
 - Im Hintergrund wurde der Umgang mit Dialogfenstern angepasst, um wieder mit der neuen Version der Conspiration.Lib kompatibel zu sein
 
 ## 1.4.6 - 24.12.2023

@@ -102,7 +102,6 @@ namespace Conspiratio
                     // Geld abziehen
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-preise[x-1]);
                 }
-                this.Close();
             }
         }
 
