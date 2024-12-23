@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using Conspiratio.Allgemein;
 using Conspiratio.Hauptmenue;
 using Conspiratio.Kampf;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Extensions;
 using Conspiratio.Lib.Gameplay.Einstellungen;
 using Conspiratio.Lib.Gameplay.Ereignisse;
@@ -986,7 +987,7 @@ namespace Conspiratio
                         #region Runde beenden
                         else if (e.Button == MouseButtons.Right)
                         {
-                            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResult.Yes)
+                            if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResultGame.Yes)
                             {
                                 label1.Visible = false;
                                 label2.Visible = false;
@@ -1340,7 +1341,7 @@ namespace Conspiratio
                             if (label1.Visible == true)
                             {
                                 C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
-                                kirchgang.AblassKaufen();
+                                await kirchgang.AblassKaufen();
                             }
                             else if (label2.Visible == true)
                             {
@@ -1350,7 +1351,7 @@ namespace Conspiratio
                             else if (label3.Visible == true)
                             {
                                 C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
-                                kirchgang.WaisenkindAdoptieren();
+                                await kirchgang.WaisenkindAdoptieren();
                             }
                         }
                         break;
@@ -1368,7 +1369,7 @@ namespace Conspiratio
                             }
                             else if (marked_tutorial)
                             {
-                                TutorialHilfefAufrufen();
+                                await TutorialHilfefAufrufen();
                             }
                             else if (marked_optionen)
                             {
@@ -1468,7 +1469,7 @@ namespace Conspiratio
             tcsRechtsklick?.TrySetResult(true);
         }
 
-        private void label1_MouseDown(object sender, MouseEventArgs e)
+        private async void label1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
@@ -1486,7 +1487,7 @@ namespace Conspiratio
                 if (aktuellePosition == Posi_Hauptmenue || aktuellePosition == Posi_Credits)
                 {
                     // Changelog aufrufen
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr den Changelog in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResult.Yes)
+                    if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr den Changelog in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResultGame.Yes)
                         return;
 
                     Process.Start("https://github.com/Conspiratio/Conspiratio.WinForms/blob/main/CHANGELOG.md");
@@ -1517,14 +1518,14 @@ namespace Conspiratio
             }
         }
 
-        private void label3_MouseDown(object sender, MouseEventArgs e)
+        private async void label3_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 if (aktuellePosition == Posi_Hauptmenue)
                 {
                     C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
-                    TutorialHilfefAufrufen();
+                    await TutorialHilfefAufrufen();
                 }
             }
         }
@@ -1773,7 +1774,7 @@ namespace Conspiratio
             }
         }
 
-        private void btn_stadt_ws1_MouseDown(object sender, MouseEventArgs e)
+        private async void btn_stadt_ws1_MouseDown(object sender, MouseEventArgs e)
         {
             bool linksklick = false;
             if (e.Button == MouseButtons.Left)
@@ -1785,10 +1786,10 @@ namespace Conspiratio
             {
                 linksklick = false;
             }
-            StadtWSXclick(linksklick, 1);
+            await StadtWSXclick(linksklick, 1);
         }
 
-        private void btn_stadt_ws2_MouseDown(object sender, MouseEventArgs e)
+        private async void btn_stadt_ws2_MouseDown(object sender, MouseEventArgs e)
         {
             bool linksklick = false;
             if (e.Button == MouseButtons.Left)
@@ -1800,10 +1801,10 @@ namespace Conspiratio
             {
                 linksklick = false;
             }
-            StadtWSXclick(linksklick, 2);
+            await StadtWSXclick(linksklick, 2);
         }
 
-        private void btn_stadt_ws3_MouseDown(object sender, MouseEventArgs e)
+        private async void btn_stadt_ws3_MouseDown(object sender, MouseEventArgs e)
         {
             bool linksklick = false;
             if (e.Button == MouseButtons.Left)
@@ -1815,10 +1816,10 @@ namespace Conspiratio
             {
                 linksklick = false;
             }
-            StadtWSXclick(linksklick, 3);
+            await StadtWSXclick(linksklick, 3);
         }
 
-        private void btn_stadt_ws4_MouseDown(object sender, MouseEventArgs e)
+        private async void btn_stadt_ws4_MouseDown(object sender, MouseEventArgs e)
         {
             bool linksklick = false;
             if (e.Button == MouseButtons.Left)
@@ -1830,10 +1831,10 @@ namespace Conspiratio
             {
                 linksklick = false;
             }
-            StadtWSXclick(linksklick, 4);
+            await StadtWSXclick(linksklick, 4);
         }
 
-        private void btn_stadt_ws5_MouseDown(object sender, MouseEventArgs e)
+        private async void btn_stadt_ws5_MouseDown(object sender, MouseEventArgs e)
         {
             bool linksklick = false;
             if (e.Button == MouseButtons.Left)
@@ -1845,10 +1846,10 @@ namespace Conspiratio
             {
                 linksklick = false;
             }
-            StadtWSXclick(linksklick, 5);
+            await StadtWSXclick(linksklick, 5);
         }
 
-        private void btn_stadt_ws6_MouseDown(object sender, MouseEventArgs e)
+        private async void btn_stadt_ws6_MouseDown(object sender, MouseEventArgs e)
         {
             bool linksklick = false;
             if (e.Button == MouseButtons.Left)
@@ -1860,7 +1861,7 @@ namespace Conspiratio
             {
                 linksklick = false;
             }
-            StadtWSXclick(linksklick, 6);
+            await StadtWSXclick(linksklick, 6);
         }
 
         private void lbl_stadt_roh1_MouseDown(object sender, MouseEventArgs e)
@@ -2322,7 +2323,7 @@ namespace Conspiratio
 
         private async void btn_runde_beenden_Click(object sender, EventArgs e)
         {
-            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResult.Yes)
+            if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr Euren Zug \n wirklich beenden?") == DialogResultGame.Yes)
                 await ZugBeenden();
         }
         #endregion 
@@ -5477,7 +5478,15 @@ namespace Conspiratio
             {
                 if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).GetKosten() > 0)
                 {
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).DauerPlusEins(); //Dauer der Spionage erhoehen
+                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).DauerReduzieren();  //Dauer der Spionage um ein Jahr reduzieren, um endlose Spionagen bei Amtsverlust des Ziels zu verhindern
+
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).GetDauer() < 0)
+                    {
+                        lbl_nachrichten_text.Text += "Eure Spionage gegen " + SW.Dynamisch.GetSpWithID(i).GetKompletterName() + " ist ausgelaufen." + "\n\n";
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).AktiveSpionageEntfernen(i);
+                        continue;
+                    }
+
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).SetJahr(SW.Dynamisch.GetAktuellesJahr());
                     int opferdelikte = SW.Dynamisch.GetSpWithID(i).GetDeliktpunkte();
                     int bereitsSpionierteDelikte = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).GetDelikte();
@@ -6005,7 +6014,7 @@ namespace Conspiratio
                 if (id < SW.Statisch.GetMinKIID())
                 {
                     // Spielerwahl
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Für welches Urteil wollt Ihr stimmen,\n " + SW.Dynamisch.GetSpWithID(id).GetKompletterName() + "?", "Schuldig", "Nicht schuldig") == DialogResult.Yes)
+                    if (await SW.UI.YesNoQuestion.ShowDialogText("Für welches Urteil wollt Ihr stimmen,\n " + SW.Dynamisch.GetSpWithID(id).GetKompletterName() + "?", "Schuldig", "Nicht schuldig") == DialogResultGame.Yes)
                     {
                         schuldig[i] = true;
                         SpE.setBoolKurzSpeicher(false);
@@ -7307,46 +7316,32 @@ namespace Conspiratio
 
             for (int i = 1; i <= SW.Dynamisch.GetAktivSpielerAnzahl(); i++)
             {
+                lbl_nachrichten_titel.Text = "Freie Ämter für " + SW.Dynamisch.GetSpWithID(i).GetKompletterName();
                 wahlids = SW.Dynamisch.GetFreieAemterFuerSpX(i);
+
                 for (int j = 0; j < SW.Dynamisch.GetAnzahlFreieAemterFuerSpX(i); j++)
                 {
                     string Amtsname = SW.Statisch.GetAmtwithID(SW.Dynamisch.GetWahlX(wahlids[j]).AmtID).GetAmtsname(true);
                     string Gebietsname = SW.Dynamisch.GetGebietwithID(SW.Dynamisch.GetWahlX(wahlids[j]).GebietID, SW.Dynamisch.GetWahlX(wahlids[j]).Stufe).GetGebietsName();
-
+                    
                     lbl_nachrichten_text.Text += Amtsname + " in " + Gebietsname + "\n";
-
                     amtcounter++;
-
-                    //Damit nicht mehr als 10 freie Aemter pro Seite angezeigt werden
-                    if (amtcounter >= 10)
-                    {
-                        PositionWechseln(Posi_RundenNachrichten);
-                        lbl_nachrichten_text.Visible = true;
-                        lbl_nachrichten_titel.Text = "Freie Ämter";
-                        lbl_nachrichten_titel.Visible = true;
-
-                        await AufRechtsklickWarten();
-
-                        lbl_nachrichten_text.Text = "";
-                        amtcounter = 0;
-                        lbl_nachrichten_text.Visible = false;
-                        lbl_nachrichten_titel.Visible = false;
-                    }
                 }
-            }
 
-            if (lbl_nachrichten_text.Text != "")
-            {
                 PositionWechseln(Posi_RundenNachrichten);
-                lbl_nachrichten_text.Visible = true;
-                lbl_nachrichten_titel.Text = "Freie Ämter";
                 lbl_nachrichten_titel.Visible = true;
+                lbl_nachrichten_text.Visible = true;
+
+                if (amtcounter > 0)
+                    amtcounter = 0;
+                else
+                    lbl_nachrichten_text.Text = "Keine freien Ämter";
 
                 await AufRechtsklickWarten();
-
-                lbl_nachrichten_text.Visible = false;
-                lbl_nachrichten_titel.Visible = false;
             }
+
+            lbl_nachrichten_text.Visible = false;
+            lbl_nachrichten_titel.Visible = false;
         }
         #endregion
 
@@ -7379,7 +7374,7 @@ namespace Conspiratio
         #endregion
 
         #region Konvertieren
-        private void KircheKonvertieren()
+        private async void KircheKonvertieren()
         {
             int konvertierkosten = SW.Statisch.GetKonvertierkosten();
             int eigeneRelID = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetReligion();
@@ -7392,7 +7387,7 @@ namespace Conspiratio
 
             if (SW.Dynamisch.CheckIfenoughGold(konvertierkosten))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr für " + konvertierkosten.ToStringGeld() + "\nzum " + SW.Statisch.GetReligionsNamenX(neueID) + "en Glauben wechseln?", "Ja", "Nein") == DialogResult.Yes)
+                if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr für " + konvertierkosten.ToStringGeld() + "\nzum " + SW.Statisch.GetReligionsNamenX(neueID) + "en Glauben wechseln?", "Ja", "Nein") == DialogResultGame.Yes)
                 {
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).SetReligion(neueID);
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerStatistik().KKonvertierungen++;
@@ -7406,13 +7401,13 @@ namespace Conspiratio
         #endregion
 
         #region Austreten
-        private void KircheAustreten()
+        private async void KircheAustreten()
         {
             int austrittkosten = SW.Statisch.GetAustrittskosten();
 
             if (SW.Dynamisch.CheckIfenoughGold(austrittkosten))
             {
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr für " + austrittkosten.ToStringGeld() + "\naus der Kirche austreten?", "Ja", "Nein") == DialogResult.Yes)
+                if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr für " + austrittkosten.ToStringGeld() + "\naus der Kirche austreten?", "Ja", "Nein") == DialogResultGame.Yes)
                 {
                     //falls verboten
                     if (SW.Dynamisch.GetGesetzX(40) != 0)
@@ -7582,7 +7577,7 @@ namespace Conspiratio
         #region Stadt
 
         #region StadtWSXclick
-        private void StadtWSXclick(bool linksklick, int wks_nr)
+        private async Task<bool> StadtWSXclick(bool linksklick, int wks_nr)
         {
             //Wenn die WS vorhanden ist
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(wks_nr, globalAktiveStadt).GetEnabled() == true)
@@ -7597,7 +7592,7 @@ namespace Conspiratio
                 {
                     int verkpreis = (SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetWSKaufpreis() * 3) / 4;
 
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Eure Werkstätte für " + verkpreis.ToString() + "\nTaler verkaufen?", "Ja", "Nein") == DialogResult.Yes)
+                    if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr Eure Werkstätte für " + verkpreis.ToString() + "\nTaler verkaufen?", "Ja", "Nein") == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatInStadtXWerkstaettenY(wks_nr, globalAktiveStadt).SetEnabled(false);
 
@@ -7622,6 +7617,7 @@ namespace Conspiratio
                         this.Controls["label" + wks_nr.ToString()].Visible = false;
 
                         this.Controls["btn_stadt_ws" + wks_nr.ToString()].BackgroundImage = new Bitmap(Conspiratio.Properties.Resources.SymbWS);
+                        return true;
                     }
                 }
             }
@@ -7632,8 +7628,8 @@ namespace Conspiratio
                 {
                     int preis = SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetWSKaufpreis();
                     
-                    if (SW.UI.JaNeinFrage.ShowDialogText(textFrage: "Wollt Ihr für " + preis.ToStringGeld() + " in " + SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetGebietsName() + " eine Werkstätte für eine\n" + 
-                                                         SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetRohName() + "-Produktion kaufen?") == DialogResult.Yes)
+                    if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr für " + preis.ToStringGeld() + " in " + SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetGebietsName() + " eine Werkstätte für eine\n" + 
+                                                         SW.Dynamisch.GetRohstoffwithID(SW.Dynamisch.GetStadtwithID(globalAktiveStadt).GetSingleRohstoff(wks_nr)).GetRohName() + "-Produktion kaufen?") == DialogResultGame.Yes)
                     {
                         if (SW.Dynamisch.CheckIfenoughGold(preis))
                         {
@@ -7652,6 +7648,7 @@ namespace Conspiratio
                             this.Controls["btn_stadt_roh" + wks_nr.ToString()].Visible = true;
                             this.Controls["lbl_stadt_roh" + wks_nr.ToString()].Visible = true;
                             this.Controls["label" + wks_nr.ToString()].Visible = true;
+                            return true;
                         }
                     }
                 }
@@ -7660,6 +7657,8 @@ namespace Conspiratio
                     SW.Dynamisch.BelTextAnzeigen("Ihr benötigt zuerst einen Wohnsitz in dieser Stadt");
                 }
             }
+
+            return false;
         }
         #endregion
 
@@ -8503,9 +8502,9 @@ namespace Conspiratio
         {
             var interfaceBindings = new InterfaceBindings();
 
-            SW.Statisch.Initialisieren(interfaceBindings.GetStrafen(), interfaceBindings.GetPrivilegien());
+            SW.Statisch.Initialisieren();
 
-            SW.UI.Initialisieren(interfaceBindings.GetJaNeinFrage(), interfaceBindings.GetTextAnzeigen(), interfaceBindings.GetBeziehungPflegen(), 
+            SW.UI.Initialisieren(interfaceBindings.GetYesNoQuestion(), interfaceBindings.GetTextAnzeigen(), interfaceBindings.GetBeziehungPflegen(), 
                                  interfaceBindings.GetBauwerkStiftenDialog(), interfaceBindings.GetFestGebenDialog(), interfaceBindings.GetPolitischeWeltkarteDialog(),
                                  interfaceBindings.GetTestamentAnzeigenDialog(), interfaceBindings.GetProzentwertFestlegenDialog(), interfaceBindings.GetUntergebeneDialog());
 
@@ -9027,12 +9026,13 @@ namespace Conspiratio
         #endregion
 
         #region TutorialHilfefAufrufen
-        private void TutorialHilfefAufrufen()
+        private async Task<bool> TutorialHilfefAufrufen()
         {
-            if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr unsere Hilfeseite in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResult.Yes)
-                return;
+            if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr unsere Hilfeseite in Eurem Standard-Browser öffnen?", "Auf jeden Fall", "Lieber nicht") != DialogResultGame.Yes)
+                return false;
 
             Process.Start("https://github.com/Conspiratio/Conspiratio.Wiki/wiki");
+            return true;
         }
         #endregion
 
@@ -9103,7 +9103,7 @@ namespace Conspiratio
         #region SpielerHinauswerfen
         private async Task SpielerHinauswerfen()
         {
-            bool? result = SW.Dynamisch.AktivenSpielerEntfernen();
+            bool? result = await SW.Dynamisch.AktivenSpielerEntfernen();
 
             if (result.HasValue)
             {

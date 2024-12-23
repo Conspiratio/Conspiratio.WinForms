@@ -55,9 +55,9 @@ namespace Conspiratio.Kampf
         #endregion
 
         #region btn_kaufangebot_Click
-        private void btn_kaufangebot_Click(object sender, EventArgs e)
+        private async void btn_kaufangebot_Click(object sender, EventArgs e)
         {
-            if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktID - 1].KaufangebotAbgeben(btn_Taler.Wert))
+            if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktID - 1].KaufangebotAbgeben(btn_Taler.Wert))
                 Close();
         }
         #endregion

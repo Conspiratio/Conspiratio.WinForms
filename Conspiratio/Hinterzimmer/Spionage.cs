@@ -38,13 +38,14 @@ namespace Conspiratio
                 if (Summe < 1000)
                     Summe = 1000;
 
+                int dauer = 5;
+
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheGesetzXUmEins(20);
-                lbl_text.Text = "In den nächsten Jahren werden Eure Spione " + SW.Dynamisch.GetSpWithID(KIID).GetName() + " überwachen und Euch von sämtlichen Verbrechen berichten. Die Spione verlangen dafür " + 
-                                Summe.ToStringGeld() + ".";
+                lbl_text.Text = $"In den nächsten {dauer} Jahren werden Eure Spione {SW.Dynamisch.GetSpWithID(KIID).GetName()} überwachen und Euch von sämtlichen Verbrechen berichten. Die Spione verlangen dafür {Summe.ToStringGeld()}.";
 
                 int id = ID;
                 SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(id).SetKosten(Summe);
-                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(id).SetDauer(0);
+                SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(id).SetDauer(dauer);
             }
             else
             {

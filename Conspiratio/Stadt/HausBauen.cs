@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Conspiratio.Allgemein;
+using Conspiratio.Lib.Allgemein;
 using Conspiratio.Lib.Extensions;
 using Conspiratio.Lib.Gameplay.Privilegien;
 using Conspiratio.Lib.Gameplay.Spielwelt;
@@ -105,7 +106,7 @@ namespace Conspiratio
                 this.CloseMitSound();
         }
 
-        private void btn_verkaufen_Click(object sender, EventArgs e)
+        private async void btn_verkaufen_Click(object sender, EventArgs e)
         {
             int w_counter = 0;
 
@@ -120,7 +121,7 @@ namespace Conspiratio
                 int hausid = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtID).GetHausID();
                 int wert = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtID).GetAktuellerWert();
 
-                if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Wohnsitz wirklich\n für " + wert.ToStringGeld() + " verkaufen?", "Ja", "Lieber nicht!") == DialogResult.Yes)
+                if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr Euren Wohnsitz wirklich\n für " + wert.ToStringGeld() + " verkaufen?", "Ja", "Lieber nicht!") == DialogResultGame.Yes)
                 {
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(wert);
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtID).SetHausID(0);
@@ -205,7 +206,7 @@ namespace Conspiratio
             }
         }
 
-        private void btn_renovieren_Click(object sender, EventArgs e)
+        private async void btn_renovieren_Click(object sender, EventArgs e)
         {
             if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtID).ZustandInProzent != 100)
             {
@@ -220,7 +221,7 @@ namespace Conspiratio
 
                     int preis = Convert.ToInt32((wert * ((100 - SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtID).ZustandInProzent) * 0.01)) * faktorReduzierung);
 
-                    if (SW.UI.JaNeinFrage.ShowDialogText("Wollt Ihr Euren Wohnsitz wirklich\n für " + preis.ToStringGeld() + " renovieren lassen?", "Ja", "Lieber nicht!") == DialogResult.Yes)
+                    if (await SW.UI.YesNoQuestion.ShowDialogText("Wollt Ihr Euren Wohnsitz wirklich\n für " + preis.ToStringGeld() + " renovieren lassen?", "Ja", "Lieber nicht!") == DialogResultGame.Yes)
                     {
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).ErhoeheTaler(-preis);
                         SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetSpielerHatHausVonStadtAnArraystelle(_stadtID).InDiesemJahrRenovieren = true;

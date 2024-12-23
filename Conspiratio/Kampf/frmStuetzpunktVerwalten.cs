@@ -212,11 +212,11 @@ namespace Conspiratio.Kampf
         #endregion
 
         #region btn_einheit_1_Click
-        private void btn_einheit_1_Click(object sender, System.EventArgs e)
+        private async void btn_einheit_1_Click(object sender, System.EventArgs e)
         {
             if (nb_einheit_1.Wert > _aktuelleAnzahlEinheit1)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_1.Wert - _aktuelleAnzahlEinheit1, (btn_einheit_1.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_1.Wert - _aktuelleAnzahlEinheit1, (btn_einheit_1.Tag as Einheit).GetType()))
                 {
                     _aktuelleAnzahlEinheit1 = nb_einheit_1.Wert;
                     UI.SpielerInfosAnzeigenUndAusrichten(this);  // Taler aktualisieren
@@ -226,7 +226,7 @@ namespace Conspiratio.Kampf
             }
             else if (nb_einheit_1.Wert < _aktuelleAnzahlEinheit1)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit1 - nb_einheit_1.Wert, (btn_einheit_1.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit1 - nb_einheit_1.Wert, (btn_einheit_1.Tag as Einheit).GetType()))
                     _aktuelleAnzahlEinheit1 = nb_einheit_1.Wert;
                 else
                     nb_einheit_1.Wert = _aktuelleAnzahlEinheit1;
@@ -237,11 +237,11 @@ namespace Conspiratio.Kampf
         #endregion
 
         #region btn_einheit_2_Click
-        private void btn_einheit_2_Click(object sender, System.EventArgs e)
+        private async void btn_einheit_2_Click(object sender, System.EventArgs e)
         {
             if (nb_einheit_2.Wert > _aktuelleAnzahlEinheit2)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_2.Wert - _aktuelleAnzahlEinheit2, (btn_einheit_2.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_2.Wert - _aktuelleAnzahlEinheit2, (btn_einheit_2.Tag as Einheit).GetType()))
                 {
                     _aktuelleAnzahlEinheit2 = nb_einheit_2.Wert;
                     UI.SpielerInfosAnzeigenUndAusrichten(this);  // Taler aktualisieren
@@ -251,7 +251,7 @@ namespace Conspiratio.Kampf
             }
             else if (nb_einheit_2.Wert < _aktuelleAnzahlEinheit2)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit2 - nb_einheit_2.Wert, (btn_einheit_2.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit2 - nb_einheit_2.Wert, (btn_einheit_2.Tag as Einheit).GetType()))
                     _aktuelleAnzahlEinheit2 = nb_einheit_2.Wert;
                 else
                     nb_einheit_2.Wert = _aktuelleAnzahlEinheit2;
@@ -262,11 +262,11 @@ namespace Conspiratio.Kampf
         #endregion
 
         #region btn_einheit_3_Click
-        private void btn_einheit_3_Click(object sender, System.EventArgs e)
+        private async void btn_einheit_3_Click(object sender, System.EventArgs e)
         {
             if (nb_einheit_3.Wert > _aktuelleAnzahlEinheit3)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_3.Wert - _aktuelleAnzahlEinheit3, (btn_einheit_3.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_3.Wert - _aktuelleAnzahlEinheit3, (btn_einheit_3.Tag as Einheit).GetType()))
                 {
                     _aktuelleAnzahlEinheit3 = nb_einheit_3.Wert;
                     UI.SpielerInfosAnzeigenUndAusrichten(this);  // Taler aktualisieren
@@ -276,7 +276,7 @@ namespace Conspiratio.Kampf
             }
             else if (nb_einheit_3.Wert < _aktuelleAnzahlEinheit3)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit3 - nb_einheit_3.Wert, (btn_einheit_3.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit3 - nb_einheit_3.Wert, (btn_einheit_3.Tag as Einheit).GetType()))
                     _aktuelleAnzahlEinheit3 = nb_einheit_3.Wert;
                 else
                     nb_einheit_3.Wert = _aktuelleAnzahlEinheit3;
@@ -287,11 +287,11 @@ namespace Conspiratio.Kampf
         #endregion
 
         #region btn_einheit_4_Click
-        private void btn_einheit_4_Click(object sender, System.EventArgs e)
+        private async void btn_einheit_4_Click(object sender, System.EventArgs e)
         {
             if (nb_einheit_4.Wert > _aktuelleAnzahlEinheit4)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_4.Wert - _aktuelleAnzahlEinheit4, (btn_einheit_4.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenAnheuern(nb_einheit_4.Wert - _aktuelleAnzahlEinheit4, (btn_einheit_4.Tag as Einheit).GetType()))
                 {
                     _aktuelleAnzahlEinheit4 = nb_einheit_4.Wert;
                     UI.SpielerInfosAnzeigenUndAusrichten(this);  // Taler aktualisieren
@@ -301,7 +301,7 @@ namespace Conspiratio.Kampf
             }
             else if (nb_einheit_4.Wert < _aktuelleAnzahlEinheit4)
             {
-                if (SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit4 - nb_einheit_4.Wert, (btn_einheit_4.Tag as Einheit).GetType()))
+                if (await SW.Dynamisch.GetStuetzpunkte()[_stuetzpunktIndex].TruppenEntlassen(_aktuelleAnzahlEinheit4 - nb_einheit_4.Wert, (btn_einheit_4.Tag as Einheit).GetType()))
                     _aktuelleAnzahlEinheit4 = nb_einheit_4.Wert;
                 else
                     nb_einheit_4.Wert = _aktuelleAnzahlEinheit4;
