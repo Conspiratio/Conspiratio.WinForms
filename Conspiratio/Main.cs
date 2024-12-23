@@ -5478,7 +5478,15 @@ namespace Conspiratio
             {
                 if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).GetKosten() > 0)
                 {
-                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).DauerPlusEins(); //Dauer der Spionage erhoehen
+                    SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).DauerReduzieren();  //Dauer der Spionage um ein Jahr reduzieren, um endlose Spionagen bei Amtsverlust des Ziels zu verhindern
+
+                    if (SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).GetDauer() < 0)
+                    {
+                        lbl_nachrichten_text.Text += "Eure Spionage gegen " + SW.Dynamisch.GetSpWithID(i).GetKompletterName() + " ist ausgelaufen." + "\n\n";
+                        SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).AktiveSpionageEntfernen(i);
+                        continue;
+                    }
+
                     SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).SetJahr(SW.Dynamisch.GetAktuellesJahr());
                     int opferdelikte = SW.Dynamisch.GetSpWithID(i).GetDeliktpunkte();
                     int bereitsSpionierteDelikte = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetAktiveSpionage(i).GetDelikte();
