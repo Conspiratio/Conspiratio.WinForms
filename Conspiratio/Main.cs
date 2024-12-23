@@ -7316,46 +7316,32 @@ namespace Conspiratio
 
             for (int i = 1; i <= SW.Dynamisch.GetAktivSpielerAnzahl(); i++)
             {
+                lbl_nachrichten_titel.Text = "Freie Ämter für " + SW.Dynamisch.GetSpWithID(i).GetKompletterName();
                 wahlids = SW.Dynamisch.GetFreieAemterFuerSpX(i);
+
                 for (int j = 0; j < SW.Dynamisch.GetAnzahlFreieAemterFuerSpX(i); j++)
                 {
                     string Amtsname = SW.Statisch.GetAmtwithID(SW.Dynamisch.GetWahlX(wahlids[j]).AmtID).GetAmtsname(true);
                     string Gebietsname = SW.Dynamisch.GetGebietwithID(SW.Dynamisch.GetWahlX(wahlids[j]).GebietID, SW.Dynamisch.GetWahlX(wahlids[j]).Stufe).GetGebietsName();
-
+                    
                     lbl_nachrichten_text.Text += Amtsname + " in " + Gebietsname + "\n";
-
                     amtcounter++;
-
-                    //Damit nicht mehr als 10 freie Aemter pro Seite angezeigt werden
-                    if (amtcounter >= 10)
-                    {
-                        PositionWechseln(Posi_RundenNachrichten);
-                        lbl_nachrichten_text.Visible = true;
-                        lbl_nachrichten_titel.Text = "Freie Ämter";
-                        lbl_nachrichten_titel.Visible = true;
-
-                        await AufRechtsklickWarten();
-
-                        lbl_nachrichten_text.Text = "";
-                        amtcounter = 0;
-                        lbl_nachrichten_text.Visible = false;
-                        lbl_nachrichten_titel.Visible = false;
-                    }
                 }
-            }
 
-            if (lbl_nachrichten_text.Text != "")
-            {
                 PositionWechseln(Posi_RundenNachrichten);
-                lbl_nachrichten_text.Visible = true;
-                lbl_nachrichten_titel.Text = "Freie Ämter";
                 lbl_nachrichten_titel.Visible = true;
+                lbl_nachrichten_text.Visible = true;
+
+                if (amtcounter > 0)
+                    amtcounter = 0;
+                else
+                    lbl_nachrichten_text.Text = "Keine freien Ämter";
 
                 await AufRechtsklickWarten();
-
-                lbl_nachrichten_text.Visible = false;
-                lbl_nachrichten_titel.Visible = false;
             }
+
+            lbl_nachrichten_text.Visible = false;
+            lbl_nachrichten_titel.Visible = false;
         }
         #endregion
 
