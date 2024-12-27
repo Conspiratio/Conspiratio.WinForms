@@ -19,7 +19,9 @@ namespace Conspiratio
         /// <param name="textYes">Beschriftung des linken "Ja"-Buttons</param>
         /// <param name="textNo">Beschriftung des rechten "Nein"-Buttons</param>
         /// <returns>Kann <see cref="DialogResultGame.Yes"/>, <see cref="DialogResultGame.No"/> und <see cref="DialogResultGame.Cancel"/> beim Schließen des Dialogs über Rechtsklick zurückgeben.</returns>
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously. Dies brauche ich explizit, um keine Nebeneffekte beim Öffnen des Fensters zu erzeugen (dann kann nämlich versucht werden, das Fenster erneut zu öffnen)
         public async Task<DialogResultGame> ShowDialogText(string textQuestion, string textYes = "Ja", string textNo = "Nein")
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
         {
             lbl_frage_20.Text = textQuestion;
             Width = lbl_frage_20.Left * 2 + lbl_frage_20.Width;
@@ -30,7 +32,12 @@ namespace Conspiratio
             btn_nein_20.Text = textNo;
             btn_nein_20.Left = Width / 3 * 2 - btn_nein_20.Width / 2;
 
-            return await Task.Run(ShowDialogText);
+            var dialogResult = ShowDialog();
+
+            if ((dialogResult != DialogResult.Yes) && (dialogResult != DialogResult.No))
+                dialogResult = DialogResult.Cancel;
+
+            return dialogResult.ToDialogResultGame();
         }
 
         // Protected Konstruktor, damit keine direkten Instanzen dieser Klasse erzeugt werden können.
@@ -38,16 +45,6 @@ namespace Conspiratio
         public JaNeinFrage()
         {
             InitializeComponent();
-        }
-
-        private DialogResultGame ShowDialogText()
-        {
-            var dialogResult = ShowDialog();
-
-            if ((dialogResult != DialogResult.Yes) && (dialogResult != DialogResult.No))
-                dialogResult = DialogResult.Cancel;
-
-            return dialogResult.ToDialogResultGame();
         }
 
         private void btn_ja_Click(object sender, EventArgs e)
