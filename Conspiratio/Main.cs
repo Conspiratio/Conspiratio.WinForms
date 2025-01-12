@@ -4897,7 +4897,7 @@ namespace Conspiratio
                 }
                 catch (Exception ex)
                 {
-                    SW.UI.TextAnzeigen.ShowDialog(ex.Message);
+                    await SW.UI.ShowText.ShowDialog(ex.Message);
                 }
             }
 
@@ -8262,12 +8262,12 @@ namespace Conspiratio
                             if (AnzahlMoeglich != 0)
                             {
                                 eink_anz = AnzahlMoeglich;
-                                SW.UI.TextAnzeigen.ShowDialog($"Ihr besitzt für diesen Rohstoff nicht genügend Lagerraum. Es konnte nur eine Menge von {AnzahlMoeglich} eingelagert werden.");
+                                SW.UI.ShowText.ShowDialog($"Ihr besitzt für diesen Rohstoff nicht genügend Lagerraum. Es konnte nur eine Menge von {AnzahlMoeglich} eingelagert werden.");
                             }
                             else
                             {
                                 eink_anz = 0;
-                                SW.UI.TextAnzeigen.ShowDialog("Ihr besitzt für diesen Rohstoff keinen ausreichenden Lagerraum.");
+                                SW.UI.ShowText.ShowDialog("Ihr besitzt für diesen Rohstoff keinen ausreichenden Lagerraum.");
                             }
                         }
 
@@ -8280,12 +8280,12 @@ namespace Conspiratio
                     }
                     else
                     {
-                        SW.UI.TextAnzeigen.ShowDialog("Dafür fehlen Euch die Taler.");
+                        SW.UI.ShowText.ShowDialog("Dafür fehlen Euch die Taler.");
                     }
                 }
                 else
                 {
-                    SW.UI.TextAnzeigen.ShowDialog("Der Lagerstand in der Stadt reicht nicht aus.");
+                    SW.UI.ShowText.ShowDialog("Der Lagerstand in der Stadt reicht nicht aus.");
                 }
             }
 
@@ -9147,7 +9147,7 @@ namespace Conspiratio
                 if (autosave == false)
                 {
                     if (!meldungUnterdruecken)
-                        SW.UI.TextAnzeigen.ShowDialog("Speichervorgang beendet");
+                        SW.UI.ShowText.ShowDialog("Speichervorgang beendet");
                 }
                 else
                 {
