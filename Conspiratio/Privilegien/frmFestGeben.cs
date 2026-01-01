@@ -69,12 +69,12 @@ namespace Conspiratio.Privilegien
             {
                 string message = _festManager.ErstelleNeuesFest(_festManager.StadtID, _festManager.Groesse, _festManager.Musiker, btn_jahr.Wert);
 
-                SW.UI.TextAnzeigen.ShowDialog(message);
+                SW.UI.ShowText.ShowDialog(message);
                 Close();
             }
             catch (Exception ex)
             {
-                SW.UI.TextAnzeigen.ShowDialog(ex.Message);
+                SW.UI.ShowText.ShowDialog(ex.Message);
             }
         }
 

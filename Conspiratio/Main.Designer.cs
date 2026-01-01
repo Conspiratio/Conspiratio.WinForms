@@ -195,7 +195,7 @@ namespace Conspiratio
             this.lbl_spielernameundamt.ForeColor = System.Drawing.Color.Black;
             this.lbl_spielernameundamt.Location = new System.Drawing.Point(375, 94);
             this.lbl_spielernameundamt.Name = "lbl_spielernameundamt";
-            this.lbl_spielernameundamt.Size = new System.Drawing.Size(445, 32);
+            this.lbl_spielernameundamt.Size = new System.Drawing.Size(666, 47);
             this.lbl_spielernameundamt.TabIndex = 7;
             this.lbl_spielernameundamt.Text = "Herr/Frau Spielername, ohne Amt";
             this.lbl_spielernameundamt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_spielernameundamt_MouseDown);
@@ -208,9 +208,12 @@ namespace Conspiratio
             this.lbl_Taler.ForeColor = System.Drawing.Color.Black;
             this.lbl_Taler.Location = new System.Drawing.Point(113, 29);
             this.lbl_Taler.Name = "lbl_Taler";
-            this.lbl_Taler.Size = new System.Drawing.Size(176, 32);
+            this.lbl_Taler.Size = new System.Drawing.Size(265, 47);
             this.lbl_Taler.TabIndex = 8;
             this.lbl_Taler.Text = "789910 Taler";
+            this.lbl_Taler.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_Taler_MouseDown);
+            this.lbl_Taler.MouseEnter += new System.EventHandler(this.lbl_Taler_MouseEnter);
+            this.lbl_Taler.MouseLeave += new System.EventHandler(this.lbl_Taler_MouseLeave);
             // 
             // lbl_ortdatum
             // 
@@ -220,9 +223,10 @@ namespace Conspiratio
             this.lbl_ortdatum.ForeColor = System.Drawing.Color.Black;
             this.lbl_ortdatum.Location = new System.Drawing.Point(983, 19);
             this.lbl_ortdatum.Name = "lbl_ortdatum";
-            this.lbl_ortdatum.Size = new System.Drawing.Size(231, 32);
+            this.lbl_ortdatum.Size = new System.Drawing.Size(349, 47);
             this.lbl_ortdatum.TabIndex = 11;
             this.lbl_ortdatum.Text = "Kontor A.D. 1400";
+            this.lbl_ortdatum.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lbl_ortdatum_MouseDown);
             // 
             // lbl_stadt_roh1
             // 
@@ -232,7 +236,7 @@ namespace Conspiratio
             this.lbl_stadt_roh1.ForeColor = System.Drawing.Color.Gold;
             this.lbl_stadt_roh1.Location = new System.Drawing.Point(213, 303);
             this.lbl_stadt_roh1.Name = "lbl_stadt_roh1";
-            this.lbl_stadt_roh1.Size = new System.Drawing.Size(88, 24);
+            this.lbl_stadt_roh1.Size = new System.Drawing.Size(134, 37);
             this.lbl_stadt_roh1.TabIndex = 53;
             this.lbl_stadt_roh1.Text = "000.000";
             this.lbl_stadt_roh1.Visible = false;
@@ -248,7 +252,7 @@ namespace Conspiratio
             this.lbl_stadt_roh2.ForeColor = System.Drawing.Color.Gold;
             this.lbl_stadt_roh2.Location = new System.Drawing.Point(340, 303);
             this.lbl_stadt_roh2.Name = "lbl_stadt_roh2";
-            this.lbl_stadt_roh2.Size = new System.Drawing.Size(88, 24);
+            this.lbl_stadt_roh2.Size = new System.Drawing.Size(134, 37);
             this.lbl_stadt_roh2.TabIndex = 54;
             this.lbl_stadt_roh2.Text = "000.000";
             this.lbl_stadt_roh2.Visible = false;
@@ -264,7 +268,7 @@ namespace Conspiratio
             this.lbl_stadt_roh4.ForeColor = System.Drawing.Color.Gold;
             this.lbl_stadt_roh4.Location = new System.Drawing.Point(600, 303);
             this.lbl_stadt_roh4.Name = "lbl_stadt_roh4";
-            this.lbl_stadt_roh4.Size = new System.Drawing.Size(88, 24);
+            this.lbl_stadt_roh4.Size = new System.Drawing.Size(134, 37);
             this.lbl_stadt_roh4.TabIndex = 56;
             this.lbl_stadt_roh4.Text = "000.000";
             this.lbl_stadt_roh4.Visible = false;
@@ -280,7 +284,7 @@ namespace Conspiratio
             this.lbl_stadt_roh3.ForeColor = System.Drawing.Color.Gold;
             this.lbl_stadt_roh3.Location = new System.Drawing.Point(473, 303);
             this.lbl_stadt_roh3.Name = "lbl_stadt_roh3";
-            this.lbl_stadt_roh3.Size = new System.Drawing.Size(88, 24);
+            this.lbl_stadt_roh3.Size = new System.Drawing.Size(134, 37);
             this.lbl_stadt_roh3.TabIndex = 55;
             this.lbl_stadt_roh3.Text = "000.000";
             this.lbl_stadt_roh3.Visible = false;
@@ -296,7 +300,7 @@ namespace Conspiratio
             this.lbl_stadt_roh6.ForeColor = System.Drawing.Color.Gold;
             this.lbl_stadt_roh6.Location = new System.Drawing.Point(860, 303);
             this.lbl_stadt_roh6.Name = "lbl_stadt_roh6";
-            this.lbl_stadt_roh6.Size = new System.Drawing.Size(88, 24);
+            this.lbl_stadt_roh6.Size = new System.Drawing.Size(134, 37);
             this.lbl_stadt_roh6.TabIndex = 58;
             this.lbl_stadt_roh6.Text = "000.000";
             this.lbl_stadt_roh6.Visible = false;
@@ -312,7 +316,7 @@ namespace Conspiratio
             this.lbl_stadt_roh5.ForeColor = System.Drawing.Color.Gold;
             this.lbl_stadt_roh5.Location = new System.Drawing.Point(733, 303);
             this.lbl_stadt_roh5.Name = "lbl_stadt_roh5";
-            this.lbl_stadt_roh5.Size = new System.Drawing.Size(88, 24);
+            this.lbl_stadt_roh5.Size = new System.Drawing.Size(134, 37);
             this.lbl_stadt_roh5.TabIndex = 57;
             this.lbl_stadt_roh5.Text = "000.000";
             this.lbl_stadt_roh5.Visible = false;
@@ -443,7 +447,7 @@ namespace Conspiratio
             this.btn_stadt_prod0_Taetigkeit.Location = new System.Drawing.Point(8, 464);
             this.btn_stadt_prod0_Taetigkeit.Margin = new System.Windows.Forms.Padding(0);
             this.btn_stadt_prod0_Taetigkeit.Name = "btn_stadt_prod0_Taetigkeit";
-            this.btn_stadt_prod0_Taetigkeit.Size = new System.Drawing.Size(184, 42);
+            this.btn_stadt_prod0_Taetigkeit.Size = new System.Drawing.Size(274, 57);
             this.btn_stadt_prod0_Taetigkeit.TabIndex = 95;
             this.btn_stadt_prod0_Taetigkeit.Text = "Kein Auftrag";
             this.btn_stadt_prod0_Taetigkeit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -472,7 +476,7 @@ namespace Conspiratio
             this.btn_stadt_prod0_Arbeiter.MinimalerWert = 0;
             this.btn_stadt_prod0_Arbeiter.Name = "btn_stadt_prod0_Arbeiter";
             this.btn_stadt_prod0_Arbeiter.NurEinserSchritte = false;
-            this.btn_stadt_prod0_Arbeiter.Size = new System.Drawing.Size(54, 41);
+            this.btn_stadt_prod0_Arbeiter.Size = new System.Drawing.Size(76, 57);
             this.btn_stadt_prod0_Arbeiter.TabIndex = 96;
             this.btn_stadt_prod0_Arbeiter.TausenderTrenner = true;
             this.btn_stadt_prod0_Arbeiter.Text = "00";
@@ -499,7 +503,7 @@ namespace Conspiratio
             this.btn_stadt_prod0_Produkt.Location = new System.Drawing.Point(-24, 495);
             this.btn_stadt_prod0_Produkt.Margin = new System.Windows.Forms.Padding(0);
             this.btn_stadt_prod0_Produkt.Name = "btn_stadt_prod0_Produkt";
-            this.btn_stadt_prod0_Produkt.Size = new System.Drawing.Size(122, 42);
+            this.btn_stadt_prod0_Produkt.Size = new System.Drawing.Size(180, 57);
             this.btn_stadt_prod0_Produkt.TabIndex = 101;
             this.btn_stadt_prod0_Produkt.Text = "button1";
             this.btn_stadt_prod0_Produkt.UseVisualStyleBackColor = false;
@@ -526,7 +530,7 @@ namespace Conspiratio
             this.btn_stadt_prod0_Werkstaetten.MinimalerWert = 0;
             this.btn_stadt_prod0_Werkstaetten.Name = "btn_stadt_prod0_Werkstaetten";
             this.btn_stadt_prod0_Werkstaetten.NurEinserSchritte = false;
-            this.btn_stadt_prod0_Werkstaetten.Size = new System.Drawing.Size(54, 41);
+            this.btn_stadt_prod0_Werkstaetten.Size = new System.Drawing.Size(76, 57);
             this.btn_stadt_prod0_Werkstaetten.TabIndex = 102;
             this.btn_stadt_prod0_Werkstaetten.TausenderTrenner = true;
             this.btn_stadt_prod0_Werkstaetten.Text = "00";
@@ -546,7 +550,7 @@ namespace Conspiratio
             this.lbl_stadt_prod0_text1.ForeColor = System.Drawing.Color.Black;
             this.lbl_stadt_prod0_text1.Location = new System.Drawing.Point(400, 500);
             this.lbl_stadt_prod0_text1.Name = "lbl_stadt_prod0_text1";
-            this.lbl_stadt_prod0_text1.Size = new System.Drawing.Size(86, 31);
+            this.lbl_stadt_prod0_text1.Size = new System.Drawing.Size(130, 47);
             this.lbl_stadt_prod0_text1.TabIndex = 104;
             this.lbl_stadt_prod0_text1.Text = "label4";
             this.lbl_stadt_prod0_text1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -562,7 +566,7 @@ namespace Conspiratio
             this.lbl_stadt_prod0_text2.ForeColor = System.Drawing.Color.Black;
             this.lbl_stadt_prod0_text2.Location = new System.Drawing.Point(724, 500);
             this.lbl_stadt_prod0_text2.Name = "lbl_stadt_prod0_text2";
-            this.lbl_stadt_prod0_text2.Size = new System.Drawing.Size(86, 31);
+            this.lbl_stadt_prod0_text2.Size = new System.Drawing.Size(130, 47);
             this.lbl_stadt_prod0_text2.TabIndex = 105;
             this.lbl_stadt_prod0_text2.Text = "label4";
             this.lbl_stadt_prod0_text2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -585,7 +589,7 @@ namespace Conspiratio
             this.btn_stadt_prod1_Taetigkeit.Location = new System.Drawing.Point(9, 530);
             this.btn_stadt_prod1_Taetigkeit.Margin = new System.Windows.Forms.Padding(0);
             this.btn_stadt_prod1_Taetigkeit.Name = "btn_stadt_prod1_Taetigkeit";
-            this.btn_stadt_prod1_Taetigkeit.Size = new System.Drawing.Size(184, 42);
+            this.btn_stadt_prod1_Taetigkeit.Size = new System.Drawing.Size(274, 57);
             this.btn_stadt_prod1_Taetigkeit.TabIndex = 106;
             this.btn_stadt_prod1_Taetigkeit.Text = "Kein Auftrag";
             this.btn_stadt_prod1_Taetigkeit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -610,7 +614,7 @@ namespace Conspiratio
             this.btn_stadt_prod1_Produkt.Location = new System.Drawing.Point(-24, 560);
             this.btn_stadt_prod1_Produkt.Margin = new System.Windows.Forms.Padding(0);
             this.btn_stadt_prod1_Produkt.Name = "btn_stadt_prod1_Produkt";
-            this.btn_stadt_prod1_Produkt.Size = new System.Drawing.Size(115, 41);
+            this.btn_stadt_prod1_Produkt.Size = new System.Drawing.Size(167, 57);
             this.btn_stadt_prod1_Produkt.TabIndex = 107;
             this.btn_stadt_prod1_Produkt.Text = "button1";
             this.btn_stadt_prod1_Produkt.UseVisualStyleBackColor = false;
@@ -637,7 +641,7 @@ namespace Conspiratio
             this.btn_stadt_prod1_Arbeiter.MinimalerWert = 0;
             this.btn_stadt_prod1_Arbeiter.Name = "btn_stadt_prod1_Arbeiter";
             this.btn_stadt_prod1_Arbeiter.NurEinserSchritte = false;
-            this.btn_stadt_prod1_Arbeiter.Size = new System.Drawing.Size(54, 41);
+            this.btn_stadt_prod1_Arbeiter.Size = new System.Drawing.Size(76, 57);
             this.btn_stadt_prod1_Arbeiter.TabIndex = 108;
             this.btn_stadt_prod1_Arbeiter.TausenderTrenner = true;
             this.btn_stadt_prod1_Arbeiter.Text = "00";
@@ -657,7 +661,7 @@ namespace Conspiratio
             this.lbl_stadt_prod1_text1.ForeColor = System.Drawing.Color.Black;
             this.lbl_stadt_prod1_text1.Location = new System.Drawing.Point(400, 565);
             this.lbl_stadt_prod1_text1.Name = "lbl_stadt_prod1_text1";
-            this.lbl_stadt_prod1_text1.Size = new System.Drawing.Size(86, 31);
+            this.lbl_stadt_prod1_text1.Size = new System.Drawing.Size(130, 47);
             this.lbl_stadt_prod1_text1.TabIndex = 109;
             this.lbl_stadt_prod1_text1.Text = "label4";
             this.lbl_stadt_prod1_text1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -684,7 +688,7 @@ namespace Conspiratio
             this.btn_stadt_prod1_Werkstaetten.MinimalerWert = 0;
             this.btn_stadt_prod1_Werkstaetten.Name = "btn_stadt_prod1_Werkstaetten";
             this.btn_stadt_prod1_Werkstaetten.NurEinserSchritte = false;
-            this.btn_stadt_prod1_Werkstaetten.Size = new System.Drawing.Size(54, 41);
+            this.btn_stadt_prod1_Werkstaetten.Size = new System.Drawing.Size(76, 57);
             this.btn_stadt_prod1_Werkstaetten.TabIndex = 110;
             this.btn_stadt_prod1_Werkstaetten.TausenderTrenner = true;
             this.btn_stadt_prod1_Werkstaetten.Text = "00";
@@ -704,7 +708,7 @@ namespace Conspiratio
             this.lbl_stadt_prod1_text2.ForeColor = System.Drawing.Color.Black;
             this.lbl_stadt_prod1_text2.Location = new System.Drawing.Point(724, 565);
             this.lbl_stadt_prod1_text2.Name = "lbl_stadt_prod1_text2";
-            this.lbl_stadt_prod1_text2.Size = new System.Drawing.Size(86, 31);
+            this.lbl_stadt_prod1_text2.Size = new System.Drawing.Size(130, 47);
             this.lbl_stadt_prod1_text2.TabIndex = 111;
             this.lbl_stadt_prod1_text2.Text = "label4";
             this.lbl_stadt_prod1_text2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -721,7 +725,7 @@ namespace Conspiratio
             this.lbl_stadt_prod0_kosten.ForeColor = System.Drawing.Color.Black;
             this.lbl_stadt_prod0_kosten.Location = new System.Drawing.Point(819, 495);
             this.lbl_stadt_prod0_kosten.Name = "lbl_stadt_prod0_kosten";
-            this.lbl_stadt_prod0_kosten.Size = new System.Drawing.Size(161, 31);
+            this.lbl_stadt_prod0_kosten.Size = new System.Drawing.Size(243, 47);
             this.lbl_stadt_prod0_kosten.TabIndex = 114;
             this.lbl_stadt_prod0_kosten.Text = "für xxx Taler";
             this.lbl_stadt_prod0_kosten.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -736,7 +740,7 @@ namespace Conspiratio
             this.lbl_stadt_prod1_kosten.ForeColor = System.Drawing.Color.Black;
             this.lbl_stadt_prod1_kosten.Location = new System.Drawing.Point(819, 562);
             this.lbl_stadt_prod1_kosten.Name = "lbl_stadt_prod1_kosten";
-            this.lbl_stadt_prod1_kosten.Size = new System.Drawing.Size(161, 31);
+            this.lbl_stadt_prod1_kosten.Size = new System.Drawing.Size(243, 47);
             this.lbl_stadt_prod1_kosten.TabIndex = 115;
             this.lbl_stadt_prod1_kosten.Text = "für xxx Taler";
             this.lbl_stadt_prod1_kosten.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1073,7 +1077,7 @@ namespace Conspiratio
             this.lbl_wahl_kand0.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand0.Location = new System.Drawing.Point(411, 283);
             this.lbl_wahl_kand0.Name = "lbl_wahl_kand0";
-            this.lbl_wahl_kand0.Size = new System.Drawing.Size(96, 32);
+            this.lbl_wahl_kand0.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand0.TabIndex = 192;
             this.lbl_wahl_kand0.Text = "Kand1";
             this.lbl_wahl_kand0.Visible = false;
@@ -1087,7 +1091,7 @@ namespace Conspiratio
             this.lbl_wahl_kand1.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand1.Location = new System.Drawing.Point(411, 316);
             this.lbl_wahl_kand1.Name = "lbl_wahl_kand1";
-            this.lbl_wahl_kand1.Size = new System.Drawing.Size(96, 32);
+            this.lbl_wahl_kand1.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand1.TabIndex = 193;
             this.lbl_wahl_kand1.Text = "Kand1";
             this.lbl_wahl_kand1.Visible = false;
@@ -1101,7 +1105,7 @@ namespace Conspiratio
             this.lbl_wahl_kand2.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand2.Location = new System.Drawing.Point(411, 349);
             this.lbl_wahl_kand2.Name = "lbl_wahl_kand2";
-            this.lbl_wahl_kand2.Size = new System.Drawing.Size(96, 32);
+            this.lbl_wahl_kand2.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand2.TabIndex = 194;
             this.lbl_wahl_kand2.Text = "Kand1";
             this.lbl_wahl_kand2.Visible = false;
@@ -1115,7 +1119,7 @@ namespace Conspiratio
             this.lbl_wahl_kand3.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand3.Location = new System.Drawing.Point(411, 382);
             this.lbl_wahl_kand3.Name = "lbl_wahl_kand3";
-            this.lbl_wahl_kand3.Size = new System.Drawing.Size(96, 32);
+            this.lbl_wahl_kand3.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand3.TabIndex = 195;
             this.lbl_wahl_kand3.Text = "Kand1";
             this.lbl_wahl_kand3.Visible = false;
@@ -1161,7 +1165,7 @@ namespace Conspiratio
             this.lbl_kupplerin_text.ForeColor = System.Drawing.Color.Gold;
             this.lbl_kupplerin_text.Location = new System.Drawing.Point(113, 607);
             this.lbl_kupplerin_text.Name = "lbl_kupplerin_text";
-            this.lbl_kupplerin_text.Size = new System.Drawing.Size(1539, 32);
+            this.lbl_kupplerin_text.Size = new System.Drawing.Size(2323, 47);
             this.lbl_kupplerin_text.TabIndex = 212;
             this.lbl_kupplerin_text.Text = "Ihr begebt Euch zu einer Kupplerin um Euch eine ziemende Gattin zu suchen. Wollt " +
     "Ihr die Wahl Eurer zukünftigen Frau";
@@ -1334,7 +1338,7 @@ namespace Conspiratio
             this.txb_namenEingeben.ForeColor = System.Drawing.Color.Black;
             this.txb_namenEingeben.Location = new System.Drawing.Point(560, 337);
             this.txb_namenEingeben.Name = "txb_namenEingeben";
-            this.txb_namenEingeben.Size = new System.Drawing.Size(221, 32);
+            this.txb_namenEingeben.Size = new System.Drawing.Size(221, 47);
             this.txb_namenEingeben.TabIndex = 228;
             this.txb_namenEingeben.Visible = false;
             this.txb_namenEingeben.TextChanged += new System.EventHandler(this.txb_namenEingeben_TextChanged);
@@ -1845,7 +1849,7 @@ namespace Conspiratio
             this.lbl_wahl_kand5.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand5.Location = new System.Drawing.Point(471, 349);
             this.lbl_wahl_kand5.Name = "lbl_wahl_kand5";
-            this.lbl_wahl_kand5.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand5.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand5.TabIndex = 347;
             this.lbl_wahl_kand5.Text = "Kand1";
             this.lbl_wahl_kand5.Visible = false;
@@ -1859,7 +1863,7 @@ namespace Conspiratio
             this.lbl_wahl_kand6.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand6.Location = new System.Drawing.Point(479, 357);
             this.lbl_wahl_kand6.Name = "lbl_wahl_kand6";
-            this.lbl_wahl_kand6.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand6.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand6.TabIndex = 348;
             this.lbl_wahl_kand6.Text = "Kand1";
             this.lbl_wahl_kand6.Visible = false;
@@ -1873,7 +1877,7 @@ namespace Conspiratio
             this.lbl_wahl_kand9.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand9.Location = new System.Drawing.Point(487, 365);
             this.lbl_wahl_kand9.Name = "lbl_wahl_kand9";
-            this.lbl_wahl_kand9.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand9.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand9.TabIndex = 349;
             this.lbl_wahl_kand9.Text = "Kand1";
             this.lbl_wahl_kand9.Visible = false;
@@ -1887,7 +1891,7 @@ namespace Conspiratio
             this.lbl_wahl_kand7.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand7.Location = new System.Drawing.Point(495, 373);
             this.lbl_wahl_kand7.Name = "lbl_wahl_kand7";
-            this.lbl_wahl_kand7.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand7.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand7.TabIndex = 350;
             this.lbl_wahl_kand7.Text = "Kand1";
             this.lbl_wahl_kand7.Visible = false;
@@ -1901,7 +1905,7 @@ namespace Conspiratio
             this.lbl_wahl_kand8.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand8.Location = new System.Drawing.Point(503, 381);
             this.lbl_wahl_kand8.Name = "lbl_wahl_kand8";
-            this.lbl_wahl_kand8.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand8.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand8.TabIndex = 351;
             this.lbl_wahl_kand8.Text = "Kand1";
             this.lbl_wahl_kand8.Visible = false;
@@ -1915,7 +1919,7 @@ namespace Conspiratio
             this.lbl_wahl_kand10.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand10.Location = new System.Drawing.Point(511, 389);
             this.lbl_wahl_kand10.Name = "lbl_wahl_kand10";
-            this.lbl_wahl_kand10.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand10.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand10.TabIndex = 352;
             this.lbl_wahl_kand10.Text = "Kand1";
             this.lbl_wahl_kand10.Visible = false;
@@ -1929,7 +1933,7 @@ namespace Conspiratio
             this.lbl_wahl_kand4.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand4.Location = new System.Drawing.Point(519, 397);
             this.lbl_wahl_kand4.Name = "lbl_wahl_kand4";
-            this.lbl_wahl_kand4.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand4.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand4.TabIndex = 353;
             this.lbl_wahl_kand4.Text = "Kand1";
             this.lbl_wahl_kand4.Visible = false;
@@ -1943,7 +1947,7 @@ namespace Conspiratio
             this.lbl_wahl_kand11.ForeColor = System.Drawing.Color.Gold;
             this.lbl_wahl_kand11.Location = new System.Drawing.Point(527, 405);
             this.lbl_wahl_kand11.Name = "lbl_wahl_kand11";
-            this.lbl_wahl_kand11.Size = new System.Drawing.Size(99, 32);
+            this.lbl_wahl_kand11.Size = new System.Drawing.Size(146, 47);
             this.lbl_wahl_kand11.TabIndex = 354;
             this.lbl_wahl_kand11.Text = "Kand1";
             this.lbl_wahl_kand11.Visible = false;
@@ -1957,7 +1961,7 @@ namespace Conspiratio
             this.lbl_kup_1.ForeColor = System.Drawing.Color.Gold;
             this.lbl_kup_1.Location = new System.Drawing.Point(-244, 348);
             this.lbl_kup_1.Name = "lbl_kup_1";
-            this.lbl_kup_1.Size = new System.Drawing.Size(361, 32);
+            this.lbl_kup_1.Size = new System.Drawing.Size(549, 47);
             this.lbl_kup_1.TabIndex = 356;
             this.lbl_kup_1.Text = "Kupplerin überlassen, oder";
             this.lbl_kup_1.Visible = false;
@@ -1970,7 +1974,7 @@ namespace Conspiratio
             this.lbl_kup_2.ForeColor = System.Drawing.Color.Gold;
             this.lbl_kup_2.Location = new System.Drawing.Point(-244, 348);
             this.lbl_kup_2.Name = "lbl_kup_2";
-            this.lbl_kup_2.Size = new System.Drawing.Size(198, 34);
+            this.lbl_kup_2.Size = new System.Drawing.Size(280, 47);
             this.lbl_kup_2.TabIndex = 357;
             this.lbl_kup_2.Text = "selber treffen";
             this.lbl_kup_2.Visible = false;
@@ -2055,7 +2059,7 @@ namespace Conspiratio
             this.label1.ForeColor = System.Drawing.Color.Gold;
             this.label1.Location = new System.Drawing.Point(884, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 32);
+            this.label1.Size = new System.Drawing.Size(113, 47);
             this.label1.TabIndex = 366;
             this.label1.Text = "label";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2070,7 +2074,7 @@ namespace Conspiratio
             this.label2.ForeColor = System.Drawing.Color.Gold;
             this.label2.Location = new System.Drawing.Point(884, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 32);
+            this.label2.Size = new System.Drawing.Size(113, 47);
             this.label2.TabIndex = 367;
             this.label2.Text = "label";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2085,7 +2089,7 @@ namespace Conspiratio
             this.label3.ForeColor = System.Drawing.Color.Gold;
             this.label3.Location = new System.Drawing.Point(887, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 32);
+            this.label3.Size = new System.Drawing.Size(113, 47);
             this.label3.TabIndex = 368;
             this.label3.Text = "label";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2100,7 +2104,7 @@ namespace Conspiratio
             this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(887, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 32);
+            this.label4.Size = new System.Drawing.Size(113, 47);
             this.label4.TabIndex = 369;
             this.label4.Text = "label";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2115,7 +2119,7 @@ namespace Conspiratio
             this.label5.ForeColor = System.Drawing.Color.Gold;
             this.label5.Location = new System.Drawing.Point(887, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 32);
+            this.label5.Size = new System.Drawing.Size(113, 47);
             this.label5.TabIndex = 370;
             this.label5.Text = "label";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2130,7 +2134,7 @@ namespace Conspiratio
             this.label6.ForeColor = System.Drawing.Color.Gold;
             this.label6.Location = new System.Drawing.Point(887, 241);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 32);
+            this.label6.Size = new System.Drawing.Size(113, 47);
             this.label6.TabIndex = 371;
             this.label6.Text = "label";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;

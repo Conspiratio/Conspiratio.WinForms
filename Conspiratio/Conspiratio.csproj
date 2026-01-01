@@ -82,7 +82,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Conspiratio.Lib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Conspiratio.Lib.3.0.0\lib\netstandard2.0\Conspiratio.Lib.dll</HintPath>
+      <HintPath>..\packages\Conspiratio.Lib.3.1.0\lib\netstandard2.0\Conspiratio.Lib.dll</HintPath>
     </Reference>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>

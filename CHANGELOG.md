@@ -1,5 +1,19 @@
 # Changelog Conspiratio
 
+## Unreleased
+
+## 1.4.8 - 01.01.2026
+
+### Korrekturen
+- Es kommt nun nicht mehr zu Exceptions, Einfrieren des Spiels und anderen Effekten, wenn man während der Anzeige eines Dialogfensters (z.B. ob man die Runde beenden möchte) einen Rechtsklick außerhalb des Fensters macht (Danke an eure zahlreichen Rückmeldungen dazu)
+
+### Erweiterungen
+- Beim Klick auf die Taler oben links kommt man nun in die Amtsübersichtskarte, von welcher direkt eine Bestechung oder Karten spielen initiiert werden kann (Danke an Muffinz für die Anregung)
+- Es wurden im Kontor ein paar Hinweistexte beim Rechtsklick für Elemente, die noch keinen Hinweis besaßen, hinzugefügt
+
+### Änderungen
+- Die Kirchenaustritts- und Konvertierungskosten sind nun variabel und vom Gesamtvermögen des Spielers abhängig (Danke an DerEinzehnte für die Anregung)
+
 ## 1.4.7 - 24.12.2024
 
 ### Änderungen

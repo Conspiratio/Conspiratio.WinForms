@@ -78,6 +78,7 @@ namespace Conspiratio
         readonly int maxVerschiedeneAuftraege;
         int BrautwerbungButtonKlick = 0;
         int globalAktiveStadt;
+        private Color _standardForeColor = Color.Black;
 
         #endregion
 
@@ -2286,6 +2287,42 @@ namespace Conspiratio
             RohstoffEinVerkaufen(1);
         }
 
+        private void lbl_Taler_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                SW.Dynamisch.BelTextAnzeigen("Dies ist Euer aktuelles Guthaben in Talern.\nMit Talern könnt Ihr Rohstoffe kaufen, Produktionsstätten errichten und vieles mehr.");
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
+                SW.UI.PolitischeWeltkarteDialog.ShowDialogModus(0, true);
+            }
+        }
+
+        private void lbl_Taler_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = (sender as Label);
+            if (label.ForeColor != Color.Red)
+                _standardForeColor = label.ForeColor;
+
+            label.ForeColor = Color.Red;
+        }
+
+        private void lbl_Taler_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = (sender as Label);
+            label.ForeColor = _standardForeColor;
+        }
+
+        private void lbl_ortdatum_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                SW.Dynamisch.BelTextAnzeigen("Hier seht Ihr den aktuellen Ort und das Datum im Spiel.\nDas Datum ist wichtig für Ereignisse, Verträge und vieles mehr.");
+            }
+        }
+
         private void lbl_stadt_roh2_Click(object sender, EventArgs e)
         {
             RohstoffEinVerkaufen(2);
@@ -3988,10 +4025,6 @@ namespace Conspiratio
             PositionWechseln(Posi_Kerker);
             SpielerInfosEinAusBlenden(true);
 
-            //lbl_Taler.Visible = false;
-            //lbl_ortdatum.Visible = false;
-
-
             label1.Text = "Ihr verbringt dieses Jahr im Schuldturm...";
             label1.Top = this.Height - NormH(75);
             label1.Left = this.Width / 2 - label1.Width / 2;
@@ -4897,7 +4930,7 @@ namespace Conspiratio
                 }
                 catch (Exception ex)
                 {
-                    SW.UI.TextAnzeigen.ShowDialog(ex.Message);
+                    await SW.UI.ShowText.ShowDialog(ex.Message);
                 }
             }
 
@@ -7377,6 +7410,11 @@ namespace Conspiratio
         private async void KircheKonvertieren()
         {
             int konvertierkosten = SW.Statisch.GetKonvertierkosten();
+            int gesamtvermoegen = SW.Dynamisch.GetAktHum().GetGesamtVermoegen(SW.Dynamisch.GetAktiverSpieler());
+
+            // Konvertierungskosten immer mind. 5% des Gesamtvermögens des Spielers
+            konvertierkosten = Math.Max(konvertierkosten, Convert.ToInt32(gesamtvermoegen * 0.05));
+
             int eigeneRelID = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetReligion();
             int neueID = eigeneRelID + 1;
 
@@ -7404,6 +7442,10 @@ namespace Conspiratio
         private async void KircheAustreten()
         {
             int austrittkosten = SW.Statisch.GetAustrittskosten();
+            int gesamtvermoegen = SW.Dynamisch.GetAktHum().GetGesamtVermoegen(SW.Dynamisch.GetAktiverSpieler());
+
+            // Austrittskosten immer mind. 20% des Gesamtvermögens des Spielers
+            austrittkosten = Math.Max(austrittkosten, Convert.ToInt32(gesamtvermoegen * 0.2));
 
             if (SW.Dynamisch.CheckIfenoughGold(austrittkosten))
             {
@@ -8262,12 +8304,12 @@ namespace Conspiratio
                             if (AnzahlMoeglich != 0)
                             {
                                 eink_anz = AnzahlMoeglich;
-                                SW.UI.TextAnzeigen.ShowDialog($"Ihr besitzt für diesen Rohstoff nicht genügend Lagerraum. Es konnte nur eine Menge von {AnzahlMoeglich} eingelagert werden.");
+                                SW.UI.ShowText.ShowDialog($"Ihr besitzt für diesen Rohstoff nicht genügend Lagerraum. Es konnte nur eine Menge von {AnzahlMoeglich} eingelagert werden.");
                             }
                             else
                             {
                                 eink_anz = 0;
-                                SW.UI.TextAnzeigen.ShowDialog("Ihr besitzt für diesen Rohstoff keinen ausreichenden Lagerraum.");
+                                SW.UI.ShowText.ShowDialog("Ihr besitzt für diesen Rohstoff keinen ausreichenden Lagerraum.");
                             }
                         }
 
@@ -8280,12 +8322,12 @@ namespace Conspiratio
                     }
                     else
                     {
-                        SW.UI.TextAnzeigen.ShowDialog("Dafür fehlen Euch die Taler.");
+                        SW.UI.ShowText.ShowDialog("Dafür fehlen Euch die Taler.");
                     }
                 }
                 else
                 {
-                    SW.UI.TextAnzeigen.ShowDialog("Der Lagerstand in der Stadt reicht nicht aus.");
+                    SW.UI.ShowText.ShowDialog("Der Lagerstand in der Stadt reicht nicht aus.");
                 }
             }
 
@@ -9147,7 +9189,7 @@ namespace Conspiratio
                 if (autosave == false)
                 {
                     if (!meldungUnterdruecken)
-                        SW.UI.TextAnzeigen.ShowDialog("Speichervorgang beendet");
+                        SW.UI.ShowText.ShowDialog("Speichervorgang beendet");
                 }
                 else
                 {

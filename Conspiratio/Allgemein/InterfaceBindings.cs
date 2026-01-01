@@ -11,7 +11,7 @@ namespace Conspiratio.Allgemein
             return new JaNeinFrage();
         }
 
-        public ITextAnzeigen GetTextAnzeigen()
+        public IShowText GetTextAnzeigen()
         {
             return new Textanzeigen();
         }
