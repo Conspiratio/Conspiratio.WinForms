@@ -7410,6 +7410,11 @@ namespace Conspiratio
         private async void KircheKonvertieren()
         {
             int konvertierkosten = SW.Statisch.GetKonvertierkosten();
+            int gesamtvermoegen = SW.Dynamisch.GetAktHum().GetGesamtVermoegen(SW.Dynamisch.GetAktiverSpieler());
+
+            // Konvertierungskosten immer mind. 5% des Gesamtvermögens des Spielers
+            konvertierkosten = Math.Max(konvertierkosten, Convert.ToInt32(gesamtvermoegen * 0.05));
+
             int eigeneRelID = SW.Dynamisch.GetHumWithID(SW.Dynamisch.GetAktiverSpieler()).GetReligion();
             int neueID = eigeneRelID + 1;
 
@@ -7437,6 +7442,10 @@ namespace Conspiratio
         private async void KircheAustreten()
         {
             int austrittkosten = SW.Statisch.GetAustrittskosten();
+            int gesamtvermoegen = SW.Dynamisch.GetAktHum().GetGesamtVermoegen(SW.Dynamisch.GetAktiverSpieler());
+
+            // Austrittskosten immer mind. 20% des Gesamtvermögens des Spielers
+            austrittkosten = Math.Max(austrittkosten, Convert.ToInt32(gesamtvermoegen * 0.2));
 
             if (SW.Dynamisch.CheckIfenoughGold(austrittkosten))
             {
