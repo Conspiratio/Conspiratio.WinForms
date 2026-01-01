@@ -78,6 +78,7 @@ namespace Conspiratio
         readonly int maxVerschiedeneAuftraege;
         int BrautwerbungButtonKlick = 0;
         int globalAktiveStadt;
+        private Color _standardForeColor = Color.Black;
 
         #endregion
 
@@ -2286,6 +2287,42 @@ namespace Conspiratio
             RohstoffEinVerkaufen(1);
         }
 
+        private void lbl_Taler_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                SW.Dynamisch.BelTextAnzeigen("Dies ist Euer aktuelles Guthaben in Talern.\nMit Talern könnt Ihr Rohstoffe kaufen, Produktionsstätten errichten und vieles mehr.");
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
+                C_MusikInstanz.PlaySound(Properties.Resources.bongo_dunkel);
+                SW.UI.PolitischeWeltkarteDialog.ShowDialogModus(0, true);
+            }
+        }
+
+        private void lbl_Taler_MouseEnter(object sender, EventArgs e)
+        {
+            Label label = (sender as Label);
+            if (label.ForeColor != Color.Red)
+                _standardForeColor = label.ForeColor;
+
+            label.ForeColor = Color.Red;
+        }
+
+        private void lbl_Taler_MouseLeave(object sender, EventArgs e)
+        {
+            Label label = (sender as Label);
+            label.ForeColor = _standardForeColor;
+        }
+
+        private void lbl_ortdatum_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                SW.Dynamisch.BelTextAnzeigen("Hier seht Ihr den aktuellen Ort und das Datum im Spiel.\nDas Datum ist wichtig für Ereignisse, Verträge und vieles mehr.");
+            }
+        }
+
         private void lbl_stadt_roh2_Click(object sender, EventArgs e)
         {
             RohstoffEinVerkaufen(2);
@@ -3987,10 +4024,6 @@ namespace Conspiratio
         {
             PositionWechseln(Posi_Kerker);
             SpielerInfosEinAusBlenden(true);
-
-            //lbl_Taler.Visible = false;
-            //lbl_ortdatum.Visible = false;
-
 
             label1.Text = "Ihr verbringt dieses Jahr im Schuldturm...";
             label1.Top = this.Height - NormH(75);
