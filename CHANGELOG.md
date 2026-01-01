@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.4.8 - 01.01.2026
+
 ### Korrekturen
 - Es kommt nun nicht mehr zu Exceptions, Einfrieren des Spiels und anderen Effekten, wenn man während der Anzeige eines Dialogfensters (z.B. ob man die Runde beenden möchte) einen Rechtsklick außerhalb des Fensters macht (Danke an eure zahlreichen Rückmeldungen dazu)
 
